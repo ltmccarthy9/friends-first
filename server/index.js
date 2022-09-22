@@ -29,9 +29,11 @@ mongoose.connection.on("connected", () => {
 });
 
 //middelware
+app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/events", eventRoute);
+
 
 //connection to server on port 4000
 app.listen(4000, () => {

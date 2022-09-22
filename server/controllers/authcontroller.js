@@ -38,6 +38,8 @@ export const loginUser = async (req, res, next) => {
             return next(createError(400), "Wrong password or username.")
         }
 
+        const token = jwt.sign({ id: user._id, isAdmin: user.isAdmin }, "secret123")
+
         const { password, isAdmin, ...otherDetails } = user._doc;
         res.status(200).json({...otherDetails})
     } catch(err) {

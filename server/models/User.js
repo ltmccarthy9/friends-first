@@ -25,7 +25,11 @@ const userSchema = new mongoose.Schema({
     },
     photos: {
         type: [String],
-    }
-});
+    },
+    isAdmin: {
+        type: Boolean,
+        default: false,
+    },
+},{timestamps: true});
 
 export default mongoose.model("User", userSchema);

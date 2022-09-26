@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import authRoute from "./routes/auth.js";
 import userRoute from "./routes/users.js";
 import eventRoute from "./routes/events.js";
+import cookieParser from 'cookie-parser';
 
 const app = express();
 dotenv.config();
@@ -29,7 +30,7 @@ mongoose.connection.on("connected", () => {
 });
 
 //middelware
-
+app.use(cookieParser());
 app.use(express.json());
 
 app.use("/api/auth", authRoute);

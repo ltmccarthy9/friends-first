@@ -9,19 +9,20 @@ const eventSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    distance: {
-        type: Number
-    },
     description: {
         type: String,
         required: true,
     },
-    spots: {
+    capacity: {
         type: Number,
         required: true,
     },
     taken: {
         type: Number,
+        required: true,
+    },
+    category: {
+        type: String,
         required: true,
     }
 });

@@ -6,6 +6,7 @@ import userRoute from "./routes/users.js";
 import eventRoute from "./routes/events.js";
 import cookieParser from 'cookie-parser';
 
+
 const app = express();
 dotenv.config();
 
@@ -29,14 +30,16 @@ mongoose.connection.on("connected", () => {
     console.log("mongoDB connected")
 });
 
-//middelware
+//middleware
 app.use(cookieParser());
 app.use(express.json());
 
+// router middleware
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/events", eventRoute);
 
+// custom error middleware
 app.use((err, req, res, next) => {
     const errorStatus = err.status || 500
     const errorMessage = err.message || "Something went wrong."

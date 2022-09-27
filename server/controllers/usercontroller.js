@@ -1,6 +1,6 @@
 import User from "../models/User.js";
 
-
+// Update user
 export const updateUser = async (req, res, next) => {
     try {
         //update user by using the id in the request paramter :id
@@ -18,6 +18,7 @@ export const updateUser = async (req, res, next) => {
     }
 }
 
+// Delete user by id
 export const deleteUser = async (req, res, next) => {
     try {
         //because we are deleting we don't need to assign 
@@ -29,6 +30,7 @@ export const deleteUser = async (req, res, next) => {
     }
 }
 
+// Get single user by id
 export const getUser = async (req, res, next) => {
     try {
         const user = await User.findById(req.params.id);
@@ -38,6 +40,7 @@ export const getUser = async (req, res, next) => {
     }
 }
 
+// Get all users (must be admin)
 export const getUsers = async (req,res,next) => {
     try {
         const users = await User.find();

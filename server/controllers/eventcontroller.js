@@ -1,5 +1,6 @@
 import Event from "../models/Event.js";
 
+// Create an event (must be admin)
 export const createEvent = async (req, res, next) => {
     try {
         const newEvent = new Event({
@@ -18,6 +19,7 @@ export const createEvent = async (req, res, next) => {
     }
 };
 
+// Update an event (must be admin)
 export const updateEvent = async (req, res, next) => {
     try {
         const updatedEvent = await Event.findByIdAndUpdate(
@@ -29,5 +31,15 @@ export const updateEvent = async (req, res, next) => {
             res.status(200).json(updatedEvent);
     } catch(err) {
        next(err);
+    }
+}
+
+// Get an event
+export const getEvent = async (req, res, next) => {
+    try {
+        const event = await Event.findById(req.params.id);
+        res.status(200).json(event);
+    } catch(err) {
+        next(err);
     }
 }

@@ -6,7 +6,6 @@ import userRoute from "./routes/users.js";
 import eventRoute from "./routes/events.js";
 import cookieParser from 'cookie-parser';
 
-
 const app = express();
 dotenv.config();
 

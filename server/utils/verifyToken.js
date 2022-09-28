@@ -1,5 +1,5 @@
-import jwt, { verify } from "jsonwebtoken";
-import { createError } from "../utils/error.js"
+import jwt from "jsonwebtoken";
+import createError from "./error.js"
 
 //Verifty that the user has a jwt
 export const verifyToken = (req, res, next) => {

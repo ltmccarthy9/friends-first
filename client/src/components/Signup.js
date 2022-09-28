@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useAxios from "../hooks/useAxios";
 
 const Signup = () => {
     const [name, setName] = useState("");
@@ -6,15 +7,7 @@ const Signup = () => {
     const [password, setPassword] = useState("");
     const [password2, setPassword2] = useState("");
 
-    // const handleFormSubmit = async () => {
-    //     fetch('http://localhost:4000/api/register', {
-    //         method: postMessage,
-    //         body: JSON.stringify({
-
-    //         })
-    //     })
-    // }
-
+    const { data, loading, error } = useAxios("")
     return (
         <div>
             <h1>Signup</h1>

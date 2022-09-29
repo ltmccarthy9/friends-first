@@ -27,16 +27,16 @@ const Home = () => {
       }, [])
     
     return (
-        <div style={{margin: "0 auto", boxShadow: "1px 4px 10px black", 
-        width: "400px", height: "400px", 
-        position: "relative", padding: "10px", top: "15em",
-        backgroundColor: "white"}}>
+        <div style={{margin: "0 auto", boxShadow: "1px 4px 23px black", 
+        width: "300px", height: "300px", 
+        position: "relative", padding: "10px", top: "20em",
+        backgroundColor: "white", borderRadius: ".5em"}}>
 
             <h1 style={{margin: "0 auto", width: "200px", 
             height: "auto", padding: "10px", 
-            position: "relative", fontWeight: "lighter"}} >Welcome to Friends First!</h1>
+            position: "relative", fontWeight: "lighter", textAlign: "center"}} >Friends First</h1>
 
-            <div style={{margin: "0 auto", width: "200px", 
+            <div style={{margin: "0 auto", width: "175px", 
             height: "auto", padding: "10px", 
             position: "relative"}} id="signIn"></div>
         </div>

@@ -1,14 +1,18 @@
 import { useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";
+import { useNavigate } from "react-router-dom"
 
 const Home = () => {
     
+    const navigate = useNavigate();
 
     function handleCallbackResponse(response) {
         console.log("Encoded JWT ID token: " + response.credential);
         const userObject = jwt_decode(response.credential);
         console.log(userObject);
+        navigate("/dashboard");
       }
+
       useEffect(() => {
         /* global google */
         google.accounts.id.initialize({

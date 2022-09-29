@@ -8,8 +8,8 @@ const Home = () => {
 
     function handleCallbackResponse(response) {
         console.log("Encoded JWT ID token: " + response.credential);
-        const userObject = jwt_decode(response.credential);
-        console.log(userObject);
+        //const userObject = jwt_decode(response.credential);
+        localStorage.setItem('user', JSON.stringify(response.credential));
         navigate("/dashboard");
       }
 
@@ -27,7 +27,7 @@ const Home = () => {
       }, [])
     
     return (
-        <div style={{margin: "0 auto", boxShadow: "1px 4px 23px black", 
+        <div style={{margin: "0 auto", boxShadow: "1px 0px 8px black", 
         width: "300px", height: "300px", 
         position: "relative", padding: "10px", top: "20em",
         backgroundColor: "white", borderRadius: ".5em"}}>

@@ -1,0 +1,43 @@
+import { useEffect, useState } from "react";
+import jwt_decode from "jwt-decode";
+
+const Home = () => {
+    
+
+    function handleCallbackResponse(response) {
+        console.log("Encoded JWT ID token: " + response.credential);
+        const userObject = jwt_decode(response.credential);
+        console.log(userObject);
+      }
+      useEffect(() => {
+        /* global google */
+        google.accounts.id.initialize({
+          client_id: "582905064760-5f6mbfblnm6ba3kc2vv03l6jq3m9rsuf.apps.googleusercontent.com",
+          callback: handleCallbackResponse
+        });
+    
+        google.accounts.id.renderButton(
+          document.getElementById("signIn"),
+          { theme: "outline", size: "medium" }
+        )
+      }, [])
+    
+    return (
+        <div style={{margin: "0 auto", boxShadow: "1px 4px 10px black", 
+        width: "400px", height: "400px", 
+        position: "relative", padding: "10px", top: "15em",
+        backgroundColor: "white"}}>
+
+            <h1 style={{margin: "0 auto", width: "200px", 
+            height: "auto", padding: "10px", 
+            position: "relative", fontWeight: "lighter"}} >Welcome to Friends First!</h1>
+
+            <div style={{margin: "0 auto", width: "200px", 
+            height: "auto", padding: "10px", 
+            position: "relative"}} id="signIn"></div>
+        </div>
+       
+    );
+}
+
+export default Home;

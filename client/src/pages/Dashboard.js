@@ -5,14 +5,15 @@ import { useNavigate } from "react-router-dom";
 const Dashboard = () => {
     const navigate = useNavigate();
 
-
+    // Check to see if the user is logged in
     useEffect(() => {
-        if(localStorage.getItem('user') === null) {
+        if(localStorage.getItem('user') != 'loggedin') {
             loginAlert();
             navigate("/")
         }
     }, [])
     
+    // alert if you try to access other routes without being loggedin
     const loginAlert = () => {
         alert("please login to continue");
     }
@@ -21,6 +22,8 @@ const Dashboard = () => {
         localStorage.removeItem('user');
         navigate("/")
     }
+
+
     return (
         <div>
 

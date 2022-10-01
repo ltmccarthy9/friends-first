@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
     
@@ -8,10 +8,16 @@ const Home = () => {
 
     function handleCallbackResponse(response) {
         console.log("Encoded JWT ID token: " + response.credential);
-        //const userObject = jwt_decode(response.credential);
-        localStorage.setItem('user', JSON.stringify(response.credential));
+        const userObject = jwt_decode(response.credential);
+        localStorage.setItem('user', 'loggedin');
         navigate("/dashboard");
+        // fetch("/users", {
+        //     method: "GET",
+        //     
+        // })
       }
+      // ADD FACEBOOK LOGIN OPTION
+      //need state management for credentials to generate the correct profile.
 
       useEffect(() => {
         /* global google */
@@ -27,8 +33,8 @@ const Home = () => {
       }, [])
     
     return (
-        <div style={{margin: "0 auto", boxShadow: "1px 0px 8px black", 
-        width: "300px", height: "300px", 
+        <div style={{margin: "0 auto", boxShadow: "1px 0px 8px #252525", 
+        width: "300px", height: "400px", 
         position: "relative", padding: "10px", top: "20em",
         backgroundColor: "white", borderRadius: ".5em"}}>
 

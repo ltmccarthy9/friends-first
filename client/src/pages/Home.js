@@ -4,8 +4,10 @@ import { useNavigate } from "react-router-dom";
 
 const Home = () => {
     
+   //useNavigate hook for changing react route
     const navigate = useNavigate();
 
+    // handles object response from google and sets user to logged in.
     function handleCallbackResponse(response) {
         console.log("Encoded JWT ID token: " + response.credential);
         const userObject = jwt_decode(response.credential);
@@ -19,6 +21,7 @@ const Home = () => {
       // ADD FACEBOOK LOGIN OPTION
       //need state management for credentials to generate the correct profile.
 
+      // generate google button and google login
       useEffect(() => {
         /* global google */
         google.accounts.id.initialize({

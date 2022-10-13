@@ -6,7 +6,7 @@ import useFetch from "../hooks/useFetch";
 const Dashboard = () => {
     const navigate = useNavigate();
 
-    const {data, loading, error } = useFetch("");
+    const {data, loading, error } = useFetch("/events");
 
     // Check to see if the user is logged in
     useEffect(() => {

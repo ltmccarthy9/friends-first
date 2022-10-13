@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useFetch from "../hooks/useFetch";
 
 
 const Dashboard = () => {
     const navigate = useNavigate();
+
+    const {data, loading, error } = useFetch("");
 
     // Check to see if the user is logged in
     useEffect(() => {

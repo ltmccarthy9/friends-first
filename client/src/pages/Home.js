@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+
 
 const Home = () => {
     
@@ -75,18 +75,11 @@ const Home = () => {
       }, [])
     
     return (
-        <div style={{margin: "0 auto", boxShadow: "1px 0px 8px #252525", 
-        width: "300px", height: "400px", 
-        position: "relative", padding: "10px", top: "20em",
-        backgroundColor: "white", borderRadius: ".5em"}}>
 
-            <h1 style={{margin: "0 auto", width: "200px", 
-            height: "auto", padding: "10px", 
-            position: "relative", fontWeight: "lighter", textAlign: "center"}} >Friends First</h1>
+        <div className="login-card">
+           <h1 className="login-header" >Login</h1>
+            <div className="login-button" id="signIn"></div>
 
-            <div style={{margin: "0 auto", width: "175px", 
-            height: "auto", padding: "10px", 
-            position: "relative"}} id="signIn"></div>
         </div>
        
     );

@@ -13,5 +13,35 @@ code {
 }
 
 html {
-background-image: linear-gradient(to right,rgb(255, 255, 255), rgb(255, 255, 255));
+background-color: rgb(214, 235, 232);
+}
+
+.login-card{
+  margin: 0 auto;
+  box-shadow: 1px 1px 3px #2e2e2e; 
+  width: 300px;
+  height: 400px; 
+  position: relative; 
+  padding: 10px;
+  top: 20em;
+  background-color: white;
+  border-radius: .5em;
+  transition: all ease-in .2s;
+}
+
+.login-card:hover{
+  box-shadow: 9px 9px 3px #4b5b5b;
+}
+
+.login-button{
+  margin: 0 auto;
+  width: 175px;
+  height: auto;
+  padding: 10px;
+  position: relative;
+}
+
+.login-header{
+  text-align: center;
+  font-weight: 500;
 }

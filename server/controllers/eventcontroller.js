@@ -32,7 +32,7 @@ export const updateEvent = async (req, res, next) => {
     } catch(err) {
        next(err);
     }
-}
+};
 
 // Get an event
 export const getEvent = async (req, res, next) => {
@@ -40,6 +40,16 @@ export const getEvent = async (req, res, next) => {
         const event = await Event.findById(req.params.id);
         res.status(200).json(event);
     } catch(err) {
+        next(err);
+    }
+};
+
+//get all events (will add parameters for only events within certain range)
+export const getEvents = async (req, res, next) => {
+    try {
+        const events = await Event.find({});
+        res.status(200).json(events);
+    } catch (err) {
         next(err);
     }
 }

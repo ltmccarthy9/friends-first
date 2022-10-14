@@ -11,12 +11,11 @@ router.put("/:id", verifyUser, updateUser);
 router.delete("/:id", verifyUser, deleteUser);
 
 // GET USER
-router.get("/:id", verifyUser, getUser);
+router.get("/:email", getUser);
 
 
 //GET ALL FOR ADMIN
 router.get("/", verifyAdmin, getUsers);
-
 
 
 //ROUTE FOR OTHER USERS WHO WERE ALSO AT EVENT AND OPTED INTO SWIPE POOL

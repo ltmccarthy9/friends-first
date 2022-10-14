@@ -1,4 +1,5 @@
 import User from "../models/User.js";
+import UserG from "../models/UserG.js";
 import bcrypt from "bcryptjs"
 import createError from "../utils/error.js";
 import jwt from "jsonwebtoken";
@@ -21,6 +22,21 @@ export const registerUser = async (req, res, next) => {
 
         await newUser.save();
         res.status(200).send("User has been created")
+    } catch(err) {
+        next(err);
+    }
+};
+
+export const registerGoogleUser = async (req, res, next) => {
+    try {
+
+        const newUserG = new UserG({
+            name: req.body.name,
+            email: req.body.email,
+        })
+
+        await newUserG.save();
+        res.status(200).send("User has been created from google account")
     } catch(err) {
         next(err);
     }
@@ -52,4 +68,4 @@ export const loginUser = async (req, res, next) => {
     } catch(err) {
         next(err);
     }
-}
+};

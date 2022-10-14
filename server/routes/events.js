@@ -13,4 +13,6 @@ router.put("/update/:id", verifyAdmin, updateEvent);
 // get a event by id
 router.get("/:id", getEvent);
 
+router.get("/events", )
+
 export default router;

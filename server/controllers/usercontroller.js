@@ -33,7 +33,7 @@ export const deleteUser = async (req, res, next) => {
 // Get single user by id
 export const getUser = async (req, res, next) => {
     try {
-        const user = await User.findById(req.params.id);
+        const user = await User.findOne({email: req.params.email});
         res.status(200).json(user);
     } catch(err) {
         next(err);

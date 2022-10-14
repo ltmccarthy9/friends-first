@@ -14,35 +14,33 @@ const Home = () => {
     // with that email, if there is -> redirect to dashboard.
     // if there is no account, we ask for their age first and then register the user
     // using the email and name provided by the JWT from google, then redirect to dashboard.
-    
+
     function handleCallbackResponse(response) {
         console.log("Encoded JWT ID token: " + response.credential);
         const userObject = jwt_decode(response.credential);
         localStorage.setItem('user', 'loggedin');
         console.log(userObject);
         const userEmail = userObject.email;
-        fetch(`/users/${userEmail}`, {
+        fetch(`http://localhost:4000/api/users/google/${userEmail}`, {
           method: "GET",
-          headers: {
-            'Content-Type': 'application/json',
-          }
         })
         .then((response) => response.json())
         .then((data) => {
-          console.log('Success', data);
-          if(data.email){
+          console.log(data);
+          if(data){
             navigate("/dashboard");
           } else {
+            const userAge = prompt("What is your age?")
             //modal ask for age input since google account doesn't supply age.
-            fetch(`/google`, {
+            fetch(`http://localhost:4000/api/auth/google`, {
               method: "POST",
               headers: {
                 'Content-Type': 'application/json',
               },
               body: JSON.stringify({
                 name: userObject.given_name,
-                email: userEmail,
-                age: age
+                email: userObject.email,
+                age: userAge
               }),
             })
             .then((response) => response.json())

@@ -75,13 +75,23 @@ const Home = () => {
       }, [])
     
     return (
-
+  <div>
+    <h1 className="title" >Friends First.</h1>
         <div className="login-card">
-           <h1 className="login-header" >Login</h1>
+           <h1 className="login-header">Login</h1>
             <div className="login-button" id="signIn"></div>
+            <h2 className="login-header">or</h2>
+            <form id="myForm">
+                <input placeholder="email" type="name" className="form-control email"></input>
+                <input placeholder="password" type="password" className="form-control name"></input>
+            
+            
+            <button style={{margin: "10px"}} type="submit" className="btn btn-light sub">Sign in</button>
+        </form>
 
         </div>
        
+        </div>
     );
 }
 

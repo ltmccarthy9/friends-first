@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(235, 235, 235);
 }
 
 code {
@@ -15,33 +16,69 @@ code {
 html {
 background-color: rgb(235, 235, 235);
 }
+.title{
+  text-align: center;
+  margin-top: 100px;
+  font-size: 400%;
+  font-weight: 600;
+}
 
 .login-card{
-  margin: 0 auto;
-  box-shadow: 1px 1px 3px #2e2e2e; 
-  width: 300px;
-  height: 400px; 
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  width: 450px;
+  height: auto; 
   position: relative; 
-  padding: 10px;
-  top: 20em;
+  padding-top: 40px;
+  padding-bottom: 60px;
+  padding-left: 50px;
+  padding-right: 50px;
   background-color: white;
   border-radius: .5em;
   transition: all ease-in .2s;
+  
 }
 
 .login-card:hover{
-  box-shadow: 9px 9px 3px #4b5b5b;
+  box-shadow: -9px 9px 1px #4b5b5b;
 }
 
 .login-button{
   margin: 0 auto;
-  width: 175px;
+  width: 190px;
   height: auto;
   padding: 10px;
   position: relative;
+  transform: scale(1.23);
 }
 
 .login-header{
   text-align: center;
   font-weight: 500;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.email{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.email:hover{
+  box-shadow: -4px 4px 1px #4b5b5b;
+}
+
+.name{
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.name:hover{
+  box-shadow: -4px 4px 1px #4b5b5b;
+}
+
+
+.sub:hover{
+  box-shadow: -4px 4px 1px #4b5b5b;
 }

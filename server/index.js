@@ -5,6 +5,7 @@ import authRoute from "./routes/auth.js";
 import userRoute from "./routes/users.js";
 import eventRoute from "./routes/events.js";
 import cookieParser from 'cookie-parser';
+import cors from "cors";
 
 const app = express();
 dotenv.config();
@@ -30,6 +31,7 @@ mongoose.connection.on("connected", () => {
 });
 
 //middleware
+app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
 
@@ -50,7 +52,7 @@ app.use((err, req, res, next) => {
     });
 });
 
-//connection to server on port 4000
+//connection to server on port 3000
 app.listen(4000, () => {
     connect();
     console.log("listening on port 4000");

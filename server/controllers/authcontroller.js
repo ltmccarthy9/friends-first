@@ -27,12 +27,14 @@ export const registerUser = async (req, res, next) => {
     }
 };
 
+// Register a new user who signed in through google.
 export const registerGoogleUser = async (req, res, next) => {
     try {
 
         const newUserG = new UserG({
             name: req.body.name,
             email: req.body.email,
+            age: req.body.age
         })
 
         await newUserG.save();

@@ -4,9 +4,16 @@ import { useNavigate } from "react-router-dom";
 
 
 const Home = () => {
-    
+  
+
+    // State for user input for login/signup
+    const [email, setEmail ] = useState('');
+    const [password, setPassword] = useState('');
+
    //useNavigate hook for changing react route
     const navigate = useNavigate();
+
+
 
     // After successfully logging in through google, google sends us a JWT with
     // The users details.  We then decode it and have access to their information.
@@ -46,19 +53,19 @@ const Home = () => {
             .then((response) => response.json())
             .then((data) => {
               console.log('Success', data);
+              
             })
             .catch((error) => {
               console.error('Error', error);
+              alert("Oops, there was an error");
             })
           }
         })
         .catch((error) => {
           console.error('Error', error);
+          alert("Oops, there was an error");
         });
       }
-
-      // ADD FACEBOOK LOGIN OPTION
-      //need state management for credentials to generate the correct profile.
 
       // generate google button and google login
       useEffect(() => {
@@ -73,6 +80,31 @@ const Home = () => {
           { theme: "outline", size: "medium" }
         )
       }, [])
+
+      const handleLog = async (e) => {
+        e.preventDefault();
+        console.log(`${email} ${password}`)
+         fetch("http://localhost:4000/api/auth/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            email: email,
+            password: password
+          }),
+        }).then((response) => response.json())
+        .then((data) => {
+          console.log('Success', data);
+          if(data.email === `${email}`){
+            localStorage.setItem('user', 'loggedin');
+            navigate("/dashboard")
+          }
+        })
+        .catch((error) => {
+          console.log('Error', error);
+        });
+      }
     
     return (
   <div>
@@ -82,11 +114,11 @@ const Home = () => {
             <div className="login-button" id="signIn"></div>
             <h2 className="login-header">or</h2>
             <form id="myForm">
-                <input placeholder="email" type="name" className="form-control email"></input>
-                <input placeholder="password" type="password" className="form-control name"></input>
+                <input placeholder="email" onKeyUp={(e) => setEmail(e.target.value)} type="name" className="form-control email"></input>
+                <input placeholder="password" onKeyUp={(e) => setPassword(e.target.value)} type="password" className="form-control pass"></input>
             
             
-            <button style={{margin: "10px"}} type="submit" className="btn btn-light sub">Sign in</button>
+            <button style={{margin: "10px"}} type="button" onClick={(e) => handleLog(e)} className="btn btn-light sub">Sign in</button>
         </form>
 
         </div>

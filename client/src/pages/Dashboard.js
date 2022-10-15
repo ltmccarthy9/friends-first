@@ -30,9 +30,15 @@ const Dashboard = () => {
     return (
         <div>
 
-        <h1>WELCOME TO DASHBOARD</h1>
+        <div className="nav">
+        <h1 className="dash-title" >Friends First.</h1>
+        <button className="btn btn-light logout" onClick={logout}>Logout</button>
+        </div>
 
-        <button onClick={logout}>Logout</button>
+        <div className="dashboard-body">
+            <h3>Nearby Events</h3>
+        </div>
+
         </div>
     );
 };

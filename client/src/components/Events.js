@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 const Events = () => {
     // fetch our events
     const fetchEvents = async () => {
-        const response = await fetch("http://localhost:4000/api/events/all")
+        const response = await fetch("http://localhost:4000/api/events")
         return response.json();
     };
 
@@ -19,7 +19,7 @@ const Events = () => {
 
     return (
         <ul>
-        {data.results?.map((event) => (
+        {data.map((event) => (
             <li key={event.id}>{event.business}</li>
         ))}
         </ul>

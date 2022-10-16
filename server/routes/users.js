@@ -23,7 +23,7 @@ router.delete("/google/:email", deleteUserG);
 router.put("/google/:email", updateUserG);
 
 //GET ALL FOR ADMIN
-router.get("/", verifyAdmin, getUsers);
+router.get("/", getUsers);
 
 
 

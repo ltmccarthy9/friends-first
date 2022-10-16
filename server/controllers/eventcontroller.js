@@ -47,9 +47,10 @@ export const getEvent = async (req, res, next) => {
 //get all events (will add parameters for only events within certain range)
 export const getEvents = async (req, res, next) => {
     try {
-        const events = await Event.find({});
+        const events = await Event.find();
         res.status(200).json(events);
     } catch (err) {
         next(err);
     }
 };
+

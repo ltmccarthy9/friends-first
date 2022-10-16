@@ -8,16 +8,23 @@ const Events = () => {
         return response.json();
     };
 
+    //react query useQuery Hook                 
     const { data, status } = useQuery('events', fetchEvents);
     
+    // if status of fetch is loading we return loading
     if (status === 'loading') {
         return <p>Loading...</p>
     }
 
+    // if status is error we return an error
+    // react query will refetch automatically for us a few times
     if (status === 'error') {
         return <p>Error!</p>;
     }
 
+    // we map our data (each event)
+    // send down props of each event attribute
+    // render each event to events
     return (
         <div>
         {data.map((event) => (

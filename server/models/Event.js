@@ -27,6 +27,8 @@ const eventSchema = new mongoose.Schema({
     }
 });
 
+// we will need to add a date and time and auto remove from active events
+
 
 const Event = mongoose.model("Event", eventSchema);
 export default Event;

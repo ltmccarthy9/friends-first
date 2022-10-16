@@ -1,11 +1,11 @@
 import express from "express";
-import { createEvent, updateEvent, getEvent } from "../controllers/eventcontroller.js";
+import { createEvent, updateEvent, getEvent, getEvents } from "../controllers/eventcontroller.js";
 import { verifyToken, verifyUser, verifyAdmin  } from "../utils/verifyToken.js";
 
 const router = express.Router();
 
 //create event as admin
-router.post("/create", verifyAdmin, createEvent);
+router.post("/create", createEvent);
 
 //update event as admin
 router.put("/update/:id", verifyAdmin, updateEvent);
@@ -13,6 +13,7 @@ router.put("/update/:id", verifyAdmin, updateEvent);
 // get a event by id
 router.get("/:id", getEvent);
 
-router.get("/events", )
+// get all events
+router.get("/all", getEvents);
 
 export default router;

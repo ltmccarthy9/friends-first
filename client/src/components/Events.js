@@ -1,4 +1,5 @@
 import { useQuery } from "react-query";
+import Event from "./Event";
 
 const Events = () => {
     // fetch our events
@@ -18,11 +19,17 @@ const Events = () => {
     }
 
     return (
-        <ul>
+        <div>
         {data.map((event) => (
-            <li key={event.id}>{event.business}</li>
+            <Event key={event._id} 
+            business={event.business}
+            location={event.location}
+            description={event.description}
+            capacity={event.capacity}
+            taken={event.taken}
+            category={event.category} />
         ))}
-        </ul>
+        </div>
     );
 }
 

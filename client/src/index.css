@@ -155,3 +155,41 @@ background-color: rgb(235, 235, 235);
   width: 50%;
   margin: auto;
 }
+
+.event{
+  background-color: white;
+  border-radius: 20px;
+  transition: all ease-in .2s;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.event:hover{
+  box-shadow: -6px 6px 1px #4b5b5b;
+}
+
+.event-attribute{
+  margin-top: 0px;
+  margin-left: 20px;
+}
+
+.event-description{
+ justify-content: center;
+ align-items: center;
+ align-content: center;
+ margin: auto;
+}
+
+.join-button{
+  background-color: #424e4e;
+  color: white;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  width: 10%;
+}
+
+.join-button:hover{
+  background-color: #6c7d7d;
+  color: white;
+}

@@ -2,10 +2,9 @@ import { useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 
-
 const Home = () => {
   
-
+  
     // State for user input for login/signup
     const [email, setEmail ] = useState('');
     const [password, setPassword] = useState('');
@@ -105,20 +104,23 @@ const Home = () => {
           console.log('Error', error);
         });
       }
+
     
     return (
   <div>
     <h1 className="title" >Friends First.</h1>
         <div className="login-card">
-           <h1 className="login-header">Login</h1>
+           <h1 className="login-header">Sign in</h1>
             <div className="login-button" id="signIn"></div>
             <h2 className="login-header">or</h2>
             <form id="myForm">
-                <input placeholder="email" onKeyUp={(e) => setEmail(e.target.value)} type="name" className="form-control email"></input>
+                <input placeholder="email" onKeyUp={(e) => setEmail(e.target.value)} type="email" className="form-control email"></input>
                 <input placeholder="password" onKeyUp={(e) => setPassword(e.target.value)} type="password" className="form-control pass"></input>
             
             
             <button style={{margin: "10px"}} type="button" onClick={(e) => handleLog(e)} className="btn btn-light sub">Sign in</button>
+            <p className="no-account" >Don't have an account?</p>
+            <button type="button" onClick={() => navigate("/register")} className="btn sign-up">Register</button>
         </form>
 
         </div>

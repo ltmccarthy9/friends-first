@@ -92,6 +92,22 @@ background-color: rgb(235, 235, 235);
   box-shadow: -1px 1px 1px #4b5b5b;
 }
 
+.sign-up{
+  margin-left: 8px;
+  background-color: #424e4e;
+  color: white;
+}
+
+.sign-up:hover{
+  background-color: #6c7d7d;
+  box-shadow: -4px 4px 1px #4b5b5b;
+  color: white;
+}
+
+.no-account{
+  font-weight: 500;
+}
+
 /* DASHBOARD */
 
 .nav{

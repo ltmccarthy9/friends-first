@@ -26,6 +26,10 @@ background-color: rgb(235, 235, 235);
   color:#424e4e;
 }
 
+.title:hover{
+  cursor: pointer;
+}
+
 .login-card{
   margin-left: auto;
   margin-right: auto;

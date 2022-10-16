@@ -8,6 +8,7 @@ import jwt from "jsonwebtoken";
 export const registerUser = async (req, res, next) => {
     try {
 
+        
         // use bcrypt to encode user password
         // assign the hashed password as the password for user
         const salt = bcrypt.genSaltSync(10);

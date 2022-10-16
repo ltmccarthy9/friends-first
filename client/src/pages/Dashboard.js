@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 
 
@@ -8,7 +8,7 @@ const Dashboard = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if(localStorage.getItem('user') != 'loggedin') {
+        if(localStorage.getItem('user') !== 'loggedin') {
             loginAlert();
             navigate("/")
         }
@@ -23,6 +23,7 @@ const Dashboard = () => {
         localStorage.removeItem('user');
         navigate("/")
     }
+    
 
 
     return (

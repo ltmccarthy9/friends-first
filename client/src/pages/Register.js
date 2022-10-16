@@ -1,23 +1,56 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
 
+    const navigate = useNavigate();
+    
     const [ name, setName ] = useState('');
     const [ email, setEmail] = useState('');
     const [ password, setPassword] = useState('');
     const [ age, setAge ] = useState(18);
 
     const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log(`${age} ${name} ${email} ${password}`)
         fetch("http://localhost:4000/api/auth/register" , {
             method: "POST",
-
+            headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({
+                age: age,
+                name: name,
+                email: email,
+                password: password
+              }),
+        }).then((response) => response.json())
+        .then((data) => {
+          console.log('Success', data);
+          if(data.success === false){
+            alert("Oops there was an error");
+          }
+          navigate('/');
         })
+        .catch((error) => {
+          console.log('Error', error);
+          navigate('/');
+        });
     } 
    
+    // if user is logged in go to dashboard
+    // if not, go back to login page
+    const navHome = () => {
+        if(localStorage.getItem('user') === 'loggedin'){
+            navigate("/dashboard")
+        } else {
+            navigate("/") 
+        }
+    }
 
     return (
         <div>
-        <h1 className="title" >Friends First.</h1>
+        <h1 className="title" onClick={navHome} >Friends First.</h1>
         <div className="login-card">
            <h1 className="login-header">Sign Up</h1>
             <div className="login-button" id="signIn"></div>

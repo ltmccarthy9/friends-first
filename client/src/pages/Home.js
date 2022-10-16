@@ -82,7 +82,6 @@ const Home = () => {
 
       const handleLog = async (e) => {
         e.preventDefault();
-        console.log(`${email} ${password}`)
          fetch("http://localhost:4000/api/auth/login", {
           method: "POST",
           headers: {

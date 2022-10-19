@@ -33,6 +33,7 @@ const Dashboard = () => {
 
         <div className="nav">
         <h1 className="dash-title" >Friends First.</h1>
+        <button className="btn btn-light profile-button">Profile</button>
         <button className="btn btn-light logout" onClick={logout}>Logout</button>
         </div>
 

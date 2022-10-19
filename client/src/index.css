@@ -110,6 +110,7 @@ background-color: rgb(235, 235, 235);
 
 .no-account{
   font-weight: 500;
+  color: #4b5b5b;
 }
 
 /* DASHBOARD */
@@ -130,9 +131,10 @@ background-color: rgb(235, 235, 235);
 }
 
 .logout{
-  margin-left: auto;
+  margin-left: 10px;
   margin-right: 20px;
   margin-top: 10px;
+  border-radius: 10px;
 }
 
 .logout:hover{
@@ -192,4 +194,23 @@ background-color: rgb(235, 235, 235);
 .join-button:hover{
   background-color: #6c7d7d;
   color: white;
+}
+
+.profile-button{
+  margin-right: 0px;
+  margin-left: auto;
+  margin-top: 10px;
+  background-color: #424e4e;
+  color: white;
+  border-radius: 10px;
+}
+
+.profile-button:hover{
+  background-color: white;
+  background-color: #6c7d7d;
+  color: white;
+}
+
+.profile-button:active{
+  box-shadow: 1px 1px 1px #4b5b5b;
 }

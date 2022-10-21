@@ -17,7 +17,7 @@ html {
 background-color: rgb(235, 235, 235);
 }
 
-/* HOME LOGIN / SIGN UP PAGE */
+/* -----------------------------------------------HOME LOGIN / SIGN UP PAGE------------------------- */
 .title{
   text-align: center;
   margin-top: 100px;
@@ -74,18 +74,11 @@ background-color: rgb(235, 235, 235);
   margin-bottom: 20px;
 }
 
-/* .email:hover{
-  box-shadow: -4px 4px 1px #4b5b5b;
-} */
 
 .pass{
   margin-top: 20px;
   margin-bottom: 5px;
 }
-
-/* .pass:hover{
-  box-shadow: -4px 4px 1px #4b5b5b;
-} */
 
 
 .sub:hover{
@@ -113,7 +106,7 @@ background-color: rgb(235, 235, 235);
   color: #4b5b5b;
 }
 
-/* DASHBOARD */
+/* --------------------------------------------------------DASHBOARD--------------------------------- */
 
 .nav{
   width: 50%;
@@ -214,3 +207,6 @@ background-color: rgb(235, 235, 235);
 .profile-button:active{
   box-shadow: 1px 1px 1px #4b5b5b;
 }
+
+/* --------------------------------------------------------PROFILE PAGE ----------------------------------------- */
+

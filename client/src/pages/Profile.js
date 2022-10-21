@@ -6,7 +6,8 @@ const Profile = () => {
 
     const goDashboard = () => {
         navigate("/dashboard");
-    }
+    };
+    
     return (
         <div>
             Welcome to your profile page.

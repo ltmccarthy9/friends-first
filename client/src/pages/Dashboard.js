@@ -1,9 +1,8 @@
 import { useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import Events from "../components/Events";
-import { QueryClient, QueryClientProvider } from "react-query";
 
-const queryClient = new QueryClient();
+
 
 const Dashboard = () => {
     const navigate = useNavigate();
@@ -31,7 +30,6 @@ const Dashboard = () => {
 
 
     return (
-        <QueryClientProvider client={queryClient}>
         <div>
 
         <div className="nav">
@@ -45,8 +43,7 @@ const Dashboard = () => {
             <Events /> 
         </div>
 
-        </div>
-        </QueryClientProvider>
+        </div> 
     );
 };
 

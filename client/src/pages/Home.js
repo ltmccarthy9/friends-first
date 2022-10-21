@@ -64,7 +64,7 @@ const Home = () => {
           console.error('Error', error);
           alert("Oops, there was an error");
         });
-      }
+      };
 
       // generate google button and google login
       useEffect(() => {
@@ -78,7 +78,7 @@ const Home = () => {
           document.getElementById("signIn"),
           { theme: "outline", size: "medium" }
         )
-      }, [])
+      }, []);
 
       const handleLog = async (e) => {
         e.preventDefault();
@@ -102,7 +102,7 @@ const Home = () => {
         .catch((error) => {
           console.log('Error', error);
         });
-      }
+      };
 
     
     return (

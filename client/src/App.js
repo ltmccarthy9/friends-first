@@ -5,11 +5,13 @@ import Register from "./pages/Register";
 import { QueryClient, QueryClientProvider } from "react-query";
 import Profile from "./pages/Profile";
 
+
 const queryClient = new QueryClient();
 
 function App() {
 
   return (
+    <QueryClientProvider client={queryClient}>
       <Router>
         <QueryClientProvider client={queryClient}>
         <div>
@@ -22,6 +24,7 @@ function App() {
         </div>
         </QueryClientProvider>
       </Router>
+      </QueryClientProvider>
   );
 }
 

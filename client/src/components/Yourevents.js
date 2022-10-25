@@ -1,20 +1,23 @@
-import { useQuery } from "react-query";
-import Event from "./Event";
+import Yourevent from "./Yourevent";
 
-const Events = () => {
-
-    //---------------------------- FUTURE DEVELOPMENT-------------------------------
-    //  Instead of fetching all events, we need a distance condition to only display 
-    // events that are withing a certain range of the user.
-
-    // fetch our events
+const Yourevents = () => {
+    // First check if our user is a google account or not.
+    // fetch our user.
     const fetchEvents = async () => {
-        const response = await fetch("http://localhost:4000/api/events")
-        return response.json();
+        if (localStorage.getItem("user") === "loggedinG") {
+            const response = await fetch("http://localhost:4000/api/users/google/:email")
+            return response.json();
+        } else {
+            const response = await fetch("http://localhost:4000/api/users/:email")
+            return response.json();
+        }
     };
 
+    //Use the IDs of the events in User model to populate with the correct events
+
+
     //react query useQuery Hook                 
-    const { data, status } = useQuery('events', fetchEvents);
+    const { data, status } = useQuery('user', fetchUser);
     
     // if status of fetch is loading we return loading
     if (status === 'loading') {
@@ -33,7 +36,7 @@ const Events = () => {
     return (
         <div>
         {data.map((event) => (
-            <Event key={event._id}
+            <Yourevent key={event._id}
             id={event._id} 
             business={event.business}
             location={event.location}
@@ -46,4 +49,4 @@ const Events = () => {
     );
 }
 
-export default Events;
+export default Yourevents;

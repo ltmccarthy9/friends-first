@@ -1,6 +1,5 @@
 
-
-const Event = ({ business, location, description, capacity, taken, category, id }) => {
+const Yourevent = ({ business, location, description, capacity, taken, category, id }) => {
 
     // Use event key to push to User array of events
     const logKey = () => {
@@ -25,4 +24,4 @@ const Event = ({ business, location, description, capacity, taken, category, id 
     );
 }
 
-export default Event;
+export default Yourevent;

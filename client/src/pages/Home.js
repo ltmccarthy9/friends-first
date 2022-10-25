@@ -24,7 +24,7 @@ const Home = () => {
     function handleCallbackResponse(response) {
         console.log("Encoded JWT ID token: " + response.credential);
         const userObject = jwt_decode(response.credential);
-        localStorage.setItem('user', 'loggedin');
+        localStorage.setItem('user', 'loggedinG');
         console.log(userObject);
         const userEmail = userObject.email;
         fetch(`http://localhost:4000/api/users/google/${userEmail}`, {

@@ -40,7 +40,8 @@ const Events = () => {
             description={event.description}
             capacity={event.capacity}
             taken={event.taken}
-            category={event.category} />
+            category={event.category}
+            date={event.date} />
         ))}
         </div>
     );

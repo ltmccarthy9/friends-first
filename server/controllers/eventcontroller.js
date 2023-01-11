@@ -9,7 +9,8 @@ export const createEvent = async (req, res, next) => {
             description: req.body.description,
             capacity: req.body.capacity,
             taken: req.body.taken,
-            category: req.body.category
+            category: req.body.category,
+            date: req.body.date
         })
 
         await newEvent.save();

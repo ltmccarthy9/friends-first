@@ -1,38 +1,32 @@
-import { useQuery } from "react-query";
 import Event from "./Event";
+import useFetch from "../hooks/useFetch";
+import moment from 'moment';
 
 const Events = () => {
 
-    //---------------------------- FUTURE DEVELOPMENT-------------------------------
-    //  Instead of fetching all events, we need a distance condition to only display 
-    // events that are withing a certain range of the user.
+    // use moment.js to filter out only relevent events (not in the past)
+    const date = moment().format('MM-DD-YYYY');
 
+    const { data, loading, error } = useFetch('http://localhost:4000/api/events');
     // fetch our events
-    const fetchEvents = async () => {
-        const response = await fetch("http://localhost:4000/api/events")
-        return response.json();
-    };
-
-    //react query useQuery Hook                 
-    const { data, status } = useQuery('events', fetchEvents);
     
-    // if status of fetch is loading we return loading
-    if (status === 'loading') {
-        return <p>Loading...</p>
+    if(loading) {
+        return <p>Loading...</p>;
     }
 
-    // if status is error we return an error
-    // react query will refetch automatically for us a few times
-    if (status === 'error') {
-        return <p>Error!</p>;
+    if (error) {
+        return <p>Error: {error.message}</p>;
     }
 
     // we map our data (each event)
     // send down props of each event attribute
     // render each event to events
+
+    const filteredData = data.filter(event => event.date > date);
+
     return (
         <div>
-        {data.map((event) => (
+        {filteredData.map((event) => (
             <Event key={event._id}
             id={event._id} 
             business={event.business}
@@ -41,7 +35,8 @@ const Events = () => {
             capacity={event.capacity}
             taken={event.taken}
             category={event.category}
-            date={event.date} />
+            date={event.date.substring(0,10)}
+            time={event.time} />
         ))}
         </div>
     );

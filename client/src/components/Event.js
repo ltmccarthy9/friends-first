@@ -1,6 +1,6 @@
 
 
-const Event = ({ business, location, description, capacity, taken, category, id, date }) => {
+const Event = ({ business, location, description, capacity, taken, category, id, date, time }) => {
 
     // Use event key to push to User array of events
     const logKey = () => {
@@ -16,6 +16,7 @@ const Event = ({ business, location, description, capacity, taken, category, id,
             <p className="event-attribute">filled: {taken}/{capacity}</p>
             <p className="event-attribute">category: {category}</p>
             <p className="event-attribute">date: {date}</p>
+            <p className="event-attribute">time: {time}</p>
             </div>
 
             

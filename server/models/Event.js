@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import moment from 'moment';
 
 const eventSchema = new mongoose.Schema({
     business: {
@@ -28,6 +29,7 @@ const eventSchema = new mongoose.Schema({
     date: {
         type: Date,
         required: true,
+        get: (date) => moment(date).format('MM-DD-YYYY'),
         validate: {
             validator: function (v) {
                 return(
@@ -39,6 +41,10 @@ const eventSchema = new mongoose.Schema({
             message: "Event must be at least one day from now and no more than ninety days out"
         }
         
+    },
+    time: {
+        type: String,
+        required: true,
     },
 });
 

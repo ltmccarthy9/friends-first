@@ -1,5 +1,4 @@
 import User from "../models/User.js";
-import UserG from "../models/UserG.js";
 
 // Update user
 export const updateUser = async (req, res, next) => {
@@ -51,42 +50,6 @@ export const getUsers = async (req,res,next) => {
     }
 }
 
-// GET google user
-export const getUserG = async (req, res, next) => {
-    try {
-        const user = await UserG.findOne({email: req.params.email});
-        res.status(200).json(user);
-    } catch(err) {
-        next(err);
-    }
-}
 
-// DELETE google user 
-export const deleteUserG = async (req, res, next) => {
-    try {
-        //because we are deleting we don't need to assign 
-        //this to a variable to respond.
-        await UserG.findOneAndDelete({email: req.params.email});
-        res.status(200).json("User has been deleted.");
-    } catch(err) {
-      next(err);
-    }
-}
 
-// update google user
-export const updateUserG = async (req, res, next) => {
-    try {
-        //update user by using the email in the request paramter :email
-        //update information with req.body
-        //"new: true" responds with the updated collection
-        const updatedUserG = await UserG.findOneAndUpdate(
-            {email: req.params.email},
-            { $set: req.body},
-            { new: true }
-            );
-        
-            res.status(200).json(updatedUserG);
-    } catch(err) {
-       next(err);
-    }
-}
+

@@ -41,7 +41,7 @@ export const getUser = async (req, res, next) => {
 }
 
 // Get all users (must be admin)
-export const getUsers = async (req,res,next) => {
+export const getUsers = async (req, res, next) => {
     try {
         const users = await User.find();
         res.status(200).json(users);
@@ -50,6 +50,15 @@ export const getUsers = async (req,res,next) => {
     }
 }
 
+//add an event to a user's profile
+export const addEvent = async (req, res, next) => {
+    try {
+        const user = await User.findById(req.body.userId);
+        user.events.push(req.body.eventId);
+    } catch (err) {
+        console.log(err);
+    }
+}
 
 
 

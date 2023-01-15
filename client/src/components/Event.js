@@ -1,11 +1,7 @@
+import Joinbutton from "./Joinbutton";
 
+const Event = ({ business, location, description, capacity, taken, category, id, date, time, joined }) => {
 
-const Event = ({ business, location, description, capacity, taken, category, id, date, time }) => {
-
-    // Use event key to push to User array of events
-    const logKey = () => {
-        console.log(id)
-    }
 
     return (
         <div className="event">
@@ -21,7 +17,8 @@ const Event = ({ business, location, description, capacity, taken, category, id,
 
             
                 <p className="event-description">{description}</p>
-                <button onClick={logKey} type="button" className="btn join-button">Join</button>
+                < Joinbutton joined={joined} />
+                
            
         </div>
     );

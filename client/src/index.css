@@ -189,6 +189,15 @@ background-color: rgb(235, 235, 235);
   color: white;
 }
 
+.joined {
+  background-color: #5b5553;
+  color: white;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  width: 10%;
+}
+
 .profile-button{
   margin-right: 0px;
   margin-left: auto;
@@ -207,6 +216,7 @@ background-color: rgb(235, 235, 235);
 .profile-button:active{
   box-shadow: 1px 1px 1px #4b5b5b;
 }
+
 
 /* --------------------------------------------------------PROFILE PAGE ----------------------------------------- */
 

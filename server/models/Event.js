@@ -30,6 +30,7 @@ const eventSchema = new mongoose.Schema({
         type: Date,
         required: true,
         get: (date) => moment(date).format('MM-DD-YYYY'),
+        set: (date) => moment(date, 'MM-DD-YYYY'),
         validate: {
             validator: function (v) {
                 return(

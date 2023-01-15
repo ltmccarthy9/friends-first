@@ -1,6 +1,6 @@
 import Joinbutton from "./Joinbutton";
 
-const Event = ({ business, location, description, capacity, taken, category, id, date, time, joined }) => {
+const Event = ({ business, location, description, capacity, taken, category, id, date, time }) => {
 
 
     return (
@@ -17,7 +17,7 @@ const Event = ({ business, location, description, capacity, taken, category, id,
 
             
                 <p className="event-description">{description}</p>
-                < Joinbutton joined={joined} />
+                <Joinbutton id={id} />
                 
            
         </div>

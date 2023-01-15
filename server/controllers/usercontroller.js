@@ -50,15 +50,7 @@ export const getUsers = async (req, res, next) => {
     }
 }
 
-//add an event to a user's profile
-export const addEvent = async (req, res, next) => {
-    try {
-        const user = await User.findById(req.body.userId);
-        user.events.push(req.body.eventId);
-    } catch (err) {
-        console.log(err);
-    }
-}
+
 
 
 

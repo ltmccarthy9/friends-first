@@ -36,8 +36,7 @@ const Events = () => {
             taken={event.taken}
             category={event.category}
             date={event.date.substring(0,10)}
-            time={event.time} 
-            joined={false}/>
+            time={event.time} />
         ))}
         </div>
     );

@@ -1,4 +1,6 @@
 import Event from "../models/Event.js";
+import User from "../models/User.js";
+
 
 // Create an event (must be admin)
 export const createEvent = async (req, res, next) => {
@@ -56,3 +58,14 @@ export const getEvents = async (req, res, next) => {
     }
 };
 
+//add a user to an event
+export const joinEvent = async (req, res, next) => {
+    const eventId = req.body.eventId;
+    
+    const event = await Event.findById(eventId);
+    const user = await User.findOne({email: req.body.email});;
+
+    event.attendees.push(user._id);
+
+    res.json(`${user.name} added to ${event.business} event`)
+};

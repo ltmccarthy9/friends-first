@@ -21,6 +21,7 @@ const Dashboard = () => {
 
     const logout = () => {
         localStorage.removeItem('user');
+        localStorage.removeItem('email');
         navigate("/")
     }
     

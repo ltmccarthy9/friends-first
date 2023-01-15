@@ -1,5 +1,5 @@
 import express from "express";
-import { deleteUser, getUser, updateUser, getUsers, addEvent} from "../controllers/usercontroller.js";
+import { deleteUser, getUser, updateUser, getUsers} from "../controllers/usercontroller.js";
 import { verifyToken, verifyUser, verifyAdmin  } from "../utils/verifyToken.js";
 
 const router = express.Router();
@@ -16,8 +16,7 @@ router.get("/:email", getUser);
 //GET ALL FOR ADMIN
 router.get("/", getUsers);
 
-//JOIN AN EVENT
-router.post("/join", addEvent);
+
 
 
 

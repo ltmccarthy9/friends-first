@@ -11,6 +11,7 @@ const Profile = () => {
 
     const logout = () => {
         localStorage.removeItem('user');
+        localStorage.removeItem('email');
         navigate("/")
     }
     return (

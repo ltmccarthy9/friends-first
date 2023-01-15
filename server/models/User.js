@@ -20,10 +20,6 @@ const userSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
-    events: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Event'
-    }],
     photos: {
         type: [String],
     },

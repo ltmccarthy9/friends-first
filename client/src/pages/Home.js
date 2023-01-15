@@ -28,6 +28,7 @@ const Home = () => {
           console.log('Success', data);
           if(data.email === `${email}`){
             localStorage.setItem('user', 'loggedin');
+            localStorage.setItem('email', data.email)
             navigate("/dashboard")
           }
         })

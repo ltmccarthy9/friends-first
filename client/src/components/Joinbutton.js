@@ -1,32 +1,43 @@
 import useFetch from "../hooks/useFetch";
 import { useState } from "react";
+import axios from "axios";
 
 const Joinbutton = (id) => {
+    // FUTURE: determine whether user has already joined event, don't default to false.
+    // May create a prop and pass down value of joined and set useState() default to that value
     const [ joined, setJoined ] = useState(false)
 
-    const email = localStorage.getItem('email');
+    const userId = localStorage.getItem('id');
+    //Here I was running into an error because I was passing in an object instead of a string which was
+    //slightly confusing because of the double id name.
+    //To fix this I simply had to access only the value on id -> (id.id)
     const eventId = id.id;
-    console.log(eventId)
 
-    const joinEvent = (e) => {
+    const joinEvent = () => {
         if(!joined) {
-            fetch('http://localhost:4000/api/events/join', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    email: email,
-                    eventId: eventId
-                })
-            }).then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.error(error))
+            axios.patch(`http://localhost:4000/api/events/join/${eventId}`,
+            { 
+                userId: userId
+            }).then(response => {
+                console.log(response.data);
+            }).catch(error => {
+                console.log(error);
+            });
 
             setJoined(true)
         } else {
             if(window.confirm("Are you sure you want to leave this event?")) {
-                setJoined(false)
+                axios.patch(`http://localhost:4000/api/events/leave/${eventId}`, 
+                {
+                    userId: userId,
+                    remove: true
+                }).then(response => {
+                    console.log(response.data);
+                }).catch(error => {
+                    console.log(error);
+                });
+                   
+            setJoined(false)
             }
         }
     }

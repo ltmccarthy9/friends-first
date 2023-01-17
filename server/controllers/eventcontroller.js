@@ -60,12 +60,41 @@ export const getEvents = async (req, res, next) => {
 
 //add a user to an event
 export const joinEvent = async (req, res, next) => {
-    const eventId = req.body.eventId;
+    try {
+        //grab event id from request body
+        const eventId = req.params.eventId;
+        const userId = req.body.userId
+        //find event by that id
+        const event = await Event.findById(eventId);
+        //if the event no longer exists, send error
+        if (!event) return res.status(404).send({ error: "Event not found" });
+
+        const user = await User.findById(userId);
+        // add user to attendees array
+        event.attendees.push(userId);
+        await event.save()
+
+        res.send(event).status(200).json(`${user.name} added to ${event.business} event`)
+    } catch (err) {
+        next(err);
+    }
     
-    const event = await Event.findById(eventId);
-    const user = await User.findOne({email: req.body.email});;
+};
 
-    event.attendees.push(user._id);
+// remove user from an event.
+export const leaveEvent = async (req, res, next) => {
+    try {
+        const eventId = req.params.eventId;
+        const userId = req.body.userId;
 
-    res.json(`${user.name} added to ${event.business} event`)
+        const event = await Event.findById(eventId);
+        if(!event) return res.status(404).send({ error: 'Event not found' });
+        const user = await User.findById(userId);
+
+        event.attendees = event.attendees.filter(id => id = !userId);
+        await event.save();
+        res.send(event).status(200).json(`${user.name} removed from ${event.business} event`)
+    } catch (err) {
+        next(err);
+    }
 };

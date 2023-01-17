@@ -1,5 +1,5 @@
 import express from "express";
-import { createEvent, updateEvent, getEvent, getEvents, joinEvent } from "../controllers/eventcontroller.js";
+import { createEvent, updateEvent, getEvent, getEvents, joinEvent, leaveEvent } from "../controllers/eventcontroller.js";
 import { verifyToken, verifyUser, verifyAdmin  } from "../utils/verifyToken.js";
 
 const router = express.Router();
@@ -17,6 +17,9 @@ router.get("/:id", getEvent);
 router.get("/", getEvents);
 
 //Add user to an event
-router.post("/join", joinEvent);
+router.patch("/join/:eventId", joinEvent);
+
+//remove user from an event
+router.patch('/leave/:eventId', leaveEvent);
 
 export default router;

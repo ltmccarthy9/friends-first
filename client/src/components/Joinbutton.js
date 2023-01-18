@@ -1,11 +1,10 @@
-import useFetch from "../hooks/useFetch";
 import { useState } from "react";
 import axios from "axios";
 
-const Joinbutton = (id) => {
+const Joinbutton = (id, attending) => {
     // FUTURE: determine whether user has already joined event, don't default to false.
     // May create a prop and pass down value of joined and set useState() default to that value
-    const [ joined, setJoined ] = useState(false)
+    const [ joined, setJoined ] = useState(attending)
 
     const userId = localStorage.getItem('id');
     //Here I was running into an error because I was passing in an object instead of a string which was

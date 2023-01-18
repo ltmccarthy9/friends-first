@@ -4,6 +4,8 @@ import moment from 'moment';
 
 const Events = () => {
 
+    const userId = localStorage.getItem('id');
+
     // use moment.js to filter out only relevent events (not in the past)
     const date = moment().format('MM-DD-YYYY');
 
@@ -24,6 +26,7 @@ const Events = () => {
 
     const filteredData = data.filter(event => event.date > date);
 
+    console.log(filteredData);
     return (
         <div>
         {filteredData.map((event) => (
@@ -36,7 +39,8 @@ const Events = () => {
             taken={event.taken}
             category={event.category}
             date={event.date.substring(0,10)}
-            time={event.time} />
+            time={event.time}
+            attending={event.attendees.includes(userId)} />
         ))}
         </div>
     );

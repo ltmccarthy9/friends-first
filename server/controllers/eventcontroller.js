@@ -61,15 +61,18 @@ export const getEvents = async (req, res, next) => {
 //add a user to an event
 export const joinEvent = async (req, res, next) => {
     try {
-        //grab event id from request body
+        //grab event id from request parameters
         const eventId = req.params.eventId;
+        //grab userId from request bodyu\
         const userId = req.body.userId
         //find event by that id
         const event = await Event.findById(eventId);
         //if the event no longer exists, send error
         if (!event) return res.status(404).send({ error: "Event not found" });
 
+        //grab user by id so we can send name in message
         const user = await User.findById(userId);
+        
         // add user to attendees array
         event.attendees.push(userId);
         await event.save()

@@ -1,4 +1,3 @@
-//import Joinbutton from "./Joinbutton";
 import { useState } from "react";
 import axios from "axios";
 

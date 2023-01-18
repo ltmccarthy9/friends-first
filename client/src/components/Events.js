@@ -26,7 +26,7 @@ const Events = () => {
 
     const filteredData = data.filter(event => event.date > date);
 
-    console.log(filteredData);
+    
     return (
         <div>
         {filteredData.map((event) => (

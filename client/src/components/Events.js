@@ -36,7 +36,7 @@ const Events = () => {
             location={event.location}
             description={event.description}
             capacity={event.capacity}
-            taken={event.taken}
+            taken={event.attendees.length}
             category={event.category}
             date={event.date.substring(0,10)}
             time={event.time}

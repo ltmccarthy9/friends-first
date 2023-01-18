@@ -26,6 +26,7 @@ const Yourevents = () => {
 
     const filteredData = data.filter(event => event.date > date);
 
+    // In this case we filter it again to only display events the user has joined
     const ourEvents = filteredData.filter(event => event.attendees.includes(userId));
     
     return (

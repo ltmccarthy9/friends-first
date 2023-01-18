@@ -2,15 +2,12 @@ import { useState } from "react";
 import axios from "axios";
 
 const Event = ({ business, location, description, capacity, taken, category, id, date, time, attending }) => {
-
- // FUTURE: determine whether user has already joined event, don't default to false.
-    // May create a prop and pass down value of joined and set useState() default to that value
-    const [ joined, setJoined ] = useState(attending)
+    // state for event cards
+    const [filled, setFilled] = useState(taken);
+    const [ joined, setJoined ] = useState(attending);
 
     const userId = localStorage.getItem('id');
-    //Here I was running into an error because I was passing in an object instead of a string which was
-    //slightly confusing because of the double id name.
-    //To fix this I simply had to access only the value on id -> (id.id)
+    
     const eventId = id;
 
 
@@ -25,7 +22,8 @@ const Event = ({ business, location, description, capacity, taken, category, id,
                 console.log(error);
             });
 
-            setJoined(true)
+            setJoined(true);
+            setFilled(filled + 1);
         } else {
             if(window.confirm("Are you sure you want to leave this event?")) {
                 axios.patch(`http://localhost:4000/api/events/leave/${eventId}`, 
@@ -38,7 +36,8 @@ const Event = ({ business, location, description, capacity, taken, category, id,
                     console.log(error);
                 });
                    
-            setJoined(false)
+            setJoined(false);
+            setFilled(filled - 1);
             }
         }
     }
@@ -49,7 +48,7 @@ const Event = ({ business, location, description, capacity, taken, category, id,
             <div>
             <h3 className="event-location">{business}</h3>
             <p className="event-attribute">city: {location}</p>
-            <p className="event-attribute">filled: {taken}/{capacity}</p>
+            <p className="event-attribute">filled: {filled}/{capacity}</p>
             <p className="event-attribute">category: {category}</p>
             <p className="event-attribute">date: {date}</p>
             <p className="event-attribute">time: {time}</p>

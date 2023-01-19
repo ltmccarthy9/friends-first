@@ -123,6 +123,10 @@ background-color: rgb(235, 235, 235);
   margin-left: 20px;
 }
 
+.event-card-top{
+  display: flex;
+}
+
 .logout{
   margin-left: 10px;
   margin-right: 20px;
@@ -143,11 +147,11 @@ background-color: rgb(235, 235, 235);
 .dashboard-body h3{
   margin-top: 20px;
   margin-left: 20px;
-  color: #424e4e;
+  color: #424e48;
 }
 
 .dashboard-body{
-  width: 50%;
+  width: 40%;
   margin: auto;
 }
 
@@ -156,6 +160,7 @@ background-color: rgb(235, 235, 235);
   border-radius: 20px;
   transition: all ease-in .2s;
   display: flex;
+  flex-direction: column;
   margin-bottom: 10px;
 }
 
@@ -181,7 +186,7 @@ background-color: rgb(235, 235, 235);
   margin: auto;
   margin-bottom: 20px;
   margin-right: 20px;
-  width: 10%;
+  width: 100%;
 }
 
 .join-button:hover{
@@ -195,7 +200,12 @@ background-color: rgb(235, 235, 235);
   margin: auto;
   margin-bottom: 20px;
   margin-right: 20px;
-  width: 10%;
+  width: 100%;
+}
+
+.joined:hover {
+  background-color: #8a817e;
+  color: white;
 }
 
 .profile-button{

@@ -40,9 +40,9 @@ const Yourevent = ({ business, location, description, capacity, taken, category,
         }
     }
 
+    // each event card
     return (
         <div className="event">
-
             <div>
             <h3 className="event-location">{business}</h3>
             <p className="event-attribute">city: {location}</p>
@@ -54,7 +54,7 @@ const Yourevent = ({ business, location, description, capacity, taken, category,
 
             
                 <p className="event-description">{description}</p>
-                {/* <Joinbutton key={id} id={id} attending={attending} /> */}
+                
                 
                 <button onClick={() => joinEvent()} type={"button"} 
                 className={joined ? "btn joined" : "btn join-button"}>

@@ -1,8 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
+import {GiCheckMark} from 'react-icons/gi'
 
 const Event = ({ business, location, description, capacity, taken, category, id, date, time, attending }) => {
-    // state for event cards
+   
+    // state for event cards - updating spots taken and whether user joined or not
     const [filled, setFilled] = useState(taken);
     const [ joined, setJoined ] = useState(attending);
 
@@ -53,15 +55,17 @@ const Event = ({ business, location, description, capacity, taken, category, id,
             <p className="event-attribute">date: {date}</p>
             <p className="event-attribute">time: {time}</p>
             </div>
+            
 
             
                 <p className="event-description">{description}</p>
                 {/* <Joinbutton key={id} id={id} attending={attending} /> */}
                 
                 <button onClick={() => joinEvent()} type={"button"} 
-                className={joined ? "btn joined" : "btn join-button"}>
-                {joined ? 'Joined' : 'Join'}
+                className={joined ? "btn joined"  : "btn join-button"}>
+                {joined ? `Joined` : 'Join'}
                 </button>
+                
                 
            
         </div>

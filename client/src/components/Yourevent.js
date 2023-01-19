@@ -34,7 +34,7 @@ const Yourevent = ({ business, location, description, capacity, taken, category,
                     remove: true
                 }).then(response => {
                     console.log(response.data);
-                    setJoined(true);
+                    setJoined(false);
                     setFilled(filled + 1);
                 }).catch(error => {
                     console.log(error);

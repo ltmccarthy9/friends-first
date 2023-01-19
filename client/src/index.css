@@ -10,7 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(235, 235, 235);
+  background-color: rgb(220, 228, 225);
 }
 
 code {
@@ -19,7 +19,7 @@ code {
 }
 
 html {
-background-color: rgb(235, 235, 235);
+background-color: rgb(220, 228, 225);
 }
 
 /* -----------------------------------------------HOME LOGIN / SIGN UP PAGE------------------------- */
@@ -186,7 +186,7 @@ background-color: rgb(235, 235, 235);
 
 /* JOIN AND JOINED BUTTONS */
 .join-button{
-  background-color: #62a265;
+  background-color: #678669;
   color: white;
   margin: auto;
   width: 100%;

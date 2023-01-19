@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -180,13 +185,14 @@ background-color: rgb(235, 235, 235);
  margin: auto;
 }
 
+/* JOIN AND JOINED BUTTONS */
 .join-button{
   background-color: #62a265;
   color: white;
   margin: auto;
-  margin-bottom: 20px;
-  margin-right: 20px;
   width: 100%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .join-button:hover{
@@ -198,15 +204,16 @@ background-color: rgb(235, 235, 235);
   background-color: #5b5553;
   color: white;
   margin: auto;
-  margin-bottom: 20px;
-  margin-right: 20px;
   width: 100%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .joined:hover {
   background-color: #8a817e;
   color: white;
 }
+/* JOIN AND JOINED BUTTONS */
 
 .profile-button{
   margin-right: 0px;

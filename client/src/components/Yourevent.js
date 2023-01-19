@@ -43,13 +43,13 @@ const Yourevent = ({ business, location, description, capacity, taken, category,
     // each event card
     return (
         <div className="event">
-            <div>
-            <h3 className="event-location">{business}</h3>
-            <p className="event-attribute">city: {location}</p>
-            <p className="event-attribute">filled: {taken}/{capacity}</p>
-            <p className="event-attribute">category: {category}</p>
-            <p className="event-attribute">date: {date}</p>
-            <p className="event-attribute">time: {time}</p>
+            <div className="event-card-top justify-between">
+            <h3 className="w-6/12">{business}</h3>
+            <p className="m-2">city: {location}</p>
+            <p className="m-2">filled: {taken}/{capacity}</p>
+            <p className="m-2">category: {category}</p>
+            <p className="m-2">date: {date}</p>
+            <p className="m-2">time: {time}</p>
             </div>
 
             

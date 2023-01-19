@@ -45,26 +45,32 @@ const Event = ({ business, location, description, capacity, taken, category, id,
     }
 
     return (
-        <div className="event">
+        <div className="event w-full m-6 h-64 ">
 
-            <div>
-            <h3 className="event-location">{business}</h3>
-            <p className="event-attribute">city: {location}</p>
-            <p className="event-attribute">filled: {filled}/{capacity}</p>
-            <p className="event-attribute">category: {category}</p>
-            <p className="event-attribute">date: {date}</p>
-            <p className="event-attribute">time: {time}</p>
+            {/* Top row */}
+            <div className="flex justify-between" >
+            <h3 className="w-3/12 font-extrabold tracking-tight text-lg">{business}</h3>
+            <p className="p-4">{location}</p>
+            <p className="p-4">{filled}/{capacity}</p>
+            <p className="p-4">{date}</p>
+            <p className="p-4">{time}</p>
             </div>
-            
 
-            
+            {/* middle row */}
+            <div className="flex m-4">
+                <div>
                 <p className="event-description">{description}</p>
-                {/* <Joinbutton key={id} id={id} attending={attending} /> */}
-                
-                <button onClick={() => joinEvent()} type={"button"} 
-                className={joined ? "btn joined"  : "btn join-button"}>
+                </div>
+                <div>
+
+                </div>
+            </div>
+
+            {/* Bottom row */}
+            <button onClick={() => joinEvent()} type={"button"} 
+                className={joined ? "btn joined mb-0"  : "btn join-button mb-0"}>
                 {joined ? `Joined` : 'Join'}
-                </button>
+            </button>
                 
                 
            

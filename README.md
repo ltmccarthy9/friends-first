@@ -9,49 +9,64 @@ relationships.
 
 * React & React Router
 * MongoDB & Mongoose
-* Google Oauth
 * Nodejs
 * Express
+* Tailwindcss
 * Bootstrap
 
 ## Code
 
 ```JavaScript
-    const fetchEvents = async () => {
-        const response = await fetch("http://localhost:4000/api/events")
-        return response.json();
-    };              
-    const { data, status } = useQuery('events', fetchEvents);
-
-    if (status === 'loading') {
-        return <p>Loading...</p>
+    
+    const { data, loading, error } = useFetch('http://localhost:4000/api/events');
+    // fetch our events
+    
+    if(loading) {
+        return <p>Loading...</p>;
     }
 
-    if (status === 'error') {
-        return <p>Error!</p>;
+    if (error) {
+        return <p>Error: {error.message}</p>;
     }
+
 ```
-Utilizing React Query useQuery hook to fetch events in the Events component.
+Utilizing custom useFetch hook to fetch events in the Events component.
 
 ```JavaScript
-return (
+
+    const filteredData = data.filter(event => event.date > date)
+
+    return (
         <div>
-        {data.map((event) => (
-            <Event key={event._id} 
+        {filteredData.map((event) => (
+            <Event key={event._id}
+            id={event._id} 
             business={event.business}
             location={event.location}
             description={event.description}
             capacity={event.capacity}
-            taken={event.taken}
-            category={event.category} />
+            taken={event.attendees.length}
+            category={event.category}
+            date={event.date.substring(5,10)}
+            time={event.time}
+            attending={event.attendees.includes(userId)} />
         ))}
         </div>
     );
 ```
-With the data we recieved from our fetch, we grab each event attribute
+With the data recieved from useFetch, we filter only
+future dates, then map through and grab each event attribute
 and send it down to our Event component as props.
 
 ## Demonstration Of Current State of Application
+
+https://drive.google.com/file/d/1janvooZxIk15fuhMbP-byOvF1bBVkIMW/view
+
+
+
+
+
+## Old demonstrations
 
 https://drive.google.com/file/d/1k2D33sbG12-gu9rU5L8alY4oDdoZWV8a/view
 

@@ -32,13 +32,13 @@ const Profile = () => {
          <div>
 
         <div className="nav">
-        <h1 className="dash-title" >Friends First.</h1>
+        <h1 className="dash-title font-extrabold tracking-tight text-3xl" >Friends First.</h1>
         <button className="btn btn-light profile-button" onClick={goDashboard}>Dashboard</button>
         <button className="btn btn-light logout" onClick={logout}>Logout</button>
         </div>
 
         <div className="dashboard-body">
-            <h3>Your events</h3>
+            <h3 className="font-extrabold tracking-tight text-2xl">Your events</h3>
             <Yourevents /> 
         </div>
 

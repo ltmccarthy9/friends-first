@@ -38,9 +38,9 @@ const Yourevents = () => {
             location={event.location}
             description={event.description}
             capacity={event.capacity}
-            taken={event.taken}
+            taken={event.attendees.length}
             category={event.category}
-            date={event.date.substring(0,10)}
+            date={event.date.substring(5,10)}
             time={event.time}
             attending={event.attendees.includes(userId)} />
         ))}

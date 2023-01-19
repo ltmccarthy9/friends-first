@@ -35,14 +35,14 @@ const Dashboard = () => {
 
         {/*Replace this with nav component*/}
         <div className="nav">
-        <h1 className="dash-title" >Friends First.</h1>
+        <h1 className="dash-title font-extrabold tracking-tight text-3xl" >Friends First.</h1>
         <button className="btn btn-light profile-button" onClick={goProfile}>Profile</button>
         <button className="btn btn-light logout" onClick={logout}>Logout</button>
         </div>
 
         {/* body containing each event card */}
         <div className="dashboard-body">
-            <h3>Nearby Events</h3>
+            <h3 className="font-extrabold tracking-tight text-2xl">Nearby Events</h3>
             <Events /> 
         </div>
 

@@ -20,12 +20,12 @@ const Event = ({ business, location, description, capacity, taken, category, id,
                 userId: userId
             }).then(response => {
                 console.log(response.data);
+                setJoined(true);
+                setFilled(filled + 1);
             }).catch(error => {
                 console.log(error);
             });
 
-            setJoined(true);
-            setFilled(filled + 1);
         } else {
             if(window.confirm("Are you sure you want to leave this event?")) {
                 axios.patch(`http://localhost:4000/api/events/leave/${eventId}`, 
@@ -34,12 +34,12 @@ const Event = ({ business, location, description, capacity, taken, category, id,
                     remove: true
                 }).then(response => {
                     console.log(response.data);
+                    setJoined(false);
+                    setFilled(filled - 1);
                 }).catch(error => {
                     console.log(error);
                 });
                    
-            setJoined(false);
-            setFilled(filled - 1);
             }
         }
     }
@@ -50,8 +50,8 @@ const Event = ({ business, location, description, capacity, taken, category, id,
             {/* Top row */}
             <div className="flex justify-between" >
             <h3 className="w-3/12 font-extrabold tracking-tight text-lg">{business}</h3>
-            <p className="p-4">{location}</p>
-            <p className="p-4">{filled}/{capacity}</p>
+            <p className="p-4 ">{location}</p>
+            <p className="p-4">Filled: {filled}/{capacity}</p>
             <p className="p-4">{date}</p>
             <p className="p-4">{time}</p>
             </div>

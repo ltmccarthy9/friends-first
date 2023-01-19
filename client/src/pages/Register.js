@@ -50,9 +50,9 @@ const Register = () => {
 
     return (
         <div>
-        <h1 className="title" onClick={navHome} >Friends First.</h1>
+        <h1 className="title font-extrabold tracking-tight text-6xl" onClick={navHome} >Friends First.</h1>
         <div className="login-card">
-           <h1 className="login-header">Sign Up</h1>
+           <h1 className="login-header font-extrabold tracking-tight text-3xl">Sign Up</h1>
             <div className="login-button" id="signIn"></div>
             <form id="myForm">
             <label style={{fontWeight: "bolder"}} htmlFor="userAge">Age</label>

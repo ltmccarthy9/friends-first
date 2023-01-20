@@ -1,6 +1,6 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; 
 
 
 body {
@@ -10,7 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(220, 228, 225);
+  background-color: rgb(255, 255, 255);
 }
 
 code {
@@ -19,7 +19,7 @@ code {
 }
 
 html {
-background-color: rgb(220, 228, 225);
+background-color: rgb(255, 255, 255);
 }
 
 /* -----------------------------------------------HOME LOGIN / SIGN UP PAGE------------------------- */
@@ -110,14 +110,12 @@ background-color: rgb(220, 228, 225);
 
 /* --------------------------------------------------------DASHBOARD--------------------------------- */
 
-.nav{
-  width: 50%;
-  display: flex;
-  margin: auto;
+.nav {
+  color: #424e4e;
 }
 
-.nav h1{
-  color: #424e4e;
+.nav-bar{
+  background-color: rgb(220, 228, 225);
 }
 
 .dash-title{
@@ -144,15 +142,9 @@ background-color: rgb(220, 228, 225);
 }
 
 .dashboard-body h3{
-  margin-top: 20px;
-  margin-left: 20px;
   color: #424e48;
 }
 
-.dashboard-body{
-  width: 40%;
-  margin: auto;
-}
 
 /* EVENT CARDS */
 .event-card-top{
@@ -160,7 +152,7 @@ background-color: rgb(220, 228, 225);
 }
 
 .event{
-  background-color: white;
+  background-color: rgb(228, 237, 234);
   border-radius: 20px;
   transition: all ease-in .2s;
   display: flex;

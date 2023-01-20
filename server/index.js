@@ -52,7 +52,7 @@ app.use((err, req, res, next) => {
     });
 });
 
-//connection to server on port 3000
+//connection to server on port 4000
 app.listen(4000, () => {
     connect();
     console.log("listening on port 4000");

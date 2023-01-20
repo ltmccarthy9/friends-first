@@ -1,7 +1,7 @@
 import { useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import Events from "../components/Events";
-
+import Nav from "../components/Nav";
 
 
 const Dashboard = () => {
@@ -32,20 +32,11 @@ const Dashboard = () => {
 
     return (
         <div>
-
-        {/*Replace this with nav component*/}
-        <div className="nav">
-        <h1 className="dash-title font-extrabold tracking-tight text-3xl" >Friends First.</h1>
-        <button className="btn btn-light profile-button" onClick={goProfile}>Profile</button>
-        <button className="btn btn-light logout" onClick={logout}>Logout</button>
-        </div>
-
+            <Nav/>
         {/* body containing each event card */}
-        <div className="dashboard-body">
-            <h3 className="font-extrabold tracking-tight text-2xl">Nearby Events</h3>
-            <Events /> 
-        </div>
-
+            <div>
+                <Events /> 
+            </div>
         </div> 
     );
 };

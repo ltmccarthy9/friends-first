@@ -26,9 +26,9 @@ const Home = () => {
         }).then((response) => response.json())
         .then((data) => {
           console.log('Success', data);
-          if(data.email === `${email}`){
+          if(data.token){
             localStorage.setItem('user', 'loggedin');
-            localStorage.setItem('id', data._id)
+            localStorage.setItem('id', data.user._id)
             navigate("/dashboard")
           }
         })

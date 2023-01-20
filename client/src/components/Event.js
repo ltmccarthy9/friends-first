@@ -45,15 +45,15 @@ const Event = ({ business, location, description, capacity, taken, category, id,
     }
 
     return (
-        <div className="event w-full m-6 h-64 ">
+        <div className="event w-5/12 h-64 m-auto justify-center p-2 mt-4">
 
             {/* Top row */}
             <div className="flex justify-between" >
             <h3 className="w-3/12 font-extrabold tracking-tight text-lg">{business}</h3>
-            <p className="p-4 ">{location}</p>
-            <p className="p-4">Filled: {filled}/{capacity}</p>
-            <p className="p-4">{date}</p>
-            <p className="p-4">{time}</p>
+            <p className="p-1 ">{location}</p>
+            <p className="p-1">Filled: {filled}/{capacity}</p>
+            <p className="p-1">{date}</p>
+            <p className="p-1">{time}</p>
             </div>
 
             {/* middle row */}

@@ -98,7 +98,7 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
             {/* Bottom row */}
 
             <div className="z-10">
-                <RiArrowDropDownLine onClick={() => controlExpand()} className="theme-green drop mx-auto mb-0 mt-2" size={55}/>
+                <RiArrowDropDownLine style={expand ? {transform: 'rotate(180deg)' } : ""} onClick={() => controlExpand()} className="theme-green drop mx-auto mb-0 mt-2" size={55}/>
             </div>
             
                 

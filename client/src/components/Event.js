@@ -92,13 +92,13 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
 
             {/* middle row */}
             <div className={expand ? "h-fit w-11/12 m-auto" : "w-11/12 m-auto"}>
-                <p className={expand ? "description-expanded theme-green text-s pt-2" : "description theme-green text-s pt-2"}>{description}LoremepsumLoremeps umLoremepsumLorem psumLoremepsumLoreme sumLoremepsumLoremepsumLoremepsumLo remepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsum</p>
+                <p className={expand ? "description-expanded theme-green text-s pt-2" : "description theme-green text-s pt-2"}>{description} LoremepsumLoremeps umLoremepsumLorem psumLoremepsumLoreme sumLoremepsumLoremepsumLoremepsumLo remepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsum</p>
             </div>
                 
             {/* Bottom row */}
 
             <div className="z-10">
-                <RiArrowDropDownLine onClick={() => controlExpand()} className="drop mx-auto mb-0 mt-2" size={55}/>
+                <RiArrowDropDownLine onClick={() => controlExpand()} className="theme-green drop mx-auto mb-0 mt-2" size={55}/>
             </div>
             
                 

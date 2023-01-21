@@ -10,7 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(241, 245, 243);
+  background-color: rgb(235, 241, 238);
 }
 
 code {
@@ -19,7 +19,7 @@ code {
 }
 
 html {
-background-color: rgb(241, 245, 243);
+background-color: rgb(235, 241, 238);
 }
 
 /* -----------------------------------------------HOME LOGIN / SIGN UP PAGE------------------------- */
@@ -115,7 +115,8 @@ background-color: rgb(241, 245, 243);
 }
 
 .nav-bar{
-  background-color: rgb(220, 228, 225);
+  background-color: rgb(196, 206, 202);
+  border-bottom: 1px solid rgb(185, 183, 183);;
 }
 
 .dash-title{
@@ -131,20 +132,6 @@ background-color: rgb(241, 245, 243);
   border-radius: 10px;
 }
 
-.logout:hover{
-  box-shadow: 4px 4px 1px #4b5b5b;
-  background-color: white;
-  border: 1px solid white;
-}
-
-.logout:active{
-  box-shadow: 1px 1px 1px #4b5b5b;
-}
-
-.dashboard-body h3{
-  color: #424e48;
-}
-
 
 /* EVENT CARDS */
 .event-card-top{
@@ -152,16 +139,17 @@ background-color: rgb(241, 245, 243);
 }
 
 .event{
-  background-color: rgb(228, 237, 234);
+  background-color: rgb(255, 255, 255);
   border-radius: 20px;
   transition: all ease-in .2s;
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+  border: 1px solid rgb(185, 183, 183);
 }
 
 .event:hover{
-  box-shadow: -6px 6px 1px #4b5b5b;
+  box-shadow: -6px 6px 2px #4b5b5b;
 }
 
 
@@ -169,6 +157,7 @@ background-color: rgb(241, 245, 243);
 .description-expanded {
   overflow-wrap: break-word;
   hyphens: manual;
+  transition: all ease-in .8s;
 }
 
 .description {
@@ -177,6 +166,7 @@ background-color: rgb(241, 245, 243);
   white-space: nowrap;
   display: inline-block;
   width: 98%;
+  transition: all ease-in .8s;
 }
 
 /* JOIN AND JOINED BUTTONS */

@@ -46,7 +46,7 @@ const Yourevent = ({ business, location, description, capacity, taken, category,
 
     // each event card
     return (
-        <div className="event w-10/12 h-96 m-auto justify-center p-2 mt-4 md:w-6/12 lg:w-4/12 ">
+        <div className="event w-10/12 h-44 m-auto justify-center p-2 mt-4 md:w-6/12 lg:w-4/12 ">
 
             {/* Top row */}
             <h3 className="w-full theme-green font-extrabold tracking-tight text-3xl p-1">{business}</h3>

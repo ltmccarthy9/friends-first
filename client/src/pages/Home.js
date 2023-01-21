@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setLogin } from "../state";
 
 const Home = () => {
   
@@ -8,6 +10,8 @@ const Home = () => {
     // State for user input for login/signup
     const [email, setEmail ] = useState('');
     const [password, setPassword] = useState('');
+
+    const dispatch = useDispatch();
 
    //useNavigate hook for changing react route
     const navigate = useNavigate();
@@ -27,8 +31,13 @@ const Home = () => {
         .then((data) => {
           console.log('Success', data);
           if(data.token){
+            dispatch(setLogin({
+              user: data.user,
+              token: data.token,
+            }))
             localStorage.setItem('user', 'loggedin');
             localStorage.setItem('id', data.user._id)
+            console.log(data.user._id)
             navigate("/dashboard")
           }
         })

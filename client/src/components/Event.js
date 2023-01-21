@@ -1,8 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
-import {GiCheckMark} from 'react-icons/gi'
+import { useSelector } from "react-redux";
 
-const Event = ({ business, location, description, capacity, taken, category, id, date, time, attending }) => {
+
+const Event = ({ business, location, description, capacity, taken, id, date, time, attending }) => {
    
     // state for event cards - updating spots taken and whether user joined or not
     const [filled, setFilled] = useState(taken);
@@ -12,40 +13,55 @@ const Event = ({ business, location, description, capacity, taken, category, id,
     
     const eventId = id;
 
+    const token = useSelector((state) => state.token);
 
-    const joinEvent = () => {
+    const joinEvent = async () => {
         if(!joined) {
-            axios.patch(`http://localhost:4000/api/events/join/${eventId}`,
-            { 
-                userId: userId
-            }).then(response => {
-                console.log(response.data);
-                setJoined(true);
-                setFilled(filled + 1);
-            }).catch(error => {
-                console.log(error);
+            const response = await fetch(`http://localhost:4000/api/events/join/${eventId}`, {
+                method: "PATCH",
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    userId: userId
+                })
             });
+            const data = await response.json();
+            if(!data.error){
+                setJoined(true)
+                setFilled(filled + 1)
+                console.log(data)
+            }
+            
 
         } else {
             if(window.confirm("Are you sure you want to leave this event?")) {
-                axios.patch(`http://localhost:4000/api/events/leave/${eventId}`, 
-                {
-                    userId: userId,
-                    remove: true
-                }).then(response => {
-                    console.log(response.data);
-                    setJoined(false);
-                    setFilled(filled - 1);
-                }).catch(error => {
-                    console.log(error);
-                });
+                const response = await fetch(`http://localhost:4000/api/events/leave/${eventId}`, {
+                method: "PATCH",
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify ({
+                    userId: userId
+                })
+            });
+            const data = await response.json();
+            console.log(data)
+            if(!data.error) {
+                setJoined(false)
+                setFilled(filled - 1)
+            }
+            
                    
             }
         }
     }
 
+
     return (
-        <div className="event w-10/12 h-96 m-auto justify-center p-2 mt-4 md:w-6/12 lg:w-4/12 ">
+        <div className="event w-10/12 h-44 m-auto justify-center p-2 mt-4 md:w-6/12 lg:w-4/12 ">
 
             {/* Top row */}
             <h3 className="w-full theme-green font-extrabold tracking-tight text-3xl p-1">{business}</h3>

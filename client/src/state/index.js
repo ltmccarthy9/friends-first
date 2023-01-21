@@ -20,8 +20,8 @@ export const authSlice = createSlice({
         },
         setEvents: (state, action) => {
             state.events = action.payload.events;
-        }
-    }
+        },
+    },
 });
 
 export const { setLogin, setLogout, setEvents } = authSlice.actions;

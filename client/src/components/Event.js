@@ -71,11 +71,11 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
 
 
     return (
-        <div className={"event w-10/12 h-fit m-auto justify-center p-2 mt-4 md:w-6/12 lg:w-4/12"}>
+        <div className={"event w-9/12 h-fit m-auto justify-center p-2 mt-3 md:w-6/12 lg:w-5/12 xl:w-3/12"}>
 
             {/* Top row */}
             <div className="w-full flex justify-between mb-4 pt-2">
-                <h3 className="theme-green font-extrabold tracking-tight text-3xl p-1">{business}</h3>
+                <h3 className="theme-green font-extrabold tracking-tight text-2xl p-1">{business}</h3>
                 <div onClick={() => joinEvent()}
                     className={joined ? "flex btn joined"  : "flex btn join-button"}>
                     {/* <p className="mt-1">{joined ? `Joined` : 'Join'}</p> */}
@@ -83,7 +83,7 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
                 </div>
             </div>
             
-            <div className="flex justify-between border-b-2 border-slate-500" >
+            <div className="flex justify-between border-b-2 border-slate-800" >
                 <p className="theme-green p-1 font-bold italic">{location}</p>
                 <p className="theme-green p-1 font-bold italic">Filled: {filled}/{capacity}</p>
                 <p className="theme-green p-1 font-bold italic">{date}</p>

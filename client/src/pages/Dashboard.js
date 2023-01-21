@@ -33,6 +33,7 @@ const Dashboard = () => {
     return (
         <div>
             <Nav/>
+            <h2 className="login-header tracking-tight text-xl">Nearby Events</h2>
         {/* body containing each event card */}
             <div>
                 <Events /> 

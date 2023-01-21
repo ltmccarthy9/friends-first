@@ -25,7 +25,6 @@ const Events = () => {
     // render each event to events
 
     const filteredData = data.filter(event => event.date > date);
-
     
     return (
         <div>

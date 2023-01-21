@@ -22,6 +22,7 @@ const Profile = () => {
     return (
          <div className="flex-col">
             <Nav/>
+            <h2 className="login-header tracking-tight text-xl">Your Upcoming Events</h2>
             <div>
                 <Yourevents /> 
             </div>

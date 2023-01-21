@@ -5,6 +5,7 @@ import Nav from "../components/Nav";
 
 const Profile = () => {
 
+
     const navigate = useNavigate();
 
     useEffect(() => {

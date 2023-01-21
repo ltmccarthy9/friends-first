@@ -27,14 +27,14 @@ const Nav = () => {
 
   return (
     <div>
-      <div className="nav nav-bar h-fit flex justify-center bg-slate-100">
+      <div className="theme-green nav-bar h-fit flex justify-center bg-slate-100">
         <h1 className="dash-title font-extrabold tracking-tight text-3xl mr-20 cursor-pointer" >Friends First.</h1>
         <BsFillCalendar2EventFill size={25} className='ml-6 mr-1 my-3 cursor-pointer'/>
-        <div onClick={goDashboard} className={'nav mr-6 ml-0 my-3 rounded-md cursor-pointer'}>Events</div>
+        <div onClick={goDashboard} className={'theme-green mr-6 ml-0 my-3 rounded-md cursor-pointer'}>Events</div>
         <BsPersonCircle size={25} className='ml-6 mr-1 my-3 cursor-pointer'/>
-        <div onClick={goProfile} className={'nav mr-6 ml-0 my-3 rounded-md cursor-pointer'}>Profile</div>
+        <div onClick={goProfile} className={'theme-green mr-6 ml-0 my-3 rounded-md cursor-pointer'}>Profile</div>
         <RiLogoutCircleRFill size={28} className='ml-6 mr-1 my-3 cursor-pointer'/>
-        <div onClick={logout} className={'nav mr-6 ml-0 my-3 rounded-md cursor-pointer'}>Logout</div>
+        <div onClick={logout} className={'theme-green mr-6 ml-0 my-3 rounded-md cursor-pointer'}>Logout</div>
         </div>
     </div>
   )

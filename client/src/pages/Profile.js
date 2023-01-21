@@ -21,8 +21,7 @@ const Profile = () => {
     return (
          <div>
             <Nav/>
-            <div className="dashboard-body">
-                <h3 className="font-extrabold tracking-tight text-2xl">Your events</h3>
+            <div>
                 <Yourevents /> 
             </div>
         </div> 

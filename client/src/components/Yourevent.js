@@ -46,21 +46,21 @@ const Yourevent = ({ business, location, description, capacity, taken, category,
 
     // each event card
     return (
-        <div className="event w-full m-6 h-64 ">
+        <div className="event w-10/12 h-96 m-auto justify-center p-2 mt-4 md:w-6/12 lg:w-4/12 ">
 
             {/* Top row */}
-            <div className="flex justify-between" >
-            <h3 className="w-3/12 font-extrabold tracking-tight text-lg">{business}</h3>
-            <p className="p-4">{location}</p>
-            <p className="p-4">Filled: {filled}/{capacity}</p>
-            <p className="p-4">{date}</p>
-            <p className="p-4">{time}</p>
+            <h3 className="w-full theme-green font-extrabold tracking-tight text-3xl p-1">{business}</h3>
+            <div className="flex justify-between border-b-2 border-slate-500" >
+            <p className="theme-green p-1 font-bold italic">{location}</p>
+            <p className="theme-green p-1 font-bold italic">Filled: {filled}/{capacity}</p>
+            <p className="theme-green p-1 font-bold italic">{date}</p>
+            <p className="theme-green p-1 font-bold italic">{time}</p>
             </div>
 
             {/* middle row */}
-            <div className="flex m-4">
+            <div className="flex p-1">
                 <div>
-                <p className="event-description">{description}</p>
+                <p className="theme-green text-s">{description}</p>
                 </div>
                 <div>
 

@@ -1,6 +1,6 @@
-import Yourevent from "./Yourevent";
 import useFetch from "../hooks/useFetch";
 import moment from 'moment';
+import Event from "./Event";
 
 const Yourevents = () => {
 
@@ -30,9 +30,9 @@ const Yourevents = () => {
     const ourEvents = filteredData.filter(event => event.attendees.includes(userId));
     
     return (
-        <div>
+        <div className="flex-col">
         {ourEvents.map((event) => (
-            <Yourevent key={event._id}
+            <Event key={event._id}
             id={event._id} 
             business={event.business}
             location={event.location}

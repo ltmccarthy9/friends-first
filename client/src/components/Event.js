@@ -1,7 +1,8 @@
 import { useState } from "react";
-import axios from "axios";
 import { useSelector } from "react-redux";
-
+import { RiArrowDropDownLine } from 'react-icons/ri';
+import { BsArrowRightSquare } from 'react-icons/bs';
+import { CgArrowLeftR } from 'react-icons/cg';
 
 const Event = ({ business, location, description, capacity, taken, id, date, time, attending }) => {
    
@@ -9,8 +10,9 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
     const [filled, setFilled] = useState(taken);
     const [ joined, setJoined ] = useState(attending);
 
+    const [expand, setExpand] = useState(false);
+
     const userId = localStorage.getItem('id');
-    
     const eventId = id;
 
     const token = useSelector((state) => state.token);
@@ -59,34 +61,46 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
         }
     }
 
+    const controlExpand = () => {
+        if(expand){
+            setExpand(false);
+        } else {
+            setExpand(true);
+        }
+    }
+
 
     return (
-        <div className="event w-10/12 h-44 m-auto justify-center p-2 mt-4 md:w-6/12 lg:w-4/12 ">
+        <div className={"event w-10/12 h-fit m-auto justify-center p-2 mt-4 md:w-6/12 lg:w-4/12"}>
 
             {/* Top row */}
-            <h3 className="w-full theme-green font-extrabold tracking-tight text-3xl p-1">{business}</h3>
+            <div className="w-full flex justify-between mb-4 pt-2">
+                <h3 className="theme-green font-extrabold tracking-tight text-3xl p-1">{business}</h3>
+                <div onClick={() => joinEvent()}
+                    className={joined ? "flex btn joined"  : "flex btn join-button"}>
+                    {/* <p className="mt-1">{joined ? `Joined` : 'Join'}</p> */}
+                    {joined ? <CgArrowLeftR size={25} className="m-auto"/> : <BsArrowRightSquare size={25} className="m-auto"/>}
+                </div>
+            </div>
+            
             <div className="flex justify-between border-b-2 border-slate-500" >
-            <p className="theme-green p-1 font-bold italic">{location}</p>
-            <p className="theme-green p-1 font-bold italic">Filled: {filled}/{capacity}</p>
-            <p className="theme-green p-1 font-bold italic">{date}</p>
-            <p className="theme-green p-1 font-bold italic">{time}</p>
+                <p className="theme-green p-1 font-bold italic">{location}</p>
+                <p className="theme-green p-1 font-bold italic">Filled: {filled}/{capacity}</p>
+                <p className="theme-green p-1 font-bold italic">{date}</p>
+                <p className="theme-green p-1 font-bold italic">{time}</p>
             </div>
 
             {/* middle row */}
-            <div className="flex p-1">
-                <div>
-                <p className="theme-green text-s">{description}</p>
-                </div>
-                <div>
-
-                </div>
+            <div className={expand ? "h-fit w-11/12 m-auto" : "w-11/12 m-auto"}>
+                <p className={expand ? "description-expanded theme-green text-s pt-2" : "description theme-green text-s pt-2"}>{description}LoremepsumLoremeps umLoremepsumLorem psumLoremepsumLoreme sumLoremepsumLoremepsumLoremepsumLo remepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsumLoremepsum</p>
             </div>
-
+                
             {/* Bottom row */}
-            <button onClick={() => joinEvent()} type={"button"} 
-                className={joined ? "btn joined mb-0"  : "btn join-button mb-0"}>
-                {joined ? `Joined` : 'Join'}
-            </button>
+
+            <div className="z-10">
+                <RiArrowDropDownLine onClick={() => controlExpand()} className="drop mx-auto mb-0 mt-2" size={55}/>
+            </div>
+            
                 
                 
            

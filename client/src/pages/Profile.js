@@ -20,7 +20,7 @@ const Profile = () => {
     }
 
     return (
-         <div>
+         <div className="flex-col">
             <Nav/>
             <div>
                 <Yourevents /> 

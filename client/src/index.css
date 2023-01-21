@@ -164,26 +164,26 @@ background-color: rgb(241, 245, 243);
   box-shadow: -6px 6px 1px #4b5b5b;
 }
 
-.event-attribute{
-  margin-top: 0px;
-  margin-left: 20px;
+
+
+.description-expanded {
+  overflow-wrap: break-word;
+  hyphens: manual;
 }
 
-.event-description{
- justify-content: center;
- align-items: center;
- align-content: center;
- margin: auto;
+.description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  width: 98%;
 }
 
 /* JOIN AND JOINED BUTTONS */
 .join-button{
   background-color: #678669;
   color: white;
-  margin: auto;
-  width: 100%;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  width: 13%;
 }
 
 .join-button:hover{
@@ -194,10 +194,7 @@ background-color: rgb(241, 245, 243);
 .joined {
   background-color: #5b5553;
   color: white;
-  margin: auto;
-  width: 100%;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  width: 13%;
 }
 
 .joined:hover {
@@ -225,6 +222,15 @@ background-color: rgb(241, 245, 243);
   box-shadow: 1px 1px 1px #4b5b5b;
 }
 
+.drop{
+  transition: all ease-in .2s;
+}
+
+.drop:hover{
+  color: rgb(122, 123, 123);
+  scale: 105%;
+  cursor: pointer;
+}
 
 /* --------------------------------------------------------PROFILE PAGE ----------------------------------------- */
 

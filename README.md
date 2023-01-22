@@ -34,7 +34,7 @@ Utilizing custom useFetch hook to fetch events in the Events component.
 
 ```JavaScript
 
-    const filteredData = data.filter(event => event.date > date)
+    const filteredData = data.filter(event => event.date > now)
 
     return (
         <div>

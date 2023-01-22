@@ -1,13 +1,14 @@
 import Event from "./Event";
 import useFetch from "../hooks/useFetch";
 import moment from 'moment';
+import { RiContactsBookLine } from "react-icons/ri";
 
 const Events = () => {
 
     const userId = localStorage.getItem('id');
 
     // use moment.js to filter out only relevent events (not in the past)
-    const date = moment().format('MM-DD-YYYY');
+    const now = moment().toISOString();
 
     const { data, loading, error } = useFetch('http://localhost:4000/api/events');
     // fetch our events
@@ -25,15 +26,15 @@ const Events = () => {
     // render each event to events
 
     //filter out past events
-    const filteredDate = data.filter(event => event.date > date);
-
+    const futureEvents = data.filter(event => event.date >= now);
+    
     //filter out events user has already joined
-    const futureEvents = filteredDate.filter(each => !each.attendees.includes(userId));
+    const filteredEvent = futureEvents.filter(each => !each.attendees.includes(userId));
 
 
     return (
         <div>
-        {futureEvents.map((event) => (
+        {filteredEvent.map((event) => (
             <Event key={event._id}
             id={event._id} 
             business={event.business}
@@ -42,7 +43,7 @@ const Events = () => {
             capacity={event.capacity}
             taken={event.attendees.length}
             category={event.category}
-            date={event.date.substring(5,10)}
+            date={event.date.substring(0, 10)}
             time={event.time}
             attending={event.attendees.includes(userId)} />
         ))}

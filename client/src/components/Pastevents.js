@@ -6,8 +6,8 @@ import Event from "./Event";
 const Pastevents = () => {
     const userId = localStorage.getItem('id');
 
-    // use moment.js to filter out only relevent events (not in the past)
-    const date = moment().format('MM-DD-YYYY');
+    
+    const now = moment().toISOString();
 
     const { data, loading, error } = useFetch('http://localhost:4000/api/events');
     // fetch our events
@@ -20,13 +20,10 @@ const Pastevents = () => {
         return <p>Error: {error.message}</p>;
     }
 
-    // we map our data (each event)
-    // send down props of each event attribute
-    // render each event to events
+    
+    //Here we only want past events, so we filter only those that are prior to now.
+    const filteredData = data.filter(event => now > event.date);
 
-    const filteredData = data.filter(event => event.date < date);
-
-    // In this case we filter it again to only display events the user has joined
     const ourPastEvents = filteredData.filter(event => event.attendees.includes(userId));
     
     return (
@@ -40,7 +37,7 @@ const Pastevents = () => {
             capacity={event.capacity}
             taken={event.attendees.length}
             category={event.category}
-            date={event.date.substring(5,10)}
+            date={event.date.substring(0, 10)}
             time={event.time}
             attending={event.attendees.includes(userId)} />
         ))}

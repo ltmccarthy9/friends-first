@@ -29,18 +29,18 @@ const eventSchema = new mongoose.Schema({
     date: {
         type: Date,
         required: true,
-        get: (date) => moment(date).format('MM-DD-YYYY'),
-        set: (date) => moment(date, 'MM-DD-YYYY'),
-        validate: {
-            validator: function (v) {
-                return(
-                    v &&
-                    v.getTime() > Date.now() + 24 * 60 * 60 * 1000 &&
-                    v.getTime() < Date.now() + 90 * 24 * 60 * 60 * 1000
-                );
-            },
-            message: "Event must be at least one day from now and no more than ninety days out"
-        }
+        get: (date) => moment(date).toISOString(),
+        // set: (date) => moment(date, 'MM-DD-YYYY'),
+        // validate: {
+        //     validator: function (v) {
+        //         return(
+        //             v &&
+        //             v.getTime() > Date.now() + 24 * 60 * 60 * 1000 &&
+        //             v.getTime() < Date.now() + 90 * 24 * 60 * 60 * 1000
+        //         );
+        //     },
+        //     message: "Event must be at least one day from now and no more than ninety days out"
+        // }
         
     },
     time: {

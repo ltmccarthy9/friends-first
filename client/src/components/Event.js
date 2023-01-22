@@ -79,15 +79,15 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
                 <div onClick={() => joinEvent()}
                     className={joined ? "flex btn joined"  : "flex btn join-button"}>
                     {/* <p className="mt-1">{joined ? `Joined` : 'Join'}</p> */}
-                    {joined ? <CgArrowLeftR size={25} className="m-auto"/> : <BsArrowRightSquare size={25} className="m-auto"/>}
+                    {joined ? <CgArrowLeftR size={20} className="m-auto"/> : <BsArrowRightSquare size={20} className="m-auto"/>}
                 </div>
             </div>
             
-            <div className="flex justify-between border-b-2 border-slate-800" >
-                <p className="theme-green p-1 font-bold italic">{location}</p>
-                <p className="theme-green p-1 font-bold italic">Filled: {filled}/{capacity}</p>
-                <p className="theme-green p-1 font-bold italic">{date}</p>
-                <p className="theme-green p-1 font-bold italic">{time}</p>
+            <div className="flex justify-between nav-bar border-slate-800" >
+                <p className="theme-green font-bold p-1 text-xl italic">{location}</p>
+                <p className="theme-green p-2 font-bold italic">Filled: {filled}/{capacity}</p>
+                <p className="theme-green p-2 font-bold italic">{date}</p>
+                <p className="theme-green p-2 font-bold italic">{time}</p>
             </div>
 
             {/* middle row */}

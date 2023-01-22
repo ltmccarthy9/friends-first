@@ -19,17 +19,6 @@ const Dashboard = () => {
         alert("please login to continue");
     }
 
-    const logout = () => {
-        localStorage.removeItem('user');
-        localStorage.removeItem('id');
-        navigate("/")
-    }
-    
-    const goProfile = () => {
-        navigate("/profile");
-    }
-
-
     return (
         <div>
             <Nav/>

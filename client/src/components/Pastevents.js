@@ -1,9 +1,9 @@
+import React from 'react'
 import useFetch from "../hooks/useFetch";
 import moment from 'moment';
 import Event from "./Event";
 
-const Yourevents = () => {
-
+const Pastevents = () => {
     const userId = localStorage.getItem('id');
 
     // use moment.js to filter out only relevent events (not in the past)
@@ -13,7 +13,7 @@ const Yourevents = () => {
     // fetch our events
     
     if(loading) {
-        return <p className="m-auto">Loading...</p>;
+        return <p className='m-auto'>Loading...</p>;
     }
 
     if (error) {
@@ -24,14 +24,14 @@ const Yourevents = () => {
     // send down props of each event attribute
     // render each event to events
 
-    const filteredData = data.filter(event => event.date > date);
+    const filteredData = data.filter(event => event.date < date);
 
     // In this case we filter it again to only display events the user has joined
-    const ourEvents = filteredData.filter(event => event.attendees.includes(userId));
+    const ourPastEvents = filteredData.filter(event => event.attendees.includes(userId));
     
     return (
         <div className="flex-col">
-        {ourEvents.map((event) => (
+        {ourPastEvents.map((event) => (
             <Event key={event._id}
             id={event._id} 
             business={event.business}
@@ -46,7 +46,6 @@ const Yourevents = () => {
         ))}
         </div>
     );
-
 }
 
-export default Yourevents;
+export default Pastevents

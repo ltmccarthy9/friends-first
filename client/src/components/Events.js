@@ -24,11 +24,16 @@ const Events = () => {
     // send down props of each event attribute
     // render each event to events
 
-    const filteredData = data.filter(event => event.date > date);
-    
+    //filter out past events
+    const filteredDate = data.filter(event => event.date > date);
+
+    //filter out events user has already joined
+    const futureEvents = filteredDate.filter(each => !each.attendees.includes(userId));
+
+
     return (
         <div>
-        {filteredData.map((event) => (
+        {futureEvents.map((event) => (
             <Event key={event._id}
             id={event._id} 
             business={event.business}

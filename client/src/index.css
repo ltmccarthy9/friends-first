@@ -10,7 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(235, 241, 238);
+  background-color: rgb(215, 223, 217);
 }
 
 code {
@@ -19,7 +19,7 @@ code {
 }
 
 html {
-background-color: rgb(235, 241, 238);
+background-color: rgb(215, 223, 217);
 }
 
 /* -----------------------------------------------HOME LOGIN / SIGN UP PAGE------------------------- */
@@ -171,24 +171,24 @@ background-color: rgb(235, 241, 238);
 
 /* JOIN AND JOINED BUTTONS */
 .join-button{
-  background-color: #678669;
+  background-color: #738574;
   color: white;
-  width: 13%;
+  width: 11%;
 }
 
 .join-button:hover{
-  background-color: #8cc98f;
+  background-color: #83a484;
   color: white;
 }
 
 .joined {
-  background-color: #921919;
+  background-color: #a47928;
   color: white;
-  width: 13%;
+  width: 10%;
 }
 
 .joined:hover {
-  background-color: #8a817e;
+  background-color: #654f33;
   color: white;
 }
 /* JOIN AND JOINED BUTTONS */

@@ -1,0 +1,53 @@
+import { useState } from "react";
+import { RiArrowDropDownLine } from 'react-icons/ri';
+import { TiMessages } from 'react-icons/ti'
+
+const Pastevent = ({ business, location, description, capacity, taken, id, date, time, attending }) => {
+   
+    const [expand, setExpand] = useState(false);
+
+    const controlExpand = () => {
+        if(expand){
+            setExpand(false);
+        } else {
+            setExpand(true);
+        }
+    }
+
+
+    return (
+        <div className={"event w-9/12 h-fit m-auto justify-center p-2 mt-1 mb-4 md:w-6/12 lg:w-5/12 xl:w-3/12"}>
+
+            {/* Top row */}
+            <div className="w-full flex justify-between mb-4 pt-2">
+                <h3 className="theme-green font-extrabold tracking-tight text-2xl p-1">{business}</h3>
+                <TiMessages size={40} className="theme-green mr-4 cursor-pointer hover:text-black"/>
+            </div>
+            
+            <div className="flex justify-between nav-bar border-slate-800" >
+                <p className="theme-green font-bold p-1 text-xl italic">{location}</p>
+                <p className="theme-green p-2 font-bold italic">{date} | {time}</p>
+            </div>
+
+            {/* middle row */}
+            <div className={expand ? "h-fit w-11/12 m-auto" : "w-11/12 m-auto"}>
+                <p className={expand ? "description-expanded theme-green text-s pt-2" : "description theme-green text-s pt-2"}>{description} "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                 irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                anim id est laborum."</p>
+            </div>
+                
+            {/* Bottom row */}
+
+            <div className="z-10">
+                <RiArrowDropDownLine style={expand ? {transform: 'rotate(180deg)' } : ""} onClick={() => controlExpand()} className="theme-green drop mx-auto mb-0 mt-2" size={55}/>
+            </div>
+            
+                
+                
+           
+        </div>
+    );
+}
+
+export default Pastevent;

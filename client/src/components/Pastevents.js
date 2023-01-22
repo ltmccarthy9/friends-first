@@ -1,7 +1,7 @@
 import React from 'react'
 import useFetch from "../hooks/useFetch";
 import moment from 'moment';
-import Event from "./Event";
+import Pastevent from './Pastevent';
 
 const Pastevents = () => {
     const userId = localStorage.getItem('id');
@@ -29,7 +29,7 @@ const Pastevents = () => {
     return (
         <div className="flex-col">
         {ourPastEvents.map((event) => (
-            <Event key={event._id}
+            <Pastevent key={event._id}
             id={event._id} 
             business={event.business}
             location={event.location}

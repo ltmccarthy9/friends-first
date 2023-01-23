@@ -31,14 +31,18 @@ mongoose.connection.on("connected", () => {
 });
 
 //middleware
-app.use(cors());
 app.use(cookieParser());
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+app.use(cors());
+
+
 
 // router middleware
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/events", eventRoute);
+
 
 // custom error middleware
 app.use((err, req, res, next) => {
@@ -52,8 +56,14 @@ app.use((err, req, res, next) => {
     });
 });
 
-//connection to server on port 4000
-app.listen(4000, () => {
+
+const PORT = 4000;
+
+
+
+
+//connection to server
+app.listen(PORT, () => {
     connect();
-    console.log("listening on port 4000");
+    console.log("listening on port ", PORT);
 });

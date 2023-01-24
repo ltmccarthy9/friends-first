@@ -225,13 +225,27 @@ background-color: rgb(215, 223, 217);
 /* --------------------------------------------------------PROFILE PAGE ----------------------------------------- */
 
 .message{
+  width: fit-content;
   max-width: 50%;
 }
 
 .sent{
-  background-color: rgb(47, 185, 206);
+  background-color: #fafbfb;
+  justify-content: flex-start;
+  margin-right: 4px;
+  margin-left: auto;
+  margin-top: 7px;
+}
+
+.sent p {
+  color: black;
 }
 
 .recieved{
   background-color: grey;
+}
+
+.chat-form{
+  position: absolute;
+  bottom: 0px;
 }

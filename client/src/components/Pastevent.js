@@ -1,19 +1,7 @@
-import { useState } from "react";
-import { RiArrowDropDownLine } from 'react-icons/ri';
 import { TiMessages } from 'react-icons/ti'
 
-const Pastevent = ({ business, location, description, capacity, taken, id, date, time, attending }) => {
+const Pastevent = ({ business, location, date,}) => {
    
-    const [expand, setExpand] = useState(false);
-
-    const controlExpand = () => {
-        if(expand){
-            setExpand(false);
-        } else {
-            setExpand(true);
-        }
-    }
-
 
     return (
         <div className={"event w-9/12 h-fit m-auto justify-center p-2 mt-1 mb-4 md:w-6/12 lg:w-5/12 xl:w-3/12"}>

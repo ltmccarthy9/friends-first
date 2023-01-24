@@ -3,11 +3,14 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
+import Messages from "./pages/Messages";
 
 
 
 
 function App() {
+  
+
 
   return (
     
@@ -18,6 +21,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/messages" element={<Messages/>} />
         </Routes>
         </div>
       </Router>

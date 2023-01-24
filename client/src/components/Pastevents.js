@@ -30,15 +30,9 @@ const Pastevents = () => {
         <div className="flex-col">
         {ourPastEvents.map((event) => (
             <Pastevent key={event._id}
-            id={event._id} 
             business={event.business}
             location={event.location}
-            description={event.description}
-            capacity={event.capacity}
-            taken={event.attendees.length}
-            category={event.category}
             date={event.date.substring(0, 10)}
-            time={event.time}
             attending={event.attendees.includes(userId)} />
         ))}
         </div>

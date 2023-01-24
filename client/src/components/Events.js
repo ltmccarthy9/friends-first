@@ -1,7 +1,7 @@
 import Event from "./Event";
 import useFetch from "../hooks/useFetch";
 import moment from 'moment';
-import { RiContactsBookLine } from "react-icons/ri";
+
 
 const Events = () => {
 

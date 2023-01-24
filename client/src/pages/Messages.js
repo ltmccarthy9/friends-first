@@ -1,5 +1,7 @@
 import React from 'react'
 import Nav from '../components/Nav'
+import ChatRoom from '../components/ChatRoom';
+
 
 const Messages = () => {
   return (
@@ -10,7 +12,7 @@ const Messages = () => {
             {/* Chats */}
         </div>
         <div className='h-3/5 border-2 w-6/12 mt-4'>
-            {/* Chat expanded with messagaes */}
+            <ChatRoom/>
         </div>
       </div>
     </div>

@@ -15,7 +15,7 @@ relationships.
 * Firebase
 
 ## Demonstration Of Current State of Application
-https://drive.google.com/file/d/1BHFzUMh825Apoug1ngvUm5qnZ6JNj-EA/view
+https://drive.google.com/file/d/1taImDVGhV74cYG2sZzC32pJDaMHtfUcY/view
 
 ## Updates 
 I'm currently working on fully implementing a chat feature.  I am using firebase for this feature

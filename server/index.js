@@ -56,11 +56,7 @@ app.use((err, req, res, next) => {
     });
 });
 
-
 const PORT = 4000;
-
-
-
 
 //connection to server
 app.listen(PORT, () => {

@@ -28,7 +28,7 @@ const Home = () => {
           }),
         }).then((response) => response.json())
         .then((data) => {
-          console.log('Success', data);
+          console.log(data);
           if(data.token){
             dispatch(setLogin({
               user: data.user,

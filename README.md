@@ -12,10 +12,29 @@ relationships.
 * Nodejs
 * Express
 * Tailwindcss
-* Bootstrap
-
+* Firebase
 
 ## Demonstration Of Current State of Application
+https://drive.google.com/file/d/1BHFzUMh825Apoug1ngvUm5qnZ6JNj-EA/view
+
+## Updates 
+I'm currently working on fully implementing a chat feature.  I am using firebase for this feature
+and currently the chat is pulling all message documents.  My next goal is to complete a "stay connected" feature that the user can find in their past events section on their profile.  The chat
+bar will be populated with their matches and there you can chat with other users you met at an event.
+
+
+## Old demonstrations
+
+1.)
+https://drive.google.com/file/d/1k2D33sbG12-gu9rU5L8alY4oDdoZWV8a/view
+
+2.)
+https://drive.google.com/file/d/1janvooZxIk15fuhMbP-byOvF1bBVkIMW/view
+
+3.)
+https://drive.google.com/file/d/1xQscWSkKpkTcRvAW5FcLo5GfPkgqcP7I/view
+
+4.)
 https://drive.google.com/file/d/1GHkIAzEgsSw9Uj2cTsFRN3P88daxA3lY/view
 
 ## Code
@@ -63,13 +82,3 @@ future dates, then map through and grab each event attribute
 and send it down to our Event component as props.
 
 
-## Old demonstrations
-
-1.)
-https://drive.google.com/file/d/1k2D33sbG12-gu9rU5L8alY4oDdoZWV8a/view
-
-2.)
-https://drive.google.com/file/d/1janvooZxIk15fuhMbP-byOvF1bBVkIMW/view
-
-3.)
-https://drive.google.com/file/d/1xQscWSkKpkTcRvAW5FcLo5GfPkgqcP7I/view

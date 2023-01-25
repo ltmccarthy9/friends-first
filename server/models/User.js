@@ -29,9 +29,6 @@ const userSchema = new mongoose.Schema({
     }
 },{timestamps: true});
 
-//need array of user's future events (could also do past events)
-// array of user's matches
-    // to implement a chat we need a message row as well.
   
 const User = mongoose.model('User', userSchema)
 

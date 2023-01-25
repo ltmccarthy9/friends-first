@@ -26,14 +26,12 @@ const Register = () => {
               }),
         }).then((response) => response.json())
         .then((data) => {
-          console.log('Success', data);
-          if(data.success === false){
-            alert("Oops there was an error");
-          }
+          alert('Successfully registered!');
           navigate('/');
         })
         .catch((error) => {
           console.log('Error', error);
+          alert(error);
           navigate('/');
         });
     } 

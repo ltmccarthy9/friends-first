@@ -6,12 +6,10 @@ import jwt from "jsonwebtoken";
 // Signup/Register user
 export const registerUser = async (req, res, next) => {
     try {
-
-        
         // use bcrypt to encode user password
         // assign the hashed password as the password for user
         const salt = bcrypt.genSaltSync(10);
-        const hash = bcrypt.hash(req.body.password, salt)
+        const hash = await bcrypt.hash(req.body.password, salt)
  
         const newUser = new User({
             name: req.body.name,
@@ -20,8 +18,8 @@ export const registerUser = async (req, res, next) => {
             age: req.body.age
         })
 
-        const savedUser = await newUser.save();
-        res.status(201).json(savedUser)
+        await newUser.save();
+        res.status(201).json({message: "user successfully registered!"});
     } catch(err) {
         next(err);
     }

@@ -15,6 +15,7 @@ relationships.
 * Firebase
 
 ## Demonstration Of Current State of Application
+Be sure to enable sound! 
 https://drive.google.com/file/d/1taImDVGhV74cYG2sZzC32pJDaMHtfUcY/view
 
 ## Updates 

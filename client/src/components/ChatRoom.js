@@ -10,18 +10,14 @@ import { useCollectionData } from 'react-firebase-hooks/firestore'
 const ChatRoom = () => {
 
     const firestore = firebase.firestore();
-
     const currentUserId = localStorage.getItem('id');
-
     const ref = useRef();
     const messagesRef = firestore.collection('messages');
     const query = messagesRef.orderBy('createdAt').limit(20);
-  
     const [messages] = useCollectionData(query, { idField: 'id' });
-  
     const [formValue, setFormValue] = useState('');
   
-  
+    
     const sendMessage = async (e) => {
       e.preventDefault();
   
@@ -36,6 +32,7 @@ const ChatRoom = () => {
       setFormValue('');
       ref.current.scrollIntoView({ behavior: 'smooth' });
     }
+
   
     return (
         <div className='chat-form w-full'>

@@ -71,7 +71,7 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
 
 
     return (
-        <div className={"event w-9/12 h-fit m-auto justify-center p-2 mt-1 mb-4 md:w-6/12 lg:w-5/12 xl:w-3/12"}>
+        <div className={"event w-9/12 h-fit m-auto justify-center p-2 mt-1 mb-4 md:w-6/12 lg:w-5/12 xl:w-5/12"}>
 
             {/* Top row */}
             <div className="w-full flex justify-between mb-4 pt-2">

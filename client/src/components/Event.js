@@ -10,13 +10,16 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
     const [filled, setFilled] = useState(taken);
     const [ joined, setJoined ] = useState(attending);
 
+    //state for expand button.  
     const [expand, setExpand] = useState(false);
 
     const userId = localStorage.getItem('id');
     const eventId = id;
 
+    //grab our jwt from our state
     const token = useSelector((state) => state.token);
 
+    //join event function.  We send the jwt for authorization so that the user can join the event
     const joinEvent = async () => {
         if(!joined) {
             const response = await fetch(`http://localhost:4000/api/events/join/${eventId}`, {
@@ -30,13 +33,14 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
                 })
             });
             const data = await response.json();
+            //if there is no error, we set joined to true and fill is increased by 1
             if(!data.error){
                 setJoined(true)
                 setFilled(filled + 1)
                 console.log(data)
             }
             
-
+            // if the user has already joined, ask them for confirmation that they want to leave
         } else {
             if(window.confirm("Are you sure you want to leave this event?")) {
                 const response = await fetch(`http://localhost:4000/api/events/leave/${eventId}`, {
@@ -51,16 +55,16 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
             });
             const data = await response.json();
             console.log(data)
+            //Here we just do the opposite as shown above for the join functionality
             if(!data.error) {
                 setJoined(false)
                 setFilled(filled - 1)
             }
-            
-                   
             }
         }
     }
 
+    // our control expand functiod for each event card
     const controlExpand = () => {
         if(expand){
             setExpand(false);
@@ -98,7 +102,7 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
                 
             {/* Bottom row */}
 
-            <div className="z-10">
+            <div onClick={() => controlExpand()} className="z-10 cursor-pointer">
                 <RiArrowDropDownLine style={expand ? {transform: 'rotate(180deg)' } : ""} onClick={() => controlExpand()} className="theme-green drop mx-auto mb-0 mt-2" size={55}/>
             </div>
             

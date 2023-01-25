@@ -6,7 +6,7 @@ import Pastevent from './Pastevent';
 const Pastevents = () => {
     const userId = localStorage.getItem('id');
 
-    
+    // get current time using moment so we can compare events in our database
     const now = moment().toISOString();
 
     const { data, loading, error } = useFetch('http://localhost:4000/api/events');
@@ -33,7 +33,7 @@ const Pastevents = () => {
             business={event.business}
             location={event.location}
             date={event.date.substring(0, 10)}
-            attending={event.attendees.includes(userId)} />
+            attending={event.attendees} />
         ))}
         </div>
     );

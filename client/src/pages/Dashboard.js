@@ -5,8 +5,11 @@ import Nav from "../components/Nav";
 
 
 const Dashboard = () => {
+    //useNavigate for changing pages
     const navigate = useNavigate();
 
+    //if user is not logged in, navigate to home. 
+    //This was the initial working version, I am going to consolidate so that we use jwt instead of localstorage.
     useEffect(() => {
         if(localStorage.getItem('user') !== 'loggedin') {
             loginAlert();

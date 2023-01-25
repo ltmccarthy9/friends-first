@@ -10,12 +10,18 @@ import { setLogout } from '../state';
 
 const Nav = () => {
 
+    //useNavigate for changing pages
     const navigate = useNavigate();
+    //These are for styling on the nav componenets.  If true, the icon color becomes black and has a bottom border
     const [profile, setProfile] = useState(false);
     const [dashboard, setDashboard] = useState(false);
     const [messages, setMessages] = useState(false);
-    
+    // utilize useDispatch hook for logging out
     const dispatch = useDispatch();
+
+    //useEffect for determining which icon becomes true;
+    //Because the nav component gets rehoisted every time the page changes, we keep the second argument as an empty array.
+    //When we change pages all of our useState will default to false, the useEffect will set the correct one to true.
     useEffect(() => {
         if(window.location.pathname.includes('profile')){
             setProfile(true)
@@ -31,14 +37,17 @@ const Nav = () => {
         navigate("/dashboard");
     };
 
+    //navigate to profile page
     const goProfile = () => {
         navigate("/profile");
     }
 
+    //navigate to messages page
     const goMessages = () => {
         navigate("/messages")
     }
 
+    //logout function
     const logout = () => {
         if(window.confirm("Are you sure you want to log out?")) {
             dispatch(setLogout())

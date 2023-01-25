@@ -6,6 +6,7 @@ import Pastevents from "../components/Pastevents";
 
 const Profile = () => {
 
+    //useStates for switching between upcoming and past events on profile
     const [upcoming, setUpcoming] = useState(true);
     const [past, setPast] = useState(false)
     
@@ -18,16 +19,18 @@ const Profile = () => {
         }
     }, [])
 
+    //function for switching to upcoming events
     const switchUpcoming = () => {
         setPast(false);
         setUpcoming(true);
     }
 
+    //function for switching to past events
     const switchPast = () => {
         setUpcoming(false);
         setPast(true);
     }
-
+    
     const loginAlert = () => {
         alert("please login to continue");
     }

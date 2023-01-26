@@ -31,7 +31,6 @@ const Events = () => {
     //filter out events user has already joined
     const filteredEvent = futureEvents.filter(each => !each.attendees.includes(userId));
 
-    console.log(filteredEvent);
 
     return (
         <div>

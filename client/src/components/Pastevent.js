@@ -27,17 +27,15 @@ const Pastevent = ({ business, location, date, attending}) => {
                 <p className="theme-green font-bold italic p-1">{date}</p>
             </div>
 
-            <div onClick={() => controlExpand()} className="flex-col z-10 cursor-pointer">
-                <p className='m-auto'>Stay in contact with your new friends!</p>
-                
-                <div className={expand ? "h-fit w-11/12 m-auto" : "w-11/12 m-auto"}>
+            <p className='m-auto'>Stay in contact with your new friends!</p>
+            
+            <div className={expand ? "h-fit w-11/12 m-auto" : "w-11/12 m-auto"}>
                     {attending.map((attendee, index) => {
                         return <Attendees key={index} user2Id={attendee}/>;
                     })}
                 </div>
-                
-                
 
+            <div onClick={() => controlExpand()} className="flex-col z-10 cursor-pointer">
                 <RiArrowDropDownLine style={expand ? {transform: 'rotate(180deg)' } : ""} onClick={() => controlExpand()} className="theme-green drop mx-auto mb-0 mt-2" size={55}/>
             </div>
         </div>

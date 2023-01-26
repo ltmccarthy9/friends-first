@@ -29,6 +29,7 @@ const Yourevents = () => {
     // In this case we filter it again to only display events the user has joined
     const ourEvents = filteredData.filter(event => event.attendees.includes(userId));
     
+
     return (
         <div className="flex-col">
         {ourEvents.map((event) => (

@@ -11,7 +11,7 @@ router.put("/:id", verifyToken, updateUser);
 router.delete("/:id", verifyToken, deleteUser);
  
 // GET USER
-router.get("/:email", getUser);
+router.get("/:id", getUser);
 
 //GET ALL FOR ADMIN
 router.get("/", getUsers);

@@ -64,23 +64,23 @@ const Nav = () => {
         <h1 onClick={goDashboard} className="py-3 font-extrabold tracking-tight text-3xl ml-4 mr-2 cursor-pointer sm:mr-32 md:mr-32 lg:mr-32 xl:mr-32 2xl:mr-32" >Friends First.</h1>
         
         <div onClick={goDashboard} className={dashboard ? 'cursor-pointer border-b-4 w-24 text-black border-slate-700 px-2 py-3' : 'cursor-pointer w-24 px-2 py-3 hover:text-black'}>
-            <BsFillCalendar2EventFill size={26} className='cursor-pointer m-auto'/>
-            <h2 className={'theme-green cursor-pointer text-center'}>Events</h2>
+            <BsFillCalendar2EventFill size={22} className='cursor-pointer m-auto'/>
+            <h4 className={'theme-green cursor-pointer text-center text-sm'}>Events</h4>
         </div>
         
         <div onClick={goProfile} className={profile ? 'cursor-pointer border-b-4 w-24 text-black border-slate-700 px-2 py-3' : ' cursor-pointer w-24 px-2 py-3 hover:text-black'}>
-            <BsPersonCircle size={26} className='cursor-pointer m-auto'/>
-            <h2 className={'theme-green cursor-pointer text-center'}>Profile</h2>
+            <BsPersonCircle size={22} className='cursor-pointer m-auto'/>
+            <h4 className={'theme-green cursor-pointer text-center text-sm'}>Profile</h4>
         </div>
 
         <div onClick={goMessages} className={messages ? 'cursor-pointer w-24 border-b-4 text-black border-slate-700 px-3 py-3' : 'cursor-pointer w-24 px-3 py-3 hover:text-black'}>
-            <RiMessage2Fill size={26} className='cursor-pointer m-auto'/>
-            <h2 className={'theme-green cursor-pointer text-center'}>Messages</h2>
+            <RiMessage2Fill size={22} className='cursor-pointer m-auto'/>
+            <h4 className={'theme-green cursor-pointer text-center text-sm'}>Messages</h4>
         </div>
         
         <div onClick={logout} className='w-24 px-2 py-3 cursor-pointer hover:text-black'>
-            <RiLogoutBoxRFill size={26} className='cursor-pointer m-auto'/>
-            <h2 className={'theme-green cursor-pointer text-center'}>Logout</h2>
+            <RiLogoutBoxRFill size={22} className='cursor-pointer m-auto'/>
+            <h4 className={'theme-green cursor-pointer text-center text-sm'}>Logout</h4>
         </div>
         
         

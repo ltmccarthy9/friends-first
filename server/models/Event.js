@@ -1,7 +1,7 @@
-import mongoose from "mongoose";
+import { Schema, model }from "mongoose";
 import moment from 'moment';
 
-const eventSchema = new mongoose.Schema({
+const eventSchema = new Schema({
     business: {
         type: String,
         required: true,
@@ -19,7 +19,7 @@ const eventSchema = new mongoose.Schema({
         required: true,
     },
     attendees: [{
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'User'
     }],
     category: {
@@ -52,5 +52,5 @@ const eventSchema = new mongoose.Schema({
 // we will need to add a date and time and auto remove from active events
 
 
-const Event = mongoose.model("Event", eventSchema);
+const Event = model("Event", eventSchema);
 export default Event;

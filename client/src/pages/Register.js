@@ -8,10 +8,26 @@ const Register = () => {
     const [ name, setName ] = useState('');
     const [ email, setEmail] = useState('');
     const [ password, setPassword] = useState('');
+    const [ passwordCheck, setPasswordCheck] = useState('');
     const [ age, setAge ] = useState(18);
 
-    const handleSubmit = async (e) => {
+    const checkForm = (e) => {
         e.preventDefault();
+        if(!name || !email || !password || !passwordCheck) {
+            alert('You must fill every part of the form')
+            return;
+        } else if(password !== passwordCheck) {
+            alert('Your password must match');
+            setPassword('')
+            setPasswordCheck('');
+            return;
+        }
+
+        handleSubmit();
+    };
+
+
+    const handleSubmit = async () => {
         console.log(`${age} ${name} ${email} ${password}`)
         fetch("http://localhost:4000/api/auth/register" , {
             method: "POST",
@@ -58,9 +74,9 @@ const Register = () => {
             <input placeholder="name" onKeyUp={(e) => setName(e.target.value)} type="name" className="form-control email"></input>
             <input placeholder="email" onKeyUp={(e) => setEmail(e.target.value)} type="email" className="form-control email"></input>
             <input placeholder="password" onKeyUp={(e) => setPassword(e.target.value)} type="password" className="form-control pass"></input>
+            <input placeholder="re-type password" onKeyUp={(e) => setPasswordCheck(e.target.value)} type="password" className="form-control pass"></input>
             
-            
-            <button style={{margin: "10px"}} type="button" onClick={(e) => handleSubmit(e)} className="btn btn-light sub">Sign Up</button>
+            <button style={{margin: "10px"}} type="button" onClick={(e) => checkForm(e)} className="btn btn-light sub">Sign Up</button>
         </form>
 
         </div> 

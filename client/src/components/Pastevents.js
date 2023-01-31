@@ -3,7 +3,7 @@ import useFetch from "../hooks/useFetch";
 import moment from 'moment';
 import Pastevent from './Pastevent';
 
-const Pastevents = () => {
+const Pastevents = (likes) => {
     const userId = localStorage.getItem('id');
 
     // get current time using moment so we can compare events in our database
@@ -33,7 +33,8 @@ const Pastevents = () => {
             business={event.business}
             location={event.location}
             date={event.date.substring(0, 10)}
-            attending={event.attendees} />
+            attending={event.attendees} 
+            likes={likes}/>
         ))}
         </div>
     );

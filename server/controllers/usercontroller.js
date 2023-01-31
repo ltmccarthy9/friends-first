@@ -60,6 +60,7 @@ export const addFriend = async (req, res, next) => {
        const user2 = await User.findById(user2Id);
 
        if (user2.liked.includes(userId)) {
+        user.liked.push(user2Id);
         user.friends.push(user2Id);
         user2.friends.push(userId);
        } else {

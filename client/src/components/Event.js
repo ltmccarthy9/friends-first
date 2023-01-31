@@ -75,14 +75,13 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
 
 
     return (
-        <div className={"event w-9/12 h-fit m-auto justify-center p-2 mt-1 mb-4 md:w-6/12 lg:w-5/12 xl:w-5/12"}>
+        <div className={"event w-9/12 h-fit m-auto justify-center p-2 mt-1 mb-4 md:w-6/12 lg:w-5/12 xl:w-4/12"}>
 
             {/* Top row */}
             <div className="w-full flex justify-between mb-4 pt-2">
-                <h3 className="theme-green font-extrabold tracking-tight text-2xl p-1">{business}</h3>
+                <h3 className="theme-green font-extrabold tracking-tight text-2xl p-2">{business}</h3>
                 <div onClick={() => joinEvent()}
-                    className={joined ? "flex btn joined"  : "flex btn join-button"}>
-                    {/* <p className="mt-1">{joined ? `Joined` : 'Join'}</p> */}
+                    className={joined ? "m-2 p-1 flex joined"  : "m-2 p-1 flex join-button"}>
                     {joined ? <CgArrowLeftR size={20} className="m-auto"/> : <BsArrowRightSquare size={20} className="m-auto"/>}
                 </div>
             </div>

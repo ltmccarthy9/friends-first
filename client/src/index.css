@@ -118,6 +118,7 @@ background-color: rgb(215, 223, 217);
   background-color: rgb(255, 255, 255);
 }
 
+
 .dash-title{
   margin-top: 10px;
   margin-left: 20px;
@@ -139,7 +140,7 @@ background-color: rgb(215, 223, 217);
 
 .event{
   background-color: rgb(255, 255, 255);
-  border-radius: 20px;
+  border-radius: 40px;
   transition: all ease-in .2s;
   display: flex;
   flex-direction: column;
@@ -155,7 +156,6 @@ background-color: rgb(215, 223, 217);
 .description-expanded {
   overflow-wrap: break-word;
   hyphens: manual;
-  transition: all ease-in .8s;
 }
 
 .description {
@@ -172,22 +172,30 @@ background-color: rgb(215, 223, 217);
   background-color: #738574;
   color: white;
   width: 11%;
+  border-radius: 11px;
+  transition: all ease-in .14s;
 }
 
 .join-button:hover{
-  background-color: #83a484;
+  background-color: #96ab97;
   color: white;
+  cursor: pointer;
+  box-shadow: -3px 3px 1px #4b5b5b;
 }
 
 .joined {
   background-color: #a47928;
   color: white;
   width: 10%;
+  border-radius: 11px;
+  transition: all ease-in .14s;
 }
 
 .joined:hover {
   background-color: #654f33;
   color: white;
+  cursor: pointer;
+  box-shadow: 3px 3px 1px rgb(61, 60, 60);
 }
 /* JOIN AND JOINED BUTTONS */
 
@@ -219,6 +227,7 @@ background-color: rgb(215, 223, 217);
   scale: 105%;
   cursor: pointer;
 }
+
 
 /* --------------------------------------------------------PROFILE PAGE ----------------------------------------- */
 

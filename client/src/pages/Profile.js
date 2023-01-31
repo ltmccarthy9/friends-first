@@ -39,13 +39,13 @@ const Profile = () => {
          <div className="flex-col">
             <Nav/>
             <div className="flex mb-4">
-                <h2 onClick={() => switchUpcoming()} className={upcoming ? "bg-slate-50 p-2 rounded-lg tracking-tight text-lg font-bold cursor-pointer ml-auto profile-active"
-                 : "tracking-tight text-lg cursor-pointer ml-auto font-bold bg-slate-50 p-2 rounded-lg profile-inactive"}>Upcoming Events</h2>
+                <h2 onClick={() => switchUpcoming()} className={upcoming ? "bg-white p-2 rounded-lg tracking-tight text-lg font-bold cursor-pointer ml-auto profile-active"
+                 : "tracking-tight text-lg cursor-pointer ml-auto font-bold bg-white p-2 rounded-lg profile-inactive"}>Upcoming Events</h2>
                 
                 <div className="tracking-tight text-xl mx-2"></div>
                 
-                <h2 onClick={() => switchPast()} className={past ? "bg-slate-50 p-2 rounded-lg font-bold tracking-tight text-lg cursor-pointer mr-auto profile-active" 
-                 : "tracking-tight text-lg cursor-pointer mr-auto bg-slate-50 p-2 rounded-lg font-bold profile-inactive"}>Past Events</h2>
+                <h2 onClick={() => switchPast()} className={past ? "bg-white p-2 rounded-lg font-bold tracking-tight text-lg cursor-pointer mr-auto profile-active" 
+                 : "tracking-tight text-lg cursor-pointer mr-auto bg-white p-2 rounded-lg font-bold profile-inactive"}>Past Events</h2>
             </div>
 
             <div>

@@ -5,7 +5,7 @@ import { MdOutlineCancelPresentation } from 'react-icons/md'
 const Attendees = (props) => {
 
     const id = props.user2Id
-
+    
     // Here I use the custom useFetch hook and pass in the user id in
     const { data, loading, error } = useFetch(`http://localhost:4000/api/users/${id}`);
     

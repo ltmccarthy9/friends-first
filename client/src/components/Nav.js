@@ -5,7 +5,7 @@ import { BsFillCalendar2EventFill, BsPersonCircle } from 'react-icons/bs';
 import { RiLogoutCircleRFill, RiMessage2Fill, RiLogoutBoxRFill } from 'react-icons/ri';
 import { useDispatch } from "react-redux";
 import { setLogout } from '../state';
-
+import { IoLogOut } from 'react-icons/io5';
 
 
 const Nav = () => {
@@ -61,7 +61,7 @@ const Nav = () => {
 
   return (
       <div className="theme-green nav-bar h-fit flex justify-center bg-slate-100 z-20 mb-12">
-        <h1 onClick={goDashboard} className="pt-3 pb-1 font-extrabold tracking-tight text-3xl ml-4 mr-2 cursor-pointer sm:mr-32 md:mr-32 lg:mr-32 xl:mr-32 2xl:mr-32" >Friends First.</h1>
+        <h1 onClick={goDashboard} className="pt-2 pb-1 font-extrabold tracking-tight text-4xl ml-4 mr-2 cursor-pointer sm:mr-32 md:mr-32 lg:mr-32 xl:mr-32 2xl:mr-32" >Friends First.</h1>
         
         <div onClick={goDashboard} className={dashboard ? 'cursor-pointer border-b-4 w-24 text-black border-slate-700 px-2 pb-1 pt-3' : 'cursor-pointer w-24 px-2 pb-1 pt-3 hover:text-black'}>
             <BsFillCalendar2EventFill size={22} className='cursor-pointer m-auto'/>
@@ -79,7 +79,7 @@ const Nav = () => {
         </div>
         
         <div onClick={logout} className='w-24 px-2 pb-1 pt-3 cursor-pointer hover:text-black'>
-            <RiLogoutBoxRFill size={22} className='cursor-pointer m-auto'/>
+            <IoLogOut size={22} className='cursor-pointer m-auto'/>
             <h4 className={'theme-green cursor-pointer text-center text-sm'}>Logout</h4>
         </div>
         

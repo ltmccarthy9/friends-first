@@ -1,17 +1,12 @@
-import { TiMessages } from 'react-icons/ti'
-import { RiArrowDropDownLine } from 'react-icons/ri';
 import { useState } from 'react';
 import Attendees from './Attendees';
 
 
 const Pastevent = ({ business, location, date, attending}) => {
    
-    
-
+    // use token to grab userId instead of localstorage
     const userId = localStorage.getItem('id');
 
-
-    //need to filter out the user from the attending array.
 
     return (
         <div className={"event w-9/12 h-fit m-auto justify-center p-3 mt-1 mb-4 md:w-6/12 lg:w-5/12 xl:w-3/12"}>
@@ -25,6 +20,7 @@ const Pastevent = ({ business, location, date, attending}) => {
             <p className='m-auto p-2'>Stay in contact with your new friends!</p>
             
             <div className="h-fit w-11/12 m-auto">
+                {/* map through attendees and return them as attendee component (other than user) */}
                     {attending.map((attendee, index) => {
                         if(attendee !== userId){
                             return <Attendees key={index} user2Id={attendee}/>;

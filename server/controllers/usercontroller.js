@@ -51,7 +51,29 @@ export const getUsers = async (req, res, next) => {
     }
 }
 
+export const addFriend = async (req, res, next) => {
+    try {
+       const userId = req.params.id
+       const user2Id = req.params.id2
 
+       const user = await User.findById(userId);
+       const user2 = await User.findById(user2Id);
+
+       if (user2.liked.includes(userId)) {
+        user.friends.push(user2Id);
+        user2.friends.push(userId);
+       } else {
+        user.liked.push(user2Id);
+       }
+
+       await user.save();
+       await user2.save();
+
+       res.status(200).json("Success!")
+    } catch (err) {
+        next(err);
+    }
+}
 
 
 

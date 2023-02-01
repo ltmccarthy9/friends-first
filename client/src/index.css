@@ -273,3 +273,9 @@ background-color: rgb(215, 223, 217);
 .profile-inactive:hover {
   background-color: #e3eae3;
 }
+
+/* --------------------------------------------------------MESSAGES PAGE ----------------------------------------- */
+
+.chats-box-active{
+  box-shadow: -6px 6px 1px #4b5b5b;
+}

@@ -4,25 +4,24 @@ import ChatMessage from './ChatMessage';
 import firebase from 'firebase/compat/app'
 import 'firebase/compat/firestore';
 import { useCollectionData } from 'react-firebase-hooks/firestore'
-
+import { useSelector } from "react-redux";
 
 
 const ChatRoom = () => {
 
-    const firestore = firebase.firestore();
+    const user2 = useSelector((state) => state.messageWith)
     const currentUserId = localStorage.getItem('id');
+    
+    const firestore = firebase.firestore();
     const ref = useRef();
-
     //connect to our message documents
     const messagesRef = firestore.collection('messages');
     // our query of our firebase data so that we order by most recent and only pull the 20 latest
     // will modify this to only pull the proper people for a given conversation
-    // Will do this by passing in id of useer and 2nd user in conversation. (message documents with both user id and user2 id)
+    // Will do this by passing in id of user and 2nd user in conversation. (message documents with both user id and user2 id)
     const query = messagesRef.orderBy('createdAt').limit(20);
-    //const query = messagesRef.where("includes", "array-contains-all", [`${userId}`, `${user2Id}]).orderBy('createdAt').limit(25);
-
     // grab messages from database with query parameters and grab message id
-    const [messages] = useCollectionData(query, { idField: 'id' });
+    const [messages, loading, error ] = useCollectionData(query, { idField: 'id' });
     //form value for sending messages
     const [formValue, setFormValue] = useState('');
   
@@ -30,17 +29,15 @@ const ChatRoom = () => {
     //function for sending message
     const sendMessage = async (e) => {
       e.preventDefault();
-  
-  
       // add a new message document using form value for the message, timestamp of doc creation, userId,
       //will add photo url later
       await messagesRef.add({
         message: formValue,
         createdAt: firebase.firestore.FieldValue.serverTimestamp(),
         photoURL: "",
-        userId: currentUserId
+        senderID: currentUserId,
+        receiverID: user2
       })
-  
       setFormValue('');
       ref.current.scrollIntoView({ behavior: 'smooth' });
     }
@@ -49,6 +46,8 @@ const ChatRoom = () => {
     return (
         <div className='chat-form w-full'>
             <main>
+            {error && <strong>Error: {JSON.stringify(error)}</strong>}
+            {loading && <span>Loading...</span>}
             {/* map through message documents and dispay each using ChatMessage componenet */}
             {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
 

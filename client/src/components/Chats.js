@@ -1,11 +1,30 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import useFetch from '../hooks/useFetch';
+import { useDispatch } from "react-redux";
+import { setMessageWith } from '../state';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 const Chats = (props) => {
 
-    const user2Id = props.user2Id
+    let messenger = useSelector((state) => state.messageWith);
+    const user2Id = props.user2Id;
 
+    useEffect(() => {
+        if(user2Id === messenger) {
+            setActive(true)
+        } 
+    }, [])
+
+    const [active, setActive] = useState(false);
+
+    const dispatch = useDispatch();
+
+    const changeMessage = () => {
+        dispatch(setMessageWith({
+            messageWith: user2Id
+        }));
+    };
     
   const { data, loading, error } = useFetch(`http://localhost:4000/api/users/${user2Id}`);
   // fetch our events
@@ -24,7 +43,7 @@ const Chats = (props) => {
     
 
   return (
-    <div className=' rounded-lg bg-stone-300 p-2 m-2 cursor-pointer hover:bg-stone-400'>
+    <div onClick={changeMessage} className={active ? 'chats-box-active rounded-lg bg-stone-300 p-2 m-2 cursor-pointer hover:bg-stone-400' : 'rounded-lg bg-stone-300 p-2 m-2 cursor-pointer hover:bg-stone-400'}>
         <p>{name} | {age} </p>
     </div>
   )

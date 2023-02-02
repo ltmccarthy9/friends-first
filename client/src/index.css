@@ -280,7 +280,7 @@ background-color: rgb(215, 223, 217);
   height: 480px;
   overflow: scroll;
   border-radius: 10px;
-  background-color: #e4f0e9;
+  background-color: #f0f6f3;
   overflow-x: hidden;
 }
 
@@ -306,7 +306,7 @@ background-color: rgb(215, 223, 217);
 }
 
 .chats-box-container{
- background-color: #b4bbbb;
+ background-color: #838c86;
 }
 
 .chat-input:focus {
@@ -318,6 +318,15 @@ background-color: rgb(215, 223, 217);
   box-shadow: -5px 5px 1px #424e4e
 }
 
-.chat-form{
-  
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

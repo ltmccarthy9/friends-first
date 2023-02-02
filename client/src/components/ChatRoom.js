@@ -11,28 +11,29 @@ import { useDispatch } from 'react-redux';
 const ChatRoom = () => {
   
   const [formValue, setFormValue] = useState('');
-  
   const ref = useRef();
 
+  // grab the user we're messaging with from state
   var user = useSelector((state) => state.messageWith).trim();
+  // grab current user
   const currentUserId = localStorage.getItem('id').trim();
+  //initialize firestore connection
   const firestore = firebase.firestore();
   const messagesRef = firestore.collection('messages');
+  //create query
   const query= messagesRef.orderBy('createdAt').limit(20);
+  //useCollectionData hook.
   const [messages, loading, error ] = useCollectionData(query, {idField: 'id'});
 
   let filteredMessages;
 
+  //I decided to filter on the front end instead filtering with the query for the 
+  //time being. was running into a lot of problems with the query.
+  //if messages have loaded, filter them based on the convo ids
   if(messages) {
    filteredMessages = messages.filter(m => m.members.includes(currentUserId && user));
   } 
-
-  console.log(user);
-  console.log(filteredMessages)
   
-  
-  // const filteredMessages = messages.filter(obj => obj.members.includes(currentUserId && user2));
-  // console.log(filteredMessages);
 
   //function for sending message
   const sendMessage = async (e) => {

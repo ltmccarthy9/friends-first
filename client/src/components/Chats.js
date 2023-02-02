@@ -10,13 +10,15 @@ const Chats = (props) => {
     let messenger = useSelector((state) => state.messageWith);
     const user2Id = props.user2Id;
 
+    const [active, setActive] = useState(false);
+
     useEffect(() => {
         if(user2Id === messenger) {
             setActive(true)
-        } 
-    }, [])
-
-    const [active, setActive] = useState(false);
+        } else {
+            setActive(false)
+        }
+    }, [messenger])
 
     const dispatch = useDispatch();
 
@@ -27,7 +29,6 @@ const Chats = (props) => {
     };
     
   const { data, loading, error } = useFetch(`http://localhost:4000/api/users/${user2Id}`);
-  // fetch our events
   
   if(loading) {
       return <p>Loading...</p>;
@@ -43,7 +44,7 @@ const Chats = (props) => {
     
 
   return (
-    <div onClick={changeMessage} className={active ? 'chats-box-active rounded-lg bg-stone-300 p-2 m-2 cursor-pointer hover:bg-stone-400' : 'rounded-lg bg-stone-300 p-2 m-2 cursor-pointer hover:bg-stone-400'}>
+    <div onClick={changeMessage} className={active ? 'chats-box-active rounded-lg bg-white p-2 m-2' : 'rounded-lg p-2 m-2 bg-white cursor-pointer hover:bg-stone-400'}>
         <p>{name} | {age} </p>
     </div>
   )

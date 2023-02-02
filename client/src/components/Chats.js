@@ -39,12 +39,11 @@ const Chats = (props) => {
   }
 
   const name = data.name;
-
   const age = data.age;
     
 
   return (
-    <div onClick={changeMessage} className={active ? 'chats-box-active rounded-lg bg-white p-2 m-2' : 'rounded-lg p-2 m-2 bg-white cursor-pointer hover:bg-stone-400'}>
+    <div onClick={changeMessage} className={active ? 'chats-box-active rounded-lg bg-white p-2 mb-2 font-bold' : 'rounded-lg p-2 my-1 bg-gray-100 cursor-pointer hover:bg-stone-400'}>
         <p>{name} | {age} </p>
     </div>
   )

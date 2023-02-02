@@ -1,5 +1,5 @@
 import express from "express";
-import { createEvent, updateEvent, getEvent, getEvents, joinEvent, leaveEvent } from "../controllers/eventcontroller.js";
+import { createEvent, updateEvent, getEvent, getEvents, joinEvent, leaveEvent, editEventDate } from "../controllers/eventcontroller.js";
 import { verifyToken } from "../middleware/auth.js";
 
 const router = express.Router();
@@ -21,5 +21,7 @@ router.patch("/join/:eventId", verifyToken, joinEvent);
 
 //remove user from an event
 router.patch('/leave/:eventId', verifyToken, leaveEvent);
+
+router.patch('/edit/date/:eventId', editEventDate);
 
 export default router;

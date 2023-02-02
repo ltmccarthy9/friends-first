@@ -101,3 +101,18 @@ export const leaveEvent = async (req, res, next) => {
         next(err);
     }
 };
+
+
+export const editEventDate = async (req, res, next) => {
+    try{
+        const newDate = req.body.date
+        const event = await Event.findById(req.params.eventId)
+        if(!event) return res.status(404).send({ error: 'Event not found' });
+
+        event.date = newDate;
+        await event.save();
+        res.status(200).json('successfully edited event date')
+    } catch (err) {
+        next(err);
+    }
+}

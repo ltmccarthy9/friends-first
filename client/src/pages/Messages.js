@@ -3,9 +3,12 @@ import Nav from '../components/Nav'
 import ChatRoom from '../components/ChatRoom';
 import Chats from '../components/Chats';
 import useFetch from '../hooks/useFetch';
+import { useDispatch } from 'react-redux';
+import { setFriends } from '../state';
 
 const Messages = () => {
 
+  const dispatch = useDispatch();
   const userId = localStorage.getItem('id');
   const { data, loading, error } = useFetch(`http://localhost:4000/api/users/${userId}`);
   
@@ -18,6 +21,12 @@ const Messages = () => {
   }
 
   const friends = data.friends;
+
+  dispatch(setFriends({
+    friends: data.friends.length
+  }));
+
+  
 
   return (
     <div className='h-screen'>

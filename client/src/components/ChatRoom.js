@@ -13,7 +13,9 @@ const ChatRoom = () => {
   const [formValue, setFormValue] = useState('');
   const ref = useRef();
 
-  // grab the user we're messaging with from state
+  // grab # of friends and the user we're messaging with from state
+  // if 0 friends, display "no friends"
+  var friends = (useSelector((state) => state.friends) > 0)
   var user = useSelector((state) => state.messageWith).trim();
   // grab current user
   const currentUserId = localStorage.getItem('id').trim();
@@ -33,7 +35,6 @@ const ChatRoom = () => {
   if(messages) {
    filteredMessages = messages.filter(m => m.members.includes(currentUserId && user));
   } 
-  
 
   //function for sending message
   const sendMessage = async (e) => {
@@ -50,13 +51,14 @@ const ChatRoom = () => {
     ref.current.scrollIntoView({ behavior: 'smooth' });
   }
 
+
     return (
         <div className='chat-form w-full'>
             <main>
             {error && <strong>Error: {JSON.stringify(error)}</strong>}
             {loading && <span>Loading...</span>}
             {/* map through message documents and dispay each using ChatMessage componenet */}
-            {filteredMessages && filteredMessages.map(msg => <ChatMessage key={msg.createdAt} message={msg} />)}
+            {friends ? filteredMessages && filteredMessages.map(msg => <ChatMessage key={msg.createdAt} message={msg} />) : <p>You have no friends</p>}
 
             <span ref={ref}></span>
 

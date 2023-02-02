@@ -242,6 +242,7 @@ background-color: rgb(215, 223, 217);
   justify-content: flex-start;
   margin-right: 24px;
   margin-left: auto;
+  box-shadow: 4px 4px 1px #4b5b5b;
 }
 
 .sent p {
@@ -253,6 +254,7 @@ background-color: rgb(215, 223, 217);
   color: white;
   margin-left: 24px;
   margin-right: auto;
+  box-shadow: -4px 4px 1px white;
 }
 
 .chat-form{
@@ -278,11 +280,34 @@ background-color: rgb(215, 223, 217);
 
 .chats-box-active{
   transition: all ease-in .06s;
-  box-shadow: -6px 6px 1px #4b5b5b;
+  box-shadow: -5px 5px 1px #424e4e;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid white;
+  color: #424e4e;
+  width: 103%;
 }
 
-.chats-box-container{
-  background-color: #f0f6f0;
-  border-radius: 15px;
+.chats-box{
+  color: white;
+  background-color: #424e4e;
+  border-radius: 8px;
+  transition: all ease-in .12s;
+}
+
+.chats-box:hover{
+  background-color: #748585;
+}
+
+/* .chats-box-container{
+  
+} */
+
+.chat-input:focus {
   box-shadow: -6px 6px 1px #4b5b5b;
+  border: 3px solid white;
+}
+
+.submit-message:hover{
+  box-shadow: -5px 5px 1px #424e4e
 }

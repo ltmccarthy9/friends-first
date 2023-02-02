@@ -59,12 +59,14 @@ export const addFriend = async (req, res, next) => {
        const user = await User.findById(userId);
        const user2 = await User.findById(user2Id);
 
-       if (user2.liked.includes(userId)) {
-        user.liked.push(user2Id);
-        user.friends.push(user2Id);
-        user2.friends.push(userId);
+        if(user.liked.includes(user2Id)){
+            res.status(409).json("You've already liked that user");
+        } else if (user2.liked.includes(userId)) {
+            user.liked.push(user2Id);
+            user.friends.push(user2Id);
+            user2.friends.push(userId);
        } else {
-        user.liked.push(user2Id);
+            user.liked.push(user2Id);
        }
 
        await user.save();

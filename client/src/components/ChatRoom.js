@@ -23,7 +23,7 @@ const ChatRoom = () => {
   const firestore = firebase.firestore();
   const messagesRef = firestore.collection('messages');
   //create query
-  const query= messagesRef.orderBy('createdAt').limit(20);
+  const query= messagesRef.orderBy('createdAt').limit(40);
   //useCollectionData hook.
   const [messages, loading, error ] = useCollectionData(query, {idField: 'id'});
 
@@ -53,8 +53,8 @@ const ChatRoom = () => {
 
 
     return (
-        <div className='chat-form w-full'>
-            <main>
+        <div>
+            <main className='chat-messages-box w-full py-4'>
             {error && <strong>Error: {JSON.stringify(error)}</strong>}
             {loading && <span>Loading...</span>}
             {/* map through message documents and dispay each using ChatMessage componenet */}
@@ -64,7 +64,7 @@ const ChatRoom = () => {
 
             </main>
 
-            <form className='w-full m-2 flex' onSubmit={sendMessage}>
+            <form className='chat-form' onSubmit={sendMessage}>
 
                 <input className='chat-input p-2 h-10 w-11/12 rounded-lg mt-2' value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Type a message..." />
 

@@ -231,6 +231,24 @@ background-color: rgb(215, 223, 217);
 
 /* --------------------------------------------------------PROFILE PAGE ----------------------------------------- */
 
+
+.profile-active {
+  color: #424e4e;
+  transition: all ease-in .2s;
+  box-shadow: -6px 6px 1px #4b5b5b;
+}
+
+.profile-inactive{
+  transition: all ease-in .2s;
+  color:#b0bfb1
+}
+.profile-inactive:hover {
+  background-color: #e3eae3;
+}
+
+/* --------------------------------------------------------MESSAGES PAGE ----------------------------------------- */
+
+
 .message{
   width: fit-content;
   max-width: 50%;
@@ -257,26 +275,14 @@ background-color: rgb(215, 223, 217);
   box-shadow: -4px 4px 1px white;
 }
 
-.chat-form{
-  position: absolute;
+.chat-messages-box{
   bottom: 0px;
+  height: 480px;
+  overflow: scroll;
+  border-radius: 10px;
+  background-color: #e4f0e9;
+  overflow-x: hidden;
 }
-
-.profile-active {
-  color: #424e4e;
-  transition: all ease-in .2s;
-  box-shadow: -6px 6px 1px #4b5b5b;
-}
-
-.profile-inactive{
-  transition: all ease-in .2s;
-  color:#b0bfb1
-}
-.profile-inactive:hover {
-  background-color: #e3eae3;
-}
-
-/* --------------------------------------------------------MESSAGES PAGE ----------------------------------------- */
 
 .chats-box-active{
   transition: all ease-in .06s;
@@ -299,9 +305,9 @@ background-color: rgb(215, 223, 217);
   background-color: #748585;
 }
 
-/* .chats-box-container{
-  
-} */
+.chats-box-container{
+ background-color: #b4bbbb;
+}
 
 .chat-input:focus {
   box-shadow: -6px 6px 1px #4b5b5b;
@@ -310,4 +316,8 @@ background-color: rgb(215, 223, 217);
 
 .submit-message:hover{
   box-shadow: -5px 5px 1px #424e4e
+}
+
+.chat-form{
+  
 }

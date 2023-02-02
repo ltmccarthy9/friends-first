@@ -118,6 +118,10 @@ background-color: rgb(215, 223, 217);
   background-color: rgb(255, 255, 255);
 }
 
+.nav-bar-border{
+  border-bottom: 1px solid grey;
+}
+
 
 .dash-title{
   margin-top: 10px;
@@ -256,7 +260,7 @@ background-color: rgb(215, 223, 217);
 }
 
 .sent{
-  background-color: #fafbfb;
+  background-color: rgb(218, 219, 219);
   justify-content: flex-start;
   margin-right: 24px;
   margin-left: auto;
@@ -272,14 +276,14 @@ background-color: rgb(215, 223, 217);
   color: white;
   margin-left: 24px;
   margin-right: auto;
-  box-shadow: -4px 4px 1px white;
+  box-shadow: -4px 4px 1px #aeb7b7;
 }
 
 .chat-messages-box{
   bottom: 0px;
   height: 476px;
   overflow: scroll;
-  background-color: #f0f6f3;
+  background-color: white;
   overflow-x: hidden;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -321,6 +325,7 @@ background-color: rgb(215, 223, 217);
 .chat-input:focus {
   box-shadow: -6px 6px 1px #4b5b5b;
   outline: none;
+  border: 1px solid rgb(210, 206, 206);
 }
 
 .submit-message:hover{

@@ -13,6 +13,7 @@ relationships.
 * Express
 * Tailwindcss
 * Firebase
+* Redux/Redux Toolkit
 
 ## Demonstration Of Current State of Application
 Be sure to enable sound! 

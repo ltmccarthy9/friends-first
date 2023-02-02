@@ -18,8 +18,6 @@ const Register = () => {
             return;
         } else if(password !== passwordCheck) {
             alert('Your password must match');
-            setPassword('')
-            setPasswordCheck('');
             return;
         }
 
@@ -71,10 +69,10 @@ const Register = () => {
             <form id="myForm">
             <label style={{fontWeight: "bolder"}} htmlFor="userAge">Age</label>
             <input style={{width: "20%"}} defaultValue={(18)} id="userAge" onChange={(e) => setAge(e.target.value)} type="number" className="form-control email"></input>
-            <input placeholder="name" onKeyUp={(e) => setName(e.target.value)} type="name" className="form-control email"></input>
-            <input placeholder="email" onKeyUp={(e) => setEmail(e.target.value)} type="email" className="form-control email"></input>
-            <input placeholder="password" onKeyUp={(e) => setPassword(e.target.value)} type="password" className="form-control pass"></input>
-            <input placeholder="re-type password" onKeyUp={(e) => setPasswordCheck(e.target.value)} type="password" className="form-control pass"></input>
+            <input placeholder="name" onKeyUp={(e) => setName(e.target.value)} type="name" className="form-control email chat-input"></input>
+            <input placeholder="email" onKeyUp={(e) => setEmail(e.target.value)} type="email" className="form-control email chat-input"></input>
+            <input placeholder="password" onKeyUp={(e) => setPassword(e.target.value)} type="password" className="form-control pass chat-input"></input>
+            <input placeholder="re-type password" onKeyUp={(e) => setPasswordCheck(e.target.value)} type="password" className="form-control pass chat-input"></input>
             
             <button style={{margin: "10px"}} type="button" onClick={(e) => checkForm(e)} className="btn btn-light sub">Sign Up</button>
         </form>

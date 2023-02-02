@@ -52,8 +52,8 @@ const Home = () => {
         <div className="login-card">
            <h1 className="login-header font-extrabold tracking-tight text-3xl">Sign in</h1>
             <form id="myForm">
-                <input placeholder="email" onKeyUp={(e) => setEmail(e.target.value)} type="email" className="form-control email"></input>
-                <input placeholder="password" onKeyUp={(e) => setPassword(e.target.value)} type="password" className="form-control pass"></input>
+                <input placeholder="email" onKeyUp={(e) => setEmail(e.target.value)} type="email" className="form-control email chat-input"></input>
+                <input placeholder="password" onKeyUp={(e) => setPassword(e.target.value)} type="password" className="form-control pass chat-input"></input>
             
             
             <button style={{margin: "10px"}} type="button" onClick={(e) => handleLog(e)} className="btn btn-light sub">Sign in</button>

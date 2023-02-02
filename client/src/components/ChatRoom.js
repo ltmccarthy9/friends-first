@@ -64,7 +64,7 @@ const ChatRoom = () => {
 
             </main>
 
-            <form className='chat-form' onSubmit={sendMessage}>
+            <form className='chat-form mt-2' onSubmit={sendMessage}>
 
                 <input className='chat-input p-2 h-10 w-11/12 rounded-lg mt-2' value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Type a message..." />
 

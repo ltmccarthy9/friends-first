@@ -26,6 +26,13 @@ const Pastevents = (likes) => {
 
     const ourPastEvents = filteredData.filter(event => event.attendees.includes(userId));
     
+    //return past events in descending order so we have most recent event first
+    ourPastEvents.sort(function(a, b) {
+        let dateA = new Date(a.date);
+        let dateB = new Date(b.date);
+        return dateB - dateA;
+    });
+
     return (
         <div className="flex-col">
         {ourPastEvents.map((event) => (

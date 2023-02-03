@@ -26,7 +26,7 @@ const Dashboard = () => {
         <div>
             <Nav/>
             <div className="flex mb-4">
-                <h2 className="theme-green tracking-tight text-2xl m-auto p-2 rounded-lg bg-white">Nearby Events</h2>
+                <h2 className="theme-green tracking-tight text-2xl m-auto p-2 rounded-xl bg-white">Nearby Events</h2>
             </div>
         {/* body containing each event card */}
             <div>

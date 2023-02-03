@@ -21,10 +21,9 @@ https://drive.google.com/file/d/1-M95XduMEb5XuTsPWORG6fudlk0WQuSx/view
 
 
 ## Updates 
-I'm currently working on fully implementing a chat feature.  I am using firebase for this feature
-and currently the chat is pulling all message documents.  My next goal is to complete a "stay connected" feature that the user can find in their past events section on their profile.  The chat
-bar will be populated with their matches and there you can chat with other users you met at an event.
-
+I recently completed my implementation of a "stay connected" feature
+and chat/messenger feature.  Next I'm going to be adding smaller scale features like deleting chats, deleting old events, and adding functionality
+for a profile picture.
 
 ## Old demonstrations
 

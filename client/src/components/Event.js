@@ -87,8 +87,8 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
             </div>
             
             <div className="flex justify-between nav-bar border-slate-800" >
-                <p className="theme-green font-bold p-1 text-xl italic">{location}</p>
-                <p className="theme-green p-2 font-bold italic">Filled: {filled}/{capacity} | {date} | {time}</p>
+                <p className="theme-green p-1 font-semibold text-xl italic">{location}</p>
+                <p className="theme-green p-2 ">Filled: {filled}/{capacity} | {date} | {time}</p>
             </div>
 
             {/* middle row */}

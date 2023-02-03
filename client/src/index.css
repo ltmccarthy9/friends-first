@@ -10,7 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(215, 223, 217);
+  background-color: rgb(224, 230, 225);
 }
 
 code {
@@ -19,7 +19,7 @@ code {
 }
 
 html {
-background-color: rgb(215, 223, 217);
+background-color: rgb(224, 230, 225);
 }
 
 /* -----------------------------------------------HOME LOGIN / SIGN UP PAGE------------------------- */

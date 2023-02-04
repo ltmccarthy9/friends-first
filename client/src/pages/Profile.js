@@ -55,13 +55,13 @@ const Profile = () => {
             <Nav/>
             <div className="flex mb-4">
             <h2 className="theme-green font-semibold tracking-tight text-3xl ml-auto mr-2 px-3 pt-2 pb-1">{data.name}'s</h2>
-                <h2 onClick={() => switchUpcoming()} className={upcoming ? "bg-white px-3 pt-2 pb-1 rounded-lg tracking-tight text-lg cursor-pointer ml-2 profile-active"
-                 : "tracking-tight text-lg cursor-pointer ml-2 bg-white px-3 pt-2 pb-1 rounded-lg profile-inactive"}>Upcoming Events</h2>
+                <h2 onClick={() => switchUpcoming()} className={upcoming ? "px-3 pt-2 pb-1 rounded-lg tracking-tight text-lg cursor-pointer ml-2 profile-active"
+                 : "tracking-tight text-lg cursor-pointer ml-2 px-3 pt-2 pb-1 rounded-lg profile-inactive"}>Upcoming Events</h2>
                 
                 <div className="tracking-tight text-xl mx-2"></div>
                 
-                <h2 onClick={() => switchPast()} className={past ? "bg-white px-3 pt-2 pb-1 rounded-lg tracking-tight text-lg cursor-pointer mr-auto profile-active" 
-                 : "tracking-tight text-lg cursor-pointer mr-auto bg-white px-3 pt-2 pb-1 rounded-lg  profile-inactive"}>Past Events</h2>
+                <h2 onClick={() => switchPast()} className={past ? "px-3 pt-2 pb-1 rounded-lg tracking-tight text-lg cursor-pointer mr-auto profile-active" 
+                 : "tracking-tight text-lg cursor-pointer mr-auto px-3 pt-2 pb-1 rounded-lg  profile-inactive"}>Past Events</h2>
             </div>
 
             <div>

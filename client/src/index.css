@@ -240,14 +240,17 @@ background-color: rgb(224, 230, 225);
   color: #424e4e;
   transition: all ease-in .2s;
   box-shadow: -6px 6px 1px #4b5b5b;
+  background-color: white;
 }
 
 .profile-inactive{
   transition: all ease-in .2s;
-  color:#b0bfb1
+  color: white;
+  background-color: #3c4646;
 }
+
 .profile-inactive:hover {
-  background-color: #e3eae3;
+  background-color: #5b6464;
 }
 
 .attendee-list{

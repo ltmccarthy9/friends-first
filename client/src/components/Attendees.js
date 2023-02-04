@@ -46,7 +46,7 @@ const Attendees = (props) => {
     };
 
   return (
-    <div className='flex justify-between bg-slate-100 rounded-lg p-2 m-1'>
+    <div className='flex justify-between attendee-list rounded-2xl p-2 m-1'>
         {/* show picture of user here */}
        <p className='m-1 font-bold theme-green'>{data.name}</p>
        <div className=' flex'>

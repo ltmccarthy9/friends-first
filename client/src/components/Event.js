@@ -75,10 +75,10 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
 
 
     return (
-        <div className={"event w-9/12 h-fit m-auto justify-center p-3 mt-1 mb-4 md:w-6/12 lg:w-5/12 xl:w-4/12"}>
+        <div className={"event w-9/12 h-fit mx-auto justify-center px-2 py-3 mt-1 mb-3 md:w-6/12 lg:w-5/12 xl:w-4/12"}>
 
             {/* Top row */}
-            <div className="w-full flex justify-between mb-4 pt-2">
+            <div className="w-full flex justify-between px-2">
                 <h3 className="theme-green font-extrabold tracking-tight text-2xl p-2">{business}</h3>
                 <div onClick={() => joinEvent()}
                     className={joined ? "m-2 p-1 flex joined"  : "m-2 p-1 flex join-button"}>
@@ -86,9 +86,9 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
                 </div>
             </div>
             
-            <div className="flex justify-between nav-bar border-slate-800" >
-                <p className="theme-green p-1 font-semibold text-xl italic">{location}</p>
-                <p className="theme-green p-2 ">Filled: {filled}/{capacity} | {date} | {time}</p>
+            <div className="flex justify-between nav-bar px-3 border-slate-800" >
+                <p className="theme-green font-semibold text-xl italic">{location}</p>
+                <p className="theme-green">Filled: {filled}/{capacity} | {date} | {time}</p>
             </div>
 
             {/* middle row */}
@@ -101,8 +101,8 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
                 
             {/* Bottom row */}
 
-            <div onClick={() => controlExpand()} className="z-10 cursor-pointer">
-                <RiArrowDropDownLine style={expand ? {transform: 'rotate(180deg)' } : ""} onClick={() => controlExpand()} className="theme-green drop mx-auto mb-0 mt-2" size={55}/>
+            <div onClick={() => controlExpand()} className="z-10 cursor-pointer h-12">
+                <RiArrowDropDownLine style={expand ? {transform: 'rotate(180deg)' } : ""} onClick={() => controlExpand()} className="theme-green drop mx-auto mb-4" size={55}/>
             </div>
             
                 

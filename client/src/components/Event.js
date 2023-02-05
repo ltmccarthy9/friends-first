@@ -75,10 +75,10 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
 
 
     return (
-        <div className={"event w-9/12 h-fit mx-auto justify-center px-2 py-3 mt-1 mb-3 md:w-6/12 lg:w-5/12 xl:w-4/12"}>
+        <div className={"event w-9/12 h-fit mx-auto justify-center mt-1 mb-3 md:w-6/12 lg:w-5/12 xl:w-4/12"}>
 
             {/* Top row */}
-            <div className="w-full flex justify-between px-2">
+            <div className="w-full flex justify-between px-2 py-3">
                 <h3 className="theme-green font-extrabold tracking-tight text-2xl p-2">{business}</h3>
                 <div onClick={() => joinEvent()}
                     className={joined ? "m-2 p-1 flex joined"  : "m-2 p-1 flex join-button"}>
@@ -101,7 +101,7 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
                 
             {/* Bottom row */}
 
-            <div onClick={() => controlExpand()} className="z-10 cursor-pointer h-12">
+            <div onClick={() => controlExpand()} className="expand-div z-10 cursor-pointer h-12">
                 <RiArrowDropDownLine style={expand ? {transform: 'rotate(180deg)' } : ""} onClick={() => controlExpand()} className="theme-green drop mx-auto mb-4" size={55}/>
             </div>
             

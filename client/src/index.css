@@ -171,6 +171,16 @@ background-color: rgb(224, 230, 225);
   transition: all ease-in .8s;
 }
 
+.expand-div{
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  transition: all ease-in .2s;
+}
+
+.expand-div:hover{
+  background-color: #e8f0ec;
+}
+
 /* JOIN AND JOINED BUTTONS */
 .join-button{
   background-color: #738574;
@@ -246,11 +256,11 @@ background-color: rgb(224, 230, 225);
 .profile-inactive{
   transition: all ease-in .2s;
   color: white;
-  background-color: #3c4646;
+  background-color: #8e9894;
 }
 
 .profile-inactive:hover {
-  background-color: #5b6464;
+  background-color: #5e6966;
 }
 
 .attendee-list{

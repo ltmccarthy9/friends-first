@@ -93,7 +93,7 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
 
             {/* middle row */}
             <div className={expand ? "h-fit w-11/12 m-auto" : "w-11/12 m-auto"}>
-                <p className={expand ? "description-expanded theme-green text-s pt-2" : "description theme-green text-s pt-2"}>{description} "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                <p className={expand ? "description-expanded theme-green text-s py-2" : "description theme-green text-s py-2"}>{description} "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
                  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
                 anim id est laborum."</p>
@@ -101,8 +101,8 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
                 
             {/* Bottom row */}
 
-            <div onClick={() => controlExpand()} className="expand-div z-10 cursor-pointer h-12">
-                <RiArrowDropDownLine style={expand ? {transform: 'rotate(180deg)' } : ""} onClick={() => controlExpand()} className="theme-green drop mx-auto mb-4" size={55}/>
+            <div onClick={() => controlExpand()} className="expand-div z-10 cursor-pointer h-8 m-2">
+                <RiArrowDropDownLine style={expand ? {transform: 'rotate(180deg)' } : ""} onClick={() => controlExpand()} className="theme-green drop mx-auto" size={30}/>
             </div>
             
                 

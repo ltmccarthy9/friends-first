@@ -110,6 +110,20 @@ background-color: rgb(224, 230, 225);
 
 /* --------------------------------------------------------DASHBOARD--------------------------------- */
 
+.search-bar{
+  background-color: rgb(224, 230, 225);
+  border-bottom: 1px solid #424e4e;
+  font-size: 18px;
+  border-radius: 2px;
+  font-weight: 500;
+  color: #374040;
+}
+
+.search-bar:focus{
+  outline: none;
+  background-color: rgb(224, 230, 225);
+}
+
 .theme-green {
   color: #424e4e;
 }
@@ -172,8 +186,8 @@ background-color: rgb(224, 230, 225);
 }
 
 .expand-div{
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
+  border-radius: 30px;
+  width: 90%;
   transition: all ease-in .2s;
 }
 

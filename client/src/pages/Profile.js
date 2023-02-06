@@ -51,7 +51,7 @@ const Profile = () => {
     const userLikes = data.liked;
 
     return (
-         <div className="flex-col justify-center">
+         <div className="flex-col justify-center  mt-24">
             <Nav/>
             <div className="flex mb-4">
             <h2 className="theme-green font-semibold tracking-tight text-3xl ml-auto mr-2 px-3 pt-2 pb-1">{data.name}'s</h2>

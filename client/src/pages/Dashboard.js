@@ -28,7 +28,7 @@ const Dashboard = () => {
                 setFilteredEvents(openEvents.filter((ev) => ev.description.toLowerCase().includes(query.toLocaleLowerCase())
                 || ev.category.toLowerCase().includes(query.toLowerCase()) || 
                 ev.business.toLowerCase().includes(query.toLowerCase())));
-            }
+            } 
         })
         ();
     }, [query]);
@@ -58,41 +58,34 @@ const Dashboard = () => {
     return (
         <div>
             <Nav/>
-            <div className="flex mb-4">
-                <div className="m-auto flex">
-                    <input onChange={(e) => setQuery(e.target.value)} value={query} className="search-bar px-2 pt-2 pb-1 m-2" placeholder="Search.."/>
-                    <h2 className="mx-2 mt-3 theme-green tracking-tight text-xl rounded-xl">Nearby Events</h2>
-                </div>
-            </div>
-            <div>
-                <div>
-                {query ? filteredEvents.map((event) => (
-                    <Event key={event._id}
-                    id={event._id} 
-                    business={event.business}
-                    location={event.location}
-                    description={event.description}
-                    capacity={event.capacity}
-                    taken={event.attendees.length}
-                    category={event.category}
-                    date={event.date.substring(0, 10)}
-                    time={event.time}
-                    attending={event.attendees.includes(userId)} />
-                )) : openEvents.map((event) => (
-                    <Event key={event._id}
-                    id={event._id} 
-                    business={event.business}
-                    location={event.location}
-                    description={event.description}
-                    capacity={event.capacity}
-                    taken={event.attendees.length}
-                    category={event.category}
-                    date={event.date.substring(0, 10)}
-                    time={event.time}
-                    attending={event.attendees.includes(userId)} />))}
-            </div> 
-            </div>
-        </div> 
+                <div className="flex-col mt-24">
+                <input onChange={(e) => setQuery(e.target.value)} value={query} className="search-bar px-2 pt-2 pb-1 mx-auto mb-4 w-80 flex" placeholder="Search by category, name, description..."/>
+                    {query ? filteredEvents.map((event) => (
+                        <Event key={event._id}
+                        id={event._id} 
+                        business={event.business}
+                        location={event.location}
+                        description={event.description}
+                        capacity={event.capacity}
+                        taken={event.attendees.length}
+                        category={event.category}
+                        date={event.date.substring(0, 10)}
+                        time={event.time}
+                        attending={event.attendees.includes(userId)} />
+                    )) : openEvents.map((event) => (
+                        <Event key={event._id}
+                        id={event._id} 
+                        business={event.business}
+                        location={event.location}
+                        description={event.description}
+                        capacity={event.capacity}
+                        taken={event.attendees.length}
+                        category={event.category}
+                        date={event.date.substring(0, 10)}
+                        time={event.time}
+                        attending={event.attendees.includes(userId)} />))}
+                </div> 
+                </div> 
     );
 };
 

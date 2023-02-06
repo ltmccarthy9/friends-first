@@ -112,10 +112,10 @@ background-color: rgb(224, 230, 225);
 
 .search-bar{
   background-color: rgb(224, 230, 225);
-  border-bottom: 1px solid #424e4e;
+  border-bottom: 2px solid #424e4e;
   font-size: 18px;
   border-radius: 2px;
-  font-weight: 500;
+  font-weight: 350;
   color: #374040;
 }
 
@@ -152,6 +152,7 @@ background-color: rgb(224, 230, 225);
 
 
 /* EVENT CARDS */
+
 .event-card-top{
   display: flex;
 }

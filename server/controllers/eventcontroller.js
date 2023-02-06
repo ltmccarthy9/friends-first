@@ -1,6 +1,6 @@
 import Event from "../models/Event.js";
 import User from "../models/User.js";
-
+import moment from 'moment';
 
 // Create an event (must be admin)
 export const createEvent = async (req, res, next) => {
@@ -48,7 +48,7 @@ export const getEvent = async (req, res, next) => {
     }
 };
 
-//get all events (will add parameters for only events within certain range)
+//get all events
 export const getEvents = async (req, res, next) => {
     try {
         const events = await Event.find();
@@ -102,7 +102,7 @@ export const leaveEvent = async (req, res, next) => {
     }
 };
 
-
+//edit event date
 export const editEventDate = async (req, res, next) => {
     try{
         const newDate = req.body.date
@@ -116,3 +116,28 @@ export const editEventDate = async (req, res, next) => {
         next(err);
     }
 }
+
+// get upcoming events
+export const getFutureEvents = async (req, res, next) => {
+    try {
+        let now = moment().toISOString();
+        const events = await Event.find({date: { $gte: now}});
+        res.status(200).json(events);
+    } catch (err) {
+        console.log(err);
+        next(err);
+    }
+};
+
+
+//get past events
+export const getPastEvents = async (req, res, next) => {
+    try {
+        let now = moment().toISOString();
+        const events = await Event.find({date: { $lt: now}});
+        res.status(200).json(events);
+    } catch (err) {
+        console.log(err);
+        next(err);
+    }
+};

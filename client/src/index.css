@@ -186,9 +186,14 @@ background-color: rgb(224, 230, 225);
 }
 
 .expand-div{
+  all: unset;
   border-radius: 30px;
   width: 90%;
   transition: all ease-in .2s;
+}
+
+.expand-div:focus {
+  outline: 1px solid black;
 }
 
 .expand-div:hover{

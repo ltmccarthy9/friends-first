@@ -101,9 +101,9 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
                 
             {/* Bottom row */}
 
-            <div onClick={() => controlExpand()} className="expand-div z-10 cursor-pointer h-8 mx-auto my-2">
+            <button onClick={() => controlExpand()} type="button" className="expand-div z-10 cursor-pointer h-8 mx-auto my-2">
                 <RiArrowDropDownLine style={expand ? {transform: 'rotate(180deg)' } : ""} onClick={() => controlExpand()} className="theme-green drop mx-auto" size={35}/>
-            </div>
+            </button>
             
                 
                 

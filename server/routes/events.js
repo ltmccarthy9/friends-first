@@ -1,5 +1,5 @@
 import express from "express";
-import { createEvent, updateEvent, getEvent, getEvents, joinEvent, leaveEvent, editEventDate } from "../controllers/eventcontroller.js";
+import { createEvent, updateEvent, getEvent, getEvents, joinEvent, leaveEvent, editEventDate, getFutureEvents, getPastEvents } from "../controllers/eventcontroller.js";
 import { verifyToken } from "../middleware/auth.js";
 
 const router = express.Router();
@@ -10,18 +10,25 @@ router.post("/create", createEvent);
 //update event as admin
 router.put("/update/:id", updateEvent);
 
-// get a event by id
-router.get("/:id", verifyToken, getEvent);
-
-// get all events
-router.get("/", getEvents);
-
 //Add user to an event
 router.patch("/join/:eventId", verifyToken, joinEvent);
 
 //remove user from an event
 router.patch('/leave/:eventId', verifyToken, leaveEvent);
 
+//edit event date
 router.patch('/edit/date/:eventId', editEventDate);
+
+//get past events
+router.get("/past", getPastEvents);
+
+//get upcoming events
+router.get("/future", getFutureEvents);
+
+//get event by id
+router.get("/:id", verifyToken, getEvent);
+
+//get all events
+router.get("/", getEvents);
 
 export default router;

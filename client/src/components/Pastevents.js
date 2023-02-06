@@ -6,10 +6,7 @@ import Pastevent from './Pastevent';
 const Pastevents = (likes) => {
     const userId = localStorage.getItem('id');
 
-    // get current time using moment so we can compare events in our database
-    const now = moment().toISOString();
-
-    const { data, loading, error } = useFetch('http://localhost:4000/api/events');
+    const { data, loading, error } = useFetch('http://localhost:4000/api/events/past');
     // fetch our events
     
     if(loading) {
@@ -20,11 +17,7 @@ const Pastevents = (likes) => {
         return <p>Error: {error.message}</p>;
     }
 
-    
-    //Here we only want past events, so we filter only those that are prior to now.
-    const filteredData = data.filter(event => now > event.date);
-
-    const ourPastEvents = filteredData.filter(event => event.attendees.includes(userId));
+    const ourPastEvents = data.filter(event => event.attendees.includes(userId));
     
     //return past events in descending order so we have most recent event first
     ourPastEvents.sort(function(a, b) {

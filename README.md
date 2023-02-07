@@ -16,8 +16,7 @@ relationships.
 * Redux/Redux Toolkit
 
 ## Demonstration Of Current State of Application
-Be sure to enable sound! 
-https://drive.google.com/file/d/1-M95XduMEb5XuTsPWORG6fudlk0WQuSx/view
+https://www.youtube.com/watch?v=_a4XgtZ_UnA&ab_channel=LiamMcCarthy
 
 
 ## Updates 
@@ -42,5 +41,7 @@ https://drive.google.com/file/d/1taImDVGhV74cYG2sZzC32pJDaMHtfUcY/view
 5.)
 https://drive.google.com/file/d/12-Q-GOwGbQkl_hXrqYoYF3Z1nEnRZT_N/view
 
+6.)
+https://drive.google.com/file/d/1-M95XduMEb5XuTsPWORG6fudlk0WQuSx/view
 
 

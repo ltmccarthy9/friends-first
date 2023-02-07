@@ -2,11 +2,11 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { BsFillCalendar2EventFill, BsPersonCircle } from 'react-icons/bs';
-import { RiLogoutCircleRFill, RiMessage2Fill, RiLogoutBoxRFill } from 'react-icons/ri';
+import { RiMessage2Fill } from 'react-icons/ri';
 import { useDispatch } from "react-redux";
-import { setLogout } from '../state';
+import { setLogout, setFriends, setMessageWith } from '../state';
 import { IoLogOut } from 'react-icons/io5';
-
+import useFetch from '../hooks/useFetch';
 
 const Nav = () => {
 
@@ -18,6 +18,7 @@ const Nav = () => {
     const [messages, setMessages] = useState(false);
     // utilize useDispatch hook for logging out
     const dispatch = useDispatch();
+    const userId = localStorage.getItem('id');
 
     //useEffect for determining which icon becomes true;
     //Because the nav component gets rehoisted every time the page changes, we keep the second argument as an empty array.
@@ -32,6 +33,17 @@ const Nav = () => {
         }
     }, [])
 
+    const { data, loading, error } = useFetch(`http://localhost:4000/api/users/${userId}`);
+  
+    if(data) {
+        dispatch(setFriends({
+            friends: data.friends.length
+        }));
+        dispatch(setMessageWith({
+            messageWith: data.friends[0]
+        }))
+    }
+    
     // Navigate to dashboard page
     const goDashboard = () => {
         navigate("/dashboard");

@@ -66,9 +66,12 @@ const ChatRoom = () => {
 
             {friends ? <form className='chat-form mt-2' onSubmit={sendMessage}>
 
+            <div className='flex'>
                 <input className='chat-input p-2 h-10 w-11/12 rounded-lg mt-2' value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Type a message..." />
 
                 <button className='submit-message font-bold transition-all cursor-pointer bg-white rounded-md ml-2 mt-2 p-2' type="submit" disabled={!formValue}>send</button>
+            </div>
+                
 
             </form> : <div></div>}
         </div>

@@ -64,7 +64,7 @@ const Nav = () => {
         if(window.confirm("Are you sure you want to log out?")) {
             dispatch(setLogout())
             localStorage.removeItem('user');
-            localStorage.removeItem('email');
+            localStorage.removeItem('id');
             navigate("/")
         }
     }

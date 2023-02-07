@@ -15,17 +15,19 @@ const ChatRoom = () => {
 
   // grab # of friends and the user we're messaging with from state
   // if 0 friends, display "no friends"
-  var friends = (useSelector((state) => state.friends) > 0)
-  var user = useSelector((state) => state.messageWith).trim();
+  let friends = (useSelector((state) => state.friends) > 0)
+  const user = useSelector((state) => state.messageWith);
   // grab current user
   const currentUserId = localStorage.getItem('id').trim();
   //initialize firestore connection
   const firestore = firebase.firestore();
   const messagesRef = firestore.collection('messages');
   //create query
-  const query = messagesRef.orderBy('createdAt').limit(100);
+  const query = messagesRef.orderBy('createdAt').limit(300);
   //useCollectionData hook.
   const [messages, loading, error ] = useCollectionData(query, {idField: 'id'});
+
+  console.log(user, currentUserId);
 
   let filteredMessages;
 
@@ -33,7 +35,7 @@ const ChatRoom = () => {
   //time being. was running into a lot of problems with the query.
   //if messages have loaded, filter them based on the convo ids
   if(messages) {
-   filteredMessages = messages.filter(m => m.members.includes(currentUserId && user));
+   filteredMessages = messages.filter(m => m.members.includes(currentUserId) && m.members.includes(user));
   } 
 
   //function for sending message

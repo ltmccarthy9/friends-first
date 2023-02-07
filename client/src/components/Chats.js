@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 
 const Chats = (props) => {
 
-    let messenger = useSelector((state) => state.messageWith);
+    const messenger = useSelector((state) => state.messageWith);
     const user2Id = props.user2Id;
 
     const [active, setActive] = useState(false);

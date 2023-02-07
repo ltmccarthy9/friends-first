@@ -6,6 +6,7 @@ import 'firebase/compat/firestore';
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 import { useSelector } from "react-redux";
 import { useDispatch } from 'react-redux';
+import { RiUser2Fill } from 'react-icons/ri';
 
 
 const ChatRoom = () => {
@@ -18,22 +19,21 @@ const ChatRoom = () => {
   let friends = (useSelector((state) => state.friends) > 0)
   const user = useSelector((state) => state.messageWith);
   // grab current user
-  const currentUserId = localStorage.getItem('id').trim();
+  const currentUserId = localStorage.getItem('id');
   //initialize firestore connection
   const firestore = firebase.firestore();
   const messagesRef = firestore.collection('messages');
-  //create query
-  const query = messagesRef.orderBy('createdAt').limit(300);
+  //create query and grab all messages that contain current user.
+  const query = messagesRef.where("members", 'array-contains', currentUserId).orderBy('createdAt').limit(300);
   //useCollectionData hook.
   const [messages, loading, error ] = useCollectionData(query, {idField: 'id'});
-
-  console.log(user, currentUserId);
-
   let filteredMessages;
 
-  //I decided to filter on the front end instead filtering with the query for the 
-  //time being. was running into a lot of problems with the query.
-  //if messages have loaded, filter them based on the convo ids
+  if(error){
+    console.log(error);
+  }
+  
+  //filter messages for each message partner
   if(messages) {
    filteredMessages = messages.filter(m => m.members.includes(currentUserId) && m.members.includes(user));
   } 

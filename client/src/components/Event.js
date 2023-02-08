@@ -75,7 +75,7 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
 
 
     return (
-        <div className={expand ? "event flex flex-col w-9/12 h-fit mx-auto justify-center md:w-6/12 lg:w-5/12 xl:w-4/12" : "event flex flex-col w-9/12 h-44 mx-auto justify-center md:w-6/12 lg:w-5/12 xl:w-4/12"}>
+        <div className={expand ? "event bg-white flex flex-col w-9/12 h-fit mx-auto justify-center md:w-6/12 lg:w-5/12 xl:w-4/12" : "event bg-white flex flex-col w-9/12 h-44 mx-auto justify-center md:w-6/12 lg:w-5/12 xl:w-4/12"}>
 
             {/* Top row */}
             <div className="w-full flex justify-between px-2 py-2">

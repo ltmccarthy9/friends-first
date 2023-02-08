@@ -61,23 +61,22 @@ const Register = () => {
     }
 
     return (
-        <div>
-        <h1 className="title font-extrabold tracking-tight text-6xl" onClick={navHome} >Friends First.</h1>
-        <div className="login-card">
-           <h1 className="login-header font-extrabold tracking-tight text-3xl">Sign Up</h1>
-            <div className="login-button" id="signIn"></div>
-            <form id="myForm">
-            <label style={{fontWeight: "bolder"}} htmlFor="userAge">Age</label>
-            <input style={{width: "20%"}} defaultValue={(18)} id="userAge" onChange={(e) => setAge(e.target.value)} type="number" className="form-control email"></input>
-            <input placeholder="name" onKeyUp={(e) => setName(e.target.value)} type="name" className="form-control email chat-input"></input>
-            <input placeholder="email" onKeyUp={(e) => setEmail(e.target.value)} type="email" className="form-control email chat-input"></input>
-            <input placeholder="password" onKeyUp={(e) => setPassword(e.target.value)} type="password" className="form-control pass chat-input"></input>
-            <input placeholder="re-type password" onKeyUp={(e) => setPasswordCheck(e.target.value)} type="password" className="form-control pass chat-input"></input>
-            
-            <button style={{margin: "10px"}} type="button" onClick={(e) => checkForm(e)} className="btn btn-light sub">Sign Up</button>
-        </form>
+        <div  className="flex flex-col">
+            <h1 className="title font-extrabold tracking-tight text-6xl cursor-pointer" onClick={navHome} >Friends First.</h1>
+            <div className="login-card mt-32 mx-auto pt-8 pb-12 px-8">
+            <h1 className="theme-green text-center my-4 font-extrabold tracking-tight text-3xl">Sign Up</h1>
+                <form id="myForm">
+                    <input placeholder="name" onKeyUp={(e) => setName(e.target.value)} type="name" className="form-control my-2 chat-input"></input>
+                    <input placeholder="email" onKeyUp={(e) => setEmail(e.target.value)} type="email" className="form-control my-2 chat-input"></input>
+                    <input placeholder="password" onKeyUp={(e) => setPassword(e.target.value)} type="password" className="form-control my-2 chat-input"></input>
+                    <input placeholder="re-type password" onKeyUp={(e) => setPasswordCheck(e.target.value)} type="password" className="form-control chat-input"></input>
+                    <label className="font-bold mt-2" htmlFor="userAge">Age</label>
+                    <input defaultValue={(18)} placeholder="age" id="userAge" onChange={(e) => setAge(e.target.value)} type="number" className="my-2 form-control chat-input w-16"></input>
 
-        </div> 
+                    <button type="button" onClick={(e) => checkForm(e)} className="btn btn-light sub">Sign Up</button>
+                </form>
+
+            </div> 
         </div>
     );
 }

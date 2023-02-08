@@ -159,11 +159,17 @@ background-color: rgb(224, 230, 225);
 
 .event{
   background-color: rgb(255, 255, 255);
-  border-radius: 40px;
+  border-radius: 30px;
   transition: all ease-in .2s;
-  display: flex;
-  flex-direction: column;
   margin-bottom: 10px;
+}
+
+.past-event{
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+  transition: all ease-in .2s;
+  margin-bottom: 10px;
+  padding: 1px;
 }
 
 .event:hover{
@@ -372,7 +378,7 @@ background-color: rgb(224, 230, 225);
 /* --------------------------------------------------------WEBKIT----------------------------------------- */
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {

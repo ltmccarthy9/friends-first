@@ -7,6 +7,7 @@ const initialState = {
     messageWith: null, //this is an id of whoever you're messaging with.
     messages: [],
     friends: 0,
+    page: null,
 };
 
 export const authSlice = createSlice({
@@ -33,9 +34,12 @@ export const authSlice = createSlice({
         setFriends: (state, action) => {
             state.friends = action.payload.friends
         },
+        setPage: (state, action) => {
+            state.page = action.payload.page
+        }
     },
 });
 
-export const { setLogin, setLogout, setEvents, setMessageWith, setMessages, setFriends } = authSlice.actions;
+export const { setLogin, setLogout, setEvents, setMessageWith, setMessages, setFriends, setPage } = authSlice.actions;
 
 export default authSlice.reducer;

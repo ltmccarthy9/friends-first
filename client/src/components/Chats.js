@@ -7,18 +7,9 @@ import { useSelector } from 'react-redux';
 
 const Chats = (props) => {
 
-    const messenger = useSelector((state) => state.messageWith);
+    
     const user2Id = props.user2Id;
-
-    const [active, setActive] = useState(false);
-
-    useEffect(() => {
-        if(user2Id === messenger) {
-            setActive(true)
-        } else {
-            setActive(false)
-        }
-    }, [messenger])
+    const messenger = useSelector((state) => state.messageWith) === user2Id;
 
     const dispatch = useDispatch();
 
@@ -43,7 +34,7 @@ const Chats = (props) => {
     
 
   return (
-    <div onClick={changeMessage} className={active ? 'chats-box-active p-2 mb-2 font-extrabold' : 'chats-box p-2 my-1 cursor-pointer'}>
+    <div onClick={changeMessage} className={messenger ? 'chats-box-active p-2 mb-2 font-extrabold' : 'chats-box p-2 my-1 cursor-pointer'}>
         <p>{name} | {age} </p>
     </div>
   )

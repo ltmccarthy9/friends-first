@@ -10,24 +10,25 @@ const Pastevent = ({ business, location, date, attending, likes }) => {
 
     
     return (
-        <div className={"event w-9/12 h-fit m-auto justify-center mt-1 mb-3 md:w-6/12 lg:w-5/12 xl:w-3/12"}>
+        <div className={"past-event p-2 w-9/12 h-fit m-auto justify-center mt-1 mb-2 md:w-6/12 lg:w-5/12 xl:w-3/12"}>
 
-            <div className="w-full flex px-4 mt-3 mx-2 justify-between">
-                <h3 className="theme-green font-extrabold tracking-tight text-2xl">{business}</h3>
-                <p className="theme-green font-bold italic p-2">{date}</p>
+            <div className="w-full flex px-2 mt-3 justify-between">
+                <h3 className="theme-green font-extrabold tracking-tight text-xl">{business}</h3>
+                <p className="theme-green font-bold italic">{date}</p>
             </div>
             
-            <div className="h-fit w-11/12 m-auto">
+            <div className="h-fit m-auto grid grid-cols-3">
                 {/* map through attendees and return them as attendee component (other than user) */}
                     {attending.map((attendee, index) => {
                         if(attendee !== userId){
                             return <Attendees key={index} user2Id={attendee} likes={likes}/>;
                         }
                     })}
-                </div>
-                <div className='mt-3'>
+            </div>
+            
+            <div className='mt-3'>
 
-                </div>
+            </div>
         </div>
     );
 }

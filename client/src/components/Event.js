@@ -75,11 +75,11 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
 
 
     return (
-        <div className={"event w-9/12 h-fit mx-auto justify-center mt-1 mb-3 md:w-6/12 lg:w-5/12 xl:w-4/12"}>
+        <div className={expand ? "event flex flex-col w-9/12 h-fit mx-auto justify-center md:w-6/12 lg:w-5/12 xl:w-4/12" : "event flex flex-col w-9/12 h-44 mx-auto justify-center md:w-6/12 lg:w-5/12 xl:w-4/12"}>
 
             {/* Top row */}
-            <div className="w-full flex justify-between px-2 py-3">
-                <h3 className="theme-green font-extrabold tracking-tight text-2xl p-2">{business}</h3>
+            <div className="w-full flex justify-between px-2 py-2">
+                <h3 className="theme-green font-extrabold tracking-tight text-xl p-2">{business}</h3>
                 <div onClick={() => joinEvent()}
                     className={joined ? "m-2 p-1 flex joined"  : "m-2 p-1 flex join-button"}>
                     {joined ? <CgArrowLeftR size={20} className="m-auto"/> : <BsArrowRightSquare size={20} className="m-auto"/>}
@@ -87,13 +87,13 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
             </div>
             
             <div className="flex justify-between nav-bar px-3 border-slate-800" >
-                <p className="theme-green font-semibold text-xl italic">{location}</p>
-                <p className="theme-green">Filled: {filled}/{capacity} | {date} | {time}</p>
+                <h3 className="theme-green font-semibold text-lg italic">{location}</h3>
+                <p className="theme-green text-sm mt-2">Filled: {filled}/{capacity} | {date} | {time}</p>
             </div>
 
             {/* middle row */}
-            <div className={expand ? "h-fit w-11/12 m-auto" : "w-11/12 m-auto"}>
-                <p className={expand ? "description-expanded theme-green text-s py-2" : "description theme-green text-s py-2"}>{description} "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            <div className={"w-11/12 m-auto"}>
+                <p className={expand ? "description-expanded theme-green text-sm p-1" : "description theme-green text-sm p-1"}>{description} "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
                  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
                 anim id est laborum."</p>
@@ -101,7 +101,7 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
                 
             {/* Bottom row */}
 
-            <button onClick={() => controlExpand()} type="button" className="expand-div z-10 cursor-pointer h-8 mx-auto my-2">
+            <button onClick={() => controlExpand()} type="button" className="expand-div z-10 cursor-pointer h-8 mx-auto mb-2">
                 <RiArrowDropDownLine style={expand ? {transform: 'rotate(180deg)' } : ""}  onClick={() => controlExpand()} className="theme-green drop mx-auto" size={35}/>
             </button>
             

@@ -29,59 +29,16 @@ background-color: rgb(224, 230, 225);
   color:#424e4e;
 }
 
-.title:hover{
-  cursor: pointer;
-}
-
 .login-card{
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 150px;
-  width: 450px;
-  height: auto; 
-  position: relative; 
-  padding-top: 40px;
-  padding-bottom: 60px;
-  padding-left: 50px;
-  padding-right: 50px;
+  width: 380px;
   background-color: white;
   border-radius: 30px;
   transition: all ease-in .2s;
-  
 }
 
 .login-card:hover{
   box-shadow: -9px 9px 1px #4b5b5b;
-  border-radius: 30px;
 }
-
-.login-button{
-  margin: 0 auto;
-  width: 190px;
-  height: auto;
-  padding: 10px;
-  position: relative;
-  transform: scale(1.23);
-}
-
-.login-header{
-  text-align: center;
-  margin-bottom: 40px;
-  margin-top: 20px;
-  color: #424e4e;
-}
-
-.email{
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-
-.pass{
-  margin-top: 20px;
-  margin-bottom: 5px;
-}
-
 
 .sub:hover{
   box-shadow: -4px 4px 1px #4b5b5b;
@@ -92,13 +49,12 @@ background-color: rgb(224, 230, 225);
 }
 
 .sign-up{
-  margin-left: 8px;
   background-color: #424e4e;
   color: white;
 }
 
 .sign-up:hover{
-  background-color: #6c7d7d;
+  background-color: #798888;
   box-shadow: -4px 4px 1px #4b5b5b;
   color: white;
 }
@@ -368,7 +324,7 @@ background-color: rgb(224, 230, 225);
 .chat-input:focus {
   box-shadow: -6px 6px 1px #4b5b5b;
   outline: none;
-  border: 1px solid rgb(210, 206, 206);
+  border: 1px solid rgb(225, 221, 221);
 }
 
 .submit-message:hover{

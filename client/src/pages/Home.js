@@ -47,17 +47,17 @@ const Home = () => {
 
     
     return (
-    <div>
-      <h1 className="title font-extrabold tracking-tight text-6xl" >Friends First.</h1>
+    <div className="flex flex-col">
+      <h1 className="title font-extrabold tracking-tight text-6xl cursor-pointer" >Friends First.</h1>
         
-      <div className="login-card">
-        <h1 className="login-header font-extrabold tracking-tight text-3xl">Sign in</h1>
+      <div className="login-card mt-32 mx-auto pt-8 pb-12 px-8">
+        <h1 className="theme-green text-center my-4 font-extrabold tracking-tight text-3xl">Sign in</h1>
           <form id="myForm">
-            <input placeholder="email" onKeyUp={(e) => setEmail(e.target.value)} type="email" className="form-control email chat-input"></input>
-            <input placeholder="password" onKeyUp={(e) => setPassword(e.target.value)} type="password" className="form-control pass chat-input"></input>
-            <button style={{margin: "10px"}} type="button" onClick={(e) => handleLog(e)} className="btn btn-light sub">Sign in</button>
-            <p className="no-account m-2" >Don't have an account?</p>
-            <button type="button" onClick={() => navigate("/register")} className="btn sign-up">Register</button>
+            <input placeholder="email" onKeyUp={(e) => setEmail(e.target.value)} type="email" className="form-control my-3 chat-input"></input>
+            <input placeholder="password" onKeyUp={(e) => setPassword(e.target.value)} type="password" className="form-control my-1 chat-input"></input>
+            <button type="button" onClick={(e) => handleLog(e)} className="btn sub mx-2 mt-2 border-solid border-1 border-gray-200">Sign in</button>
+            <p className="no-account mt-2 mb-1" >Don't have an account?</p>
+            <button type="button" onClick={() => navigate("/register")} className="btn sign-up mx-2">Register</button>
           </form>
       </div>
     </div>

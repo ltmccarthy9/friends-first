@@ -10,7 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(222, 229, 226);
+  background-color: rgb(246, 250, 248);
 }
 
 code {
@@ -19,7 +19,7 @@ code {
 }
 
 html {
-background-color: rgb(222, 229, 226);
+background-color: rgb(246, 250, 248);
 }
 
 /* -----------------------------------------------HOME LOGIN / SIGN UP PAGE------------------------- */
@@ -62,24 +62,24 @@ background-color: rgb(222, 229, 226);
 /* --------------------------------------------------------DASHBOARD--------------------------------- */
 
 .search-bar{
-  background-color: white;
+  background-color: #e7edeb;
   font-size: 16px;
   border-radius: 30px;
   font-weight: 450;
-  color: #374040;
+  color: #424e4e;
   margin-top: 100px;
 }
 
 .search-bar:focus{
   outline: none;
-  background-color: white;
+  background-color: #e7edeb;
 }
 
 .theme-green {
-  color: #ffffff;
+  color: #424e4e;
 }
 .navBar{
-  background-color: #485050;
+  background-color: #b1bebe;
 }
 
 .nav-bar-border{
@@ -89,50 +89,52 @@ background-color: rgb(222, 229, 226);
 /* EVENT CARDS */
 
 .event{
-  background-color: #5b6260;
+  background-color: #e7edeb;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: 20px;
-  border: 1px solid rgb(226, 227, 226);
+  border: 1px solid rgb(165, 167, 166);
+}
+
+.event:hover{
+  box-shadow: 0px 8px 1px rgb(74, 81, 81);
+  transform: translate(-0%, -6%);
+  transition: all ease-in-out .3s;
+  z-index: 0; 
 }
 
 .eventExpanded{
-  background-color: #747e7b;
-  position: absolute;
+  background-color: #e7edeb;
+  padding-top: 50px;
+  position: fixed;
+  display: inline-block;
   flex-direction: column;
-  padding: 50px;
+  justify-content: center;
+  border-radius: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  box-shadow: 0px 8px 1px rgb(74, 81, 81);
   height: 500px;
   width: 500px;
-  border-radius: 20px;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -70%); 
-  box-shadow: -8px 8px 2px #262b2b;
+  z-index: 30;
 }
 
-
 .overlay{
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgb(239, 244, 240, .9);
-  z-index: 10;
+  background-color: rgb(10, 10, 10, .7);
+  z-index: 20;
 }
 
-.event:hover{
-  box-shadow: -6px 6px 1px #606767;
-  border: 1px solid rgb(226, 227, 226);
-  transform: translate(-0%, -6%);
-  transition: all ease-in-out .3s;
-  z-index: 20; 
-}
 
 .pastEvent{
-  border: 1px solid gainsboro;
-  background-color: #747e7b;
+  border: 1px solid rgb(165, 167, 166);
+  background-color: #e7edeb;
   border-radius: 30px;
   transition: all ease-in .2s;
   margin-bottom: 10px;
@@ -140,8 +142,7 @@ background-color: rgb(222, 229, 226);
 }
 
 .description-expanded {
-  overflow-wrap: break-word;
-  hyphens: manual;
+  overflow:inherit;
 }
 
 .description {
@@ -154,9 +155,7 @@ background-color: rgb(222, 229, 226);
 }
 
 .expand-btn{
-  all: unset;
   border-radius: 30px;
-  width: 90%;
   transition: all ease-in .2s;
 }
 
@@ -165,7 +164,8 @@ background-color: rgb(222, 229, 226);
 }
 
 .expand-btn:hover{
-  background-color: #eceeee;
+  background-color: #464b4b;
+  color: white;
 }
 
 /* JOIN AND JOINED BUTTONS */

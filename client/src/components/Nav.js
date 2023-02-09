@@ -69,7 +69,7 @@ const Nav = () => {
 
   return (
       <div className="fixed top-0 w-full theme-green navBar nav-bar-border h-fit flex justify-center z-20 mb-4">
-        <h1 onClick={goDashboard} className="pt-1 font-extrabold tracking-tight text-4xl ml-4 mr-2 cursor-pointer sm:mr-22 md:mr-32 lg:mr-32 xl:mr-32 2xl:mr-32" >Friends First.</h1>
+        <a href='/dashboard' onClick={goDashboard} className="pt-1 font-extrabold tracking-tight hover:text-white text-4xl ml-4 mr-2 cursor-pointer sm:mr-22 md:mr-32 lg:mr-32 xl:mr-32 2xl:mr-32" >Friends First.</a>
         
         <a href='/dashboard' onClick={goDashboard} className={events ? 'cursor-pointer border-b-4 w-24 text-black border-white px-2 pb-1 pt-2' : 'cursor-pointer w-24 px-2 pb-1 pt-2 hover:text-black'}>
             <BsFillCalendar2EventFill size={18} className='cursor-pointer m-auto'/>

@@ -34,11 +34,13 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
             });
             const data = await response.json();
             //if there is no error, we set joined to true and fill is increased by 1
+            window.location.reload();
             if(!data.error){
                 setJoined(true)
                 setFilled(filled + 1)
                 console.log(data)
             }
+
             
             // if the user has already joined, ask them for confirmation that they want to leave
         } else {
@@ -55,6 +57,7 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
             });
             const data = await response.json();
             console.log(data)
+            window.location.reload();
             //Here we just do the opposite as shown above for the join functionality
             if(!data.error) {
                 setJoined(false)
@@ -67,23 +70,25 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
     const handleExpand = () => {
         setExpanded(!expanded);
     }
+    
 
     return (
-        <div className={expanded && "overlay"}>
-            <button onClick={handleExpand} type="button" className={expanded ? 'eventExpanded' :"event w-full h-48"}>
-                
-                    <h3 className={expanded ? "theme-green font-extrabold tracking-tight text-4xl pt-2 px-2" : "mx-auto theme-green font-extrabold tracking-tight text-3xl px-3"}>{business}</h3>
+        <div onClick={expanded ? () => handleExpand() : null } className={expanded ? "overlay" : 'overlaySmall'}>
+            <button onClick={expanded ? null : () => handleExpand()} type="button" className={expanded ? 'eventExpanded mx-4' : "event w-full h-48 mb-3"}>
+                    <h2 className="theme-green absolute top-0 right-0 p-3 font-extrabold tracking-tight text-2xl">{filled}/{capacity}</h2>
+                    <h3 className={expanded ? "theme-green font-extrabold tracking-tight text-4xl px-2" : "mx-auto theme-green font-extrabold tracking-tight text-3xl px-3"}>{business}</h3>
+                    <p className={expanded ? "mx-auto theme-green font-semibold text-lg mt-2" : "mx-auto font-semibold theme-green text-md mt-2"}>{date} | {time}</p>
                     
-                    <p className={expanded ? "mx-auto theme-green font-semibold text-md mt-2" : "mx-auto font-semibold theme-green text-md mt-2"}>Filled: {filled}/{capacity} | {date} | {time}</p>
-                    
-                    {expanded ? <p className={expanded ? "description-expanded theme-green text-sm p-1" : "description theme-green text-sm p-1"}>{description} "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    <p className={expanded ? "description-expanded theme-green text-md p-1" : "hidden"}>{description} "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                        "</p> : <p></p>}
-                    {expanded ? joined ? <button onClick={() => joinEvent()} type="button" className="theme-green text-3xl absolute font-extrabold bottom-0 right-0 p-4 hover:bg-slate-400">LEAVE</button>
-                     : <button onClick={() => joinEvent()} type="button" className="theme-green text-3xl absolute font-extrabold bottom-0 right-0 p-4 hover:bg-slate-400">JOIN</button>   : <p></p>}
+                        "</p>
                     
-                
-        </button>
+                    <div className="absolute bottom-0 right-0">
+                        {expanded ? joined ? <button onClick={() => joinEvent()} type="button" className="theme-green text-3xl font-extrabold p-4 m-2 expand-btn">LEAVE</button>
+                        : <button onClick={() => joinEvent()} type="button" className="theme-green text-3xl font-extrabold p-4 m-2 expand-btn ">JOIN</button>   : <p></p>}      
+                    </div>
+                    
+            </button>
         </div>
     );
 }

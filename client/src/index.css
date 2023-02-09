@@ -10,7 +10,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(239, 244, 240);
+  background-color: rgb(220, 228, 222);
 }
 
 code {
@@ -19,7 +19,7 @@ code {
 }
 
 html {
-background-color: rgb(239, 244, 240);
+background-color: rgb(220, 228, 222);
 }
 
 /* -----------------------------------------------HOME LOGIN / SIGN UP PAGE------------------------- */
@@ -63,9 +63,9 @@ background-color: rgb(239, 244, 240);
 
 .search-bar{
   background-color: white;
-  font-size: 18px;
+  font-size: 16px;
   border-radius: 30px;
-  font-weight: 350;
+  font-weight: 450;
   color: #374040;
   margin-top: 100px;
 }
@@ -90,23 +90,21 @@ background-color: rgb(239, 244, 240);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid gainsboro;
-  border-radius: 30px;
-  transition: all ease-in .2s;
+  border-radius: 20px;
 }
 
 .eventExpanded{
   background-color: white;
-  display: block;
   position: absolute;
   flex-direction: column;
-  justify-content: center;
-  border: 1px solid gainsboro;
-  border-radius: 30px;
+  padding: 40px;
+  height: 500px;
+  width: 500px;
+  border-radius: 20px;
   top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%); 
-  transition: transform .4s ease-out;
+  transform: translate(-50%, -70%); 
+  box-shadow: -8px 8px 2px #4b5b5b;
 }
 
 
@@ -116,12 +114,12 @@ background-color: rgb(239, 244, 240);
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(239, 244, 240, .9);
   z-index: 10;
 }
 
 .event:hover{
-  box-shadow: -8px 8px 2px #4b5b5b;
+  box-shadow: -6px 6px 2px #4b5b5b;
 }
 
 .past-event{

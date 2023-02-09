@@ -56,10 +56,10 @@ const Dashboard = () => {
     //filter out events user has already joined
 
     return (
-        <div>
+        <div className="flex flex-col">
             <Nav/>
-                <div className="flex-col mt-24">
-                <input onChange={(e) => setQuery(e.target.value)} value={query} className="search-bar px-2 pt-2 pb-1 mx-auto mb-4 w-80 flex" placeholder="Search by category, name, description..."/>
+            <input onChange={(e) => setQuery(e.target.value)} value={query} className="search-bar w-80 p-2 mx-auto" placeholder="Search by category, name, description..."/>
+                <div className="grid grid-cols-3 gap-2 mt-8 mx-auto w-full sm:w-5/6 md:w-4/6 lg:w-4/6 xl:w-3/6">
                     {query ? filteredEvents.map((event) => (
                         <Event key={event._id}
                         id={event._id} 

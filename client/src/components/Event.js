@@ -64,51 +64,20 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
         }
     }
 
-    // our control expand functiod for each event card
-    const controlExpand = () => {
-        if(expand){
-            setExpand(false);
-        } else {
-            setExpand(true);
-        }
-    }
-
-
     return (
-        <div className={expand ? "event bg-white flex flex-col w-9/12 h-fit mx-auto justify-center md:w-6/12 lg:w-5/12 xl:w-4/12" : "event bg-white flex flex-col w-9/12 h-44 mx-auto justify-center md:w-6/12 lg:w-5/12 xl:w-4/12"}>
+        <button type="button" className={expand ? "event bg-white flex flex-col w-full h-fit justify-center" : "event bg-white flex flex-col w-full h-48 justify-center"}>
 
-            {/* Top row */}
-            <div className="w-full flex justify-between px-2 py-2">
-                <h3 className="theme-green font-extrabold tracking-tight text-xl p-2">{business}</h3>
-                <div onClick={() => joinEvent()}
-                    className={joined ? "m-2 p-1 flex joined"  : "m-2 p-1 flex join-button"}>
-                    {joined ? <CgArrowLeftR size={20} className="m-auto"/> : <BsArrowRightSquare size={20} className="m-auto"/>}
-                </div>
-            </div>
-            
-            <div className="flex justify-between nav-bar px-3 border-slate-800" >
-                <h3 className="theme-green font-semibold text-lg italic">{location}</h3>
-                <p className="theme-green text-sm mt-2">Filled: {filled}/{capacity} | {date} | {time}</p>
-            </div>
-
+            <h3 className="mx-auto theme-green font-extrabold tracking-tight text-xl pt-3 px-3">{business}</h3>
+            <h3 className="mx-auto theme-green font-semibold text-md italic">{location}</h3>
+            <p className="mx-auto theme-green text-md mt-2">Filled: {filled}/{capacity} | {date} | {time}</p>
             {/* middle row */}
             <div className={"w-11/12 m-auto"}>
                 <p className={expand ? "description-expanded theme-green text-sm p-1" : "description theme-green text-sm p-1"}>{description} "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                 irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-                anim id est laborum."</p>
+                 "</p>
             </div>
-                
-            {/* Bottom row */}
-
-            <button onClick={() => controlExpand()} type="button" className="expand-div z-10 cursor-pointer h-8 mx-auto mb-2">
-                <RiArrowDropDownLine style={expand ? {transform: 'rotate(180deg)' } : ""}  onClick={() => controlExpand()} className="theme-green drop mx-auto" size={35}/>
-            </button>
-            
-                
-                
-           
-        </div>
+               
+        </button>
     );
 }
 

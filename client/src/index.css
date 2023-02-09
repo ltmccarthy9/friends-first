@@ -62,17 +62,17 @@ background-color: rgb(239, 244, 240);
 /* --------------------------------------------------------DASHBOARD--------------------------------- */
 
 .search-bar{
-  background-color: rgb(239, 244, 240);
-  border-bottom: 2px solid #424e4e;
+  background-color: white;
   font-size: 18px;
-  border-radius: 2px;
+  border-radius: 30px;
   font-weight: 350;
   color: #374040;
+  margin-top: 100px;
 }
 
 .search-bar:focus{
   outline: none;
-  background-color: rgb(239, 244, 240);
+  background-color: white;
 }
 
 .theme-green {
@@ -89,7 +89,6 @@ background-color: rgb(239, 244, 240);
   border: 1px solid gainsboro;
   border-radius: 30px;
   transition: all ease-in .2s;
-  margin-bottom: 10px;
 }
 
 .event:hover{
@@ -97,6 +96,7 @@ background-color: rgb(239, 244, 240);
 }
 
 .past-event{
+  border: 1px solid gainsboro;
   background-color: white;
   border-radius: 30px;
   transition: all ease-in .2s;
@@ -118,18 +118,18 @@ background-color: rgb(239, 244, 240);
   transition: all ease-in .8s;
 }
 
-.expand-div{
+.expand-btn{
   all: unset;
   border-radius: 30px;
   width: 90%;
   transition: all ease-in .2s;
 }
 
-.expand-div:focus {
+.expand-btn:focus {
   outline: 1px solid black;
 }
 
-.expand-div:hover{
+.expand-btn:hover{
   background-color: #eceeee;
 }
 

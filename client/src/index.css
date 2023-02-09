@@ -86,9 +86,38 @@ background-color: rgb(239, 244, 240);
 /* EVENT CARDS */
 
 .event{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border: 1px solid gainsboro;
   border-radius: 30px;
   transition: all ease-in .2s;
+}
+
+.eventExpanded{
+  background-color: white;
+  display: block;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid gainsboro;
+  border-radius: 30px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  transition: transform .4s ease-out;
+}
+
+
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
 }
 
 .event:hover{

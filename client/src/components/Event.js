@@ -11,7 +11,7 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
     const [ joined, setJoined ] = useState(attending);
 
     //state for expand button.  
-    const [expand, setExpand] = useState(false);
+    const [expanded, setExpanded] = useState(false);
 
     const userId = localStorage.getItem('id');
     const eventId = id;
@@ -64,20 +64,25 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
         }
     }
 
-    return (
-        <button type="button" className={expand ? "event bg-white flex flex-col w-full h-fit justify-center" : "event bg-white flex flex-col w-full h-48 justify-center"}>
+    const handleExpand = () => {
+        setExpanded(!expanded);
+    }
 
+    return (
+        <div className={expanded && "overlay"}>
+            <button onClick={handleExpand} type="button" className={expanded ? 'eventExpanded' :"event w-full h-48"}>
             <h3 className="mx-auto theme-green font-extrabold tracking-tight text-xl pt-3 px-3">{business}</h3>
             <h3 className="mx-auto theme-green font-semibold text-md italic">{location}</h3>
             <p className="mx-auto theme-green text-md mt-2">Filled: {filled}/{capacity} | {date} | {time}</p>
             {/* middle row */}
             <div className={"w-11/12 m-auto"}>
-                <p className={expand ? "description-expanded theme-green text-sm p-1" : "description theme-green text-sm p-1"}>{description} "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                <p className={expanded ? "description-expanded theme-green text-sm p-1" : "description theme-green text-sm p-1"}>{description} "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
                  "</p>
             </div>
                
         </button>
+        </div>
     );
 }
 

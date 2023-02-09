@@ -84,8 +84,8 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
                         "</p>
                     
                     <div className="absolute bottom-0 right-0">
-                        {expanded ? joined ? <button onClick={() => joinEvent()} type="button" className="theme-green text-3xl font-extrabold p-4 m-2 expand-btn">LEAVE</button>
-                        : <button onClick={() => joinEvent()} type="button" className="theme-green text-3xl font-extrabold p-4 m-2 expand-btn ">JOIN</button>   : <p></p>}      
+                        {expanded ? joined ? <button onClick={() => joinEvent()} type="button" className="theme-green text-2xl font-extrabold p-3 m-2 expand-btn">LEAVE</button>
+                        : <button onClick={() => joinEvent()} type="button" className="theme-green text-2xl font-extrabold p-3 m-2 expand-btn ">JOIN</button>   : <p></p>}      
                     </div>
                     
             </button>

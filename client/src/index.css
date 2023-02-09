@@ -75,12 +75,17 @@ background-color: rgb(246, 250, 248);
   background-color: #e7edeb;
 }
 
+.theme-dark{
+  color:#424e4e;
+}
+
 .theme-green {
-  color: #424e4e;
+  color: #4f5c5c;
 }
 .navBar{
-  background-color: #b1bebe;
+  background-color: #ffffff;
 }
+
 
 .nav-bar-border{
   border-bottom: 1px solid rgb(212, 217, 213);
@@ -89,23 +94,24 @@ background-color: rgb(246, 250, 248);
 /* EVENT CARDS */
 
 .event{
-  background-color: #e7edeb;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: 20px;
-  border: 1px solid rgb(165, 167, 166);
+  border: 1px solid rgb(224, 226, 225);
 }
 
 .event:hover{
   box-shadow: 0px 8px 1px rgb(74, 81, 81);
   transform: translate(-0%, -6%);
   transition: all ease-in-out .3s;
+  background-color: #e7efef;
   z-index: 0; 
 }
 
 .eventExpanded{
-  background-color: #e7edeb;
+  background-color: #e7efef;
   padding-top: 50px;
   position: fixed;
   display: inline-block;
@@ -134,7 +140,7 @@ background-color: rgb(246, 250, 248);
 
 .pastEvent{
   border: 1px solid rgb(165, 167, 166);
-  background-color: #e7edeb;
+  background-color: #ffffff;
   border-radius: 30px;
   transition: all ease-in .2s;
   margin-bottom: 10px;
@@ -155,8 +161,10 @@ background-color: rgb(246, 250, 248);
 }
 
 .expand-btn{
-  border-radius: 30px;
+  border-radius: 20px;
   transition: all ease-in .2s;
+  color: white;
+  background-color: #6f7e7e;
 }
 
 .expand-btn:focus {
@@ -164,7 +172,7 @@ background-color: rgb(246, 250, 248);
 }
 
 .expand-btn:hover{
-  background-color: #464b4b;
+  background-color: #2d3232;
   color: white;
 }
 
@@ -264,7 +272,7 @@ background-color: rgb(246, 250, 248);
 }
 
 .sent{
-  background-color: rgb(218, 219, 219);
+  background-color: rgb(226, 235, 233);
   justify-content: flex-start;
   margin-right: 24px;
   margin-left: auto;
@@ -287,11 +295,12 @@ background-color: rgb(246, 250, 248);
   bottom: 0px;
   height: 476px;
   overflow: scroll;
-  background-color: white;
+  background-color: #ffffff;
   overflow-x: hidden;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   box-shadow: -6px 6px 1px #4b5b5b;
+  border: 1px solid rgb(165, 167, 166);
 }
 
 .chats-box-active{
@@ -316,7 +325,7 @@ background-color: rgb(246, 250, 248);
 }
 
 .chats-box-container{
- background-color: #838c86;
+ background-color: #bdcaca;
  box-shadow: -6px 6px 1px #4b5b5b;
  border-top-left-radius: 8px;
  border-bottom-left-radius: 8px;
@@ -324,6 +333,7 @@ background-color: rgb(246, 250, 248);
  overflow: scroll;
  overflow-x: hidden;
  height: 476px;
+ border: 1px solid rgb(165, 167, 166);
 }
 
 .chat-input:focus {
@@ -332,8 +342,16 @@ background-color: rgb(246, 250, 248);
   border: 1px solid rgb(225, 221, 221);
 }
 
+.chat-input{
+  border: 1px solid rgb(225, 221, 221);
+}
+
 .submit-message:hover{
   box-shadow: -5px 5px 1px #424e4e
+}
+
+.submit-message{
+  border: 1px solid rgb(225, 221, 221);
 }
 
 /* --------------------------------------------------------WEBKIT----------------------------------------- */

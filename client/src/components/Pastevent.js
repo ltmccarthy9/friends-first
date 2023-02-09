@@ -10,7 +10,7 @@ const Pastevent = ({ business, location, date, attending, likes }) => {
 
     
     return (
-        <div className={"past-event p-2 w-9/12 h-fit m-auto justify-center mt-1 mb-2 md:w-6/12 lg:w-5/12 xl:w-3/12"}>
+        <div className={"pastEvent p-2 w-9/12 h-fit m-auto justify-center mt-1 mb-2 md:w-6/12 lg:w-5/12 xl:w-3/12"}>
 
             <div className="w-full flex px-2 mt-3 justify-between">
                 <h3 className="theme-green font-extrabold tracking-tight text-xl">{business}</h3>

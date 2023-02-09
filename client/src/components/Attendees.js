@@ -48,7 +48,7 @@ const Attendees = (props) => {
   return (
     <div className='flex justify-between attendee-list rounded-2xl p-1 m-1'>
         {/* show picture of user here */}
-       <p className='p-1 font-medium theme-green'>{data.name}</p>
+       <p className='p-1 font-medium text-slate-600'>{data.name}</p>
        <div className=' flex'>
             {added ? <ImCheckmark size={27} className='mx-2 my-1'/>
             : <AiOutlineUserAdd onClick={addFriend} size={27} className='mx-2 my-1 hover:text-slate-400 cursor-pointer'/>}

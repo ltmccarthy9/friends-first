@@ -59,7 +59,7 @@ const Dashboard = () => {
         <div className="flex flex-col">
             <Nav/>
             <input onChange={(e) => setQuery(e.target.value)} value={query} className="search-bar w-80 p-2 mx-auto" placeholder="Search by category, name, description..."/>
-                <div className="grid grid-cols-3 gap-2 mt-8 mx-auto w-full sm:w-5/6 md:w-4/6 lg:w-4/6 xl:w-3/6">
+                <div className="grid grid-cols-2 gap-2 mt-8 mx-auto w-5/6 sm:w-5/6 sm:grid-cols-2 md:w-4/6 lg:w-4/6 lg:grid-cols-3 xl:w-4/6 xl:grid-cols-4">
                     {query ? filteredEvents.map((event) => (
                         <Event key={event._id}
                         id={event._id} 

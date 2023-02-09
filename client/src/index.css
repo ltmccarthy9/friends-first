@@ -111,7 +111,7 @@ background-color: rgb(246, 250, 248);
 }
 
 .eventExpanded{
-  background-color: #e7efef;
+  background-color: #edf4f4;
   padding-top: 50px;
   position: fixed;
   display: inline-block;
@@ -300,7 +300,7 @@ background-color: rgb(246, 250, 248);
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   box-shadow: -6px 6px 1px #4b5b5b;
-  border: 1px solid rgb(165, 167, 166);
+  border: 1px solid rgb(224, 226, 225);
 }
 
 .chats-box-active{
@@ -333,7 +333,7 @@ background-color: rgb(246, 250, 248);
  overflow: scroll;
  overflow-x: hidden;
  height: 476px;
- border: 1px solid rgb(165, 167, 166);
+ border: 1px solid rgb(224, 226, 225);
 }
 
 .chat-input:focus {

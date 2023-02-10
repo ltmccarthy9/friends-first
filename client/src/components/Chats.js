@@ -34,7 +34,7 @@ const Chats = (props) => {
     
 
   return (
-    <div onClick={changeMessage} className={messenger ? 'chats-box-active p-2 mb-2 font-extrabold' : 'chats-box p-2 my-1 cursor-pointer'}>
+    <div onClick={changeMessage} className={messenger ? 'chats-box-active px-2 py-3 font-bold' : 'chats-box px-2 py-3 cursor-pointer'}>
         <p>{name} | {age} </p>
     </div>
   )

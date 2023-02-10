@@ -91,6 +91,19 @@ background-color: rgb(246, 250, 248);
   border-bottom: 1px solid rgb(212, 217, 213);
 }
 
+.signOut{
+  color: white;
+  border: 1px solid #536a74;
+  background-color: #536a74;
+  border-radius: 12px;
+  transition: all ease-in-out .2s;
+}
+
+.signOut:hover{
+  border: 1px solid #536a74;
+  background-color: white;
+  color: #536a74; 
+}
 /* EVENT CARDS */
 
 .event{
@@ -103,15 +116,25 @@ background-color: rgb(246, 250, 248);
 }
 
 .event:hover{
-  box-shadow: 0px 8px 1px rgb(74, 81, 81);
+  box-shadow: 0px 8px 1px rgb(99, 110, 110);
   transform: translate(-0%, -6%);
   transition: all ease-in-out .3s;
-  background-color: #e7efef;
+  background-color: #536a74;
   z-index: 0; 
 }
 
+.event:hover h3{
+  color: white;
+}
+.event:hover h2{
+  color: white;
+}
+.event:hover p{
+  color: white;
+}
+
 .eventExpanded{
-  background-color: #edf4f4;
+  background-color: #536a74;
   padding-top: 50px;
   position: fixed;
   display: inline-block;
@@ -125,6 +148,10 @@ background-color: rgb(246, 250, 248);
   height: 500px;
   width: 500px;
   z-index: 30;
+}
+
+.eventExpanded h2, h3, p{
+  color: white;
 }
 
 .overlay{
@@ -164,7 +191,9 @@ background-color: rgb(246, 250, 248);
   border-radius: 20px;
   transition: all ease-in .2s;
   color: white;
-  background-color: #6f7e7e;
+  background-color: #4e7282;
+  color: white;
+  border: 1px solid white;
 }
 
 .expand-btn:focus {
@@ -284,7 +313,7 @@ background-color: rgb(246, 250, 248);
 }
 
 .received{
-  background-color: #424e4e;
+  background-color: #536a74;
   color: white;
   margin-left: 24px;
   margin-right: auto;
@@ -300,32 +329,33 @@ background-color: rgb(246, 250, 248);
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   box-shadow: -6px 6px 1px #4b5b5b;
-  border: 1px solid rgb(224, 226, 225);
+  border-top: 1px solid rgb(224, 226, 225);
+  border-bottom: 1px solid rgb(224, 226, 225);
+  border-right: 1px solid rgb(224, 226, 225);
+  
 }
 
 .chats-box-active{
   transition: all ease-in .06s;
-  box-shadow: -5px 5px 1px #374040;
-  background-color: #ffffff;
-  border-radius: 8px;
-  border: 1px solid white;
-  color: #424e4e;
-  width: 103%;
+  background-color: #536a74;
 }
 
 .chats-box{
-  color: white;
-  background-color: #424e4e;
-  border-radius: 8px;
+  background-color: #e7edeb;
   transition: all ease-in .12s;
+  border-bottom: 1px solid #5e6c71;
+}
+
+.chats-box p{
+  color: #4b5b5b;
 }
 
 .chats-box:hover{
-  background-color: #748585;
+  background-color: #b8c4c4;
 }
 
 .chats-box-container{
- background-color: #bdcaca;
+ background-color: #ffffff;
  box-shadow: -6px 6px 1px #4b5b5b;
  border-top-left-radius: 8px;
  border-bottom-left-radius: 8px;
@@ -333,7 +363,8 @@ background-color: rgb(246, 250, 248);
  overflow: scroll;
  overflow-x: hidden;
  height: 476px;
- border: 1px solid rgb(224, 226, 225);
+ border-bottom: 1px solid rgb(224, 226, 225);
+ border-top: 1px solid rgb(224, 226, 225);
 }
 
 .chat-input:focus {
@@ -357,7 +388,7 @@ background-color: rgb(246, 250, 248);
 /* --------------------------------------------------------WEBKIT----------------------------------------- */
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-thumb {

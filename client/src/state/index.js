@@ -7,7 +7,7 @@ const initialState = {
     messageWith: null, //this is an id of whoever you're messaging with.
     messages: [],
     friends: 0,
-    page: null,
+    page: 'events',
 };
 
 export const authSlice = createSlice({

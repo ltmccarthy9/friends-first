@@ -58,6 +58,9 @@ const Nav = () => {
     //logout function
     const logout = () => {
         if(window.confirm("Are you sure you want to log out?")) {
+            dispatch(setPage({
+                page: 'events'
+            }))
             dispatch(setLogout())
             localStorage.removeItem('user');
             localStorage.removeItem('id');
@@ -86,9 +89,8 @@ const Nav = () => {
             <h4 className={'theme-dark cursor-pointer text-center text-sm'}>Messages</h4>
         </a>
         
-        <button type='button' onClick={logout} className='w-24 px-2 pb-1 pt-1 cursor-pointer hover:text-black'>
-            <IoLogOut size={18} className='cursor-pointer m-auto'/>
-            <h4 className={'theme-dark cursor-pointer text-center text-sm'}>Logout</h4>
+        <button type='button' onClick={logout} className='signOut w-24 cursor-pointer m-2 font-bold'>
+            Sign Out
         </button>
         
         

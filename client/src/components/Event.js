@@ -76,7 +76,7 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
         <div onClick={expanded ? () => handleExpand() : null } className={expanded ? "overlay" : 'overlaySmall'}>
             <button onClick={expanded ? null : () => handleExpand()} type="button" className={expanded ? 'eventExpanded mx-4' : "event w-full h-48 mb-3"}>
                     <h2 className={expanded ? " font-bold tracking-tight text-4xl px-2" : "mx-auto theme-green font-bold tracking-tight text-3xl px-3"}>{business}</h2>
-                    <h3 className="absolute top-0 right-0 p-3 font-extrabold tracking-tight text-2xl">{filled}/{capacity}</h3>
+                    <h3 className="absolute top-0 right-0 p-3 font-bold tracking-tight text-xl">{filled}/{capacity}</h3>
                     <p className={expanded ? "mx-auto font-semibold text-lg mt-2" : "mx-auto font-normal theme-green text-md mt-2"}>{date} | {time}</p>
                     
                     <p className={expanded ? "description-expanded text-md p-1" : "hidden"}>{description} "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 

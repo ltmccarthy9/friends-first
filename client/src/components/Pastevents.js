@@ -32,7 +32,7 @@ const Pastevents = (likes) => {
             <Pastevent key={event._id}
             business={event.business}
             location={event.location}
-            date={event.date.substring(0, 10)}
+            date={event.date.substring(5, 10)}
             attending={event.attendees} 
             likes={likes}/>
         ))}

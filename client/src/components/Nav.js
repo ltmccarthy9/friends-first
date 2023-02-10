@@ -109,20 +109,20 @@ const Nav = () => {
         {/* menu bar small screen */}
         <div className={nav ? 'md:hidden fixed right-0 top-0 w-full h-screen bg-black/70' : ''}>
                 <div className={nav 
-                    ? 'fixed right-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] h-screen bg-white p-10 ease-in duration-200' 
+                    ? 'fixed right-0 top-0 w-[75%] sm:w-[50%] md:w-[45%] h-screen bg-white p-10 ease-in duration-200' 
                     : 'fixed right-[-100%] top-0 p-10 ease-in duration-500'}>
                     <div>
                         <div className='flex flex-col w-full items-center justify-between mt-8'>
-                            <a className='m-2' href='/dashboard'>
+                            <a onClick={goDashboard} className='m-2' href='/dashboard'>
                                 <FaHome color='#536a74' size={50} />
                             </a>
-                            <a className='text-2xl m-4 hover:font-bold hover:text-[#536a74]' href='/dashboard'>
+                            <a onClick={goDashboard} className='text-2xl m-4 hover:font-bold hover:text-[#536a74]' href='/dashboard'>
                                 EVENTS
                             </a>
-                            <a className='text-2xl m-4 hover:font-bold hover:text-[#536a74]' href='/profile'>
+                            <a onClick={goProfile} className='text-2xl m-4 hover:font-bold hover:text-[#536a74]' href='/profile'>
                                 PROFILE
                             </a>
-                            <a className='text-2xl m-4 hover:font-bold hover:text-[#536a74]' href='/messages'>
+                            <a onClick={goMessages} className='text-2xl m-4 hover:font-bold hover:text-[#536a74]' href='/messages'>
                                 MESSAGES
                             </a>
                             <button type='button' onClick={logout} className='signOut w-24 cursor-pointer p-2 mx-2 mt-6'>

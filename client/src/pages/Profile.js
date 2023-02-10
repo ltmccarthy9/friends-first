@@ -54,7 +54,7 @@ const Profile = () => {
          <div className="flex-col justify-center  mt-24">
             <Nav/>
             <div className="flex mb-4">
-            <h2 className="theme-green font-semibold tracking-tight text-3xl ml-auto mr-2 px-3 pt-2 pb-1">{data.name}'s</h2>
+            <h2 className="theme-green font-bold tracking-tight text-3xl ml-auto mr-2 px-3 pt-2 pb-1">{data.name}'s</h2>
                 <button type="button" onClick={() => switchUpcoming()} className={upcoming ? "px-3 pt-1 pb-1 rounded-lg tracking-tight text-lg cursor-pointer ml-2 profile-active"
                  : "tracking-tight text-lg cursor-pointer ml-2 px-3 pt-1 pb-1 rounded-lg profile-inactive"}>Upcoming Events</button>
                 

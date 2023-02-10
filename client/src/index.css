@@ -166,7 +166,7 @@ background-color: rgb(246, 250, 248);
 
 
 .pastEvent{
-  border: 1px solid rgb(165, 167, 166);
+  border: 1px solid rgb(224, 226, 225);
   background-color: #ffffff;
   border-radius: 30px;
   transition: all ease-in .2s;
@@ -187,22 +187,42 @@ background-color: rgb(246, 250, 248);
   transition: all ease-in .8s;
 }
 
-.expand-btn{
+.joinBtn{
   border-radius: 20px;
   transition: all ease-in .2s;
   color: white;
-  background-color: #4e7282;
+  background-color: #459861;
   color: white;
-  border: 1px solid white;
+  border: 2px solid white;
 }
 
-.expand-btn:focus {
+.joinBtn:focus {
   outline: 1px solid black;
 }
 
-.expand-btn:hover{
-  background-color: #2d3232;
+.joinBtn:hover{
+  background-color: white;
+  color: #459861;
+  border: 2px solid white;
+}
+
+.leaveBtn{
+  border-radius: 20px;
+  transition: all ease-in .2s;
   color: white;
+  background-color: #a46c27;
+  color: white;
+  border: 2px solid white;
+}
+
+.leaveBtn:focus {
+  outline: 1px solid black;
+}
+
+.leaveBtn:hover{
+  background-color: white;
+  color: #a46c27;
+  border: 2px solid white;
 }
 
 /* JOIN AND JOINED BUTTONS */
@@ -271,24 +291,30 @@ background-color: rgb(246, 250, 248);
 
 
 .profile-active {
-  color: #424e4e;
+  color: white;
   transition: all ease-in .2s;
   box-shadow: -6px 6px 1px #4b5b5b;
-  background-color: white;
+  background-color: #536a74;
 }
 
 .profile-inactive{
   transition: all ease-in .2s;
   color: white;
-  background-color: #8e9894;
+  background-color: #bfc7c4;
 }
 
 .profile-inactive:hover {
-  background-color: #5e6966;
+  background-color: #536a74;
 }
 
-.attendee-list{
-  background-color: rgb(238, 244, 239);
+.attendeeListAdded{
+  background-color: #536a74;
+  color: white;
+}
+
+.attendeeList{
+  background-color: #e7edeb;
+  color: black;
 }
 
 /* --------------------------------------------------------MESSAGES PAGE ----------------------------------------- */
@@ -328,22 +354,23 @@ background-color: rgb(246, 250, 248);
   overflow-x: hidden;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
-  box-shadow: -6px 6px 1px #4b5b5b;
   border-top: 1px solid rgb(224, 226, 225);
   border-bottom: 1px solid rgb(224, 226, 225);
   border-right: 1px solid rgb(224, 226, 225);
-  
 }
 
 .chats-box-active{
   transition: all ease-in .06s;
   background-color: #536a74;
+  border-radius: 15px;
+  margin-top: 2px;
 }
 
 .chats-box{
   background-color: #e7edeb;
   transition: all ease-in .12s;
-  border-bottom: 1px solid #5e6c71;
+  border-radius: 15px;
+  margin-top: 2px;
 }
 
 .chats-box p{
@@ -356,15 +383,14 @@ background-color: rgb(246, 250, 248);
 
 .chats-box-container{
  background-color: #ffffff;
- box-shadow: -6px 6px 1px #4b5b5b;
  border-top-left-radius: 8px;
  border-bottom-left-radius: 8px;
  z-index: 10;
  overflow: scroll;
  overflow-x: hidden;
  height: 476px;
- border-bottom: 1px solid rgb(224, 226, 225);
- border-top: 1px solid rgb(224, 226, 225);
+ border: 1px solid rgb(224, 226, 225);
+ padding: 5px;
 }
 
 .chat-input:focus {

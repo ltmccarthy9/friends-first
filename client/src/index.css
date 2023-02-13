@@ -289,22 +289,26 @@ background-color: rgb(246, 250, 248);
 
 /* --------------------------------------------------------PROFILE PAGE ----------------------------------------- */
 
+.profileBar{
+  border: 1px solid rgb(224, 226, 225);
+}
 
 .profile-active {
   color: white;
-  transition: all ease-in .2s;
-  box-shadow: -6px 6px 1px #4b5b5b;
-  background-color: #536a74;
+  transition: all ease-in .15s;
+  border-left: 4px solid #536a74;
+  color: black;
+  background-color: #dee5e2;
 }
 
 .profile-inactive{
-  transition: all ease-in .2s;
-  color: white;
-  background-color: #bfc7c4;
+  transition: all ease-in .15s;
+  color: black;
+  border: 1px solid rgb(224, 226, 225);
 }
 
 .profile-inactive:hover {
-  background-color: #536a74;
+  background-color: #dee5e2;
 }
 
 .attendeeListAdded{

@@ -52,22 +52,23 @@ const Profile = () => {
     const userLikes = data.liked;
 
     return (
-         <div className="flex-col justify-center  mt-24">
+         <div className="flex justify-center mt-24 mx-auto">
             <Nav/>
-            <div className="flex mb-4">
-            <h2 className="theme-green font-bold tracking-tight text-3xl ml-auto mr-2 px-3 pt-2 pb-1">{data.name}'s</h2>
-                <button type="button" onClick={() => switchUpcoming()} className={upcoming ? "px-3 pt-1 pb-1 rounded-lg tracking-tight text-lg cursor-pointer ml-2 profile-active"
-                 : "tracking-tight text-lg cursor-pointer ml-2 px-3 pt-1 pb-1 rounded-lg profile-inactive"}>Upcoming Events</button>
-                
-                <div className="tracking-tight text-xl mx-2"></div>
-                
-                <button type="button" onClick={() => switchPast()} className={past ? "px-3 pt-1 pb-1 rounded-lg mr-auto tracking-tight text-lg cursor-pointer profile-active" 
-                 : "tracking-tight text-lg cursor-pointer mr-auto px-3 pt-1 pb-1 rounded-lg  profile-inactive"}>Past Events</button>
+            <div className="flex w-full justify-center bg-slate-200">
+                <div className="profileBar mt-8 flex flex-col rounded-lg bg-white mr-4 pt-2 h-80 w-22 sm:w-48">
+                <h2 className="theme-green font-bold tracking-tight text-3xl px-1 pt-2 pb-1">{data.name}'s</h2>
+                    <button type="button" onClick={() => switchUpcoming()} className={upcoming ? "text-left px-1 py-2 tracking-tight text-lg cursor-pointer profile-active"
+                    : "text-left tracking-tight text-lg cursor-pointer px-1 py-2 profile-inactive"}>Upcoming Events</button>
+                    
+                    <button type="button" onClick={() => switchPast()} className={past ? "text-left px-1 py-2 tracking-tight text-lg cursor-pointer profile-active" 
+                    : "text-left tracking-tight text-lg cursor-pointer px-1 py-2 profile-inactive"}>Past Events</button>
+                </div>
+
+                <div className="w-1/2">
+                    {upcoming ? <Yourevents /> : <Pastevents likes={userLikes} />} 
+                </div>
             </div>
 
-            <div>
-                {upcoming ? <Yourevents /> : <Pastevents likes={userLikes} />} 
-            </div>
         </div> 
     );
 };

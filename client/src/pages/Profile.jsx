@@ -4,6 +4,7 @@ import Yourevents from "../components/Yourevents";
 import Nav from "../components/Nav";
 import Pastevents from "../components/Pastevents";
 import useFetch from "../hooks/useFetch";
+import { FiSettings } from 'react-icons/fi';
 
 const Profile = () => {
 
@@ -60,7 +61,7 @@ const Profile = () => {
                 
                 <div className="tracking-tight text-xl mx-2"></div>
                 
-                <button type="button" onClick={() => switchPast()} className={past ? "px-3 pt-1 pb-1 rounded-lg tracking-tight text-lg cursor-pointer mr-auto profile-active" 
+                <button type="button" onClick={() => switchPast()} className={past ? "px-3 pt-1 pb-1 rounded-lg mr-auto tracking-tight text-lg cursor-pointer profile-active" 
                  : "tracking-tight text-lg cursor-pointer mr-auto px-3 pt-1 pb-1 rounded-lg  profile-inactive"}>Past Events</button>
             </div>
 

@@ -30,6 +30,7 @@ const Pastevents = (likes) => {
         <div className="flex-col">
         {ourPastEvents.map((event) => (
             <Pastevent key={event._id}
+            id={event._id}
             business={event.business}
             location={event.location}
             date={event.date.substring(5, 10)}

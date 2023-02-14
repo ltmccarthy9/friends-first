@@ -33,9 +33,9 @@ const Pastevent = ({ business, location, date, attending, likes, id }) => {
     }
     
     return (
-        <div className={"pastEvent p-2 h-fit justify-center mt-1 mb-2m"}>
+        <div className={"pastEvent w-full p-2 h-fit justify-center mb-2m"}>
 
-            <div className="w-full flex px-2 mt-3 justify-between">
+            <div className="flex px-2 mt-3 justify-between">
                 <div className='flex'>
                     <h3 className="theme-green font-bold tracking-tight text-xl">{business}</h3>
                     <p className="theme-green italic ml-3 mt-1">{date}</p>

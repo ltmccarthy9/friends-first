@@ -67,8 +67,11 @@ background-color: rgb(246, 250, 248);
   border-radius: 30px;
   font-weight: 450;
   color: #424e4e;
-  margin-top: 100px;
 }
+
+.locationHeader{
+  margin-top: 100px;
+} 
 
 .search-bar:focus{
   outline: none;
@@ -168,7 +171,7 @@ background-color: rgb(246, 250, 248);
 .pastEvent{
   border: 1px solid rgb(224, 226, 225);
   background-color: #ffffff;
-  border-radius: 30px;
+  border-radius: 20px;
   transition: all ease-in .2s;
   margin-bottom: 10px;
   padding: 1px;
@@ -396,7 +399,7 @@ background-color: rgb(246, 250, 248);
  border-left: 1px solid rgb(224, 226, 225);
  border-top: 1px solid rgb(224, 226, 225);
  border-bottom: 1px solid rgb(224, 226, 225);
- padding: 5px;
+ padding-top: 30px;
 }
 
 .chat-input:focus {

@@ -3,11 +3,34 @@ import Nav from '../components/Nav'
 import ChatRoom from '../components/ChatRoom';
 import Chats from '../components/Chats';
 import useFetch from '../hooks/useFetch';
-
+import { useDispatch } from 'react-redux';
+import { setPast, setUpcoming } from '../state';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Messages = () => {
 
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const userId = localStorage.getItem('id');
+
+  useEffect(() => {
+    dispatch(setPast({
+        past: false
+    }));
+    dispatch(setUpcoming({
+        upcoming: true
+    }));
+    if(localStorage.getItem('user') !== 'loggedin') {
+        loginAlert();
+        navigate("/")
+    }
+  }, []);
+
+  const loginAlert = () => {
+    alert("please login to continue");
+  }
+
   const { data, loading, error } = useFetch(`http://localhost:4000/api/users/${userId}`);
   
   if(loading) {

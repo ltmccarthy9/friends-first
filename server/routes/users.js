@@ -1,5 +1,5 @@
 import express from "express";
-import { deleteUser, getUser, updateUser, getUsers, addFriend} from "../controllers/usercontroller.js";
+import { deleteUser, getUser, updateUser, getUsers, addFriend, removeFriend} from "../controllers/usercontroller.js";
 import { verifyToken } from "../middleware/auth.js";
 
 const router = express.Router();
@@ -9,6 +9,9 @@ router.patch("/:id", verifyToken, updateUser);
 
 //ADD A FRIEND
 router.patch("/add/:id/:id2", verifyToken, addFriend);
+
+//REMOVE A FRIEND
+router.patch("/remove/:id/:id2", verifyToken, removeFriend)
 
 //DELETE USER
 router.delete("/:id", verifyToken, deleteUser);

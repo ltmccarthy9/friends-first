@@ -1,8 +1,7 @@
 # friends-first
 
 ## Description
-Friends First is the best application for making friends and forming 
-relationships.
+Friends First is an event-based dating/friend-making application that allows a user to sign up to events, meet new people, and stay in contact with one another.  I have been continually refactoring and adding to this project, check out current demo and old demos for a view into the evolution.
  
 
 ## Technologies Used
@@ -22,9 +21,7 @@ https://www.youtube.com/watch?v=pxaGvDUBOk4&ab_channel=LiamMcCarthy
 
 
 ## Updates 
-I recently completed my implementation of a "stay connected" feature
-and chat/messenger feature.  Next I'm going to be adding smaller scale features like deleting chats, deleting old events, and adding functionality
-for a profile picture.
+Restructured profile page and added functionality for deleting past past events and deleting chats/removing friends.
 
 ## Old demonstrations
 

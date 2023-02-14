@@ -27,7 +27,7 @@ const Pastevents = (likes) => {
     });
 
     return (
-        <div className="flex-col">
+        <div className="flex flex-col mt-8 w-full">
         {ourPastEvents.map((event) => (
             <Pastevent key={event._id}
             id={event._id}

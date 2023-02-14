@@ -31,7 +31,7 @@ const Yourevents = () => {
     
 
     return (
-        <div className="flex flex-col mt-8 ml-4 w-full sm:w-5/6 md:w-3/6 lg:w-3/6 xl:w-2/6">
+        <div className="flex flex-col mt-8 w-full">
         {ourEvents.map((event) => (
             <Event key={event._id}
             id={event._id} 

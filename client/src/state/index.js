@@ -8,6 +8,8 @@ const initialState = {
     messages: [],
     friends: 0,
     page: 'events',
+    upcoming: true,
+    past: false
 };
 
 export const authSlice = createSlice({
@@ -36,10 +38,16 @@ export const authSlice = createSlice({
         },
         setPage: (state, action) => {
             state.page = action.payload.page
-        }
+        },
+        setUpcoming: (state, action) => {
+            state.upcoming = action.payload.upcoming
+        },
+        setPast: (state, action) => {
+            state.past = action.payload.past
+        },
     },
 });
 
-export const { setLogin, setLogout, setEvents, setMessageWith, setMessages, setFriends, setPage } = authSlice.actions;
+export const { setLogin, setLogout, setEvents, setMessageWith, setMessages, setFriends, setPage, setUpcoming, setPast } = authSlice.actions;
 
 export default authSlice.reducer;

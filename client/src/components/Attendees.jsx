@@ -46,12 +46,12 @@ const Attendees = (props) => {
     };
 
   return (
-    <div className={added ? 'flex justify-between attendeeListAdded rounded-2xl p-1 m-1' : 'flex justify-between attendeeList rounded-2xl p-1 m-1'}>
+    <div className={added ? 'flex justify-between attendeeListAdded rounded-2xl m-1 p-1' : 'flex justify-between attendeeList rounded-2xl m-1 p-1'}>
         {/* show picture of user here */}
-       <p className={added ? 'p-1 font-medium text-white' : 'p-1 font-medium text-black'}>{data.name}</p>
-       <div className=' flex'>
-            {added ? <ImCheckmark size={27} className='mx-2 my-1'/>
-            : <AiOutlineUserAdd onClick={addFriend} size={27} className='mx-2 my-1 hover:text-slate-400 cursor-pointer'/>}
+       <p className={added ? 'pt-1 text-white' : 'pt-1 text-black'}>{data.name}</p>
+       <div className='flex'>
+            {added ? <ImCheckmark size={27} className='mx-2 my-1 p-1'/>
+            : <AiOutlineUserAdd onClick={addFriend} size={27} className='mx-2 my-1 -1 hover:text-slate-400 cursor-pointer'/>}
        </div>
     </div>
   );

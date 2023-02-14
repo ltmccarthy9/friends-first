@@ -4,18 +4,26 @@ import Yourevents from "../components/Yourevents";
 import Nav from "../components/Nav";
 import Pastevents from "../components/Pastevents";
 import useFetch from "../hooks/useFetch";
-import { FiSettings } from 'react-icons/fi';
+import { useSelector } from "react-redux";
+import { useDispatch } from 'react-redux';
+import { setUpcoming, setPast } from '../state';
 
 const Profile = () => {
 
     //useStates for switching between upcoming and past events on profile
-    const [upcoming, setUpcoming] = useState(true);
-    const [past, setPast] = useState(false)
-    
+    //useStates for switching between upcoming and past events on profile
+    const dispatch = useDispatch();
+
+    const upcoming = useSelector((state) => state.upcoming);
+    const past = useSelector((state) => state.past);
+
     const navigate = useNavigate();
 
     const userId = localStorage.getItem('id');
 
+
+    console.log('upcoming', upcoming);
+    console.log('past', past);
     useEffect(() => {
         if(localStorage.getItem('user') !== 'loggedin') {
             loginAlert();
@@ -25,20 +33,29 @@ const Profile = () => {
 
     //function for switching to upcoming events
     const switchUpcoming = () => {
-        setPast(false);
-        setUpcoming(true);
+        dispatch(setPast({
+        past: false
+        }));
+    dispatch(setUpcoming({
+        upcoming: true
+        }));
+        navigate('/profile');
     }
 
     //function for switching to past events
     const switchPast = () => {
-        setUpcoming(false);
-        setPast(true);
+    dispatch(setUpcoming({
+        upcoming: false
+        }));
+        dispatch(setPast({
+        past: true
+        }));
+        navigate('/profile/past');
     }
-    
+
     const loginAlert = () => {
         alert("please login to continue");
     }
-
     const { data, loading, error } = useFetch(`http://localhost:4000/api/users/${userId}`);
     
     if(loading) {
@@ -49,7 +66,6 @@ const Profile = () => {
         return <p>Error: {error.message}</p>;
     }
 
-    const userLikes = data.liked;
 
     return (
          <div className="flex mt-24 mx-auto">
@@ -65,7 +81,7 @@ const Profile = () => {
                 </div>
 
                 <div className="w-64 lg:w-3/12">
-                    {upcoming ? <Yourevents /> : <Pastevents likes={userLikes} />} 
+                    <Yourevents />
                 </div>
             </div>
 

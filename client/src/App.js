@@ -4,6 +4,7 @@ import Dashboard from "./pages/Dashboard";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import Messages from "./pages/Messages";
+import Past from "./pages/Past";
 
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
@@ -35,6 +36,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/past" element={<Past/>} />
           <Route path="/messages" element={<Messages/>} />
         </Routes>
         </div>

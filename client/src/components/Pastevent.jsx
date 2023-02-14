@@ -43,7 +43,7 @@ const Pastevent = ({ business, location, date, attending, likes, id }) => {
                 <AiFillDelete onClick={deletePastEvent} className='cursor-pointer hover:text-slate-500' size={25}/>
             </div>
             
-            <div className="h-fit m-auto grid grid-cols-4 lg:grid-cols-5">
+            <div className="h-fit m-auto grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4">
                 {/* map through attendees and return them as attendee component (other than user) */}
                     {attending.map((attendee, index) => {
                         if(attendee !== userId){

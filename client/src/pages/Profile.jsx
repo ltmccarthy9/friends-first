@@ -27,7 +27,7 @@ const Profile = () => {
     useEffect(() => {
         if(localStorage.getItem('user') !== 'loggedin') {
             loginAlert();
-            navigate("/")
+            navigate("/login")
         }
     }, [])
 

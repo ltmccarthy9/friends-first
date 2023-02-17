@@ -1,10 +1,11 @@
 import {BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Home from "./pages/Home";
-import Dashboard from "./pages/Dashboard";
+import Login from "./pages/Login";
+import Events from "./pages/Events";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
 import Messages from "./pages/Messages";
 import Past from "./pages/Past";
+import Landing from "./pages/Landing";
 
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
@@ -32,8 +33,9 @@ function App() {
       <Router>
         <div>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/" element ={<Landing/>} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/events" element={<Events />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/past" element={<Past/>} />

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setLogin } from "../state";
 
-const Home = () => {
+const Login = () => {
   
   
     // State for user input for login/signup
@@ -37,7 +37,7 @@ const Home = () => {
             localStorage.setItem('user', 'loggedin');
             localStorage.setItem('id', data.user._id)
             console.log(data.user._id)
-            navigate("/dashboard")
+            navigate("/events")
           }
         })
         .catch((error) => {
@@ -45,13 +45,17 @@ const Home = () => {
         });
       };
 
+      const navHome = () => {
+        navigate('/')
+     }
+
     
     return (
     <div className="flex flex-col">
-      <h1 className="title font-extrabold tracking-tight text-6xl cursor-pointer" >Friends First.</h1>
+      <h1 onClick={navHome} className="title theme-green font-extrabold tracking-tight text-6xl cursor-pointer" >Friends First.</h1>
         
       <div className="login-card mt-32 mx-auto pt-8 pb-12 px-8">
-        <h1 className="theme-green text-center my-4 font-extrabold tracking-tight text-3xl">Sign in</h1>
+        <h1 className="theme-green text-center my-4 font-extrabold tracking-tight text-3xl">Log in</h1>
           <form id="myForm">
             <input placeholder="email" onKeyUp={(e) => setEmail(e.target.value)} type="email" className="form-control my-3 chat-input"></input>
             <input placeholder="password" onKeyUp={(e) => setPassword(e.target.value)} type="password" className="form-control my-1 chat-input"></input>
@@ -64,4 +68,4 @@ const Home = () => {
     );
 }
 
-export default Home;
+export default Login;

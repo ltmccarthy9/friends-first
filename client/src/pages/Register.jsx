@@ -41,7 +41,7 @@ const Register = () => {
         }).then((response) => response.json())
         .then((data) => {
           alert('Successfully registered!');
-          navigate('/');
+          navigate('/events');
         })
         .catch((error) => {
           console.log('Error', error);
@@ -53,16 +53,12 @@ const Register = () => {
     // if user is logged in go to dashboard
     // if not, go back to login page
     const navHome = () => {
-        if(localStorage.getItem('user') === 'loggedin'){
-            navigate("/dashboard")
-        } else {
-            navigate("/") 
-        }
+       navigate('/')
     }
 
     return (
         <div  className="flex flex-col">
-            <h1 className="title font-extrabold tracking-tight text-6xl cursor-pointer" onClick={navHome} >Friends First.</h1>
+            <h1 className="title theme-green font-extrabold tracking-tight text-6xl cursor-pointer" onClick={navHome} >Friends First.</h1>
             <div className="login-card mt-32 mx-auto pt-8 pb-12 px-8">
             <h1 className="theme-green text-center my-4 font-extrabold tracking-tight text-3xl">Sign Up</h1>
                 <form id="myForm">

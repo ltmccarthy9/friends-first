@@ -23,7 +23,7 @@ const Messages = () => {
     }));
     if(localStorage.getItem('user') !== 'loggedin') {
         loginAlert();
-        navigate("/")
+        navigate("/login")
     }
   }, []);
 

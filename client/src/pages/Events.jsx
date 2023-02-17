@@ -6,7 +6,7 @@ import useFetch from "../hooks/useFetch";
 import { useDispatch } from 'react-redux';
 import { setPast, setUpcoming } from '../state';
 
-const Dashboard = () => {
+const Events = () => {
     //useNavigate hook for changing pages
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const Dashboard = () => {
         }));
         if(localStorage.getItem('user') !== 'loggedin') {
             loginAlert();
-            navigate("/")
+            navigate("/login")
         }
     }, [])
 
@@ -69,7 +69,7 @@ const Dashboard = () => {
             <div className="w-full flex flex-col locationHeader">
                 <div className="flex mx-auto mb-3">
                     <h2 className="text-2xl mr-2">Showing events for</h2>
-                    <h2 className="text-2xl font-bold">Chicago, IL</h2>
+                    <h2 className="text-2xl font-bold theme-dark">Chicago, IL</h2>
                 </div>
                 <input onChange={(e) => setQuery(e.target.value)} value={query} className="search-bar w-80 p-2 mx-auto" placeholder="Search by category, name, description..."/>
             </div>
@@ -103,4 +103,4 @@ const Dashboard = () => {
     );
 };
 
-export default Dashboard;
+export default Events;

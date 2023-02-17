@@ -50,8 +50,6 @@ const Register = () => {
         });
     } 
    
-    // if user is logged in go to dashboard
-    // if not, go back to login page
     const navHome = () => {
        navigate('/')
     }

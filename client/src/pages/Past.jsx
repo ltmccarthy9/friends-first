@@ -20,17 +20,7 @@ const Past = () => {
      const navigate = useNavigate();
  
      const userId = localStorage.getItem('id');
- 
-     console.log('upcoming', upcoming);
-    console.log('past', past);
 
-     useEffect(() => {
-         if(localStorage.getItem('user') !== 'loggedin') {
-             loginAlert();
-             navigate("/login")
-         }
-     }, [])
- 
      //function for switching to upcoming events
      const switchUpcoming = () => {
          dispatch(setPast({
@@ -53,9 +43,6 @@ const Past = () => {
          navigate('/profile/past');
      }
      
-     const loginAlert = () => {
-         alert("please login to continue");
-     }
  
      const { data, loading, error } = useFetch(`http://localhost:4000/api/users/${userId}`);
      

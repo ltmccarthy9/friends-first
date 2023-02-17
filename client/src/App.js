@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import {BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 import Login from "./pages/Login";
 import Events from "./pages/Events";
 import Register from "./pages/Register";
@@ -11,6 +11,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import 'firebase/compat/analytics';
 
+import { useSelector } from "react-redux";
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 
 firebase.initializeApp({
@@ -27,6 +28,8 @@ const firestore = firebase.firestore();
 const analytics = firebase.analytics();
 
 function App() {
+
+  const isAuth = Boolean(useSelector((state) => state.token))
   
   return (
     
@@ -35,11 +38,11 @@ function App() {
         <Routes>
           <Route path="/" element ={<Landing/>} />
           <Route path="/login" element={<Login />} />
-          <Route path="/events" element={<Events />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/profile/past" element={<Past/>} />
-          <Route path="/messages" element={<Messages/>} />
+          <Route path="/events" element={isAuth ? <Events/> : <Navigate to="/"/>} />
+          <Route path="/profile" element={isAuth ? <Profile/> : <Navigate to="/"/>} />
+          <Route path="/profile/past" element={isAuth ? <Past/> : <Navigate to="/"/>} />
+          <Route path="/messages" element={isAuth ? <Messages/> : <Navigate to="/"/>} />
         </Routes>
         </div>
       </Router>

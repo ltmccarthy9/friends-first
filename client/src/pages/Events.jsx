@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Event from "../components/Event";
 import Nav from "../components/Nav";
 import useFetch from "../hooks/useFetch";
@@ -7,8 +6,7 @@ import { useDispatch } from 'react-redux';
 import { setPast, setUpcoming } from '../state';
 
 const Events = () => {
-    //useNavigate hook for changing pages
-    const navigate = useNavigate();
+    
     const dispatch = useDispatch();
 
     const [query, setQuery] = useState('');
@@ -21,10 +19,6 @@ const Events = () => {
         dispatch(setUpcoming({
             upcoming: true
         }));
-        if(localStorage.getItem('user') !== 'loggedin') {
-            loginAlert();
-            navigate("/login")
-        }
     }, [])
 
     // Search filter
@@ -40,10 +34,6 @@ const Events = () => {
         })
         ();
     }, [query]);
-
-    const loginAlert = () => {
-        alert("please login to continue");
-    }
 
     //grab user id
     const userId = localStorage.getItem('id');

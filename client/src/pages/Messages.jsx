@@ -21,15 +21,7 @@ const Messages = () => {
     dispatch(setUpcoming({
         upcoming: true
     }));
-    if(localStorage.getItem('user') !== 'loggedin') {
-        loginAlert();
-        navigate("/login")
-    }
   }, []);
-
-  const loginAlert = () => {
-    alert("please login to continue");
-  }
 
   const { data, loading, error } = useFetch(`http://localhost:4000/api/users/${userId}`);
   

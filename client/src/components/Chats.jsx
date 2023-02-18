@@ -53,7 +53,7 @@ const Chats = (props) => {
 
   return (
     <div onClick={changeMessage} className={messenger ? 'flex chats-box-active mx-2 p-3 font-bold' : 'flex chats-box mx-2 p-3 cursor-pointer'}>
-        <p>{name} | {age} </p>
+        <p className={messenger ? '' : 'theme-dark'}>{name} | {age} </p>
         <RiDeleteBinLine onClick={() => deleteFriend()} className={messenger ? 'mt-1 ml-auto text-white cursor-pointer' : 'mt-1 ml-auto cursor-pointer'}/>
     </div>
   )

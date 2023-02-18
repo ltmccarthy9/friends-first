@@ -8,6 +8,22 @@ import { setPast, setUpcoming } from '../state';
 const Events = () => {
     const dispatch = useDispatch();
 
+    if (navigator.geolocation) {
+       const location = navigator.geolocation.getCurrentPosition(successCallback, errorCallback, {timeout:10000});
+      } else {
+        alert('your browser does not support geolocation')
+      }
+
+      function successCallback(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+      }
+
+      function errorCallback(error) {
+        console.error(`Error retrieving location: ${error.message}`);
+      }
+
     //state for filtering events with search bar
     const [query, setQuery] = useState('');
     const [filteredEvents, setFilteredEvents] = useState([]);

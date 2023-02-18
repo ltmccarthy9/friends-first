@@ -77,10 +77,10 @@ const Nav = () => {
     
 
   return (
-      <div className="fixed justify-between top-0 w-full theme-dark navBar nav-bar-border h-14 flex z-20 pt-1 mb-4 md:justify-center">
+      <div className="fixed justify-between top-0 w-full theme-dark navBar nav-bar-border h-14 flex z-20 pt-1 mb-4 md:justify-between lg:justify-center">
         <a href='/events' onClick={goDashboard} className="pt-1 font-black tracking-tight hover:text-black text-4xl ml-4 mr-2 cursor-pointer md:mr-32 lg:mr-32 xl:mr-32 2xl:mr-32">Friends First.</a>
         
-        <div className='hidden md:flex'>
+        <div className='hidden ml-auto md:flex lg:ml-44'>
             <a href='/events' onClick={goDashboard} className={events ? 'cursor-pointer border-b-4 w-24 text-black border-black px-2 pb-1 pt-2' : 'cursor-pointer w-24 px-2 pb-1 pt-2 hover:text-black'}>
                 <BsFillCalendar2EventFill size={18} className='cursor-pointer m-auto'/>
                 <h4 className={'theme-dark cursor-pointer text-center text-sm'}>Events</h4>
@@ -96,7 +96,7 @@ const Nav = () => {
                 <h4 className={'theme-dark cursor-pointer text-center text-sm'}>Messages</h4>
             </a>
             
-            <button type='button' onClick={logout} className='signOut w-24 cursor-pointer my-2 ml-12 font-bold'>
+            <button type='button' onClick={logout} className='signOut w-20 cursor-pointer my-2 ml-4 mr-1 font-bold'>
                 Sign Out
             </button>
         </div>

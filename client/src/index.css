@@ -20,16 +20,34 @@ html {
 background-color: rgb(246, 250, 248);
 }
 
-/* -----------------------------------------------HOME LOGIN / SIGN UP PAGE------------------------- */
-.signUp{
+.theme-dark{
+  color:#3d4a50;
+}
+
+.theme-green {
+  color: #536a74;
+}
+
+.navBar{
+  background-color: #ffffff;
+}
+
+.nav-bar-border{
+  border-bottom: 1px solid rgb(212, 217, 213);
+}
+/* -----------------------------------------------LANDING PAGE------------------------- */
+
+.sign-up-landing{
   outline: 2px solid #536a74;
   transition: all ease-in .15s;
 }
 
-.signUp:hover{
+.sign-up-landing:hover{
  background-color: #536a74;
  color: white;
 }
+
+/* -----------------------------------------------HOME LOGIN / SIGN UP PAGE------------------------- */
 
 .title{
   text-align: center;
@@ -74,32 +92,18 @@ background-color: rgb(246, 250, 248);
   border-radius: 30px;
   font-weight: 450;
   color: #424e4e;
+  border: 2px solid #e7edeb;
+}
+
+.search-bar:focus{
+  outline: none;
+  border: 2px solid #536a74;
+  background-color: #ffffff;
 }
 
 .locationHeader{
   margin-top: 100px;
 } 
-
-.search-bar:focus{
-  outline: none;
-  background-color: #e7edeb;
-}
-
-.theme-dark{
-  color:#3d4a50;
-}
-
-.theme-green {
-  color: #536a74;
-}
-.navBar{
-  background-color: #ffffff;
-}
-
-
-.nav-bar-border{
-  border-bottom: 1px solid rgb(212, 217, 213);
-}
 
 .signOut{
   color: white;
@@ -170,16 +174,6 @@ background-color: rgb(246, 250, 248);
   width: 100%;
   background-color: rgb(10, 10, 10, .7);
   z-index: 20;
-}
-
-
-.pastEvent{
-  border: 1px solid rgb(224, 226, 225);
-  background-color: #ffffff;
-  border-radius: 20px;
-  transition: all ease-in .2s;
-  margin-bottom: 10px;
-  padding: 1px;
 }
 
 .description-expanded {
@@ -317,6 +311,15 @@ background-color: rgb(246, 250, 248);
 
 .profile-inactive:hover {
   background-color: #dee5e2;
+}
+
+.pastEvent{
+  border: 1px solid rgb(224, 226, 225);
+  background-color: #ffffff;
+  border-radius: 20px;
+  transition: all ease-in .2s;
+  margin-bottom: 10px;
+  padding: 1px;
 }
 
 .attendeeListAdded{

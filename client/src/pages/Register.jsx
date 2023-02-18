@@ -11,15 +11,19 @@ const Register = () => {
     const [ password, setPassword] = useState('');
     const [ passwordCheck, setPasswordCheck] = useState('');
     const [ age, setAge ] = useState(18);
+    const [ checked, setChecked ] = useState(false);
 
     //function to check if form is properly filled by user
     const checkForm = (e) => {
         e.preventDefault();
         if(!name || !email || !password || !passwordCheck) {
-            alert('You must fill every part of the form')
+            alert('You must fill every part of the form.');
             return;
         } else if(password !== passwordCheck) {
-            alert('Your password must match');
+            alert('Your password must match.');
+            return;
+        } else if(age < 18) {
+            alert('You must be at least 18 years old to sign up.');
             return;
         }
         //if form is properly filled, run handleSubmit function
@@ -29,6 +33,7 @@ const Register = () => {
 
     //function for registering user
     const handleSubmit = async () => {
+        
         fetch("http://localhost:4000/api/auth/register" , {
             method: "POST",
             headers: {
@@ -68,6 +73,10 @@ const Register = () => {
                     <input placeholder="re-type password" onKeyUp={(e) => setPasswordCheck(e.target.value)} type="password" className="form-control chat-input"></input>
                     <label className="font-bold mt-2" htmlFor="userAge">Age</label>
                     <input defaultValue={(18)} placeholder="age" id="userAge" onChange={(e) => setAge(e.target.value)} type="number" className="my-2 form-control chat-input w-16"></input>
+                    <div className="py-2 w-fit h-fit">
+                        <input onChange={(e) => setChecked(e.target.checked)} checked={checked} type="checkbox" id="geolocation" name="geolocation" value="1" className="mr-2 w-5 h-5"></input>
+                        <label for="geolocation">Allow geolocation?</label>
+                    </div>
 
                     <button type="button" onClick={(e) => checkForm(e)} className="sign-up btn btn-light sub">Sign Up</button>
                 </form>

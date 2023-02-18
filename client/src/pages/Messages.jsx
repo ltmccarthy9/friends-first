@@ -11,9 +11,9 @@ import { useNavigate } from 'react-router-dom';
 const Messages = () => {
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const userId = localStorage.getItem('id');
 
+  //UsEffect for properly handling profile conditional style
   useEffect(() => {
     dispatch(setPast({
         past: false
@@ -23,6 +23,7 @@ const Messages = () => {
     }));
   }, []);
 
+  //fetch user data using useFetch custom hook
   const { data, loading, error } = useFetch(`http://localhost:4000/api/users/${userId}`);
   
   if(loading) {
@@ -33,13 +34,16 @@ const Messages = () => {
       return <p>Error: {error.message}</p>;
   }
 
+  //array of user's friends (other user ids)
   const friends = data.friends;
 
   return (
     <div className='h-screen mt-20'>
       <Nav/>
-      <div className='flex justify-center pt-16'>
-        <div className='chats-box-container flex-col chats-bar h-3/5 w-4/12 sm:w-3/12 md:w-3/12 lg:w-2/12 xl:w-2/12 2xl:w-1/12'>
+      <div className='flex justify-center pt-16 w-full m-auto md:w-10/12 xl:w-9/12 2xl:w-8/12'>
+        <div className='chats-box-container flex-col chats-bar h-3/5 w-4/12 sm:w-3/12 2xl:w-2/12'>
+          <h2 className='theme-dark tracking-tight text-3xl m-2'>Chats</h2>
+          {/* Map through friends array and return a chat component within the chats-box-container */}
           {friends.map((friend, index) => {
               return <Chats key={index} index={index} user2Id={friend}/>;
           })}

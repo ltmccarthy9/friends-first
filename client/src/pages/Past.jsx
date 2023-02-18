@@ -43,7 +43,7 @@ const Past = () => {
          navigate('/profile/past');
      }
      
- 
+     //Fetch user data
      const { data, loading, error } = useFetch(`http://localhost:4000/api/users/${userId}`);
      
      if(loading) {
@@ -54,14 +54,15 @@ const Past = () => {
          return <p>Error: {error.message}</p>;
      }
  
+     //array of user's liked (ids of other users)
      const userLikes = data.liked;
 
   return (
-    <div className="flex mt-24 mx-auto">
+    <div className="flex mt-24 mx-auto w-full">
         <Nav/>
         <div className="flex flex-col w-full justify-center sm:flex-row p-4">
             <div className="profileBar mt-8 flex flex-col rounded-lg bg-white mr-4 pt-2 h-fit w-full sm:w-48 sm:mx-8">
-                <h2 className="theme-green tracking-tight text-3xl px-1 pt-2 pb-1">{data.name}'s</h2>
+                <h2 className="theme-dark tracking-tight text-3xl px-1 pt-2 pb-1">{data.name}'s</h2>
                 <button type='button' onClick={() => switchUpcoming()} className={upcoming ? "text-left font-semibold px-1 py-2 tracking-tight text-lg cursor-pointer profile-active"
                 : "text-left tracking-tight text-lg cursor-pointer px-1 py-2 profile-inactive"}>Upcoming Events</button>
                     
@@ -69,7 +70,7 @@ const Past = () => {
                 : "text-left tracking-tight text-lg cursor-pointer px-1 py-2 profile-inactive"}>Past Events</button>
             </div>
 
-            <div className="w-full sm:w-64 lg:w-3/12">
+            <div className="w-full sm:w-6/12 lg:w-5/12 xl:w-4/12">
                 <Pastevents likes={userLikes} />
             </div>
         </div>

@@ -6,12 +6,14 @@ import { useDispatch } from 'react-redux';
 import { setPast, setUpcoming } from '../state';
 
 const Events = () => {
-    
     const dispatch = useDispatch();
 
+    //state for filtering events with search bar
     const [query, setQuery] = useState('');
     const [filteredEvents, setFilteredEvents] = useState([]);
     //Move user if they're not logged in
+    
+    //UsEffect for properly handling profile conditional style
     useEffect(() => {
         dispatch(setPast({
             past: false
@@ -21,7 +23,7 @@ const Events = () => {
         }));
     }, [])
 
-    // Search filter
+    // Search filter in useEffect, calls every time query state changes(user types in search bar)
     useEffect(() => {
         (async () => {
             if(!query){
@@ -38,7 +40,7 @@ const Events = () => {
     //grab user id
     const userId = localStorage.getItem('id');
     
-    // fetch events
+    // fetch events using custom useFetch hook
     const { data, loading, error } = useFetch('http://localhost:4000/api/events/future');
 
     if(loading) {
@@ -49,9 +51,8 @@ const Events = () => {
         return <p>Error: {error.message}</p>;
     }
 
+    // only return events that haven't been joined by user
     const openEvents = data.filter(each => !each.attendees.includes(userId));
-    
-    //filter out events user has already joined
 
     return (
         <div className="flex flex-col">

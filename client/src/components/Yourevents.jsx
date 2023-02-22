@@ -1,6 +1,7 @@
 import useFetch from "../hooks/useFetch";
 import moment from 'moment';
 import Event from "./Event";
+import { useSelector } from "react-redux";
 
 const Yourevents = () => {
 
@@ -8,8 +9,9 @@ const Yourevents = () => {
 
     // use moment.js to filter out only relevent events (not in the past)
     const now = moment().toISOString();
+    const refetch = useSelector((state) => state.refetch);
 
-    const { data, loading, error } = useFetch('http://localhost:4000/api/events');
+    const { data, loading, error } = useFetch('http://localhost:4000/api/events', refetch);
     // fetch our events
     
     if(loading) {
@@ -43,6 +45,7 @@ const Yourevents = () => {
             category={event.category}
             date={event.date.substring(5, 10)}
             time={event.time}
+            refetch={refetch}
             attending={event.attendees.includes(userId)} />
         ))}
         </div>

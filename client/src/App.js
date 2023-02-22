@@ -11,6 +11,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import 'firebase/compat/analytics';
 
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 
@@ -24,10 +25,22 @@ firebase.initializeApp({
   measurementId: "G-8GJG7K6CVR"
 });
 
+
 const firestore = firebase.firestore();
 const analytics = firebase.analytics();
 
 function App() {
+
+  const [ showNav, setShowNav] = useState(true);
+
+  useEffect(() => {
+    if(window.location.pathname === '/' || window.location.pathname === '/login' || window.location.pathname === '/register' ){
+      setShowNav(false)
+    } else {
+      setShowNav(true);
+    }
+  }, [window.location.pathname])
+
 
   const isAuth = Boolean(useSelector((state) => state.token))
   
@@ -35,7 +48,7 @@ function App() {
     
       <Router>
         <div>
-        <Nav/>
+        {showNav ? <Nav/> : <div></div>}
         <Routes>
           <Route path="/" element ={<Landing/>} />
           <Route path="/login" element={<Login />} />

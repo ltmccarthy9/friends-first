@@ -61,7 +61,9 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
             });
             const data = await response.json();
             console.log(data)
-            window.location.reload();
+            dispatch(setRefetch({
+                refetch: (!refetch)
+            }))
             //Here we just do the opposite as shown above for the join functionality
             if(!data.error) {
                 setJoined(false)

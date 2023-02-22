@@ -77,7 +77,7 @@ const Nav = () => {
     
 
   return (
-      <div className="fixed justify-between top-0 w-full theme-dark navBar nav-bar-border
+      <div className="fixed justify-between top-0 w-full theme-dark navBar
        h-14 flex z-20 pt-1 mb-4 md:justify-between lg:justify-center">
         
         <a href='/events' 

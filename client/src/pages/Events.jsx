@@ -5,6 +5,7 @@ import useFetch from "../hooks/useFetch";
 import { useDispatch } from 'react-redux';
 import { setPast, setUpcoming } from '../state';
 import { CiSearch } from 'react-icons/ci';
+import { useSelector } from "react-redux";
 
 const Events = () => {
     const dispatch = useDispatch();
@@ -57,9 +58,10 @@ const Events = () => {
     //const options = { month: 'short', day: 'numeric', ordinal: 'numeric' }
     //grab user id
     const userId = localStorage.getItem('id');
+    const refetch = useSelector((state) => state.refetch);
     
     // fetch events using custom useFetch hook
-    const { data, loading, error } = useFetch('http://localhost:4000/api/events/future');
+    const { data, loading, error } = useFetch('http://localhost:4000/api/events/future', refetch);
 
     if(loading) {
         return <p>Loading...</p>;
@@ -74,7 +76,6 @@ const Events = () => {
 
     return (
         <div className="flex flex-col">
-            <Nav/>
             <div className="w-full flex flex-col locationHeader">
                 <div className="flex mx-auto mb-3">
                     <h2 className="text-xl mr-1">Showing events for</h2>
@@ -100,6 +101,7 @@ const Events = () => {
                         category={event.category}
                         date={event.date.substring(5, 10)}
                         time={event.time}
+                        refetch={refetch}
                         attending={event.attendees.includes(userId)} />
                     )) : openEvents.map((event) => (
                         <Event key={event._id}
@@ -112,6 +114,7 @@ const Events = () => {
                         category={event.category}
                         date={event.date.substring(5, 10)}
                         time={event.time}
+                        refetch={refetch}
                         attending={event.attendees.includes(userId)} />))}
                 </div> 
                 </div> 

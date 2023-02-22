@@ -9,7 +9,8 @@ const initialState = {
     friends: 0,
     page: 'events',
     upcoming: true,
-    past: false
+    past: false,
+    refetch: false,
 };
 
 export const authSlice = createSlice({
@@ -45,9 +46,21 @@ export const authSlice = createSlice({
         setPast: (state, action) => {
             state.past = action.payload.past
         },
+        setRefetch: (state, action) => {
+            state.refetch = action.payload.refetch
+        },
     },
 });
 
-export const { setLogin, setLogout, setEvents, setMessageWith, setMessages, setFriends, setPage, setUpcoming, setPast } = authSlice.actions;
+export const { setLogin,
+    setLogout,
+    setEvents,
+    setMessageWith,
+    setMessages,
+    setFriends,
+    setPage,
+    setUpcoming,
+    setPast,
+    setRefetch } = authSlice.actions;
 
 export default authSlice.reducer;

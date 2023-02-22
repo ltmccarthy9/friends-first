@@ -56,7 +56,6 @@ const Profile = () => {
 
     return (
          <div className="flex mt-24 mx-auto">
-            <Nav/>
             <div className="flex flex-col w-full justify-center sm:flex-row p-4">
                 <div className="profileBar mt-8 flex flex-col rounded-lg bg-white 
                 mr-4 pt-2 h-fit w-full sm:w-48 sm:mx-8">

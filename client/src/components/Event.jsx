@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { RiArrowDropDownLine } from 'react-icons/ri';
-import { BsArrowRightSquare } from 'react-icons/bs';
-import { CgArrowLeftR } from 'react-icons/cg';
+import { setRefetch } from "../state";
+import { useDispatch } from "react-redux";
 
-const Event = ({ business, location, description, capacity, taken, id, date, time, attending }) => {
+
+const Event = ({ business, location, description, capacity, taken, id, date, time, attending, refetch }) => {
    
     // state for event cards - updating spots taken and whether user joined or not
     const [filled, setFilled] = useState(taken);
@@ -18,6 +18,8 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
 
     //grab our jwt from our state
     const token = useSelector((state) => state.token);
+
+    const dispatch = useDispatch();
 
     //join event function.  We send the jwt for authorization so that the user can join the event
     const joinEvent = async () => {
@@ -34,7 +36,9 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
             });
             const data = await response.json();
             //if there is no error, we set joined to true and fill is increased by 1
-            window.location.reload();
+            dispatch(setRefetch({
+                refetch: (!refetch)
+            }))
             if(!data.error){
                 setJoined(true)
                 setFilled(filled + 1)

@@ -6,7 +6,7 @@ import Profile from "./pages/Profile";
 import Messages from "./pages/Messages";
 import Past from "./pages/Past";
 import Landing from "./pages/Landing";
-
+import Nav from "./components/Nav";
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import 'firebase/compat/analytics';
@@ -35,6 +35,7 @@ function App() {
     
       <Router>
         <div>
+        <Nav/>
         <Routes>
           <Route path="/" element ={<Landing/>} />
           <Route path="/login" element={<Login />} />

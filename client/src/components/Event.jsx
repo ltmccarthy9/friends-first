@@ -73,21 +73,36 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
     
 
     return (
-        <div onClick={expanded ? () => handleExpand() : null } className={expanded ? "overlay" : 'overlaySmall'}>
-            <button onClick={expanded ? null : () => handleExpand()} type="button" className={expanded ? 'eventExpanded' : "event w-full h-48 mb-3"}>
-                    <h2 className={expanded ? " font-extrabold tracking-tight text-4xl px-2" : "mx-auto theme-dark font-extrabold tracking-tight text-3xl px-3"}>{business}</h2>
-                    <h3 className="absolute top-0 right-0 p-3 font-bold tracking-tight text-xl">{filled}/{capacity}</h3>
-                    <p className={expanded ? "mx-auto font-semibold text-lg mt-2" : "mx-auto font-normal theme-green text-md mt-2"}>{date} | {time}</p>
-                    
-                    <p className={expanded ? "description-expanded text-md p-1" : "hidden"}>{description} "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                        "</p>
-                    
-                    <div className="absolute bottom-0 right-0">
-                        {expanded ? joined ? <button onClick={() => joinEvent()} type="button" className="theme-green text-xl font-bold px-4 py-2 m-4 leaveBtn">Leave</button>
-                        : <button onClick={() => joinEvent()} type="button" className="theme-green text-xl font-bold px-4 py-2 m-4 joinBtn">Join</button>   : <p></p>}      
-                    </div>
-                    
+        <div onClick={expanded ? () => handleExpand() : null } 
+        className={expanded ? "overlay" : 'overlaySmall'}>
+            <button onClick={expanded ? null : () => handleExpand()} 
+            type="button" 
+            className={expanded ? 'eventExpanded max-w-xs sm:max-w-3xl' : "event relative w-full h-48 mb-3"}>
+                <h2 className={expanded ? " font-extrabold tracking-tight text-4xl px-2" 
+                : " mx-auto theme-dark font-extrabold tracking-tight text-3xl px-3"}
+                >{business}</h2>
+                <h3 className={expanded ? "text-white absolute top-0 right-0 p-3 font-bold tracking-tight text-xl"
+                : "theme-dark absolute top-0 right-0 p-3 font-bold tracking-tight text-xl"}
+                >{filled}/{capacity}</h3>
+                <p className={expanded ? "mx-auto font-semibold text-lg mt-2" 
+                : "mx-auto font-normal theme-green text-md mt-2"}
+                >{date} | {time}</p>
+            
+                <p className={expanded ? "description-expanded text-md p-2" 
+                : "hidden"}>{description} "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                    "</p>
+                
+                <div className="absolute bottom-0 right-0">
+                    {expanded ? joined ? <button onClick={() => joinEvent()} 
+                    type="button" className="theme-green text-xl font-bold px-4 py-2 m-4 leaveBtn"
+                    >Leave</button>
+                    : <button onClick={() => joinEvent()} type="button" 
+                    className="theme-green text-xl font-bold px-4 py-2 m-4 joinBtn"
+                    >Join</button>   
+                        : <p></p>}      
+                </div>
             </button>
         </div>
     );

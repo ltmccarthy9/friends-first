@@ -5,7 +5,7 @@
 
 body {
   margin: 0;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Mukta', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(246, 250, 248);
@@ -89,16 +89,20 @@ background-color: rgb(246, 250, 248);
 .search-bar{
   background-color: #e7edeb;
   font-size: 16px;
-  border-radius: 30px;
+  border-radius: 12px;
   font-weight: 450;
   color: #424e4e;
   border: 2px solid #e7edeb;
+  width: 200px;
+  transition: all ease-in-out .35s;
+  
 }
 
 .search-bar:focus{
   outline: none;
   border: 2px solid #536a74;
   background-color: #ffffff;
+  width: 340px;
 }
 
 .locationHeader{
@@ -134,7 +138,6 @@ background-color: rgb(246, 250, 248);
   transform: translate(-0%, -6%);
   transition: all ease-in-out .3s;
   background-color: #536a74;
-  z-index: 0; 
 }
 
 .event:hover h3{

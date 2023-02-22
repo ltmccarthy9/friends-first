@@ -37,10 +37,13 @@ const Pastevent = ({ business, location, date, attending, likes, id }) => {
 
             <div className="flex px-2 mt-3 justify-between">
                 <div className='flex'>
-                    <h3 className="theme-dark font-bold tracking-tight text-xl">{business}</h3>
-                    <p className="theme-green italic ml-3 mt-1">{date}</p>
+                    <h3 className="theme-dark font-bold tracking-tight text-xl"
+                    >{business}</h3>
+                    <p className="theme-green italic ml-3 mt-1"
+                    >{date}</p>
                 </div>
-                <AiFillDelete onClick={deletePastEvent} className='cursor-pointer theme-dark hover:text-slate-500' size={25}/>
+                <AiFillDelete onClick={deletePastEvent} 
+                className='cursor-pointer theme-dark hover:text-slate-500' size={25}/>
             </div>
             
             <div className="h-fit m-auto grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4">

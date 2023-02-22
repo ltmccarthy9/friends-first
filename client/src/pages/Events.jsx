@@ -4,6 +4,7 @@ import Nav from "../components/Nav";
 import useFetch from "../hooks/useFetch";
 import { useDispatch } from 'react-redux';
 import { setPast, setUpcoming } from '../state';
+import { CiSearch } from 'react-icons/ci';
 
 const Events = () => {
     const dispatch = useDispatch();
@@ -53,6 +54,7 @@ const Events = () => {
         ();
     }, [query]);
 
+    //const options = { month: 'short', day: 'numeric', ordinal: 'numeric' }
     //grab user id
     const userId = localStorage.getItem('id');
     
@@ -75,12 +77,18 @@ const Events = () => {
             <Nav/>
             <div className="w-full flex flex-col locationHeader">
                 <div className="flex mx-auto mb-3">
-                    <h2 className="text-2xl mr-2">Showing events for</h2>
-                    <h2 className="text-2xl font-bold theme-dark">Chicago, IL</h2>
+                    <h2 className="text-xl mr-1">Showing events for</h2>
+                    <h2 className="text-xl font-bold theme-dark">Chicago, IL</h2>
                 </div>
-                <input onChange={(e) => setQuery(e.target.value)} value={query} className="search-bar w-80 p-2 mx-auto" placeholder="Search by category, name, description..."/>
+                <input 
+                onChange={(e) => setQuery(e.target.value)} 
+                value={query} className="search-bar py-1 px-2 mx-auto" 
+                placeholder="Search by category, name, description..."
+                />
             </div>
-                <div className="grid grid-cols-2 gap-2 mt-8 mx-auto w-5/6 sm:w-5/6 sm:grid-cols-2 md:w-4/6 lg:w-4/6 lg:grid-cols-3 xl:w-4/6 xl:grid-cols-4">
+                <div className="grid max-w-6xl grid-cols-2 gap-2 mt-8 mx-auto w-5/6
+                 sm:w-5/6 sm:grid-cols-2 md:w-4/6 lg:w-4/6 lg:grid-cols-3 
+                 xl:w-4/6 xl:grid-cols-4">
                     {query ? filteredEvents.map((event) => (
                         <Event key={event._id}
                         id={event._id} 

@@ -60,7 +60,8 @@ const ChatRoom = () => {
             {error && <strong>Error: {JSON.stringify(error)}</strong>}
             {loading && <span>Loading...</span>}
             {/* map through message documents and dispay each using ChatMessage componenet */}
-            {friends ? filteredMessages && filteredMessages.map(msg => <ChatMessage key={msg.createdAt} message={msg} />) : <p className='font-light m-4 text-2xl relative'>Uh Oh! You have no friends.</p>}
+            {friends ? filteredMessages && filteredMessages.map(msg => <ChatMessage key={msg.createdAt} message={msg} />) 
+            : <p className='font-light m-4 text-2xl relative'>Uh Oh! You have no friends.</p>}
 
             <span ref={ref}></span>
 
@@ -69,12 +70,12 @@ const ChatRoom = () => {
             {friends ? <form className='chat-form mt-2' onSubmit={sendMessage}>
 
             <div className='flex'>
-                <input className='chat-input p-2 h-10 w-11/12 rounded-lg mt-2' value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Type a message..." />
+                <input className='chat-input p-2 h-10 w-11/12 rounded-lg mt-2' value={formValue} 
+                onChange={(e) => setFormValue(e.target.value)} placeholder="Type a message..." />
 
-                <button className='submit-message font-bold transition-all cursor-pointer bg-white rounded-md ml-2 mt-2 p-2' type="submit" disabled={!formValue}>send</button>
+                <button className='submit-message font-bold transition-all cursor-pointer bg-white rounded-md ml-2 mt-2 p-2' 
+                type="submit" disabled={!formValue}>send</button>
             </div>
-                
-
             </form> : <div></div>}
         </div>
         )

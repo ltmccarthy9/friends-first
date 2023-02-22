@@ -63,22 +63,37 @@ const Register = () => {
 
     return (
         <div  className="flex flex-col">
-            <h1 className="title theme-dark font-black tracking-tight text-6xl cursor-pointer" onClick={navHome} >Friends First.</h1>
+            <h1 className="title theme-dark font-black tracking-tight text-6xl cursor-pointer" 
+            onClick={navHome} >Friends First.</h1>
             <div className="login-card mt-32 mx-auto pt-8 pb-12 px-8">
             <h2 className="theme-dark text-center my-4 font-extrabold tracking-tight text-3xl">Sign Up</h2>
                 <form id="myForm">
-                    <input placeholder="name" onKeyUp={(e) => setName(e.target.value)} type="name" className="form-control my-2 chat-input"></input>
-                    <input placeholder="email" onKeyUp={(e) => setEmail(e.target.value)} type="email" className="form-control my-2 chat-input"></input>
-                    <input placeholder="password" onKeyUp={(e) => setPassword(e.target.value)} type="password" className="form-control my-2 chat-input"></input>
-                    <input placeholder="re-type password" onKeyUp={(e) => setPasswordCheck(e.target.value)} type="password" className="form-control chat-input"></input>
+                    <input placeholder="name" onKeyUp={(e) => setName(e.target.value)} 
+                    type="name" className="form-control my-2 chat-input"
+                    ></input>
+                    <input placeholder="email" onKeyUp={(e) => setEmail(e.target.value)} 
+                    type="email" className="form-control my-2 chat-input"
+                    ></input>
+                    <input placeholder="password" onKeyUp={(e) => setPassword(e.target.value)} 
+                    type="password" className="form-control my-2 chat-input"
+                    ></input>
+                    <input placeholder="re-type password" onKeyUp={(e) => setPasswordCheck(e.target.value)} 
+                    type="password" className="form-control chat-input"
+                    ></input>
                     <label className="font-bold mt-2" htmlFor="userAge">Age</label>
-                    <input defaultValue={(18)} placeholder="age" id="userAge" onChange={(e) => setAge(e.target.value)} type="number" className="my-2 form-control chat-input w-16"></input>
+                    <input defaultValue={(18)} placeholder="age" id="userAge" onChange={(e) => setAge(e.target.value)} 
+                    type="number" className="my-2 form-control chat-input w-16"
+                    ></input>
                     <div className="py-2 w-fit h-fit">
-                        <input onChange={(e) => setChecked(e.target.checked)} checked={checked} type="checkbox" id="geolocation" name="geolocation" value="1" className="mr-2 w-5 h-5"></input>
+                        <input onChange={(e) => setChecked(e.target.checked)} checked={checked} 
+                        type="checkbox" id="geolocation" name="geolocation" value="1" className="mr-2 w-5 h-5"
+                        ></input>
                         <label for="geolocation">Allow geolocation?</label>
                     </div>
 
-                    <button type="button" onClick={(e) => checkForm(e)} className="sign-up btn btn-light sub">Sign Up</button>
+                    <button type="button" onClick={(e) => checkForm(e)} 
+                    className="sign-up btn btn-light sub"
+                    >Sign Up</button>
                 </form>
             </div> 
         </div>

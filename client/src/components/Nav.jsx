@@ -77,21 +77,34 @@ const Nav = () => {
     
 
   return (
-      <div className="fixed justify-between top-0 w-full theme-dark navBar nav-bar-border h-14 flex z-20 pt-1 mb-4 md:justify-between lg:justify-center">
-        <a href='/events' onClick={goDashboard} className="pt-1 font-black tracking-tight hover:text-black text-4xl ml-4 mr-2 cursor-pointer md:mr-32 lg:mr-32 xl:mr-32 2xl:mr-32">Friends First.</a>
+      <div className="fixed justify-between top-0 w-full theme-dark navBar nav-bar-border
+       h-14 flex z-20 pt-1 mb-4 md:justify-between lg:justify-center">
+        
+        <a href='/events' 
+        onClick={goDashboard} 
+        className="pt-2 font-black tracking-tight hover:text-black text-3xl ml-4 mr-2
+         cursor-pointer md:mr-32 lg:mr-32 xl:mr-32 2xl:mr-32"
+         >Friends First.
+        </a>
         
         <div className='hidden ml-auto md:flex lg:ml-44'>
-            <a href='/events' onClick={goDashboard} className={events ? 'cursor-pointer border-b-4 w-24 text-black border-black px-2 pb-1 pt-2' : 'cursor-pointer w-24 px-2 pb-1 pt-2 hover:text-black'}>
+            <a href='/events' onClick={goDashboard} 
+            className={events ? 'cursor-pointer border-b-4 w-24 text-black border-black px-2 pb-1 pt-2' 
+            : 'cursor-pointer w-24 px-2 pb-1 pt-2 hover:text-black'}>
                 <BsFillCalendar2EventFill size={18} className='cursor-pointer m-auto'/>
                 <h4 className={'theme-dark cursor-pointer text-center text-sm'}>Events</h4>
             </a>
             
-            <a href='/profile' onClick={goProfile} className={profile ? 'cursor-pointer border-b-4 w-24 text-black border-black px-2 pb-1 pt-2' : ' cursor-pointer w-24 px-2 pb-1 pt-2 hover:text-black'}>
+            <a href='/profile' onClick={goProfile} 
+            className={profile ? 'cursor-pointer border-b-4 w-24 text-black border-black px-2 pb-1 pt-2' 
+            : ' cursor-pointer w-24 px-2 pb-1 pt-2 hover:text-black'}>
                 <BsPersonCircle size={18} className='cursor-pointer m-auto'/>
                 <h4 className={'theme-dark cursor-pointer text-center text-sm'}>Profile</h4>
             </a>
 
-            <a href='/messages' onClick={goMessages} className={messages ? 'cursor-pointer w-24 border-b-4 text-black border-black px-3 pb-1 pt-2' : 'cursor-pointer w-24 px-3 pb-1 pt-2 hover:text-black'}>
+            <a href='/messages' onClick={goMessages} 
+            className={messages ? 'cursor-pointer w-24 border-b-4 text-black border-black px-3 pb-1 pt-2' 
+            : 'cursor-pointer w-24 px-3 pb-1 pt-2 hover:text-black'}>
                 <RiMessage2Fill size={18} className='cursor-pointer m-auto'/>
                 <h4 className={'theme-dark cursor-pointer text-center text-sm'}>Messages</h4>
             </a>
@@ -116,19 +129,24 @@ const Nav = () => {
                             <a onClick={goDashboard} className='m-2' href='/events'>
                                 <FaHome color='#536a74' size={50} />
                             </a>
-                            <a  onClick={goDashboard} href='/events' className='text-2xl m-4 hover:font-bold hover:text-[#536a74]'>
+                            <a  onClick={goDashboard} href='/events' 
+                            className='text-2xl m-4 hover:font-bold hover:text-[#536a74]'>
                                 EVENTS
                             </a>
-                            <a onClick={goProfile} href='/profile' className='text-2xl m-4 hover:font-bold hover:text-[#536a74]'>
+                            <a onClick={goProfile} href='/profile' 
+                            className='text-2xl m-4 hover:font-bold hover:text-[#536a74]'>
                                 PROFILE
                             </a>
-                            <a onClick={goMessages} href='/messages' className='text-2xl m-4 hover:font-bold hover:text-[#536a74]'>
+                            <a onClick={goMessages} href='/messages'
+                            className='text-2xl m-4 hover:font-bold hover:text-[#536a74]'>
                                 MESSAGES
                             </a>
-                            <button type='button' onClick={logout} className='signOut w-24 cursor-pointer p-2 mx-2 mt-6'>
+                            <button type='button' onClick={logout} 
+                            className='signOut w-24 cursor-pointer p-2 mx-2 mt-6'>
                             Sign Out
                             </button>
-                            <div onClick={handleNav} className='absolute top-4 right-6 rounded-full p-3 cursor-pointer hover:text-black'>
+                            <div onClick={handleNav} 
+                            className='absolute top-4 right-6 rounded-full p-3 cursor-pointer hover:text-black'>
                                 <AiOutlineClose size={22} />
                             </div>
                         </div>

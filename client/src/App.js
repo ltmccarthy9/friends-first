@@ -25,7 +25,6 @@ firebase.initializeApp({
   measurementId: "G-8GJG7K6CVR"
 });
 
-
 const firestore = firebase.firestore();
 const analytics = firebase.analytics();
 
@@ -40,7 +39,6 @@ function App() {
       setShowNav(true);
     }
   }, [window.location.pathname])
-
 
   const isAuth = Boolean(useSelector((state) => state.token))
   

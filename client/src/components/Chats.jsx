@@ -31,8 +31,14 @@ const Chats = (props) => {
       return <p>Error: {error.message}</p>;
   }
 
+  const currentDate = new Date()
+  const birthdate = data.birthdate
+  let age = currentDate.getFullYear() - birthdate.getFullYear();
+  const months = currentDate.getMonth() - birthdate.getMonth();
+  if(months < 0 || (months === 0 && currentDate.getDate() < birthdate.getDate())) {
+    age--;
+  }
   const name = data.name;
-  const age = data.age;
     
   const deleteFriend = async () => {
     if(window.confirm("Are you sure you want to delete this friend?")){

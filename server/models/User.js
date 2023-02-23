@@ -30,6 +30,10 @@ const userSchema = new Schema({
             message: "You must be at least 18 years old to sign up"
         }
     },
+    uselocation: {
+        type: Boolean,
+        required: true,
+    },
     photos: {
         type: [String],
     },

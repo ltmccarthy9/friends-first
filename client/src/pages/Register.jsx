@@ -28,7 +28,6 @@ const Register = () => {
         handleSubmit();
     };
 
-
     //function for registering user
     const handleSubmit = async () => {
         
@@ -43,6 +42,7 @@ const Register = () => {
                 password: password,
                 password2: passwordCheck,
                 birthdate: birth,
+                uselocation: checked
               }),
         }).then((response) => response.json())
         .then((data) => {

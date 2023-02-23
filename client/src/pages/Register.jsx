@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import DatePicker from 'react-date-picker'
 
 const Register = () => {
     //useNavigate for changing url
@@ -10,22 +11,19 @@ const Register = () => {
     const [ email, setEmail] = useState('');
     const [ password, setPassword] = useState('');
     const [ passwordCheck, setPasswordCheck] = useState('');
-    const [ age, setAge ] = useState(18);
     const [ checked, setChecked ] = useState(false);
-
+    const [ birth, setBirth] = useState(new Date())
     //function to check if form is properly filled by user
     const checkForm = (e) => {
         e.preventDefault();
         if(!name || !email || !password || !passwordCheck) {
             alert('You must fill every part of the form.');
             return;
-        } else if(password !== passwordCheck) {
-            alert('Your password must match.');
-            return;
-        } else if(age < 18) {
-            alert('You must be at least 18 years old to sign up.');
-            return;
-        }
+        } 
+        // else if(password !== passwordCheck) {
+        //     alert('Your password must match.');
+        //     return;
+        // }
         //if form is properly filled, run handleSubmit function
         handleSubmit();
     };
@@ -40,19 +38,30 @@ const Register = () => {
                 "Content-Type": "application/json"
               },
               body: JSON.stringify({
-                age: age,
                 name: name,
                 email: email,
-                password: password
+                password: password,
+                password2: passwordCheck,
+                birthdate: birth,
               }),
         }).then((response) => response.json())
         .then((data) => {
-          alert('Successfully registered!');
-          navigate('/events');
+            //(these won't be caught by catch, they are mongodb validation errors)
+          if(data.error){
+            //loop through object keys and alert user of each error
+            let errors = data.error
+            const keys = Object.keys(errors);
+            keys.forEach((key, index) => {
+                alert(`${key}: ${errors[key]}`);
+            })
+          } else {
+            alert("Successfully registered")
+            navigate('/login');
+          }
         })
         .catch((error) => {
-          alert(error);
-          navigate('/');
+            console.log("there is error", error)
+            alert(error.message || error);
         });
     } 
    
@@ -80,15 +89,15 @@ const Register = () => {
                     <input placeholder="re-type password" onKeyUp={(e) => setPasswordCheck(e.target.value)} 
                     type="password" className="form-control chat-input"
                     ></input>
-                    <label className="font-bold mt-2" htmlFor="userAge">Age</label>
-                    <input defaultValue={(18)} placeholder="age" id="userAge" onChange={(e) => setAge(e.target.value)} 
-                    type="number" className="my-2 form-control chat-input w-16"
-                    ></input>
+                    <p className="font-bold mt-2 text-black">Birth date</p>
+                    <div>
+                        <DatePicker className="h-10" onChange={setBirth} value={birth}/>
+                    </div>
                     <div className="py-2 w-fit h-fit">
                         <input onChange={(e) => setChecked(e.target.checked)} checked={checked} 
                         type="checkbox" id="geolocation" name="geolocation" value="1" className="mr-2 w-5 h-5"
                         ></input>
-                        <label for="geolocation">Allow geolocation?</label>
+                        <label htmlFor="geolocation">Can we use your location?</label>
                     </div>
 
                     <button type="button" onClick={(e) => checkForm(e)} 

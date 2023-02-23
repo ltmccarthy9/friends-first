@@ -16,9 +16,19 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
-    age: {
-        type: Number,
+    birthdate: {
+        type: Date,
         required: true,
+        validate: {
+            validator: function(age) {
+                const minAge = 18
+                const currentDate = new Date();
+                const minDate = new Date(currentDate.getFullYear() - minAge, currentDate.getMonth(), currentDate.getDate());
+                
+                return age <= minDate;
+            },
+            message: "You must be at least 18 years old to sign up"
+        }
     },
     photos: {
         type: [String],

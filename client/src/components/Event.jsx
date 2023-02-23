@@ -85,7 +85,7 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
             type="button" 
             className={expanded ? 'eventExpanded max-w-xs sm:max-w-3xl' : "event relative w-full h-48 mb-3"}>
                 <h2 className={expanded ? " font-extrabold tracking-tight text-4xl px-2" 
-                : " mx-auto theme-dark font-extrabold tracking-tight text-3xl px-3"}
+                : " mx-auto theme-dark font-extrabold tracking-tight text-2xl px-3"}
                 >{business}</h2>
                 <h3 className={expanded ? "text-white absolute top-0 right-0 p-3 font-bold tracking-tight text-xl"
                 : "theme-dark absolute top-0 right-0 p-3 font-bold tracking-tight text-xl"}

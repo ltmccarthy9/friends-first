@@ -131,7 +131,7 @@ background-color: rgb(240, 246, 245);
 
 .event:hover{
   transition: all ease-in-out .3s;
-  background-color: #81a3b1;
+  background-color: #709aad;
 }
 
 .event:hover h3{
@@ -153,7 +153,7 @@ background-color: rgb(240, 246, 245);
   border-radius: 20px;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -80%);
+  transform: translate(-50%, -70%);
   height: 500px;
   width: 460px;
   z-index: 30;
@@ -374,15 +374,10 @@ background-color: rgb(240, 246, 245);
 .chats-box-active{
   transition: all ease-in .06s;
   background-color: #536a74;
-  border-radius: 15px;
-  margin-top: 2px;
 }
 
 .chats-box{
-  border: 1px solid rgb(224, 226, 225);
   transition: all ease-in .12s;
-  border-radius: 15px;
-  margin-top: 2px;
 }
 
 .chats-box p{

@@ -8,6 +8,10 @@ export const registerUser = async (req, res, next) => {
     try {
         // use bcrypt to encode user password
         // assign the hashed password as the password for user
+        if(req.body.password !== req.body.password2){
+            return res.status(400).json({message: "passwords must match"});
+        }
+
         const salt = bcrypt.genSaltSync(10);
         const hash = await bcrypt.hash(req.body.password, salt)
  
@@ -15,13 +19,22 @@ export const registerUser = async (req, res, next) => {
             name: req.body.name,
             email: req.body.email,
             password: hash,
-            age: req.body.age
+            birthdate: req.body.birthdate
         })
 
         await newUser.save();
         res.status(201).json({message: "user successfully registered!"});
-    } catch(err) {
-        next(err);
+    } catch(error) {
+        if(error.name === 'ValidationError') {
+            let errors = {};
+
+            Object.keys(error.errors).forEach((key) => {
+                errors[key] = error.errors[key].message;
+            });
+            
+            return res.status(400).json({error: errors});
+        }
+        next(error);
     }
 };
 

@@ -74,7 +74,7 @@ const Events = () => {
     const refetch = useSelector((state) => state.refetch);
     
     // fetch events using custom useFetch hook
-    const { data, loading, error } = useFetchEvents('http://localhost:4000/api/events/future', refetch, userLat, userLng);
+    const { data, loading, error } = useFetchEvents('http://localhost:4000/api/events', refetch, userLat, userLng);
 
     if(loading) {
         return <p>Loading...</p>;
@@ -85,6 +85,13 @@ const Events = () => {
     }
 
     const openEvents = data?.filter(each => !each.attendees.includes(userId));
+
+    //sort events by asscending date
+    openEvents.sort(function(a, b) {
+        let dateA = new Date(a.date);
+        let dateB = new Date(b.date);
+        return dateA - dateB;
+    });
 
     if(data){
         console.log(data)

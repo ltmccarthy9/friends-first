@@ -82,29 +82,29 @@ const Nav = () => {
         
         <a href='/events' 
         onClick={goDashboard} 
-        className="pt-2 font-black tracking-tight hover:text-black text-3xl ml-4 mr-2
+        className=" pt-2 font-extrabold tracking-tight text-[#536a74] hover:text-[#628797] text-3xl ml-4 mr-2
          cursor-pointer md:mr-32 lg:mr-32 xl:mr-32 2xl:mr-32"
          >Friends First.
         </a>
         
         <div className='hidden ml-auto md:flex lg:ml-44'>
             <a href='/events' onClick={goDashboard} 
-            className={events ? 'cursor-pointer border-b-4 w-24 text-black border-black px-2 pb-1 pt-2' 
-            : 'cursor-pointer w-24 px-2 pb-1 pt-2 hover:text-black'}>
+            className={events ? ' cursor-pointer border-b-4 w-24 text-[#4b5b5b] border-[#f69400] hover:text-[#6f8585] px-2 pb-1 pt-2' 
+            : ' cursor-pointer w-24 px-2 pb-1 pt-2 hover:text-[#6f8585]'}>
                 <BsFillCalendar2EventFill size={18} className='cursor-pointer m-auto'/>
                 <h4 className={'theme-dark cursor-pointer text-center text-sm'}>Events</h4>
             </a>
             
             <a href='/profile' onClick={goProfile} 
-            className={profile ? 'cursor-pointer border-b-4 w-24 text-black border-black px-2 pb-1 pt-2' 
-            : ' cursor-pointer w-24 px-2 pb-1 pt-2 hover:text-black'}>
+            className={profile ? ' cursor-pointer border-b-4 w-24 text-[#4b5b5b] border-[#f69400] hover:text-[#6f8585] px-2 pb-1 pt-2' 
+            : ' cursor-pointer w-24 px-2 pb-1 pt-2 hover:text-[#6f8585]'}>
                 <BsPersonCircle size={18} className='cursor-pointer m-auto'/>
                 <h4 className={'theme-dark cursor-pointer text-center text-sm'}>Profile</h4>
             </a>
 
             <a href='/messages' onClick={goMessages} 
-            className={messages ? 'cursor-pointer w-24 border-b-4 text-black border-black px-3 pb-1 pt-2' 
-            : 'cursor-pointer w-24 px-3 pb-1 pt-2 hover:text-black'}>
+            className={messages ? ' cursor-pointer w-24 border-b-4 text-[#4b5b5b] border-[#f69400] hover:text-[#6f8585] px-3 pb-1 pt-2' 
+            : 'cursor-pointer w-24 px-3 pb-1 pt-2 hover:text-[#6f8585]'}>
                 <RiMessage2Fill size={18} className='cursor-pointer m-auto'/>
                 <h4 className={'theme-dark cursor-pointer text-center text-sm'}>Messages</h4>
             </a>

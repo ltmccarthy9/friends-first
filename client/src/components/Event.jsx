@@ -86,13 +86,13 @@ const Event = ({ business, address, description, capacity, taken, id, date, time
                 <h2 className={expanded ? " font-extrabold tracking-tight text-4xl px-2" 
                 : " mx-auto theme-dark font-extrabold tracking-tight text-2xl px-3"}
                 >{business}</h2>
-                <h3 className={expanded ? "text-white absolute top-0 right-0 p-3 font-bold tracking-tight text-xl"
+                <h3 className={expanded ? " absolute top-0 right-0 p-3 font-bold tracking-tight text-xl"
                 : "theme-dark absolute top-0 right-0 p-3 font-bold tracking-tight text-xl"}
                 >{filled}/{capacity}</h3>
                 <p className={expanded ? "mx-auto font-semibold text-lg mt-2" 
                 : "mx-auto font-normal theme-green text-md mt-2"}
                 >{date} | {time}</p>
-                <h3 className={expanded ? "text-white absolute top-0 left-0 p-3 font-bold tracking-tight text-xl"
+                <h3 className={expanded ? " absolute top-0 left-0 p-3 font-bold tracking-tight text-xl"
                 : "theme-dark absolute top-0 left-0 p-3 font-bold tracking-tight text-xl"}
                 >{distance} miles</h3>
                 <p className={expanded ? "description-expanded text-md p-2" 

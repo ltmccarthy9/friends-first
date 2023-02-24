@@ -57,6 +57,12 @@ const Yourevents = () => {
     // In this case we filter it again to only display events the user has joined
     const ourEvents = filteredData.filter(event => event.attendees.includes(userId));
     
+     //sort events by asscending date
+     ourEvents.sort(function(a, b) {
+        let dateA = new Date(a.date);
+        let dateB = new Date(b.date);
+        return dateA - dateB;
+    });
 
     return (
         <div className="flex flex-col mt-8 w-full">

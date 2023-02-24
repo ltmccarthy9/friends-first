@@ -24,7 +24,7 @@ const ChatRoom = () => {
   const firestore = firebase.firestore();
   const messagesRef = firestore.collection('messages');
   //create query and grab all messages that contain current user.
-  const query = messagesRef.where("members", 'array-contains', currentUserId).orderBy('createdAt').limit(300);
+  const query = messagesRef.where("members", 'array-contains', currentUserId).orderBy('createdAt').limit(1000);
   //useCollectionData hook.
   const [messages, loading, error ] = useCollectionData(query, {idField: 'id'});
   let filteredMessages;

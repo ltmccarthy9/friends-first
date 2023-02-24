@@ -57,7 +57,7 @@ const Profile = () => {
     return (
          <div className="flex mt-24 mx-auto">
             <div className="flex flex-col w-full justify-center sm:flex-row p-4">
-                <div className="profileBar mt-8 flex flex-col rounded-lg bg-white 
+                <div className="mt-8 flex flex-col rounded-lg bg-white 
                 mr-4 pt-2 h-fit w-full sm:w-48 sm:mx-8">
                 <h2 className="theme-dark tracking-tight text-3xl px-1 pt-2 pb-1">{data.name}'s</h2>
                     <button type="button" onClick={() => switchUpcoming()} 

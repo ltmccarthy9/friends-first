@@ -64,7 +64,7 @@ const Chats = (props) => {
         <div onClick={changeMessage} 
         className={messenger ? 'flex chats-box-active p-3 font-bold' 
         : 'flex chats-box p-3 cursor-pointer'}>
-            <p className={messenger ? '' : 'theme-dark'}>{data.name} | {getUserBirthdate(data.birthdate)}</p>
+            <p className={messenger ? 'text-white' : 'theme-dark'}>{data.name} | {getUserBirthdate(data.birthdate)}</p>
             <RiDeleteBinLine onClick={() => deleteFriend()} 
             className={messenger ? 'mt-1 ml-auto text-white cursor-pointer' 
             : 'mt-1 ml-auto cursor-pointer'}/>

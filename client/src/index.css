@@ -8,7 +8,7 @@ body {
   font-family: 'Mukta', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(240, 246, 245);
+  background-color: rgb(228, 236, 235);
 }
 
 code {
@@ -17,7 +17,7 @@ code {
 }
 
 html {
-background-color: rgb(240, 246, 245);
+background-color: rgb(228, 236, 235);
 }
 
 .theme-dark{
@@ -29,7 +29,7 @@ background-color: rgb(240, 246, 245);
 }
 
 .navBar{
-  background-color: #ffffff;
+  background-color: rgb(228, 236, 235);
 }
 
 /* -----------------------------------------------LANDING PAGE------------------------- */
@@ -97,7 +97,7 @@ background-color: rgb(240, 246, 245);
 /* --------------------------------------------------------DASHBOARD--------------------------------- */
 
 .search-bar{
-  background-color: #e7edeb;
+  background-color: #ffffff;
   font-size: 16px;
   border-radius: 12px;
   font-weight: 450;
@@ -110,7 +110,7 @@ background-color: rgb(240, 246, 245);
 
 .search-bar:focus{
   outline: none;
-  border: 2px solid #536a74;
+  border: 2px solid #f69400;
   background-color: #ffffff;
   width: 340px;
 }
@@ -121,21 +121,19 @@ background-color: rgb(240, 246, 245);
 
 .signOut{
   color: white;
-  border: 1px solid #536a74;
   background-color: #536a74;
   border-radius: 12px;
   transition: all ease-in-out .2s;
 }
 
 .signOut:hover{
-  border: 1px solid #536a74;
-  background-color: white;
-  color: #536a74; 
+  background-color: #f69400;
 }
 /* EVENT CARDS */
 
 .event{
-  background-color: #ffffff;
+  background-color: rgb(156, 213, 193);
+  border: 3px solid #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -144,21 +142,31 @@ background-color: rgb(240, 246, 245);
 
 .event:hover{
   transition: all ease-in-out .3s;
-  background-color: #709aad;
+  border: 3px solid #ffc56f;
+  background-color: #fdfaf4;
 }
 
-.event:hover h3{
+.event h3{
   color: white;
+}
+.event h2{
+  color: white;
+}
+.event p{
+  color: white;
+}
+.event:hover h3{
+  color: rgb(74, 113, 98);
 }
 .event:hover h2{
-  color: white;
+  color: rgb(74, 113, 98);
 }
 .event:hover p{
-  color: white;
+  color: rgb(74, 113, 98);
 }
 
 .eventExpanded{
-  background-color: #81a3b1;
+  background-color: #fbf4e7;
   padding-top: 50px;
   position: fixed;
   flex-direction: column;
@@ -173,7 +181,7 @@ background-color: rgb(240, 246, 245);
 }
 
 .eventExpanded h2, h3, p{
-  color: white;
+  color: #3a4950;
 }
 
 .overlay{
@@ -301,30 +309,24 @@ background-color: rgb(240, 246, 245);
 
 /* --------------------------------------------------------PROFILE PAGE ----------------------------------------- */
 
-.profileBar{
-  border: 1px solid rgb(224, 226, 225);
-}
 
 .profile-active {
-  color: white;
   transition: all ease-in .07s;
-  border-left: 4px solid #536a74;
+  border-left: 4px solid #ffc56f;
   color: black;
-  background-color: #f2f5f4;
+  background-color: #fbf4e7;
 }
 
 .profile-inactive{
   transition: all ease-in .07s;
   color: black;
-  border: 1px solid rgb(224, 226, 225);
 }
 
 .profile-inactive:hover {
-  background-color: #dee5e2;
+  background-color: #fbf4e7;
 }
 
 .pastEvent{
-  border: 1px solid rgb(224, 226, 225);
   background-color: #ffffff;
   border-radius: 20px;
   transition: all ease-in .2s;
@@ -333,8 +335,8 @@ background-color: rgb(240, 246, 245);
 }
 
 .attendeeListAdded{
-  background-color: #536a74;
-  color: white;
+  background-color: #ffc56f;
+  color: #4b5b5b;
 }
 
 .attendeeList{
@@ -356,7 +358,7 @@ background-color: rgb(240, 246, 245);
   justify-content: flex-start;
   margin-right: 24px;
   margin-left: auto;
-  box-shadow: 4px 4px 1px #4b5b5b;
+  box-shadow: 4px 4px 1px #f69400;
 }
 
 .sent p {
@@ -364,11 +366,11 @@ background-color: rgb(240, 246, 245);
 }
 
 .received{
-  background-color: #536a74;
+  background-color: #f2e7d7;
   color: white;
   margin-left: 24px;
   margin-right: auto;
-  box-shadow: -4px 4px 1px #aeb7b7;
+  box-shadow: -4px 4px 1px #f69400;
 }
 
 .chat-messages-box{
@@ -379,13 +381,11 @@ background-color: rgb(240, 246, 245);
   overflow-x: hidden;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
-  border-top: 1px solid rgb(224, 226, 225);
-  border-bottom: 1px solid rgb(224, 226, 225);
-  border-right: 1px solid rgb(224, 226, 225);
 }
 
 .chats-box-active{
   transition: all ease-in .06s;
+  border-bottom: 3px solid #f69400;
   background-color: #536a74;
 }
 
@@ -409,23 +409,21 @@ background-color: rgb(240, 246, 245);
  overflow: scroll;
  overflow-x: hidden;
  height: 600px;
- border-left: 1px solid rgb(224, 226, 225);
- border-top: 1px solid rgb(224, 226, 225);
- border-bottom: 1px solid rgb(224, 226, 225);
 }
 
 .chat-input:focus {
-  box-shadow: -6px 6px 1px #536a74;
+  box-shadow: -6px 6px 1px #b47210;
   outline: none;
   border: 1px solid rgb(225, 221, 221);
 }
 
 .chat-input{
   border: 1px solid rgb(225, 221, 221);
+  transition: all ease-in .12s;
 }
 
 .submit-message:hover{
-  box-shadow: -5px 5px 1px #536a74;
+  box-shadow: -5px 5px 1px #b47210;
 }
 
 .submit-message{

@@ -30,15 +30,17 @@ const Chats = (props) => {
   if (error) {
       return <p>Error: {error.message}</p>;
   }
-
-  const currentDate = new Date()
-  const birthdate = data.birthdate
-  let age = currentDate.getFullYear() - birthdate.getFullYear();
-  const months = currentDate.getMonth() - birthdate.getMonth();
-  if(months < 0 || (months === 0 && currentDate.getDate() < birthdate.getDate())) {
-    age--;
+  
+  const getUserBirthdate = (birth) => {
+    const currentDate = new Date()
+    const birthdate = new Date(birth)
+    let age = currentDate.getFullYear() - birthdate.getFullYear();
+    const months = currentDate.getMonth() - birthdate.getMonth();
+    if(months < 0 || (months === 0 && currentDate.getDate() < birthdate.getDate())) {
+        age--;
+    }
+    return age;
   }
-  const name = data.name;
     
   const deleteFriend = async () => {
     if(window.confirm("Are you sure you want to delete this friend?")){
@@ -57,16 +59,18 @@ const Chats = (props) => {
     }
   }
 
-  return (
-    <div onClick={changeMessage} 
-    className={messenger ? 'flex chats-box-active p-3 font-bold' 
-    : 'flex chats-box p-3 cursor-pointer'}>
-        <p className={messenger ? '' : 'theme-dark'}>{name} | {age} </p>
-        <RiDeleteBinLine onClick={() => deleteFriend()} 
-        className={messenger ? 'mt-1 ml-auto text-white cursor-pointer' 
-        : 'mt-1 ml-auto cursor-pointer'}/>
-    </div>
-  )
+  if(data){
+    return (
+        <div onClick={changeMessage} 
+        className={messenger ? 'flex chats-box-active p-3 font-bold' 
+        : 'flex chats-box p-3 cursor-pointer'}>
+            <p className={messenger ? '' : 'theme-dark'}>{data.name} | {getUserBirthdate(data.birthdate)}</p>
+            <RiDeleteBinLine onClick={() => deleteFriend()} 
+            className={messenger ? 'mt-1 ml-auto text-white cursor-pointer' 
+            : 'mt-1 ml-auto cursor-pointer'}/>
+        </div>
+      )
+  }
 };
 
 export default Chats;

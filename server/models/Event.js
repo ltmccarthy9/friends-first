@@ -6,7 +6,7 @@ const eventSchema = new Schema({
         type: String,
         required: true,
     },
-    location: {
+    address: {
         type: String,
         required: true,
     },
@@ -46,7 +46,14 @@ const eventSchema = new Schema({
     time: {
         type: String,
         required: true,
+        match: [/^(1[012]|[1-9]):[0-5][0-9] ?([AP]M)$/i, 'Date must be properly formatted.'],
     },
+    lat: {
+        type: Number
+    },
+    lng: {
+        type: Number
+    }
 });
 
 // we will need to add a date and time and auto remove from active events

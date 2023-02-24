@@ -5,51 +5,11 @@ import { useDispatch } from 'react-redux';
 import { setPast, setUpcoming } from '../state';
 import { useSelector } from "react-redux";
 
-const Events = () => {
+const Events = ({userLat, userLng}) => {
     const dispatch = useDispatch();
-
-    const [ userLat, setUserLat ] = useState(null)
-    const [ userLng, setUserLng ] = useState(null);
-
-
-    useEffect(() => {
-        if (navigator.geolocation) {
-            const location = navigator.geolocation.getCurrentPosition(successCallback, errorCallback, {timeout:10000});
-           } else {
-             alert('your browser does not support geolocation')
-           }
-     
-           function successCallback(position) {
-             const latitude = position.coords.latitude;
-             const longitude = position.coords.longitude;
-             setUserLat(latitude)
-             setUserLng(longitude)
-           }
-     
-           function errorCallback(error) {
-             console.error(`Error retrieving location: ${error.message}`);
-           }
-    }, [])
-    
-
-    //Function to return distance from user to event, rounded to tenths place
-    const getDistanceUserToEvent = async (userLat, userLng, eventLat, eventLng) => {
-        const point1 = await new window.google.maps.LatLng(userLat, userLng);
-        const point2 = await new window.google.maps.LatLng(eventLat, eventLng);
-
-        const distanceInMeters = window.google.maps.geometry.spherical.computeDistanceBetween(point1, point2)
-        const distanceInMiles = Math.round((distanceInMeters * 0.000621371) * 10) / 10
-        console.log(distanceInMiles, ' miles');
-    }
-
-    getDistanceUserToEvent(userLat, userLng, 41.889253, -87.635404)
-
-    //getDistanceUserToEvent(41.917684, -87.696588, 41.889024, -87.635631)
-
     //state for filtering events with search bar
     const [query, setQuery] = useState('');
     const [filteredEvents, setFilteredEvents] = useState([]);
-    //Move user if they're not logged in
     
     //UsEffect for properly handling profile conditional style
     useEffect(() => {
@@ -76,7 +36,6 @@ const Events = () => {
         ();
     }, [query]);
 
-    //const options = { month: 'short', day: 'numeric', ordinal: 'numeric' }
     //grab user id
     const userId = localStorage.getItem('id');
     const refetch = useSelector((state) => state.refetch);

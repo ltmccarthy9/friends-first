@@ -7,19 +7,29 @@ export const createEvent = async (req, res, next) => {
     try {
         const newEvent = new Event({
             business: req.body.business,
-            location: req.body.location,
+            address: req.body.address,
             description: req.body.description,
             capacity: req.body.capacity,
-            taken: req.body.taken,
             category: req.body.category,
             date: req.body.date,
-            time: req.body.time
+            time: req.body.time,
+            lat: req.body.lat,
+            lng: req.body.lng
         })
 
         await newEvent.save();
-        res.status(200).send("Event has been created")
-    } catch(err) {
-        next(err);
+        res.status(200).json({message: "Event has been created"})
+    } catch(error) {
+        if(error.name === 'ValidationError') {
+            let errors = {};
+
+            Object.keys(error.errors).forEach((key) => {
+                errors[key] = error.errors[key].message;
+            });
+            
+            return res.status(400).json({error: errors});
+        }
+        next(error);
     }
 };
 

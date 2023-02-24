@@ -4,8 +4,7 @@ import { setRefetch } from "../state";
 import { useDispatch } from "react-redux";
 
 
-const Event = ({ business, location, description, capacity, taken, id, date, time, attending, refetch }) => {
-   
+const Event = ({ business, address, description, capacity, taken, id, date, time, attending, refetch, distance}) => {
     // state for event cards - updating spots taken and whether user joined or not
     const [filled, setFilled] = useState(taken);
     const [ joined, setJoined ] = useState(attending);
@@ -93,7 +92,9 @@ const Event = ({ business, location, description, capacity, taken, id, date, tim
                 <p className={expanded ? "mx-auto font-semibold text-lg mt-2" 
                 : "mx-auto font-normal theme-green text-md mt-2"}
                 >{date} | {time}</p>
-            
+                <h3 className={expanded ? "text-white absolute top-0 left-0 p-3 font-bold tracking-tight text-xl"
+                : "theme-dark absolute top-0 left-0 p-3 font-bold tracking-tight text-xl"}
+                >{distance} miles</h3>
                 <p className={expanded ? "description-expanded text-md p-2" 
                 : "hidden"}>{description} "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 

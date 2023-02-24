@@ -1,6 +1,8 @@
 import Event from "../models/Event.js";
 import User from "../models/User.js";
 import moment from 'moment';
+import axios from 'axios';
+import getDistanceUserToEvent from "../utils/getDistance.js";
 
 // Create an event (must be admin)
 export const createEvent = async (req, res, next) => {
@@ -145,6 +147,7 @@ export const getPastEvents = async (req, res, next) => {
     try {
         let now = moment().toISOString();
         const events = await Event.find({date: { $lt: now}});
+
         res.status(200).json(events);
     } catch (err) {
         console.log(err);

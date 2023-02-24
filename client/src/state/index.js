@@ -46,6 +46,9 @@ export const authSlice = createSlice({
         setPast: (state, action) => {
             state.past = action.payload.past
         },
+        setRefetch: (state, action) => {
+            state.refetch = action.payload.refetch
+        },
     },
 });
 

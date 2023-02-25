@@ -82,31 +82,31 @@ const Nav = () => {
         
         <a href='/events' 
         onClick={goDashboard} 
-        className=" pt-2 font-extrabold tracking-tight theme-dark hover:text-[#628797] text-3xl ml-4 mr-2
+        className=" pt-2 font-extrabold text-white text-2xl ml-4 mr-2
          cursor-pointer md:mr-32 lg:mr-32 xl:mr-32 2xl:mr-32"
          >Friends First.
         </a>
         
         <div className='hidden ml-auto md:flex lg:ml-44'>
             <a href='/events' onClick={goDashboard} 
-            className={events ? ' cursor-pointer border-b-4 w-24 text-[#4b5b5b] border-[#f69400] hover:text-[#6f8585] px-2 pb-1 pt-2' 
-            : ' cursor-pointer w-24 px-2 pb-1 pt-2 hover:text-[#6f8585]'}>
+            className={events ? ' cursor-pointer border-b-4 w-24 text-white border-[#f69400] px-2 pb-1 pt-2' 
+            : ' cursor-pointer w-24 px-2 pb-1 pt-2 text-white'}>
                 <BsFillCalendar2EventFill size={18} className='cursor-pointer m-auto'/>
-                <h4 className={'theme-dark cursor-pointer text-center text-sm'}>Events</h4>
+                <h4 className={'text-whitecursor-pointer text-center text-sm'}>Events</h4>
             </a>
             
             <a href='/profile' onClick={goProfile} 
-            className={profile ? ' cursor-pointer border-b-4 w-24 text-[#4b5b5b] border-[#f69400] hover:text-[#6f8585] px-2 pb-1 pt-2' 
-            : ' cursor-pointer w-24 px-2 pb-1 pt-2 hover:text-[#6f8585]'}>
+            className={profile ? ' cursor-pointer border-b-4 w-24 text-white border-[#f69400] px-2 pb-1 pt-2' 
+            : ' cursor-pointer w-24 px-2 pb-1 pt-2 text-white'}>
                 <BsPersonCircle size={18} className='cursor-pointer m-auto'/>
-                <h4 className={'theme-dark cursor-pointer text-center text-sm'}>Profile</h4>
+                <h4 className={'text-white cursor-pointer text-center text-sm'}>Profile</h4>
             </a>
 
             <a href='/messages' onClick={goMessages} 
-            className={messages ? ' cursor-pointer w-24 border-b-4 text-[#4b5b5b] border-[#f69400] hover:text-[#6f8585] px-3 pb-1 pt-2' 
-            : 'cursor-pointer w-24 px-3 pb-1 pt-2 hover:text-[#6f8585]'}>
+            className={messages ? ' cursor-pointer w-24 border-b-4 text-white border-[#f69400] px-3 pb-1 pt-2' 
+            : 'cursor-pointer w-24 px-3 pb-1 pt-2 text-white'}>
                 <RiMessage2Fill size={18} className='cursor-pointer m-auto'/>
-                <h4 className={'theme-dark cursor-pointer text-center text-sm'}>Messages</h4>
+                <h4 className={'text-white cursor-pointer text-center text-sm'}>Messages</h4>
             </a>
             
             <button type='button' onClick={logout} className='signOut w-20 cursor-pointer my-2 ml-4 mr-1 font-bold'>
@@ -115,38 +115,38 @@ const Nav = () => {
         </div>
 
 
-        <button type='button' onClick={handleNav} className='absolute hover:text-black right-6 top-4 md:hidden'>
+        <button type='button' onClick={handleNav} className='absolute text-white right-6 top-4 md:hidden'>
                     <AiOutlineMenu size={25} className='cursor-pointer' />
         </button>
 
         {/* menu bar small screen */}
         <div className={nav ? 'md:hidden fixed right-0 top-0 w-full h-screen bg-black/70 ease-in duration-200' : ''}>
                 <div className={nav 
-                    ? 'fixed right-0 top-0 w-[75%] sm:w-[50%] md:w-[45%] h-screen bg-white p-10 ease-in duration-200' 
+                    ? 'fixed right-0 top-0 w-[60%] sm:w-[50%] md:w-[45%] h-screen bg-[#e5efed] p-10 ease-in duration-200' 
                     : 'fixed right-[-100%] top-0 p-10 h-screen ease-in duration-200'}>
                     <div>
-                        <div className='flex flex-col w-full items-center justify-between mt-8'>
+                        <div className='flex flex-col w-full items-center justify-between mt-8 ease-in duration-100'>
                             <a onClick={goDashboard} className='m-2' href='/events'>
-                                <FaHome color='#536a74' size={50} />
+                                <FaHome className='hover:text-[#f69400]' size={50} />
                             </a>
                             <a  onClick={goDashboard} href='/events' 
-                            className='text-2xl m-4 hover:font-bold hover:text-[#536a74]'>
+                            className='text-2xl m-4 hover:font-bold hover:text-[#f69400] ease-in duration-100'>
                                 EVENTS
                             </a>
                             <a onClick={goProfile} href='/profile' 
-                            className='text-2xl m-4 hover:font-bold hover:text-[#536a74]'>
+                            className='text-2xl m-4 hover:font-bold hover:text-[#f69400] ease-in duration-100'>
                                 PROFILE
                             </a>
                             <a onClick={goMessages} href='/messages'
-                            className='text-2xl m-4 hover:font-bold hover:text-[#536a74]'>
+                            className='text-2xl m-4 hover:font-bold hover:text-[#f69400] ease-in duration-100'>
                                 MESSAGES
                             </a>
                             <button type='button' onClick={logout} 
-                            className='signOut w-24 cursor-pointer p-2 mx-2 mt-6'>
+                            className='w-24 cursor-pointer p-2 mx-2 mt-6 font-bold  hover:text-[#f69400]'>
                             Sign Out
                             </button>
                             <div onClick={handleNav} 
-                            className='absolute top-4 right-6 rounded-full p-3 cursor-pointer hover:text-black'>
+                            className='absolute top-4 right-6 rounded-full p-3 cursor-pointer hover:text-[#f69400]'>
                                 <AiOutlineClose size={22} />
                             </div>
                         </div>

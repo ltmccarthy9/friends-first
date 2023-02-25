@@ -8,7 +8,7 @@ body {
   font-family: 'Mukta', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(228, 236, 235);
+  background-color: rgb(231, 239, 238);
 }
 
 code {
@@ -17,7 +17,7 @@ code {
 }
 
 html {
-background-color: rgb(228, 236, 235);
+background-color: rgb(231, 239, 238);
 }
 
 .theme-dark{
@@ -29,8 +29,7 @@ background-color: rgb(228, 236, 235);
 }
 
 .navBar{
-  background-color: #fefefe;
-  border-bottom: 1px solid #c0c7cb;
+  background-color: #40525a;
 }
 
 /* -----------------------------------------------LANDING PAGE------------------------- */
@@ -122,13 +121,11 @@ background-color: rgb(228, 236, 235);
 
 .signOut{
   color: white;
-  background-color: #536a74;
-  border-radius: 10px;
   transition: all ease-in-out .2s;
 }
 
 .signOut:hover{
-  background-color: #f69400;
+  color: #fdc879;
 }
 /* EVENT CARDS */
 
@@ -158,6 +155,9 @@ background-color: rgb(228, 236, 235);
 .eventExpanded{
   background-color: #ffffff;
   padding-top: 50px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   position: fixed;
   flex-direction: column;
   justify-content: center;

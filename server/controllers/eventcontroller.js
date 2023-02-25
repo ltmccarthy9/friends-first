@@ -132,8 +132,12 @@ export const editEventDate = async (req, res, next) => {
 // get upcoming events
 export const getFutureEvents = async (req, res, next) => {
     try {
+        const userId = req.params.id
         let now = moment().toISOString();
-        const events = await Event.find({date: { $gte: now}});
+        const events = await Event.find({
+            date: { $gte: now},
+            attendees: { $nin: [userId]}
+        });
         res.status(200).json(events);
     } catch (err) {
         console.log(err);

@@ -66,14 +66,14 @@ const Create = () => {
     
     return (
     <div className='h-screen w-full top-0 right-0 flex pt-20 sm:pt-40'>
-      <div className='mx-auto sm:m-4 bg-white max-h-3xl p-12 w-full h-fit sm:w-4/5 lg:w-3/5 xl:w-2/5'>
+      <div className='mx-auto rounded-md sm:m-4 bg-white max-h-3xl p-12 w-full h-fit sm:w-4/5 lg:w-3/5 xl:w-2/5'>
       <form onSubmit={submitEvent} className='grid grid-cols-1 gap-3' id="myForm">
                     <label className='font-bold' htmlFor="business">Business Name</label>
                     <input placeholder="Business Name" onChange={(e) => setName(e.target.value)} 
                      value={name} id="business" className="form-control chat-input"
                     ></input>
                     <label className='font-bold' htmlFor="address">Address</label>
-                    <input placeholder="(street, city, ST)" onChange={(e) => setAddress(e.target.value)}  
+                    <input placeholder="street, city, ST" onChange={(e) => setAddress(e.target.value)}  
                      value={address} id="address" className="form-control chat-input"
                     ></input>
                     <label className='font-bold' htmlFor="capacity">Event Capacity</label>

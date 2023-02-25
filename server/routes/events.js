@@ -25,7 +25,7 @@ router.patch('/edit/date/:eventId', editEventDate);
 router.get("/past", getPastEvents);
 
 //get upcoming events
-router.get("/future", getFutureEvents);
+router.get("/future/:id", getFutureEvents);
 
 //get event by id
 router.get("/:id", verifyToken, getEvent);

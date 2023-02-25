@@ -158,3 +158,19 @@ export const getPastEvents = async (req, res, next) => {
         next(err);
     }
 };
+
+//get user's events
+export const getUserEvents = async (req, res, next) => {
+    try {
+        const userId = req.params.id
+        let now = moment().toISOString();
+        const events = await Event.find({
+            date: { $gte: now},
+            attendees: { $in: [userId]}
+        });
+        res.status(200).json(events);
+    } catch (err) {
+        console.log(err);
+        next(err);
+    }
+};

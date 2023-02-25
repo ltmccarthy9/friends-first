@@ -37,7 +37,7 @@ const Yourevents = () => {
           getLocation()
     })
 
-    const { data, loading, error } = useFetchEvents('http://localhost:4000/api/events', refetch, userLat, userLng);
+    const { data, loading, error } = useFetchEvents(`http://localhost:4000/api/events/future/yourevents/${userId}`, refetch, userLat, userLng);
     // fetch our events
     
     if(loading) {

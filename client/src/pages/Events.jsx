@@ -19,9 +19,10 @@ const Events = () => {
     const userId = localStorage.getItem('id');
     //UsEffect for properly handling profile conditional style
     
-     // fetch events using custom useFetch hook
-     const { data, loading, error } = useFetchEvents(`http://localhost:4000/api/events/future/${userId}`, refetch, userLat, userLng);
+    // fetch events using custom useFetch hook
+    const { data, loading, error } = useFetchEvents(`http://localhost:4000/api/events/future/${userId}`, refetch, userLat, userLng);
     
+    // For styling of nav bar bottom border
     useEffect(() => {
         dispatch(setPast({
             past: false
@@ -33,7 +34,7 @@ const Events = () => {
     }, [])
 
     useEffect(() => {
-        // Get user lat and lng
+        // Get user latitude and longitude
         async function getLocation(){
             if (navigator.geolocation) {
               const location = navigator.geolocation.getCurrentPosition(successCallback, errorCallback, {timeout:10000});
@@ -55,8 +56,9 @@ const Events = () => {
           getLocation()
     })
 
-    // Search filter in useEffect, calls every time query state changes(user types in search bar)
+    // Search query and distance filter.
     useEffect(() => {
+        //wait for data to load before returning filtered events
         if(isDataLoaded) {
             (async () => {
                 if(!query){
@@ -90,39 +92,23 @@ const Events = () => {
         let dateB = new Date(b.date);
         return dateA - dateB;
     });
+    
+    //for dropdown menu distanceFilter
+    const miles = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 
-    console.log(isDataLoaded, distanceFilter)
-    
-    
         return (
             <div className="flex flex-col">
                 <div className="w-full flex flex-col locationHeader">
                     <div className="flex mx-auto mb-3">
-                        <h2 className="text-xl mr-1">Showing events for</h2>
-                        <h2 className="text-xl font-bold theme-dark">Chicago, IL within</h2>
+                        <h2 className="text-xl mx-1">Showing events for</h2>
+                        <h2 className="text-xl font-bold theme-dark mx-1">Chicago, IL</h2>
+                        <h2 className="text-xl theme-dark mx-1">within</h2>
                         <select defaultValue={10} onChange={(e) => setDistanceFilter(parseInt(e.target.value))} className="mx-1" name="miles" id="miles">
-                            <option value={1}>1</option>
-                            <option value={2}>2</option>
-                            <option value={3}>3</option>
-                            <option value={4}>4</option>
-                            <option value={5}>5</option>
-                            <option value={6}>6</option>
-                            <option value={7}>7</option>
-                            <option value={8}>8</option>
-                            <option value={9}>9</option>
-                            <option value={10}>10</option>
-                            <option value={11}>11</option>
-                            <option value={12}>12</option>
-                            <option value={13}>13</option>
-                            <option value={14}>14</option>
-                            <option value={15}>15</option>
-                            <option value={16}>16</option>
-                            <option value={17}>17</option>
-                            <option value={18}>18</option>
-                            <option value={19}>19</option>
-                            <option value={20}>20</option>
+                           {miles.map((each) => {
+                            return <option value={each}>{each}</option>
+                           })}
                         </select>
-                        <h2 className="text-xl font-bold theme-dark">miles</h2>
+                        <h2 className="text-xl font-bold theme-dark mx-1">miles</h2>
                     </div>
                     <input 
                     onChange={(e) => setQuery(e.target.value)} 

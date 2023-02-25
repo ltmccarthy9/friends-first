@@ -1,7 +1,8 @@
 import express from "express";
 import { createEvent, updateEvent, getEvent, getEvents,
      joinEvent, leaveEvent, editEventDate, getFutureEvents,
-      getPastEvents } from "../controllers/eventcontroller.js";
+      getPastEvents, 
+      getUserEvents} from "../controllers/eventcontroller.js";
 import { verifyToken } from "../middleware/auth.js";
 
 const router = express.Router();
@@ -24,8 +25,12 @@ router.patch('/edit/date/:eventId', editEventDate);
 //get past events
 router.get("/past", getPastEvents);
 
+//get user's events
+router.get("/future/yourevents/:id", getUserEvents)
+
 //get upcoming events
 router.get("/future/:id", getFutureEvents);
+
 
 //get event by id
 router.get("/:id", verifyToken, getEvent);

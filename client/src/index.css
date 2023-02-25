@@ -29,7 +29,7 @@ background-color: rgb(228, 236, 235);
 }
 
 .navBar{
-  background-color: rgb(228, 236, 235);
+  background-color: #fefefe;
 }
 
 /* -----------------------------------------------LANDING PAGE------------------------- */
@@ -99,7 +99,7 @@ background-color: rgb(228, 236, 235);
 .search-bar{
   background-color: #ffffff;
   font-size: 16px;
-  border-radius: 12px;
+  border-radius: 10px;
   font-weight: 450;
   color: #424e4e;
   border: 2px solid #e7edeb;
@@ -122,7 +122,7 @@ background-color: rgb(228, 236, 235);
 .signOut{
   color: white;
   background-color: #536a74;
-  border-radius: 12px;
+  border-radius: 10px;
   transition: all ease-in-out .2s;
 }
 
@@ -132,28 +132,25 @@ background-color: rgb(228, 236, 235);
 /* EVENT CARDS */
 
 .event{
-  background-color: #8da7b2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 20px;
-  height: 160px;
+  background-color: #fefefe;
+  border-radius: 10px;
+  height: 145px;
 }
 
 .event:hover{
   transition: all ease-in-out .22s;
-  background-color: #a8c7d4;
   box-shadow: -0 6px 1px #eca02e;
+  background-color: #f5f3f0;
 }
 
 .event h3{
-  color: #f1f7f9;
+  color: #3d4a50;
 }
 .event h2{
-  color: #f1f7f9;
+  color: #3d4a50;
 }
 .event p{
-  color: #f1f7f9;
+  color: #3d4a50;
 }
 
 

@@ -108,7 +108,7 @@ const Events = () => {
                     placeholder="Search by category, name, description..."
                     />
                 </div>
-                    <div className="grid max-w-6xl grid-cols-1 gap-2 mt-8 mx-auto w-5/6
+                    <div className="grid max-w-6xl grid-cols-1 gap-2 mt-4 mx-auto w-5/6
                      sm:w-5/6 sm:grid-cols-2 md:w-4/6 lg:w-4/6 lg:grid-cols-3 
                      xl:w-4/6 xl:grid-cols-4">
                         {query ? filteredEvents.map((event) => (

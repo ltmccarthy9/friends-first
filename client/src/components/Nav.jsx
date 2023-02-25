@@ -82,7 +82,7 @@ const Nav = () => {
         
         <a href='/events' 
         onClick={goDashboard} 
-        className=" pt-2 font-extrabold tracking-tight text-[#536a74] hover:text-[#628797] text-3xl ml-4 mr-2
+        className=" pt-2 font-extrabold tracking-tight theme-dark hover:text-[#628797] text-3xl ml-4 mr-2
          cursor-pointer md:mr-32 lg:mr-32 xl:mr-32 2xl:mr-32"
          >Friends First.
         </a>

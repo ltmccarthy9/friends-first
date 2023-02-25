@@ -2,9 +2,11 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { setRefetch } from "../state";
 import { useDispatch } from "react-redux";
+import { BiDrink } from 'react-icons/bi'
+import { GiBasketballBall } from 'react-icons/gi';
+import { CgTrees } from 'react-icons/cg'
 
-
-const Event = ({ business, address, description, capacity, taken, id, date, time, attending, refetch, distance}) => {
+const Event = ({ business, address, description, capacity, taken, category, id, date, time, attending, refetch, distance}) => {
     // state for event cards - updating spots taken and whether user joined or not
     const [filled, setFilled] = useState(taken);
     const [ joined, setJoined ] = useState(attending);
@@ -75,6 +77,17 @@ const Event = ({ business, address, description, capacity, taken, id, date, time
     const handleExpand = () => {
         setExpanded(!expanded);
     }
+
+    
+        let icon;
+        if(category.includes('bar')) {
+            icon = <div className="pt-1 ml-1 mr-auto"><BiDrink/></div>
+       } else if (category.includes('sport')) {
+         icon = <div className="pt-1 ml-1 mr-auto"><GiBasketballBall/></div>
+       } else {
+        icon = <div className="pt-1 ml-1 mr-auto"><CgTrees/></div>
+       }
+    
     
 
     return (
@@ -82,21 +95,23 @@ const Event = ({ business, address, description, capacity, taken, id, date, time
         className={expanded ? "overlay" : 'overlaySmall'}>
             <button onClick={expanded ? null : () => handleExpand()} 
             type="button" 
-            className={expanded ? 'eventExpanded max-w-xs sm:max-w-3xl pt-6 pb-2 px-2 relative' :
+            className={expanded ? 'eventExpanded max-w-xs sm:max-w-3xl pt-6 pb-2 px-2 relative text-center ml-auto' :
              "event w-full h-48 mb-1 flex flex-col p-3 relative"}>
                 <div className="flex w-full">
-                    <h3 className={expanded ? "font-extrabold text-3xl px-2 mx-auto" 
-                    : " theme-dark font-extrabold text-2xl mr-auto overflow-clip"}
+                    <h3 className={expanded ? "font-extrabold text-3xl px-2 ml-auto" 
+                    : " theme-dark font-extrabold whitespace-pre-line text-2xl"}
                     >{business}</h3>
+                    {icon}
                     <h3 className={expanded ? " absolute top-0 right-0 font-bold p-3 text-lg"
-                    : " text-lg font-bold ml-auto"}
+                    : " text-lg font-bold ml-auto pt-1"}
                     >{distance} mi</h3>
                 </div>
+               
                 
                 <p className={expanded ? "mx-auto font-bold text-lg mt-2" 
                     : "text-md absolute  bottom-0 left-0 m-3"}
                     >{date} {time}</p>
-                 <p className={expanded ? "mx-auto font-bold text-lg mt-2" 
+                 <p className={expanded ? "absolute top-0 left-0 p-3 font-bold text-lg" 
                     : "text-md absolute  bottom-0 right-0 m-3"}
                     >{filled}/{capacity}</p>
                 <p className={expanded ? "description-expanded text-md p-2" 

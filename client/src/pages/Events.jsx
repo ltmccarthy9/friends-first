@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 import { setPast, setUpcoming } from '../state';
 import { useSelector } from "react-redux";
 
-
 const Events = () => {
     const dispatch = useDispatch()
     //state for filtering events with search bar
@@ -109,8 +108,8 @@ const Events = () => {
                     />
                 </div>
                     <div className="grid max-w-6xl grid-cols-1 gap-2 mt-4 mx-auto w-5/6
-                     sm:w-5/6 sm:grid-cols-2 md:w-4/6 lg:w-4/6 lg:grid-cols-3 
-                     xl:w-4/6 xl:grid-cols-4">
+                     sm:w-5/6 sm:grid-cols-2 md:w-4/6 lg:w-4/6
+                     xl:w-4/6">
                         {query ? filteredEvents.map((event) => (
                             <Event key={event._id}
                             id={event._id} 

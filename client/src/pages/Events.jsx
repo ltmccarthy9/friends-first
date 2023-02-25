@@ -73,7 +73,7 @@ const Events = () => {
     const refetch = useSelector((state) => state.refetch);
     
     // fetch events using custom useFetch hook
-    const { data, loading, error } = useFetchEvents('http://localhost:4000/api/events', refetch, userLat, userLng);
+    const { data, loading, error } = useFetchEvents('http://localhost:4000/api/events/future', refetch, userLat, userLng);
 
     if(loading) {
         return <p>Loading...</p>;
@@ -93,7 +93,6 @@ const Events = () => {
     });
 
     if(data){
-        console.log(data)
         return (
             <div className="flex flex-col">
                 <div className="w-full flex flex-col locationHeader">
@@ -109,7 +108,7 @@ const Events = () => {
                 </div>
                     <div className="grid max-w-6xl grid-cols-1 gap-2 mt-4 mx-auto w-5/6
                      sm:w-5/6 sm:grid-cols-2 md:w-4/6 lg:w-4/6
-                     xl:w-4/6">
+                     xl:w-4/6 xl:grid-cols-3">
                         {query ? filteredEvents.map((event) => (
                             <Event key={event._id}
                             id={event._id} 

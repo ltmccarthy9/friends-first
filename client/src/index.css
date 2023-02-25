@@ -30,6 +30,7 @@ background-color: rgb(228, 236, 235);
 
 .navBar{
   background-color: #fefefe;
+  border-bottom: 1px solid #c0c7cb;
 }
 
 /* -----------------------------------------------LANDING PAGE------------------------- */
@@ -160,7 +161,7 @@ background-color: rgb(228, 236, 235);
   position: fixed;
   flex-direction: column;
   justify-content: center;
-  border-radius: 20px;
+  border-radius: 10px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -70%);
@@ -197,12 +198,11 @@ background-color: rgb(228, 236, 235);
 }
 
 .joinBtn{
-  border-radius: 20px;
-  transition: all ease-in .2s;
-  color: white;
-  background-color: #459861;
-  color: white;
-  border: 2px solid white;
+  border-radius: 10px;
+  transition: all ease-in .1s;
+  background-color: white;
+  color: #459861;
+  border: 2px solid #459861;
 }
 
 .joinBtn:focus {
@@ -210,17 +210,16 @@ background-color: rgb(228, 236, 235);
 }
 
 .joinBtn:hover{
-  background-color: white;
-  color: #459861;
+  background-color: #459861;
+  color: white;
   border: 2px solid #459861;
 }
 
 .leaveBtn{
-  border-radius: 20px;
-  transition: all ease-in .2s;
-  color: white;
-  background-color: #a46c27;
-  color: white;
+  border-radius: 10px;
+  transition: all ease-in .1s;
+  background-color:  white;
+  color: #a46c27;
   border: 2px solid #a46c27;
 }
 
@@ -229,8 +228,8 @@ background-color: rgb(228, 236, 235);
 }
 
 .leaveBtn:hover{
-  background-color: white;
-  color: #a46c27;
+  background-color: #a46c27;
+  color: white;
 }
 
 /* JOIN AND JOINED BUTTONS */
@@ -316,7 +315,7 @@ background-color: rgb(228, 236, 235);
 
 .pastEvent{
   background-color: #ffffff;
-  border-radius: 20px;
+  border-radius: 10px;
   transition: all ease-in .2s;
   margin-bottom: 10px;
   padding: 1px;

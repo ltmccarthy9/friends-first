@@ -81,11 +81,11 @@ const Event = ({ business, address, description, capacity, taken, category, id, 
     
         let icon;
         if(category.includes('bar')) {
-            icon = <div className="pt-1 ml-1 mr-auto"><BiDrink/></div>
+            icon = <div className="flex pt-1 ml-1 mr-auto text-indigo-600"><BiDrink size={18}/></div>
        } else if (category.includes('sport')) {
-         icon = <div className="pt-1 ml-1 mr-auto"><GiBasketballBall/></div>
+         icon = <div className="pt-1 ml-1 mr-auto text-orange-700"><GiBasketballBall size={18}/></div>
        } else {
-        icon = <div className="pt-1 ml-1 mr-auto"><CgTrees/></div>
+        icon = <div className="pt-1 ml-1 mr-auto text-green-600"><CgTrees size={18}/></div>
        }
     
     
@@ -99,11 +99,11 @@ const Event = ({ business, address, description, capacity, taken, category, id, 
              "event w-full h-48 mb-1 flex flex-col p-3 relative"}>
                 <div className="flex w-full">
                     <h3 className={expanded ? "font-extrabold text-3xl px-2 ml-auto" 
-                    : " theme-dark font-extrabold whitespace-pre-line text-2xl"}
+                    : " theme-dark font-extrabold whitespace-pre-line text-xl"}
                     >{business}</h3>
                     {icon}
                     <h3 className={expanded ? " absolute top-0 right-0 font-bold p-3 text-lg"
-                    : " text-lg font-bold ml-auto pt-1"}
+                    : " text-lg font-bold ml-aut"}
                     >{distance} mi</h3>
                 </div>
                

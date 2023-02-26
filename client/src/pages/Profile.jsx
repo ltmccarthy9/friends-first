@@ -55,7 +55,7 @@ const Profile = () => {
 
 
     return (
-         <div className="flex mt-24 mx-auto">
+         <div className="flex mt-14 mx-auto">
             <div className="flex flex-col w-full justify-center sm:flex-row p-4">
                 <div className="mt-8 flex flex-col rounded-md bg-white 
                 mr-4 pt-2 h-fit w-full sm:w-48 sm:mx-8">

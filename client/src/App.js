@@ -51,7 +51,7 @@ function App() {
   return (
     
       <Router>
-        <div className="h-screen">
+        <div>
         {showNav ? <Nav/> : <div></div>}
         <Routes>
           <Route path="/" element ={<Landing/>} />

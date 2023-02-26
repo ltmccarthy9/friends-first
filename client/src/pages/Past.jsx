@@ -58,7 +58,7 @@ const Past = () => {
      const userLikes = data.liked;
 
   return (
-    <div className="flex mt-24 mx-auto w-full">
+    <div className="flex mt-14 mx-auto w-full">
         <div className="flex flex-col w-full justify-center sm:flex-row p-4">
             <div className="mt-8 flex flex-col rounded-md bg-white mr-4 pt-2 h-fit w-full sm:w-48 sm:mx-8">
                 <h2 className="theme-dark tracking-tight text-xl font-bold px-1 pt-2 pb-1">{data.name}'s</h2>

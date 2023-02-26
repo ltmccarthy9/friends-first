@@ -96,7 +96,7 @@ const Event = ({ business, address, description, capacity, taken, category, id, 
             <button onClick={expanded ? null : () => handleExpand()} 
             type="button" 
             className={expanded ? 'eventExpanded max-w-xs sm:max-w-3xl pt-6 pb-2 px-2 relative text-center ml-auto' :
-             "event w-full h-48 mb-1 flex flex-col p-3 relative"}>
+             "event w-full h-48 mb-2 flex flex-col p-3 relative"}>
                 <div className="flex w-full">
                     <h3 className={expanded ? "font-extrabold text-3xl px-2 ml-auto" 
                     : " theme-dark font-extrabold whitespace-pre-line text-xl"}

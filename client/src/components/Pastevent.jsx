@@ -33,7 +33,7 @@ const Pastevent = ({ business, location, date, attending, likes, id }) => {
     }
     
     return (
-        <div className={"pastEvent w-full p-2 h-fit justify-center mb-2m"}>
+        <div className="pastEvent w-full p-1 h-fit justify-center mb-2m">
 
             <div className="flex px-2 mt-3 justify-between">
                 <div className='flex'>

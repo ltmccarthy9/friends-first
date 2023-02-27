@@ -13,11 +13,10 @@ const Past = () => {
 
      //useStates for switching between upcoming and past events on profile
      const dispatch = useDispatch();
+     const navigate = useNavigate();
      
      const upcoming = useSelector((state) => state.upcoming);
      const past = useSelector((state) => state.past);
-
-     const navigate = useNavigate();
  
      const userId = localStorage.getItem('id');
 

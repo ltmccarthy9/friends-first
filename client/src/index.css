@@ -36,25 +36,24 @@ background-color: rgb(231, 239, 238);
 
 .login-landing{
   background-color: #536a74;
-  color: white;
   transition: all ease-in .15s;
-  border: 2px solid #536a74;
+  color: #fbfcfc;
 }
 
 .login-landing:hover {
-  background-color: rgb(240, 246, 245);
-  color: #536a74;
-  border: 2px solid #536a74;
+  background-color: #ffcd87;
+ color: #405151;
 }
 
 .sign-up-landing{
-  outline: 2px solid #536a74;
+  background-color: #536a74;
   transition: all ease-in .15s;
+  color: #fbfcfc;
 }
 
 .sign-up-landing:hover{
- background-color: #536a74;
- color: white;
+ background-color: #ffcd87;
+ color: #405151;
 }
 
 /* -----------------------------------------------HOME LOGIN / SIGN UP PAGE------------------------- */
@@ -66,7 +65,7 @@ background-color: rgb(231, 239, 238);
 
 .login-card{
   width: 380px;
-  background-color: white;
+  background-color: #fbfcfc;
   border-radius: 30px;
   transition: all ease-in .2s;
 }
@@ -75,34 +74,25 @@ background-color: rgb(231, 239, 238);
   box-shadow: -9px 9px 1px #536a74;
 }
 
-.sub:hover{
-  box-shadow: -4px 4px 1px #536a74;
-}
-
-.sub:active{
-  box-shadow: -1px 1px 1px #536a74;
-}
-
 .sign-up{
   background-color: #536a74;
-  color: white;
+  color: #fbfcfc;
 }
 
 .sign-up:hover{
-  background-color: #798888;
-  box-shadow: -4px 4px 1px #4b5b5b;
-  color: white;
+  background-color: #3c4747;
+  color: #fbfcfc;
 }
 
 /* --------------------------------------------------------DASHBOARD--------------------------------- */
 
 .search-bar{
-  background-color: #ffffff;
+  background-color: #fbfcfc;
   font-size: 16px;
   border-radius: 10px;
   font-weight: 450;
   color: #424e4e;
-  border: 2px solid #e7edeb;
+  border: 1px solid #e7edeb;
   width: 250px;
   transition: all ease-in-out .35s;
   
@@ -110,7 +100,7 @@ background-color: rgb(231, 239, 238);
 
 .search-bar:focus{
   outline: none;
-  border: 2px solid #f69400;
+  border: 1px solid #f69400;
   background-color: #fbfcfc;
   width: 340px;
 }
@@ -120,7 +110,7 @@ background-color: rgb(231, 239, 238);
 } 
 
 .signOut{
-  color: white;
+  color: #fbfcfc;
   transition: all ease-in-out .2s;
 }
 
@@ -132,13 +122,12 @@ background-color: rgb(231, 239, 238);
 .event{
   background-color: #fbfcfc;
   border-radius: 10px;
-  height: 125px;
+  height: 105px;
 }
 
 .event:hover{
   transition: all ease-in-out .22s;
   box-shadow: -0 6px 1px #eca02e;
-  
   transform: translate(0px, -8px);
 }
 
@@ -149,12 +138,11 @@ background-color: rgb(231, 239, 238);
   color: #3d4a50;
 }
 .event p{
-  color: #3d4a50;
+  color: #54646c;
 }
 
 
 .eventExpanded{
-  background-color: #f4f7f7;
   padding-top: 50px;
   padding-bottom: 10px;
   padding-left: 10px;
@@ -168,7 +156,7 @@ background-color: rgb(231, 239, 238);
   transform: translate(-50%, -70%);
   height: 500px;
   width: 460px;
-  z-index: 30;
+  z-index: 20;
 }
 
 .eventExpanded h2, h3, p{
@@ -195,14 +183,13 @@ background-color: rgb(231, 239, 238);
   white-space: nowrap;
   display: inline-block;
   width: 98%;
-  transition: all ease-in .8s;
 }
 
 .joinBtn{
   border-radius: 10px;
   transition: all ease-in .1s;
   background-color: #459861;
-  color: white;
+  color: #fbfcfc;
   
 }
 
@@ -218,7 +205,7 @@ background-color: rgb(231, 239, 238);
   border-radius: 10px;
   transition: all ease-in .1s;
   background-color:  #bc894a;
-  color: white;
+  color: #fbfcfc;
 }
 
 .leaveBtn:focus {
@@ -232,7 +219,7 @@ background-color: rgb(231, 239, 238);
 /* JOIN AND JOINED BUTTONS */
 .join-button{
   background-color: #738574;
-  color: white;
+  color: #fbfcfc;
   width: 11%;
   border-radius: 11px;
   transition: all ease-in .14s;
@@ -240,14 +227,14 @@ background-color: rgb(231, 239, 238);
 
 .join-button:hover{
   background-color: #96ab97;
-  color: white;
+  color: #fbfcfc;
   cursor: pointer;
   box-shadow: -3px 3px 1px #4b5b5b;
 }
 
 .joined {
   background-color: #a47928;
-  color: white;
+  color: #fbfcfc;
   width: 10%;
   border-radius: 11px;
   transition: all ease-in .14s;
@@ -255,7 +242,7 @@ background-color: rgb(231, 239, 238);
 
 .joined:hover {
   background-color: #654f33;
-  color: white;
+  color: #fbfcfc;
   cursor: pointer;
   box-shadow: 3px 3px 1px rgb(61, 60, 60);
 }
@@ -266,14 +253,14 @@ background-color: rgb(231, 239, 238);
   margin-left: auto;
   margin-top: 10px;
   background-color: #424e4e;
-  color: white;
+  color: #fbfcfc;
   border-radius: 10px;
 }
 
 .profile-button:hover{
   background-color: white;
   background-color: #6c7d7d;
-  color: white;
+  color: #fbfcfc;
 }
 
 .profile-button:active{
@@ -394,24 +381,18 @@ background-color: rgb(231, 239, 238);
  height: 600px;
 }
 
-.chat-input:focus {
-  box-shadow: -6px 6px 1px #ffc56f;
-  outline: none;
-  border: 1px solid rgb(225, 221, 221);
-}
-
 .chat-input{
-  border: 1px solid rgb(225, 221, 221);
   transition: all ease-in .12s;
+  border: 1px solid #e9efef;
 }
 
-.submit-message:hover{
-  box-shadow: -5px 5px 1px #ffc56f;
+.chat-input:focus {
+  box-shadow: -3px 3px 1px #ffab2d;
+  outline: none;
+  border: 1px solid #e9efef;
 }
 
-.submit-message{
-  border: 1px solid rgb(225, 221, 221);
-}
+
 
 /* --------------------------------------------------------WEBKIT----------------------------------------- */
 

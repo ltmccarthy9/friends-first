@@ -100,8 +100,8 @@ const Event = ({ business, address, description, capacity, taken, category, id, 
         className={expanded ? "overlay" : 'overlaySmall'}>
             <button onClick={expanded ? null : () => handleExpand()} 
             type="button" 
-            className={expanded ? 'eventExpanded max-w-xs sm:max-w-3xl pt-6 pb-2 px-2 relative text-center ml-auto' 
-            : "event w-full h-48 mb-2 flex flex-col p-3 relative justify-between"}>
+            className={expanded ? 'eventExpanded bg-[#f4f7f7] relative text-center ml-auto pt-6 pb-2 px-2 max-w-xs sm:max-w-3xl' 
+            : "event flex flex-col justify-between relative w-full h-48 mb-2 p-3"}>
                 <p className={expanded ? "absolute py-2 px-3 top-4 right-6 text-xl font-bold hover:bg-gray-200 rounded-full" : "hidden"}>x</p>
                 <div className={expanded ? "flex w-full mt-2" : "flex w-full"}>
                     <h3 className={expanded ? "font-extrabold text-3xl px-2 ml-auto" 
@@ -115,10 +115,10 @@ const Event = ({ business, address, description, capacity, taken, category, id, 
                
                 <div className={expanded ? "flex w-full mt-2" : "flex w-full justify-between"}>
                     <p className={expanded ? "mx-auto font-bold text-lg mt-2" 
-                        : "text-md "}
+                        : "text-sm font-bold"}
                         >{date} - {time}</p>
                     <p className={expanded ? "absolute bottom-2 left-2 p-3 font-bold text-lg" 
-                        : "text-md "}
+                        : "text-sm font-bold "}
                         >{filled}/{capacity}</p>
                 </div>
                 <p className={expanded ? "description-expanded text-md p-2" 

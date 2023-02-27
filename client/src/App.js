@@ -34,8 +34,7 @@ const analytics = firebase.analytics();
 
 function App() {
 
-  const dispatch = useDispatch();
-  //FOR CONDITIONALLY DISPLAYING NAV
+  //For conditionally displaying navbar
   const [ showNav, setShowNav] = useState(true);
   useEffect(() => {
     if(window.location.pathname === '/' || window.location.pathname === '/login' || window.location.pathname === '/register' ){
@@ -54,8 +53,8 @@ function App() {
         <div>
         {showNav ? <Nav/> : <div></div>}
         <Routes>
-          <Route path="/" element ={<Landing/>} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element ={isAuth ? <Navigate to="/events"/> : <Landing/>} />
+          <Route path="/login" element={isAuth ? <Navigate to="/events"/> : <Login/>} />
           <Route path="/register" element={<Register />} />
           <Route path="/events" element={isAuth ? <Events /> : <Navigate to="/"/>} />
           <Route path="/profile" element={isAuth ? <Profile/> : <Navigate to="/"/>} />

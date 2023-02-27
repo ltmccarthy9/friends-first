@@ -1,6 +1,6 @@
 import express from "express";
 import { createEvent, updateEvent, getEvent, getEvents,
-     joinEvent, leaveEvent, editEventDate, getFutureEvents,
+     joinEvent, leaveEvent, getFutureEvents,
       getPastEvents, 
       getUserEvents} from "../controllers/eventcontroller.js";
 import { verifyToken } from "../middleware/auth.js";
@@ -8,7 +8,7 @@ import { verifyToken } from "../middleware/auth.js";
 const router = express.Router();
 
 //create event as admin
-router.post("/create", createEvent);
+router.post("/create", verifyToken, createEvent);
 
 //update event as admin
 router.put("/update/:id", updateEvent);
@@ -18,9 +18,6 @@ router.patch("/join/:eventId", verifyToken, joinEvent);
 
 //remove user from an event
 router.patch('/leave/:eventId', verifyToken, leaveEvent);
-
-//edit event date
-router.patch('/edit/date/:eventId', editEventDate);
 
 //get past events
 router.get("/past", getPastEvents);

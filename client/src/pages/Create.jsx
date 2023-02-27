@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import DatePicker from 'react-date-picker'
+import { useSelector } from 'react-redux';
 
 const Create = () => {
   
@@ -12,6 +13,8 @@ const Create = () => {
     const [ am, setAm ] = useState(false)
     const [description, setDescription] = useState('');
    
+    const token = useSelector((state) => state.token);
+
     const submitEvent = (e) => {
         e.preventDefault();
         let am_or_pm = ' PM';
@@ -28,6 +31,7 @@ const Create = () => {
             fetch('http://localhost:4000/api/events/create', {
                 method: 'POST',
                 headers: {
+                    Authorization: `Bearer ${token}`,
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({

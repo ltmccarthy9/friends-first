@@ -69,11 +69,11 @@ const Login = () => {
             type="password" className="form-control my-1 chat-input"
             ></input>
             <button type="button" onClick={(e) => handleLog(e)} 
-            className="btn sub mx-2 mt-2 border-solid border-1 border-gray-200"
+            className="btn mt-3 border-solid border-1 bg-gray-200 hover:bg-gray-300"
             >Sign in</button>
             <p className="no-account mt-4 mb-1 text-black" >Don't have an account?</p>
             <button type="button" onClick={() => navigate("/register")} 
-            className="btn sign-up mx-2"
+            className="btn sign-up"
             >Register</button>
           </form>
       </div>

@@ -3,9 +3,8 @@ import { useNavigate } from "react-router-dom";
 import DatePicker from 'react-date-picker'
 
 const Register = () => {
-    //useNavigate for changing url
     const navigate = useNavigate();
-    
+
     //input text state for register form
     const [ name, setName ] = useState('');
     const [ email, setEmail] = useState('');
@@ -13,6 +12,7 @@ const Register = () => {
     const [ passwordCheck, setPasswordCheck] = useState('');
     const [ checked, setChecked ] = useState(false);
     const [ birth, setBirth] = useState(new Date())
+   
     //function to check if form is properly filled by user
     const checkForm = (e) => {
         e.preventDefault();
@@ -48,15 +48,18 @@ const Register = () => {
         .then((data) => {
             //(these won't be caught by catch, they are mongodb validation errors)
           if(data.error){
+            console.log(data.status)
             //loop through object keys and alert user of each error
             let errors = data.error
             const keys = Object.keys(errors);
             keys.forEach((key, index) => {
                 alert(`${key}: ${errors[key]}`);
             })
-          } else {
+          } else if (data.status === 200) {
             alert("Successfully registered")
             navigate('/login');
+          } else {
+            alert(`${data.message}`)
           }
         })
         .catch((error) => {

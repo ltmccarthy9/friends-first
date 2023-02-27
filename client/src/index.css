@@ -111,7 +111,7 @@ background-color: rgb(231, 239, 238);
 .search-bar:focus{
   outline: none;
   border: 2px solid #f69400;
-  background-color: #ffffff;
+  background-color: #fbfcfc;
   width: 340px;
 }
 
@@ -130,15 +130,16 @@ background-color: rgb(231, 239, 238);
 /* EVENT CARDS */
 
 .event{
-  background-color: #fefefe;
+  background-color: #fbfcfc;
   border-radius: 10px;
-  height: 155px;
+  height: 125px;
 }
 
 .event:hover{
   transition: all ease-in-out .22s;
   box-shadow: -0 6px 1px #eca02e;
-  background-color: #f5f3f0;
+  
+  transform: translate(0px, -8px);
 }
 
 .event h3{
@@ -153,7 +154,7 @@ background-color: rgb(231, 239, 238);
 
 
 .eventExpanded{
-  background-color: #ffffff;
+  background-color: #f4f7f7;
   padding-top: 50px;
   padding-bottom: 10px;
   padding-left: 10px;
@@ -200,9 +201,9 @@ background-color: rgb(231, 239, 238);
 .joinBtn{
   border-radius: 10px;
   transition: all ease-in .1s;
-  background-color: white;
-  color: #459861;
-  border: 2px solid #459861;
+  background-color: #459861;
+  color: white;
+  
 }
 
 .joinBtn:focus {
@@ -210,17 +211,14 @@ background-color: rgb(231, 239, 238);
 }
 
 .joinBtn:hover{
-  background-color: #459861;
-  color: white;
-  border: 2px solid #459861;
+  background-color: #418558;
 }
 
 .leaveBtn{
   border-radius: 10px;
   transition: all ease-in .1s;
-  background-color:  white;
-  color: #a46c27;
-  border: 2px solid #a46c27;
+  background-color:  #bc894a;
+  color: white;
 }
 
 .leaveBtn:focus {
@@ -228,8 +226,7 @@ background-color: rgb(231, 239, 238);
 }
 
 .leaveBtn:hover{
-  background-color: #a46c27;
-  color: white;
+  background-color: #936022;
 }
 
 /* JOIN AND JOINED BUTTONS */
@@ -364,7 +361,7 @@ background-color: rgb(231, 239, 238);
   bottom: 0px;
   height: 600px;
   overflow: scroll;
-  background-color: #ffffff;
+  background-color: #fbfcfc;
   overflow-x: hidden;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -388,7 +385,7 @@ background-color: rgb(231, 239, 238);
 }
 
 .chats-box-container{
- background-color: #ffffff;
+ background-color: #fbfcfc;
  border-top-left-radius: 8px;
  border-bottom-left-radius: 8px;
  z-index: 10;

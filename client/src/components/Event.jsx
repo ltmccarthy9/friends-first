@@ -3,8 +3,9 @@ import { useSelector } from "react-redux";
 import { setRefetch } from "../state";
 import { useDispatch } from "react-redux";
 import { BiDrink } from 'react-icons/bi'
-import { GiBasketballBall } from 'react-icons/gi';
+import { GiBasketballBall, GiKnifeFork } from 'react-icons/gi';
 import { CgTrees } from 'react-icons/cg'
+
 
 const Event = ({ business, address, description, capacity, taken, category, id, date, time, attending, refetch, distance}) => {
     // state for event cards - updating spots taken and whether user joined or not
@@ -79,14 +80,18 @@ const Event = ({ business, address, description, capacity, taken, category, id, 
     }
 
     
+    // icons for event category
         let icon;
         if(category.includes('bar')) {
             icon = <div className="flex pt-1 ml-1 mr-auto text-indigo-600"><BiDrink size={18}/></div>
-       } else if (category.includes('sport')) {
+        } else if (category.includes('sport')) {
          icon = <div className="pt-1 ml-1 mr-auto text-orange-700"><GiBasketballBall size={18}/></div>
-       } else {
+        } else if (category.includes('restaurant')) {
+        icon = <div className="pt-1 ml-1 mr-auto text-gray-800"><GiKnifeFork size={18}/></div>
+        }
+        else {
         icon = <div className="pt-1 ml-1 mr-auto text-green-600"><CgTrees size={18}/></div>
-       }
+        }
     
     
 
@@ -95,25 +100,27 @@ const Event = ({ business, address, description, capacity, taken, category, id, 
         className={expanded ? "overlay" : 'overlaySmall'}>
             <button onClick={expanded ? null : () => handleExpand()} 
             type="button" 
-            className={expanded ? 'eventExpanded max-w-xs sm:max-w-3xl pt-6 pb-2 px-2 relative text-center ml-auto' :
-             "event w-full h-48 mb-2 flex flex-col p-3 relative"}>
-                <div className="flex w-full">
+            className={expanded ? 'eventExpanded max-w-xs sm:max-w-3xl pt-6 pb-2 px-2 relative text-center ml-auto' 
+            : "event w-full h-48 mb-2 flex flex-col p-3 relative justify-between"}>
+                <p className={expanded ? "absolute py-2 px-3 top-4 right-6 text-xl font-bold hover:bg-gray-200 rounded-full" : "hidden"}>x</p>
+                <div className={expanded ? "flex w-full mt-2" : "flex w-full"}>
                     <h3 className={expanded ? "font-extrabold text-3xl px-2 ml-auto" 
                     : " theme-dark font-extrabold whitespace-pre-line text-xl"}
                     >{business}</h3>
                     {icon}
-                    <h3 className={expanded ? " absolute top-0 right-0 font-bold p-3 text-lg"
-                    : " text-lg font-bold ml-aut"}
+                    <h3 className={expanded ? " absolute top-2 left-2 font-bold p-3 text-lg"
+                    : " text-lg font-bold ml-auto"}
                     >{distance} mi</h3>
                 </div>
                
-                
-                <p className={expanded ? "mx-auto font-bold text-lg mt-2" 
-                    : "text-md absolute  bottom-0 left-0 m-3"}
-                    >{date} {time}</p>
-                 <p className={expanded ? "absolute top-0 left-0 p-3 font-bold text-lg" 
-                    : "text-md absolute  bottom-0 right-0 m-3"}
-                    >{filled}/{capacity}</p>
+                <div className={expanded ? "flex w-full mt-2" : "flex w-full justify-between"}>
+                    <p className={expanded ? "mx-auto font-bold text-lg mt-2" 
+                        : "text-md "}
+                        >{date} - {time}</p>
+                    <p className={expanded ? "absolute bottom-2 left-2 p-3 font-bold text-lg" 
+                        : "text-md "}
+                        >{filled}/{capacity}</p>
+                </div>
                 <p className={expanded ? "description-expanded text-md p-2" 
                     : "hidden"}>{description} "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 

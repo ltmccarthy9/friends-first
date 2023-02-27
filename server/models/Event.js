@@ -29,7 +29,6 @@ const eventSchema = new Schema({
     date: {
         type: Date,
         required: true,
-        get: (date) => moment(date).toISOString(),
         // set: (date) => moment(date, 'MM-DD-YYYY'),
         // validate: {
         //     validator: function (v) {

@@ -64,6 +64,14 @@ const Yourevents = () => {
         return dateA - dateB;
     });
 
+    const options = {
+        weekday: 'short',
+        month: 'long',
+        day: 'numeric',
+        timeZone: 'UTC'
+      };
+
+
     return (
         <div className="grid grid-cols-1 gap-2 mt-8 w-full">
         {ourEvents.map((event) => (
@@ -75,7 +83,7 @@ const Yourevents = () => {
             capacity={event.capacity}
             taken={event.attendees.length}
             category={event.category}
-            date={event.date.substring(5, 10)}
+            date={event.eventDate.toLocaleDateString('en-US', options)}
             time={event.time}
             distance={event.distance}
             refetch={refetch}

@@ -6,8 +6,9 @@ import { setPast, setUpcoming } from '../state';
 import { useSelector } from "react-redux";
 
 const Events = () => {
+    
     const dispatch = useDispatch()
-    //state for filtering events with search bar
+
     const [query, setQuery] = useState('');
     const [filteredEvents, setFilteredEvents] = useState([]);
     const [ userLat, setUserLat] = useState(null)
@@ -17,7 +18,7 @@ const Events = () => {
 
     const refetch = useSelector((state) => state.refetch);
     const userId = localStorage.getItem('id');
-    //UsEffect for properly handling profile conditional style
+   
     
     // fetch events using custom useFetch hook
     const { data, loading, error } = useFetchEvents(`http://localhost:4000/api/events/future/${userId}`, refetch, userLat, userLng);
@@ -38,7 +39,7 @@ const Events = () => {
         async function getLocation(){
             if (navigator.geolocation) {
               const location = navigator.geolocation.getCurrentPosition(successCallback, errorCallback, {timeout:10000});
-          } else {
+            } else {
                alert('your browser does not support geolocation')
              }
        
@@ -92,9 +93,16 @@ const Events = () => {
         let dateB = new Date(b.date);
         return dateA - dateB;
     });
-    
+
     //for dropdown menu distanceFilter
     const miles = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+
+    const options = {
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric',
+        timeZone: 'UTC'
+      };
 
         return (
             <div className="flex flex-col">
@@ -128,7 +136,7 @@ const Events = () => {
                             capacity={event.capacity}
                             taken={event.attendees.length}
                             category={event.category}
-                            date={event.date.substring(5, 10)}
+                            date={event.eventDate.toLocaleDateString('en-US', options)}
                             time={event.time}
                             distance={event.distance}
                             refetch={refetch}

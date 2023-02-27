@@ -25,6 +25,7 @@ const Pastevents = (likes) => {
         let dateB = new Date(b.date);
         return dateB - dateA;
     });
+    
 
     return (
         <div className="grid grid-cols-1 gap-2 mt-8 w-full">

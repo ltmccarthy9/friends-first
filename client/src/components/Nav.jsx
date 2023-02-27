@@ -82,31 +82,31 @@ const Nav = () => {
         
         <a href='/events' 
         onClick={goDashboard} 
-        className=" pt-2 font-extrabold text-white text-2xl ml-4 mr-2
+        className=" pt-2 font-extrabold text-zinc-100 hover:text-zinc-100 text-2xl ml-4 mr-2
          cursor-pointer md:mr-32 lg:mr-32 xl:mr-32 2xl:mr-32"
          >Friends First.
         </a>
         
         <div className='hidden ml-auto md:flex lg:ml-44'>
             <a href='/events' onClick={goDashboard} 
-            className={events ? ' cursor-pointer border-b-4 w-24 text-white border-[#f69400] px-2 pb-1 pt-2' 
-            : ' cursor-pointer w-24 px-2 pb-1 pt-2 text-white'}>
+            className={events ? ' cursor-pointer border-b-4 w-24 text-zinc-100 hover:text-zinc-100 border-[#f69400] px-2 pb-1 pt-2' 
+            : ' cursor-pointer w-24 px-2 pb-1 pt-2 text-zinc-100 hover:text-zinc-100'}>
                 <BsFillCalendar2EventFill size={18} className='cursor-pointer m-auto'/>
-                <h4 className={'text-whitecursor-pointer text-center text-sm'}>Events</h4>
+                <h4 className={'text-zinc-100 cursor-pointer text-center text-sm'}>Events</h4>
             </a>
             
             <a href='/profile' onClick={goProfile} 
-            className={profile ? ' cursor-pointer border-b-4 w-24 text-white border-[#f69400] px-2 pb-1 pt-2' 
-            : ' cursor-pointer w-24 px-2 pb-1 pt-2 text-white'}>
+            className={profile ? ' cursor-pointer border-b-4 w-24 text-zinc-100 hover:text-zinc-100 border-[#f69400] px-2 pb-1 pt-2' 
+            : ' cursor-pointer w-24 px-2 pb-1 pt-2 text-zinc-100 hover:text-zinc-100'}>
                 <BsPersonCircle size={18} className='cursor-pointer m-auto'/>
-                <h4 className={'text-white cursor-pointer text-center text-sm'}>Profile</h4>
+                <h4 className={'text-zinc-100 cursor-pointer text-center text-sm'}>Profile</h4>
             </a>
 
             <a href='/messages' onClick={goMessages} 
-            className={messages ? ' cursor-pointer w-24 border-b-4 text-white border-[#f69400] px-3 pb-1 pt-2' 
-            : 'cursor-pointer w-24 px-3 pb-1 pt-2 text-white'}>
+            className={messages ? ' cursor-pointer w-24 border-b-4 text-zinc-100 hover:text-zinc-100 border-[#f69400] px-3 pb-1 pt-2' 
+            : 'cursor-pointer w-24 px-3 pb-1 pt-2 text-zinc-100 hover:text-zinc-100'}>
                 <RiMessage2Fill size={18} className='cursor-pointer m-auto'/>
-                <h4 className={'text-white cursor-pointer text-center text-sm'}>Messages</h4>
+                <h4 className={'text-zinc-100 cursor-pointer text-center text-sm'}>Messages</h4>
             </a>
             
             <button type='button' onClick={logout} className='signOut w-20 cursor-pointer my-2 ml-4 mr-1 font-bold'>

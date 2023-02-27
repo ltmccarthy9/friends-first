@@ -14,7 +14,9 @@ export default function useFetchEvents(url, refetch, lat, lng,) {
                 const updatedEvents = await Promise.all(
                     response.data.map(async (event) => {
                         const distance = await getDistanceUserToEvent(lat, lng, event.lat, event.lng)
-                        return {...event, distance}
+                        const eventDate = new Date(event.date)
+                        //const dateString = eventDate.toString()
+                        return {...event, distance, eventDate}
                     })
                 );
                 setData(updatedEvents);

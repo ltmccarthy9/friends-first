@@ -43,7 +43,6 @@ function App() {
     }
   }, [window.location.pathname])
 
-  
   return (
     
       <Router>

@@ -3,27 +3,35 @@ import Event from "../components/Event";
 import useFetchEvents from "../hooks/useFetchEvents";
 import useFetch from "../hooks/useFetch";
 import { useDispatch } from 'react-redux';
-import { setPast, setUpcoming, setPage, setFriends, setMessageWith } from '../state';
+import { setPast, setUpcoming, setPage, setFriends, setMessageWith, setUsername } from '../state';
 import { useSelector } from "react-redux";
 
 const Events = () => {
     
     const dispatch = useDispatch()
 
+    // state for event filtering
     const [query, setQuery] = useState('');
+    const [ distanceFilter, setDistanceFilter ] = useState(10);
     const [filteredEvents, setFilteredEvents] = useState([]);
+
+    // state that stores user latituge and longitude
     const [ userLat, setUserLat] = useState(null)
     const [ userLng, setUserLng] = useState(null)
-    const [ distanceFilter, setDistanceFilter ] = useState(10);
+
+    // boolean determining if data from useFetchEvents has been fully loaded
     const [ isDataLoaded, setIsDataLoaded] = useState(false)
 
+    // refetch state
     const refetch = useSelector((state) => state.refetch);
+    
+    // get user id
     const userId = localStorage.getItem('id');
    
-    
     // fetch events using custom useFetch hook
     const { data, loading, error } = useFetchEvents(`http://localhost:4000/api/events/future/${userId}`, refetch, userLat, userLng);
     
+    // fetch user data and set friends + messagesWith state
     const { userData } = useFetch(`http://localhost:4000/api/users/${userId}`);
         if(userData) {
           dispatch(setFriends({
@@ -32,9 +40,11 @@ const Events = () => {
           dispatch(setMessageWith({
               messageWith: userData.friends[0]
           }))
+          dispatch(setUsername({
+            username: userData.name
+          }))
       }
    
-    
     // For styling of nav bar bottom border
     useEffect(() => {
         dispatch(setPast({
@@ -48,8 +58,8 @@ const Events = () => {
         }))
     }, [])
 
+    // get the user's latitude and longitude
     useEffect(() => {
-        // Get user latitude and longitude
         async function getLocation(){
             if (navigator.geolocation) {
               const location = navigator.geolocation.getCurrentPosition(successCallback, errorCallback, {timeout:10000});
@@ -88,15 +98,17 @@ const Events = () => {
         }
     }, [query, distanceFilter, isDataLoaded, data]);
 
+    // checking if data has been fully loaded
     useEffect(() => {
         setIsDataLoaded(!loading && !error);
       }, [loading, error]);
 
-
+    // if the data is still loading, return this  
     if(loading) {
         return <p className="fixed top-[50%] right-[50%]">Loading...</p>;
     }
 
+    // if there is an error return the error
     if (error) {
         return <p>Error: {error.message}</p>;
     }
@@ -111,6 +123,7 @@ const Events = () => {
     //for dropdown menu distanceFilter
     const miles = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 
+    // for display type of date
     const options = {
         weekday: 'short',
         month: 'short',
@@ -118,6 +131,7 @@ const Events = () => {
         timeZone: 'UTC'
       };
 
+      // Events header, search bar, and return event components
         return (
             <div className="flex flex-col">
                 <div className="w-full flex flex-col locationHeader">

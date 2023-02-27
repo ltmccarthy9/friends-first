@@ -11,6 +11,7 @@ const initialState = {
     upcoming: true,
     past: false,
     refetch: false,
+    username: null,
 };
 
 export const authSlice = createSlice({
@@ -49,6 +50,9 @@ export const authSlice = createSlice({
         setRefetch: (state, action) => {
             state.refetch = action.payload.refetch
         },
+        setUsername: (state, action) => {
+            state.username = action.payload.username;
+        },
     },
 });
 
@@ -61,6 +65,7 @@ export const { setLogin,
     setPage,
     setUpcoming,
     setPast,
-    setRefetch } = authSlice.actions;
+    setRefetch,
+    setUsername } = authSlice.actions;
 
 export default authSlice.reducer;

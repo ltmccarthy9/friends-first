@@ -23,43 +23,9 @@ const Nav = () => {
     const profile = useSelector((state) => state.page) === 'profile'
     const messages =  useSelector((state) => state.page) === 'messages'
 
-    //fetch our user
-    const { data, loading, error } = useFetch(`http://localhost:4000/api/users/${userId}`);
-  
-    //set friends and current message so when messages page is opened it's correctly rendered
-    if(data) {
-        dispatch(setFriends({
-            friends: data.friends.length
-        }));
-        dispatch(setMessageWith({
-            messageWith: data.friends[0]
-        }))
-    }
-
     const handleNav = () => {
         setNav(!nav);
     };
-    
-    // Navigate to dashboard page
-    const goDashboard = () => {
-        dispatch(setPage({
-            page: 'events'
-        }))
-    };
-
-    //navigate to profile page
-    const goProfile = () => {
-        dispatch(setPage({
-            page: 'profile'
-        }))
-    }
-
-    //navigate to messages page
-    const goMessages = () => {
-        dispatch(setPage({
-            page: 'messages'
-        }))
-    }
 
     //logout function
     const logout = () => {
@@ -81,28 +47,27 @@ const Nav = () => {
        h-14 flex z-20 pt-1 mb-4 md:justify-between lg:justify-center">
         
         <a href='/events' 
-        onClick={goDashboard} 
         className=" pt-2 font-extrabold text-zinc-100 hover:text-zinc-100 text-2xl ml-4 mr-2
          cursor-pointer md:mr-32 lg:mr-32 xl:mr-32 2xl:mr-32"
          >Friends First.
         </a>
         
         <div className='hidden ml-auto md:flex lg:ml-44'>
-            <a href='/events' onClick={goDashboard} 
+            <a href='/events'
             className={events ? ' cursor-pointer border-b-4 w-24 text-zinc-100 hover:text-zinc-100 border-[#f69400] px-2 pb-1 pt-2' 
             : ' cursor-pointer w-24 px-2 pb-1 pt-2 text-zinc-100 hover:text-zinc-100'}>
                 <BsFillCalendar2EventFill size={18} className='cursor-pointer m-auto'/>
                 <h4 className={'text-zinc-100 cursor-pointer text-center text-sm'}>Events</h4>
             </a>
             
-            <a href='/profile' onClick={goProfile} 
+            <a href='/profile' 
             className={profile ? ' cursor-pointer border-b-4 w-24 text-zinc-100 hover:text-zinc-100 border-[#f69400] px-2 pb-1 pt-2' 
             : ' cursor-pointer w-24 px-2 pb-1 pt-2 text-zinc-100 hover:text-zinc-100'}>
                 <BsPersonCircle size={18} className='cursor-pointer m-auto'/>
                 <h4 className={'text-zinc-100 cursor-pointer text-center text-sm'}>Profile</h4>
             </a>
 
-            <a href='/messages' onClick={goMessages} 
+            <a href='/messages'
             className={messages ? ' cursor-pointer w-24 border-b-4 text-zinc-100 hover:text-zinc-100 border-[#f69400] px-3 pb-1 pt-2' 
             : 'cursor-pointer w-24 px-3 pb-1 pt-2 text-zinc-100 hover:text-zinc-100'}>
                 <RiMessage2Fill size={18} className='cursor-pointer m-auto'/>
@@ -126,18 +91,18 @@ const Nav = () => {
                     : 'fixed right-[-100%] top-0 p-10 h-screen ease-in duration-200'}>
                     <div>
                         <div className='flex flex-col w-full items-center justify-between mt-8 ease-in duration-100'>
-                            <a onClick={goDashboard} className='m-2' href='/events'>
+                            <a className='m-2' href='/events'>
                                 <FaHome className='hover:text-[#f69400]' size={50} />
                             </a>
-                            <a  onClick={goDashboard} href='/events' 
+                            <a href='/events' 
                             className='text-2xl m-4 hover:font-bold hover:text-[#f69400] ease-in duration-100'>
                                 EVENTS
                             </a>
-                            <a onClick={goProfile} href='/profile' 
+                            <a href='/profile' 
                             className='text-2xl m-4 hover:font-bold hover:text-[#f69400] ease-in duration-100'>
                                 PROFILE
                             </a>
-                            <a onClick={goMessages} href='/messages'
+                            <a href='/messages'
                             className='text-2xl m-4 hover:font-bold hover:text-[#f69400] ease-in duration-100'>
                                 MESSAGES
                             </a>

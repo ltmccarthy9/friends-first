@@ -80,7 +80,8 @@ export const joinEvent = async (req, res, next) => {
         //find event by that id
         const event = await Event.findById(eventId);
         //if the event no longer exists, send error
-        if (!event) return res.status(404).send({ error: "Event not found" });
+        if (!event) return res.status(404).json({ error: "Event not found" });
+        if (event.attendees.length >= event.capacity) return res.status(400).json({error: "Event is full"})
 
         //grab user by id so we can send name in message
         const user = await User.findById(userId);

@@ -21,7 +21,7 @@ const Chats = (props) => {
         }));
     };
     
-  const { data, loading, error } = useFetch(`http://localhost:4000/api/users/${user2Id}`);
+  const { userData, loading, error } = useFetch(`http://localhost:4000/api/users/${user2Id}`);
   
   if(loading) {
       return <p>Loading...</p>;
@@ -59,12 +59,12 @@ const Chats = (props) => {
     }
   }
 
-  if(data){
+  if(userData){
     return (
         <div onClick={changeMessage} 
         className={messenger ? 'flex chats-box-active p-3 font-bold' 
         : 'flex chats-box p-3 cursor-pointer'}>
-            <p className={messenger ? 'theme-dark' : 'theme-dark'}>{data.name} | {getUserBirthdate(data.birthdate)}</p>
+            <p className={messenger ? 'theme-dark' : 'theme-dark'}>{userData.name} | {getUserBirthdate(userData.birthdate)}</p>
             <RiDeleteBinLine onClick={() => deleteFriend()} 
             className={messenger ? 'mt-1 ml-auto text-white cursor-pointer' 
             : 'mt-1 ml-auto cursor-pointer'}/>

@@ -16,9 +16,6 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 
-import { useDispatch } from "react-redux";
-import { setUserLat, setUserLng } from "./state";
-
 firebase.initializeApp({
   apiKey: "AIzaSyA72m43fcB8aq6RQqSchVzGzJvH6wFv0yw",
   authDomain: "friends-first-f7a67.firebaseapp.com",
@@ -36,6 +33,8 @@ function App() {
 
   //For conditionally displaying navbar
   const [ showNav, setShowNav] = useState(true);
+  const isAuth = Boolean(useSelector((state) => state.token))
+
   useEffect(() => {
     if(window.location.pathname === '/' || window.location.pathname === '/login' || window.location.pathname === '/register' ){
       setShowNav(false)
@@ -44,8 +43,6 @@ function App() {
     }
   }, [window.location.pathname])
 
-
-  const isAuth = Boolean(useSelector((state) => state.token))
   
   return (
     

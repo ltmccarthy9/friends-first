@@ -6,7 +6,7 @@ import Pastevent from './Pastevent';
 const Pastevents = (likes) => {
     const userId = localStorage.getItem('id');
 
-    const { data, loading, error } = useFetch('http://localhost:4000/api/events/past');
+    const { userData, loading, error } = useFetch('http://localhost:4000/api/events/past');
     // fetch our events
     
     if(loading) {
@@ -17,7 +17,7 @@ const Pastevents = (likes) => {
         return <p>Error: {error.message}</p>;
     }
 
-    const ourPastEvents = data.filter(event => event.attendees.includes(userId));
+    const ourPastEvents = userData.filter(event => event.attendees.includes(userId));
     
     //return past events in descending order so we have most recent event first
     ourPastEvents.sort(function(a, b) {

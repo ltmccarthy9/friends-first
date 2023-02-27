@@ -4,7 +4,7 @@ import ChatRoom from '../components/ChatRoom';
 import Chats from '../components/Chats';
 import useFetch from '../hooks/useFetch';
 import { useDispatch } from 'react-redux';
-import { setPast, setUpcoming } from '../state';
+import { setPast, setUpcoming, setPage } from '../state';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -21,10 +21,13 @@ const Messages = () => {
     dispatch(setUpcoming({
         upcoming: true
     }));
+    dispatch(setPage({
+      page: 'messages'
+  }))
   }, []);
 
   //fetch user data using useFetch custom hook
-  const { data, loading, error } = useFetch(`http://localhost:4000/api/users/${userId}`);
+  const { userData, loading, error } = useFetch(`http://localhost:4000/api/users/${userId}`);
   
   if(loading) {
       return <p>Loading...</p>;
@@ -35,7 +38,7 @@ const Messages = () => {
   }
 
   //array of user's friends (other user ids)
-  const friends = data.friends;
+  const friends = userData.friends;
 
   return (
     <div className='mt-14'>

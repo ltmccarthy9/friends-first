@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import Event from "../components/Event";
 import useFetchEvents from "../hooks/useFetchEvents";
+import useFetch from "../hooks/useFetch";
 import { useDispatch } from 'react-redux';
-import { setPast, setUpcoming } from '../state';
+import { setPast, setUpcoming, setPage, setFriends, setMessageWith } from '../state';
 import { useSelector } from "react-redux";
 
 const Events = () => {
@@ -23,6 +24,17 @@ const Events = () => {
     // fetch events using custom useFetch hook
     const { data, loading, error } = useFetchEvents(`http://localhost:4000/api/events/future/${userId}`, refetch, userLat, userLng);
     
+    const { userData } = useFetch(`http://localhost:4000/api/users/${userId}`);
+        if(userData) {
+          dispatch(setFriends({
+              friends: userData.friends.length
+          }));
+          dispatch(setMessageWith({
+              messageWith: userData.friends[0]
+          }))
+      }
+   
+    
     // For styling of nav bar bottom border
     useEffect(() => {
         dispatch(setPast({
@@ -31,7 +43,9 @@ const Events = () => {
         dispatch(setUpcoming({
             upcoming: true
         }));
-
+        dispatch(setPage({
+            page: 'events'
+        }))
     }, [])
 
     useEffect(() => {
@@ -113,7 +127,7 @@ const Events = () => {
                         <h2 className="text-xl theme-dark mx-1">within</h2>
                         <select defaultValue={10} onChange={(e) => setDistanceFilter(parseInt(e.target.value))} className="mx-1" name="miles" id="miles">
                            {miles.map((each) => {
-                            return <option value={each}>{each}</option>
+                            return <option key={each} value={each}>{each}</option>
                            })}
                         </select>
                         <h2 className="text-xl font-bold theme-dark mx-1">miles</h2>

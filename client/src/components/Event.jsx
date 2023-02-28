@@ -102,7 +102,6 @@ const Event = ({ business, address, description, capacity, taken, category, id, 
             type="button" 
             className={expanded ? 'eventExpanded bg-[#f4f7f7] relative text-center ml-auto pt-6 pb-2 px-2 max-w-xs sm:max-w-3xl' 
             : "event flex flex-col justify-between relative w-full h-48 mb-2 p-3"}>
-                <p className={expanded ? "absolute py-2 px-3 top-4 right-6 text-xl font-bold hover:bg-gray-200 rounded-full" : "hidden"}>x</p>
                 <div className={expanded ? "flex w-full mt-2" : "flex w-full"}>
                     <h3 className={expanded ? "font-extrabold text-3xl px-2 ml-auto" 
                     : " theme-dark font-extrabold whitespace-pre-line text-xl"}
@@ -125,20 +124,19 @@ const Event = ({ business, address, description, capacity, taken, category, id, 
                     : "hidden"}>{description} "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
                     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                    "</p>
+                    "</p>  
+            </button>
             
-              
-
-                <div className="absolute bottom-0 right-0">
+                <div className={expanded ? "event-wrapper" : ''}>
+                <p className={expanded ? "absolute py-2 px-3 top-4 right-6 text-xl font-bold hover:bg-gray-200 rounded-full cursor-pointer" : "hidden"}>x</p>
                     {expanded ? joined ? <button onClick={() => joinEvent()} 
-                    type="button" className="theme-green text-xl font-bold px-4 py-2 m-4 leaveBtn"
+                    type="button" className="z-30 absolute bottom-0 right-0 text-xl font-bold px-4 py-2 m-4 leaveBtn"
                     >Leave</button>
                     : <button onClick={() => joinEvent()} type="button" 
-                    className="theme-green text-xl font-bold px-4 py-2 m-4 joinBtn"
+                    className="z-30 absolute bottom-0 right-0 text-xl font-bold px-4 py-2 m-4 joinBtn"
                     >Join</button>   
                         : <p></p>}      
                 </div>
-            </button>
         </div>
     );
 }

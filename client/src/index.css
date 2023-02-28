@@ -92,7 +92,7 @@ background-color: rgb(231, 239, 238);
   border-radius: 10px;
   font-weight: 450;
   color: #424e4e;
-  border: 1px solid #e7edeb;
+  border: 2px solid #e7edeb;
   width: 250px;
   transition: all ease-in-out .35s;
   
@@ -100,7 +100,7 @@ background-color: rgb(231, 239, 238);
 
 .search-bar:focus{
   outline: none;
-  border: 1px solid #f69400;
+  border: 2px solid #f69400;
   background-color: #fbfcfc;
   width: 340px;
 }
@@ -141,6 +141,18 @@ background-color: rgb(231, 239, 238);
   color: #54646c;
 }
 
+.event-wrapper{
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  height: 500px;
+  width: 460px;
+  z-index: 30;
+}
 
 .eventExpanded{
   padding-top: 50px;

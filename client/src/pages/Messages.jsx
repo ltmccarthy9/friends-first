@@ -39,6 +39,7 @@ const Messages = () => {
 
   //array of user's friends (other user ids)
   const friends = userData.friends;
+  console.log(friends)
 
   return (
     <div className='mt-14'>

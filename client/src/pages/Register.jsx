@@ -1,8 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import DatePicker from 'react-date-picker'
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
+import 'firebase/compat/analytics';
+import 'firebase/compat/auth'
 
 const Register = () => {
+
+
     const navigate = useNavigate();
 
     //input text state for register form
@@ -59,7 +65,19 @@ const Register = () => {
             alert("Successfully registered")
             navigate('/login');
           } else {
+            firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                // Signed in 
+                var user = userCredential.user;
+                console.log('new firebase user successfully created', user)
+            })
+            .catch((error) => {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                console.log('error created firebase user', errorCode, errorMessage)
+            });
             alert(`${data.message}`)
+            navigate('/login')
           }
         })
         .catch((error) => {

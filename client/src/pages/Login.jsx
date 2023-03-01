@@ -2,6 +2,10 @@ import {  useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setLogin } from "../state";
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
+import 'firebase/compat/analytics';
+import 'firebase/compat/auth'
 
 const Login = () => {
   
@@ -33,6 +37,17 @@ const Login = () => {
       .then((data) => {
         //if a jwt(token) is sent back, login the user using dispatch and redux
         if(data.token){
+          firebase.auth().signInWithEmailAndPassword(email, password)
+          .then((userCredential) => {
+            // Signed in
+            var user = userCredential.user;
+            console.log('successfully logged in firebase user ', user)
+          })
+          .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log("something went wrong logging in firebase user ", errorCode, errorMessage)
+          });
           dispatch(setLogin({
             user: data.user,
             token: data.token,

@@ -6,6 +6,8 @@ import userRoute from "./routes/users.js";
 import eventRoute from "./routes/events.js";
 import cookieParser from 'cookie-parser';
 import cors from "cors";
+import admin from 'firebase-admin'
+
 
 const app = express();
 dotenv.config();

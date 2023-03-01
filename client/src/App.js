@@ -26,6 +26,8 @@ firebase.initializeApp({
   measurementId: "G-8GJG7K6CVR"
 });
 
+const firebaseAuth = firebase.auth();
+
 const firestore = firebase.firestore();
 const analytics = firebase.analytics();
 

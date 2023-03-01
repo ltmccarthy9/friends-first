@@ -127,8 +127,10 @@ const Event = ({ business, address, description, capacity, taken, category, id, 
                     "</p>  
             </button>
             
-                <div className={expanded ? "event-wrapper" : ''}>
-                <p className={expanded ? "absolute py-2 px-3 top-4 right-6 text-xl font-bold hover:bg-gray-200 rounded-full cursor-pointer" : "hidden"}>x</p>
+                <div className={expanded ? "event-wrapper max-w-xs sm:max-w-3xl" : ''}>
+                <button type="button" className={expanded 
+                    ? "absolute py-2 px-3 top-4 right-6 text-xl font-bold hover:bg-gray-200 rounded-full cursor-pointer" 
+                    : "hidden"}>x</button>
                     {expanded ? joined ? <button onClick={() => joinEvent()} 
                     type="button" className="z-30 absolute bottom-0 right-0 text-xl font-bold px-4 py-2 m-4 leaveBtn"
                     >Leave</button>

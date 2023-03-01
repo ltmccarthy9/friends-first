@@ -7,7 +7,10 @@ import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { FaHome } from 'react-icons/fa';
 import { useDispatch, useSelector } from "react-redux";
 import { setLogout, setFriends, setMessageWith, setPage } from '../state';
-import useFetch from '../hooks/useFetch';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
+import 'firebase/compat/analytics';
+import 'firebase/compat/auth'
 
 const Nav = () => {
 
@@ -30,6 +33,11 @@ const Nav = () => {
     //logout function
     const logout = () => {
         if(window.confirm("Are you sure you want to log out?")) {
+            firebase.auth().signOut().then(() => {
+                console.log('firebase user signed out')
+              }).catch((error) => {
+                console.log('error signing firebase user out ', error)
+              });
             dispatch(setPage({
                 page: 'events'
             }))

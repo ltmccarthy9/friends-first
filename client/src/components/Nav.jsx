@@ -51,7 +51,7 @@ const Nav = () => {
     
 
   return (
-      <div className="fixed justify-between top-0 w-full theme-dark navBar
+      <nav className="fixed justify-between top-0 w-full theme-dark navBar
        h-14 flex z-20 pt-1 mb-4 md:justify-between lg:justify-center">
         
         <a href='/events' 
@@ -63,21 +63,21 @@ const Nav = () => {
         <div className='hidden ml-auto md:flex lg:ml-44'>
             <a href='/events'
             className={events ? ' cursor-pointer border-b-4 w-24 text-zinc-100 hover:text-zinc-100 border-[#f69400] px-2 pb-1 pt-2' 
-            : ' cursor-pointer w-24 px-2 pb-1 pt-2 text-zinc-100 hover:text-zinc-100'}>
+            : ' cursor-pointer w-24 px-2 pb-1 pt-2 text-zinc-100 hover:text-zinc-300'}>
                 <BsFillCalendar2EventFill size={18} className='cursor-pointer m-auto'/>
                 <h4 className={'text-zinc-100 cursor-pointer text-center text-sm'}>Events</h4>
             </a>
             
             <a href='/profile' 
             className={profile ? ' cursor-pointer border-b-4 w-24 text-zinc-100 hover:text-zinc-100 border-[#f69400] px-2 pb-1 pt-2' 
-            : ' cursor-pointer w-24 px-2 pb-1 pt-2 text-zinc-100 hover:text-zinc-100'}>
+            : ' cursor-pointer w-24 px-2 pb-1 pt-2 text-zinc-100 hover:text-zinc-300'}>
                 <BsPersonCircle size={18} className='cursor-pointer m-auto'/>
                 <h4 className={'text-zinc-100 cursor-pointer text-center text-sm'}>Profile</h4>
             </a>
 
             <a href='/messages'
             className={messages ? ' cursor-pointer w-24 border-b-4 text-zinc-100 hover:text-zinc-100 border-[#f69400] px-3 pb-1 pt-2' 
-            : 'cursor-pointer w-24 px-3 pb-1 pt-2 text-zinc-100 hover:text-zinc-100'}>
+            : 'cursor-pointer w-24 px-3 pb-1 pt-2 text-zinc-100 hover:text-zinc-300'}>
                 <RiMessage2Fill size={18} className='cursor-pointer m-auto'/>
                 <h4 className={'text-zinc-100 cursor-pointer text-center text-sm'}>Messages</h4>
             </a>
@@ -95,7 +95,7 @@ const Nav = () => {
         {/* menu bar small screen */}
         <div className={nav ? 'md:hidden fixed right-0 top-0 w-full h-screen bg-black/70 ease-in duration-200' : ''}>
                 <div className={nav 
-                    ? 'fixed right-0 top-0 w-[60%] sm:w-[50%] md:w-[45%] h-screen bg-[#e5efed] p-10 ease-in duration-200' 
+                    ? 'fixed right-0 top-0 w-[60%] sm:w-[50%] md:w-[45%] h-screen bg-[#EDF2F6] p-10 ease-in duration-200' 
                     : 'fixed right-[-100%] top-0 p-10 h-screen ease-in duration-200'}>
                     <div>
                         <div className='flex flex-col w-full items-center justify-between mt-8 ease-in duration-100'>
@@ -127,7 +127,7 @@ const Nav = () => {
                 </div>
             </div>
         
-        </div>
+        </nav>
   )
 }
 

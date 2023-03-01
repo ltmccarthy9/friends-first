@@ -12,11 +12,11 @@ const ChatRoom = () => {
   const [formValue, setFormValue] = useState('');
   const ref = useRef()
 
-   // grab # of friends and the user we're messaging with from state
+  
   // if 0 friends, display "no friends"
   let friends = (useSelector((state) => state.friends))
+  // grab the 2nd user in conversation
   const user = useSelector((state) => state.messageWith);
-  console.log(friends)
   // grab current user
   const currentUserId = localStorage.getItem('id');
   
@@ -27,7 +27,7 @@ const ChatRoom = () => {
         console.log('idToken')
       })
     } else {
-      alert('user not authenticated')
+      console.log('user not authenticated')
     }
   })
   
@@ -81,7 +81,7 @@ const ChatRoom = () => {
             {friends ? <form className='chat-form mt-2' onSubmit={sendMessage}>
 
             <div className='flex'>
-                <input className='chat-input bg-[#fbfcfc] p-2 h-10 w-11/12 rounded-lg mt-2' value={formValue} 
+                <input className='chat-input bg-[#fbfcfc] py-3 px-2 h-10 w-11/12 rounded-lg mt-2' value={formValue} 
                 onChange={(e) => setFormValue(e.target.value)} placeholder="Type a message..." />
 
                 <button className='font-bold transition-all cursor-pointer bg-[#fbfcfc] rounded-md ml-2 mt-2 p-2' 

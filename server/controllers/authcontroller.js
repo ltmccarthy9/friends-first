@@ -51,13 +51,13 @@ export const loginUser = async (req, res, next) => {
         const user = await User.findOne({email: email});
         //if there is no user, return error
         if(!user) {
-            return next(createError(404, "User not found."))
+            return res.status(404).json({error: 'user not found, enter proper credentials'})
         }
         // compare password from front end with encrypted password
         const isPasswordCorrect = await bcrypt.compare(req.body.password, user.password)
         // if the password is not correct return error
         if(!isPasswordCorrect) {
-            return next(createError(400), "Wrong password or username.")
+            return res.status(404).json({error: 'That password was incorrect'})
         }
 
         //create json web token
@@ -66,7 +66,16 @@ export const loginUser = async (req, res, next) => {
 
         //send token and user
         res.status(200).json({ token, user});
-    } catch(err) {
-        next(err);
+    } catch(error) {
+        if(error.name === 'ValidationError') {
+            let errors = {};
+
+            Object.keys(error.errors).forEach((key) => {
+                errors[key] = error.errors[key].message;
+            });
+            
+            return res.status(400).json({error: errors});
+        }
+        next(error);
     }
 }; 

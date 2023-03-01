@@ -29,7 +29,7 @@ const Pastevents = (likes) => {
 
     return (
         <div className="grid grid-cols-1 gap-2 mt-8 w-full">
-        {ourPastEvents.map((event) => (
+        {ourPastEvents.length > 0 ? ourPastEvents.map((event) => (
             <Pastevent key={event._id}
             id={event._id}
             business={event.business}
@@ -37,7 +37,7 @@ const Pastevents = (likes) => {
             date={event.date.substring(5, 10)}
             attending={event.attendees} 
             likes={likes}/>
-        ))}
+        )) : <h2 className="pt-12 font-bold m-auto">You don't have any past events yet.</h2>}
         </div>
     );
 }

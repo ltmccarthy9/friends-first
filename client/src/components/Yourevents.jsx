@@ -74,7 +74,7 @@ const Yourevents = () => {
 
     return (
         <div className="grid grid-cols-1 gap-2 mt-8 w-full">
-        {ourEvents.map((event) => (
+        {ourEvents.length > 0 ? (ourEvents.map((event) => (
             <Event key={event._id}
             id={event._id} 
             business={event.business}
@@ -88,7 +88,7 @@ const Yourevents = () => {
             distance={event.distance}
             refetch={refetch}
             attending={event.attendees.includes(userId)} />
-        ))}
+        ))) : (<h2 className="pt-12 font-bold m-auto">You haven't joined any events!</h2>)}
         </div>
     );
 

@@ -54,11 +54,13 @@ const Login = () => {
           }))
           localStorage.setItem('id', data.user._id)
           navigate("/events")
+        } else {
+          alert(data.error)
         }
       })
       .catch((error) => {
         //if the response is an error, alert with an error
-        alert(error);
+        alert('error', error);
       });
     };
 
@@ -84,11 +86,11 @@ const Login = () => {
             type="password" className="form-control my-1 chat-input"
             ></input>
             <button type="button" onClick={(e) => handleLog(e)} 
-            className="btn mt-3 border-solid border-1 bg-gray-200 hover:bg-gray-300"
+            className="btn font-bold mt-3 border-solid border-1 bg-[#fdb342] hover:bg-[#ffc56f] w-full"
             >Sign in</button>
             <p className="no-account mt-4 mb-1 text-black" >Don't have an account?</p>
             <button type="button" onClick={() => navigate("/register")} 
-            className="btn sign-up"
+            className="btn sign-up w-full"
             >Register</button>
           </form>
       </div>

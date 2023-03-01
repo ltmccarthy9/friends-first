@@ -8,7 +8,7 @@ body {
   font-family: 'Mukta', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(231, 239, 238);
+  background-color: #EDF2F6;
 }
 
 code {
@@ -17,7 +17,7 @@ code {
 }
 
 html {
-background-color: rgb(231, 239, 238);
+background-color: #EDF2F6;
 }
 
 .theme-dark{
@@ -29,7 +29,7 @@ background-color: rgb(231, 239, 238);
 }
 
 .navBar{
-  background-color: #40525a;
+  background-color: #2d5064;
 }
 
 /* -----------------------------------------------LANDING PAGE------------------------- */
@@ -92,7 +92,7 @@ background-color: rgb(231, 239, 238);
   border-radius: 10px;
   font-weight: 450;
   color: #424e4e;
-  border: 2px solid #e7edeb;
+  border: 2px solid #EDF2F6;
   width: 250px;
   transition: all ease-in-out .35s;
   
@@ -395,13 +395,11 @@ background-color: rgb(231, 239, 238);
 
 .chat-input{
   transition: all ease-in .12s;
-  border: 1px solid #e9efef;
+  border: 2px solid #EDF2F6;
 }
 
 .chat-input:focus {
-  box-shadow: -3px 3px 1px #ffab2d;
   outline: none;
-  border: 1px solid #e9efef;
 }
 
 

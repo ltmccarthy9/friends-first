@@ -3,13 +3,16 @@ import { useState } from 'react';
 import useFetch from '../hooks/useFetch';
 import { AiOutlineUserAdd } from 'react-icons/ai';
 import { MdOutlineCancelPresentation } from 'react-icons/md'
-import { useSelector } from "react-redux";
 import { ImCheckmark } from 'react-icons/im';
+import { useDispatch, useSelector } from 'react-redux';
+import { setFriends } from '../state';
 
 const Attendees = (props) => {
 
+    const dispatch = useDispatch();
     //grab jwt from state
     const token = useSelector((state) => state.token);
+    const friends = useSelector((state) => state.friends)
 
     const id = props.user2Id
     const userId = localStorage.getItem('id');
@@ -39,6 +42,9 @@ const Attendees = (props) => {
                 },
             });
             const data = await response.json();
+            dispatch(setFriends({
+                friends: (friends + 1)
+            }))
             if(!data.error){
                 alert(data)
                 setAdded(true);

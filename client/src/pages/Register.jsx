@@ -122,7 +122,7 @@ const Register = () => {
                     </div>
 
                     <button type="button" onClick={(e) => checkForm(e)} 
-                    className="sign-up btn btn-light sub"
+                    className="sign-up btn btn-light sub w-full"
                     >Sign Up</button>
                 </form>
             </div> 

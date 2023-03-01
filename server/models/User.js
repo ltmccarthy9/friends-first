@@ -34,8 +34,8 @@ const userSchema = new Schema({
         type: Boolean,
         required: true,
     },
-    photos: {
-        type: [String],
+    photo: {
+        type: String
     },
     liked: [{
         type: Schema.Types.ObjectId,

@@ -16,8 +16,7 @@ Friends First is an event-based dating/friend-making application that allows a u
 * Google maps API
 
 ## Demo Of Current State of Application
-https://www.youtube.com/watch?v=a4PNtTc96IE&ab_channel=LiamMcCarthy
-
+https://www.youtube.com/watch?v=AgHvGWZngOA&ab_channel=LiamMcCarthy
 
 
 ## Updates 
@@ -48,6 +47,7 @@ https://www.youtube.com/watch?v=_a4XgtZ_UnA&ab_channel=LiamMcCarthy
 
 8.)
 https://www.youtube.com/watch?v=pxaGvDUBOk4&ab_channel=LiamMcCarthy
+
 
 ## License 
 

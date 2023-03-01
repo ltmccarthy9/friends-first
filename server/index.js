@@ -6,7 +6,6 @@ import userRoute from "./routes/users.js";
 import eventRoute from "./routes/events.js";
 import cookieParser from 'cookie-parser';
 import cors from "cors";
-import admin from 'firebase-admin'
 
 
 const app = express();
@@ -32,7 +31,8 @@ mongoose.connection.on("connected", () => {
     console.log("mongoDB connected")
 });
 
-//middleware
+// middleware
+// app.use('/', express.static(path.join(__dirname, '/public')))
 app.use(cookieParser());
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());

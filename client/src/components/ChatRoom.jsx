@@ -19,6 +19,7 @@ const ChatRoom = () => {
   const user = useSelector((state) => state.messageWith);
   // grab current user
   const currentUserId = localStorage.getItem('id');
+
   
  // firebase user authentication
   firebase.auth().onAuthStateChanged(function(user) {

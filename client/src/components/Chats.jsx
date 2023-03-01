@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import useFetch from '../hooks/useFetch';
 import { useDispatch } from "react-redux";
-import { setMessageWith } from '../state';
+import { setMessageWith, setFriends } from '../state';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RiDeleteBinLine } from 'react-icons/ri';
@@ -11,6 +11,7 @@ const Chats = (props) => {
     const userId = localStorage.getItem('id');
     const user2Id = props.user2Id;
     const messenger = useSelector((state) => state.messageWith) === user2Id;
+    const friends = useSelector((state) => state.friends)
 
     const token = useSelector((state) => state.token);
     const dispatch = useDispatch();
@@ -52,6 +53,9 @@ const Chats = (props) => {
         },
         });
         const data = await response.json();
+        dispatch((setFriends({
+            friends: (friends - 1)
+        })))
         window.location.reload();
         if(!data.error){
             console.log(data)
@@ -66,7 +70,7 @@ const Chats = (props) => {
         : 'flex chats-box p-3 cursor-pointer'}>
             <p className={messenger ? 'theme-dark' : 'theme-dark'}>{userData.name} | {getUserBirthdate(userData.birthdate)}</p>
             <RiDeleteBinLine onClick={() => deleteFriend()} 
-            className={messenger ? 'mt-1 ml-auto text-white cursor-pointer' 
+            className={messenger ? 'mt-1 ml-auto cursor-pointer hover:text-slate-500 ease-in duration-75' 
             : 'mt-1 ml-auto cursor-pointer'}/>
         </div>
       )

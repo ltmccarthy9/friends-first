@@ -83,17 +83,33 @@ const Event = ({ business, address, description, capacity, taken, category, id, 
     // icons for event category
         let icon;
         if(category.includes('bar')) {
-            icon = <div className="flex pt-1 ml-1 mr-auto text-indigo-600"><BiDrink size={18}/></div>
+            icon = <div className={expanded 
+                ? "m-auto mt-1 text-indigo-600" 
+                : "inline-block pt-1 ml-1 mr-auto text-indigo-600"}>
+                    <BiDrink size={expanded? 25 : 18}/>
+                    </div>
         } else if (category.includes('sport')) {
-         icon = <div className="pt-1 ml-1 mr-auto text-orange-700"><GiBasketballBall size={18}/></div>
+         icon = <div className={expanded 
+            ? "m-auto mt-1 text-orange-700" 
+            : "inline-block pt-1 ml-1 mr-auto text-orange-700"}>
+                <GiBasketballBall size={expanded? 25 : 18}/>
+                </div>
         } else if (category.includes('restaurant')) {
-        icon = <div className="pt-1 ml-1 mr-auto text-gray-800"><GiKnifeFork size={18}/></div>
+        icon = <div className={expanded 
+            ? "m-auto mt-1 text-gray-800" 
+            : "inline-block pt-1 ml-1 mr-auto text-gray-800"}>
+                <GiKnifeFork size={expanded? 25 : 18}/>
+                </div>
         }
         else {
-        icon = <div className="pt-1 ml-1 mr-auto text-green-600"><CgTrees size={18}/></div>
+        icon = <div className={expanded 
+            ? "m-auto mt-1 text-green-600" 
+            : "inline-block pt-1 ml-1 mr-auto text-green-600"}>
+                <CgTrees size={expanded? 25 : 18}/>
+                </div>
         }
     
-    
+    // text-indigo-600 text-gray-800 text-green-600
 
     return (
         <div onClick={expanded ? () => handleExpand() : null } 
@@ -101,30 +117,36 @@ const Event = ({ business, address, description, capacity, taken, category, id, 
             <button onClick={expanded ? null : () => handleExpand()} 
             type="button" 
             className={expanded ? 'eventExpanded bg-[#f4f7f7] relative text-center ml-auto pt-6 pb-2 px-2 max-w-xs sm:max-w-3xl' 
-            : "event flex flex-col justify-between relative w-full h-48 mb-2 p-3"}>
-                <div className={expanded ? "flex w-full mt-2" : "flex w-full"}>
-                    <h3 className={expanded ? "font-extrabold text-3xl px-2 ml-auto" 
-                    : " theme-dark font-extrabold whitespace-pre-line text-xl"}
-                    >{business}</h3>
+            : "event flex flex-col relative w-full h-48 mb-2 p-3"}>
+                <div className={expanded ? "flex flex-col w-full mt-2" : "flex w-full"}>
+                    <h3 className={expanded ? "font-extrabold text-2xl px-2 m-auto" 
+                    : "bussiness-name-small theme-dark font-extrabold text-xl whitespace-nowrap overflow-hidden"}
+                    >{business}
+                    </h3>
                     {icon}
                     <h3 className={expanded ? " absolute top-2 left-2 font-bold p-3 text-lg"
-                    : " text-lg font-bold ml-auto"}
-                    >{distance} mi</h3>
+                    : "miles-indicator text-lg font-bold ml-auto inline-block"}
+                    >{distance} mi
+                    </h3>
                 </div>
                
                 <div className={expanded ? "flex w-full mt-2" : "flex w-full justify-between"}>
-                    <p className={expanded ? "mx-auto font-bold text-lg mt-2" 
+                    <p className={expanded ? "mx-auto font-bold text-lg" 
                         : "text-sm font-bold"}
-                        >{date} - {time}</p>
+                        >{date} - {time}
+                    </p>
                     <p className={expanded ? "absolute bottom-2 left-2 p-3 font-bold text-lg" 
                         : "text-sm font-bold "}
-                        >{filled}/{capacity}</p>
+                        >{filled}/{capacity}
+                    </p>
                 </div>
-                <p className={expanded ? "description-expanded text-md p-2" 
+                <p className={expanded ? "text-md p-2 overflow-scroll max-h-60" 
                     : "hidden"}>{description} "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                    "</p>  
+                    quised do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                    quised do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+                    quised do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+                </p>  
             </button>
             
                 <div className={expanded ? "event-wrapper max-w-xs sm:max-w-3xl" : ''}>

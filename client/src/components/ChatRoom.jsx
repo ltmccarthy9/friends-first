@@ -6,9 +6,6 @@ import 'firebase/compat/firestore';
 import 'firebase/compat/auth'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 import { useSelector } from "react-redux";
-import { useDispatch } from 'react-redux';
-import { RiUser2Fill } from 'react-icons/ri';
-
 
 const ChatRoom = () => {
 
@@ -23,20 +20,16 @@ const ChatRoom = () => {
   // grab current user
   const currentUserId = localStorage.getItem('id');
   
-  // would use this if I wanted to wrap functionality
-  // firebase.auth().onAuthStateChanged(function(user) {
-  //   if(user) {
-  //     console.log(user);
-  //     console.log(firebase.auth().user)
-  //     var uid = user.uid
-  //     user.getIdToken().then(function(idToken) {
-  //       console.log(idToken)
-  //     })
-
-  //   } else {
-  //     alert('user not authenticated')
-  //   }
-  // })
+ // firebase user authentication
+  firebase.auth().onAuthStateChanged(function(user) {
+    if(user) {
+      user.getIdToken().then(function(idToken) {
+        console.log('idToken')
+      })
+    } else {
+      alert('user not authenticated')
+    }
+  })
   
   //initialize firestore connection
   const firestore = firebase.firestore();

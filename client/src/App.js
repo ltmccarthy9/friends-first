@@ -11,6 +11,7 @@ import Create from "./pages/Create";
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import 'firebase/compat/analytics';
+import 'firebase/auth'
 
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
@@ -25,8 +26,6 @@ firebase.initializeApp({
   appId: "1:1080194628090:web:d84bc8e6022e78d5b6cc43",
   measurementId: "G-8GJG7K6CVR"
 });
-
-const firebaseAuth = firebase.auth();
 
 const firestore = firebase.firestore();
 const analytics = firebase.analytics();

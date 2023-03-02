@@ -15,14 +15,11 @@ Friends First is an event-based dating/friend-making application that allows a u
 * Redux/Redux Toolkit
 * Google maps API
 
-## Demo Of Current State of Application
+## Demo of Application
 https://www.youtube.com/watch?v=AgHvGWZngOA&ab_channel=LiamMcCarthy
 
 
-## Updates 
-Added distance functionality that displays distance from user to each event.
-
-## Old demonstrations
+## Old updates
 
 1.) (oldest)
 https://drive.google.com/file/d/1janvooZxIk15fuhMbP-byOvF1bBVkIMW/view

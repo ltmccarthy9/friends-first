@@ -3,6 +3,8 @@
 ## Description
 Friends First is an event-based dating/friend-making application that allows a user to sign up to events, meet new people, and stay in contact with one another.  I have been continually refactoring and adding to this project, check out current demo and old demos for a view into the evolution.
  
+## Deployment
+For those wondering why this is not deployed. Friends First is structured around the existence of events created by a partnership between Friends First, ie: me at the moment, and the business that wants to host the event. Until that becomes a reality, I'm not going to deploy it. Events are the integral part of the application; I do not want to deploy it with fake events that I would have to personally continue posting.
 
 ## Technologies Used
 

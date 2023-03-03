@@ -93,8 +93,8 @@ background-color: #EDF2F6;
   font-weight: 450;
   color: #424e4e;
   border: 2px solid #EDF2F6;
-  width: 250px;
-  transition: all ease-in-out .35s;
+  width: 100px;
+  transition: all ease-in-out .5s;
   
 }
 
@@ -146,7 +146,7 @@ text-overflow: ellipsis;
 }
 
 .miles-indicator{
-  min-width: 20%;
+  min-width: 22%;
   text-align: right;
 }
 

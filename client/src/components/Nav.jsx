@@ -129,7 +129,7 @@ const Nav = () => {
                             Sign Out
                             </button>
                             <div onClick={handleNav} 
-                            className='absolute top-4 right-6 rounded-full p-3 cursor-pointer '>
+                            className='absolute top-4 right-6 rounded-full p-2 cursor-pointer hover:text-gray-900 hover:bg-gray-300 ease-in duration-100 '>
                                 <AiOutlineClose size={22} />
                             </div>
                         </div>

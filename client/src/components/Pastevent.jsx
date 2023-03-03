@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import Attendees from './Attendees';
 import useFetch from '../hooks/useFetch';
-import { AiFillDelete } from 'react-icons/ai'
+import { AiOutlineEllipsis } from 'react-icons/ai'
 import { useSelector } from "react-redux";
 
 const Pastevent = ({ business, location, date, attending, likes, id }) => {
    
+    const [ menu, setMenu ] = useState(false)
+
     const token = useSelector((state) => state.token);
 
     // use token to grab userId instead of localstorage
@@ -42,8 +44,10 @@ const Pastevent = ({ business, location, date, attending, likes, id }) => {
                     <p className="theme-green italic ml-3 mt-1"
                     >{date}</p>
                 </div>
-                <AiFillDelete onClick={deletePastEvent} 
-                className='cursor-pointer theme-dark hover:text-slate-500' size={25}/>
+                <div type='button' onClick={() => setMenu(!menu)} className='relative mx-2 cursor-pointer hover:text-slate-500'>
+                <AiOutlineEllipsis className='theme-dark' size={25}/>
+                <p onClick={deletePastEvent} className={menu ? 'absolute top-8 right-2 p-2 rounded-md border border-gray-300 hover:bg-gray-200' : 'hidden'}>Delete</p>
+                </div>
             </div>
             
             <div className="h-fit m-auto grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4">

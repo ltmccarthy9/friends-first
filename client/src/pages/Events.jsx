@@ -135,7 +135,7 @@ const Events = () => {
         return (
             <div className="flex flex-col">
                 <div className="w-full flex flex-col locationHeader">
-                    <div className="flex mx-auto mb-3">
+                    <div className="flex mx-auto mb-2">
                         <h2 className="text-xl mx-1">Showing events</h2>
                         <h2 className="text-xl theme-dark mx-1">within</h2>
                         <select defaultValue={10} onChange={(e) => setDistanceFilter(parseInt(e.target.value))} className="mx-1" name="miles" id="miles">

@@ -4,9 +4,11 @@ import { useDispatch } from "react-redux";
 import { setMessageWith, setFriends } from '../state';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { RiDeleteBinLine } from 'react-icons/ri';
+import { AiOutlineEllipsis } from 'react-icons/ai';
 
 const Chats = (props) => {
+
+    const [ menu, setMenu ] = useState(false)
 
     const userId = localStorage.getItem('id');
     const user2Id = props.user2Id;
@@ -69,9 +71,12 @@ const Chats = (props) => {
         className={messenger ? 'flex chats-box-active p-3 font-bold' 
         : 'flex chats-box p-3 cursor-pointer'}>
             <p className={messenger ? 'theme-dark' : 'theme-dark'}>{userData.name} | {getUserBirthdate(userData.birthdate)}</p>
-            <RiDeleteBinLine onClick={() => deleteFriend()} 
-            className={messenger ? 'mt-1 ml-auto cursor-pointer hover:text-slate-500 ease-in duration-75' 
-            : 'mt-1 ml-auto cursor-pointer'}/>
+            <div onClick={() => setMenu(!menu)} 
+            className='relative mt-1 ml-auto cursor-pointer hover:text-slate-500 ease-in duration-75'>
+                <AiOutlineEllipsis size={20} />
+                <p onClick={deleteFriend} className={menu ? 'absolute top-5 right-2 p-2 rounded-md border border-gray-300 bg-slate-100 hover:bg-gray-200' : 'hidden'}>Delete</p>
+            </div>
+          
         </div>
       )
   }

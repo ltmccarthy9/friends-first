@@ -148,7 +148,7 @@ const Events = () => {
                     <input 
                     onChange={(e) => setQuery(e.target.value)} 
                     value={query} className="search-bar p-2 mx-auto" 
-                    placeholder="Search by category, name, description..."
+                    placeholder="Search..."
                     />
                 </div>
                     <div className="grid max-w-6xl grid-cols-1 gap-2 mt-4 mx-auto w-5/6

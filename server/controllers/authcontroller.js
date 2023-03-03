@@ -48,23 +48,25 @@ export const loginUser = async (req, res, next) => {
         //grab the user email from the request body
         const email = req.body.email;
         //find the user with that email
-        const user = await User.findOne({email: email});
+        const checkUser = await User.findOne({email: email});
         //if there is no user, return error
-        if(!user) {
+        if(!checkUser) {
             return res.status(404).json({error: 'user not found, enter proper credentials'})
         }
         // compare password from front end with encrypted password
-        const isPasswordCorrect = await bcrypt.compare(req.body.password, user.password)
+        const isPasswordCorrect = await bcrypt.compare(req.body.password, checkUser.password)
         // if the password is not correct return error
         if(!isPasswordCorrect) {
             return res.status(404).json({error: 'That password was incorrect'})
         }
 
+        const user = await User.findOne({email: email}).select('-password');
+
+        //delete user.password;
         //create json web token
         const token = jwt.sign({ id: user._id}, process.env.JWT);
-        delete user.password;
 
-        //send token and user
+        
         res.status(200).json({ token, user});
     } catch(error) {
         if(error.name === 'ValidationError') {

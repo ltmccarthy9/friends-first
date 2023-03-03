@@ -37,6 +37,7 @@ const Login = () => {
       .then((data) => {
         //if a jwt(token) is sent back, login the user using dispatch and redux
         if(data.token){
+          console.log(data);
           firebase.auth().signInWithEmailAndPassword(email, password)
           .then((userCredential) => {
             // Signed in

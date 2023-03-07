@@ -88,7 +88,7 @@ const Yourevents = () => {
             distance={event.distance}
             refetch={refetch}
             attending={event.attendees.includes(userId)} />
-        ))) : (<h2 className="pt-12 font-bold m-auto">You haven't joined any events!</h2>)}
+        ))) : (<h2 className="pt-12 font-bold m-auto text-gray-700 dark:text-gray-50">You haven't joined any events!</h2>)}
         </div>
     );
 

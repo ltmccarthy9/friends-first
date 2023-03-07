@@ -52,10 +52,10 @@ const Attendees = (props) => {
     };
 
   return (
-    <div className={added ? 'flex justify-between attendeeListAdded rounded-2xl m-1 p-1' 
-    : 'flex justify-between attendeeList rounded-2xl m-1 p-1'}>
+    <div className={added ? 'flex justify-between rounded-2xl m-1 p-1 bg-teal-300 text-gray-700' 
+    : 'flex justify-between rounded-2xl m-1 p-1 dark:bg-gray-50 bg-gray-200 text-gray-700'}>
         {/* show picture of user here */}
-       <p className={added ? ' text-[#4b5b5b] m-auto' : ' text-black m-auto'}>{userData.name}</p>
+       <p className={added ? ' text-gray-700 m-auto' : ' text-gray-700 m-auto'}>{userData.name}</p>
        <div className='flex'>
             {added ? <ImCheckmark size={27} className='mx-2 my-1 p-1'/>
             : <AiOutlineUserAdd onClick={addFriend} size={27} 

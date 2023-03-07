@@ -14,7 +14,7 @@ import 'firebase/compat/firestore';
 import 'firebase/compat/analytics';
 import 'firebase/compat/auth'
 
-const Nav = () => {
+const Nav = ({dark, setDark}) => {
 
     const [nav, setNav] = useState(false);
     //useNavigate for changing pages
@@ -85,7 +85,7 @@ const Nav = () => {
                     <RiMessage2Fill size={18} className='cursor-pointer m-auto'/>
                     <h4 className={' cursor-pointer text-center text-sm'}>Messages</h4>
                 </a>
-                <Theme/>
+                <Theme dark={dark} setDark={setDark}/>
             </div>
            
             <div className='flex mb-2'>
@@ -100,7 +100,7 @@ const Nav = () => {
         </div>
 
 
-        <button type='button' onClick={handleNav} className='absolute text-white right-6 top-4 md:hidden'>
+        <button type='button' onClick={handleNav} className='absolute text-gray-700 dark:text-gray-50 right-6 top-4 md:hidden'>
                     <AiOutlineMenu size={25} className='cursor-pointer' />
         </button>
 
@@ -127,9 +127,10 @@ const Nav = () => {
                                 Messages
                             </a>
                             <button type='button' onClick={logout} 
-                            className='text-lg w-full m-4 p-2 rounded-lg text-center hover:text-gray-800 hover:bg-[#d5d9dc] ease-in duration-100 '>
+                            className='text-lg w-full my-8 p-2 rounded-lg text-center hover:text-gray-800 hover:bg-[#d5d9dc] ease-in duration-100 '>
                             Sign Out
                             </button>
+                            <Theme dark={dark} setDark={setDark}/>
                             <div onClick={handleNav} 
                             className='absolute top-4 right-6 rounded-full p-2 cursor-pointer hover:text-gray-900 hover:bg-gray-300 ease-in duration-100 '>
                                 <AiOutlineClose size={22} />

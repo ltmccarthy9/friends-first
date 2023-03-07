@@ -36,6 +36,16 @@ function App() {
   const [ showNav, setShowNav] = useState(true);
   const isAuth = Boolean(useSelector((state) => state.token))
 
+  
+    // state for determining display of moon or sun icon
+    const [ dark, setDark ] = useState(false)
+
+  useEffect(() => {
+    if(localStorage.getItem("dark")){
+      document.documentElement.classList.add('dark');
+    }
+  })
+
   useEffect(() => {
     if(window.location.pathname === '/' || window.location.pathname === '/login' || window.location.pathname === '/register' ){
       setShowNav(false)
@@ -48,7 +58,7 @@ function App() {
     
       <Router>
         <div>
-        {showNav ? <Nav/> : <div></div>}
+        {showNav ? <Nav dark={dark} setDark={setDark}/> : <div></div>}
         <Routes>
           <Route path="/" element ={isAuth ? <Navigate to="/events"/> : <Landing/>} />
           <Route path="/login" element={isAuth ? <Navigate to="/events"/> : <Login/>} />

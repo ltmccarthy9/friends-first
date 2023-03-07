@@ -35,18 +35,18 @@ const Pastevent = ({ business, location, date, attending, likes, id }) => {
     }
     
     return (
-        <div className="pastEvent w-full p-1 h-fit justify-center mb-2m">
+        <div className="bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-50 rounded-lg w-full p-1 h-fit justify-center mb-2m">
 
             <div className="flex px-2 mt-3 justify-between">
-                <div className='flex'>
-                    <h3 className="theme-dark font-bold tracking-tight text-xl"
+                <div className='flex '>
+                    <h3 className="font-bold tracking-tight text-xl text-gray-700 dark:text-gray-50"
                     >{business}</h3>
-                    <p className="theme-green italic ml-3 mt-1"
+                    <p className="italic ml-3 mt-1 text-gray-700 dark:text-gray-50"
                     >{date}</p>
                 </div>
                 <div type='button' onClick={() => setMenu(!menu)} className='relative mx-2 cursor-pointer hover:text-slate-500'>
-                <AiOutlineEllipsis className='theme-dark' size={25}/>
-                <p onClick={deletePastEvent} className={menu ? 'absolute top-8 right-2 p-2 rounded-md border border-gray-300 hover:bg-gray-200' : 'hidden'}>Delete</p>
+                <AiOutlineEllipsis size={25}/>
+                <button type='button' onClick={deletePastEvent} className={menu ? 'absolute top-8 right-2 p-2 rounded-md text-gray-700 dark:text-gray-50 bg-gray-50 dark:bg-gray-800' : 'hidden'}>Delete</button>
                 </div>
             </div>
             

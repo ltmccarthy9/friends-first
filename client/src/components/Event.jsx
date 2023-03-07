@@ -117,26 +117,26 @@ const Event = ({ business, address, description, capacity, taken, category, id, 
             <button onClick={expanded ? null : () => handleExpand()} 
             type="button" 
             className={expanded ? 'eventExpanded bg-[#f4f7f7] relative text-center ml-auto pt-6 pb-2 px-2 max-w-xs sm:max-w-3xl' 
-            : "event flex flex-col relative w-full h-48 mb-2 p-3"}>
+            : "event flex flex-col relative w-full h-48 mb-2 p-3 bg-gray-50 text-gray-700 dark:bg-gray-700 dark:text-gray-50"}>
                 <div className={expanded ? "flex flex-col w-full mt-2" : "flex w-full"}>
                     <h3 className={expanded ? "font-extrabold text-2xl px-2 m-auto" 
-                    : "bussiness-name-small theme-dark font-extrabold text-xl whitespace-nowrap overflow-hidden"}
+                    : "bussiness-name-small font-extrabold text-xl whitespace-nowrap overflow-hidden text-gray-700 dark:text-gray-50"}
                     >{business}
                     </h3>
                     {icon}
                     <h3 className={expanded ? " absolute top-2 left-2 font-bold p-3 text-lg"
-                    : "miles-indicator text-lg font-bold ml-auto inline-block"}
+                    : "miles-indicator text-lg font-bold ml-auto inline-block text-gray-700 dark:text-gray-50"}
                     >{distance} mi
                     </h3>
                 </div>
                
                 <div className={expanded ? "flex w-full mt-2" : "flex w-full justify-between"}>
                     <p className={expanded ? "mx-auto font-bold text-lg" 
-                        : "text-sm font-bold"}
+                        : "text-sm font-bold text-gray-700 dark:text-gray-50"}
                         >{date} - {time}
                     </p>
                     <p className={expanded ? "absolute bottom-2 left-2 p-3 font-bold text-lg" 
-                        : "text-sm font-bold "}
+                        : "text-sm font-bold text-gray-700 dark:text-gray-50 "}
                         >{filled}/{capacity}
                     </p>
                 </div>

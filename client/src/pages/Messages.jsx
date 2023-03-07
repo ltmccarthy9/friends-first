@@ -41,10 +41,10 @@ const Messages = () => {
   const friends = userData.friends;
 
   return (
-    <div className='mt-14'>
+    <div className='mt-14 h-screen bg-slate-100 dark:bg-gray-600'>
       <div className='flex justify-center pt-16 w-full m-auto md:w-10/12 xl:w-9/12 2xl:w-8/12'>
-        <div className='chats-box-container flex-col w-4/12 sm:w-3/12 2xl:w-2/12'>
-          <h2 className='theme-dark tracking-tight text-2xl m-2'>Chats</h2>
+        <div className='chats-box-container bg-gray-50  dark:bg-gray-700 flex-col w-4/12 sm:w-3/12 2xl:w-2/12'>
+          <h2 className='text-gray-700 dark:text-gray-50 tracking-tight text-2xl m-2'>Chats</h2>
           {/* Map through friends array and return a chat component within the chats-box-container */}
           {friends.map((friend, index) => {
               return <Chats key={index} index={index} user2Id={friend}/>;

@@ -8,7 +8,6 @@ body {
   font-family: 'Mukta', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #edf2f6;
 }
 
 code {
@@ -16,21 +15,6 @@ code {
     monospace;
 }
 
-html {
-background-color: #EDF2F6;
-}
-
-.theme-dark{
-  color:#3d4a50;
-}
-
-.theme-green {
-  color: #536a74;
-}
-
-.navBar{
-  background-color: #2d5064;
-}
 
 /* -----------------------------------------------LANDING PAGE------------------------- */
 
@@ -87,21 +71,18 @@ background-color: #EDF2F6;
 /* --------------------------------------------------------DASHBOARD--------------------------------- */
 
 .search-bar{
-  background-color: #fbfcfc;
   font-size: 16px;
   border-radius: 10px;
   font-weight: 450;
-  color: #424e4e;
-  border: 2px solid #EDF2F6;
-  width: 100px;
+  border: 2px solid #6b7280;
+  width: 150px;
   transition: all ease-in-out .5s;
   
 }
 
 .search-bar:focus{
   outline: none;
-  border: 2px solid #f69400;
-  background-color: #fbfcfc;
+  border: 2px solid #6b7280;
   width: 340px;
 }
 
@@ -109,36 +90,20 @@ background-color: #EDF2F6;
   margin-top: 100px;
 } 
 
-.signOut{
-  color: #fbfcfc;
-  transition: all ease-in-out .2s;
-}
-
 .signOut:hover{
   background-color: #486678;
 }
 /* EVENT CARDS */
 
 .event{
-  background-color: #fbfcfc;
   border-radius: 10px;
   height: 80px;
 }
 
 .event:hover{
   transition: all ease-in-out .22s;
-  box-shadow: 0px 6px 1px #eca02e;
+  box-shadow: 0px 6px 1px #14b8a6;
   transform: translate(0px, -8px);
-}
-
-.event h3{
-  color: #3d4a50;
-}
-.event h2{
-  color: #3d4a50;
-}
-.event p{
-  color: #54646c;
 }
 
 .bussiness-name-small{
@@ -334,11 +299,9 @@ text-overflow: ellipsis;
 }
 
 .sent{
-  background-color: rgb(226, 235, 233);
   justify-content: flex-start;
   margin-right: 24px;
   margin-left: auto;
-  box-shadow: 4px 4px 1px #dfc092;
 }
 
 .sent p {
@@ -346,18 +309,14 @@ text-overflow: ellipsis;
 }
 
 .received{
-  background-color: #f2e7d7;
-  color: white;
   margin-left: 24px;
   margin-right: auto;
-  box-shadow: -4px 4px 1px #dfc092;
 }
 
 .chat-messages-box{
   bottom: 0px;
   height: 600px;
   overflow: scroll;
-  background-color: #fbfcfc;
   overflow-x: hidden;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -365,23 +324,13 @@ text-overflow: ellipsis;
 
 .chats-box-active{
   transition: all ease-in .06s;
-  background-color: #ffc56f;
 }
 
 .chats-box{
   transition: all ease-in .12s;
 }
 
-.chats-box p{
-  color: #4b5b5b;
-}
-
-.chats-box:hover{
-  background-color: #fdebd1;
-}
-
 .chats-box-container{
- background-color: #fbfcfc;
  border-top-left-radius: 8px;
  border-bottom-left-radius: 8px;
  z-index: 10;
@@ -392,7 +341,6 @@ text-overflow: ellipsis;
 
 .chat-input{
   transition: all ease-in .12s;
-  border: 2px solid #EDF2F6;
 }
 
 .chat-input:focus {

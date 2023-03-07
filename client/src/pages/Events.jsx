@@ -133,12 +133,12 @@ const Events = () => {
 
       // Events header, search bar, and return event components
         return (
-            <div className="flex flex-col">
+            <div className="flex flex-col h-screen mt-14 bg-slate-100 dark:bg-gray-600">
                 <div className="w-full flex flex-col locationHeader">
-                    <div className="flex mx-auto mb-2">
+                    <div className="flex mx-auto mb-2 text-gray-700 dark:text-gray-50">
                         <h2 className="text-xl mx-1">Showing events</h2>
                         <h2 className="text-xl theme-dark mx-1">within</h2>
-                        <select defaultValue={10} onChange={(e) => setDistanceFilter(parseInt(e.target.value))} className="mx-1" name="miles" id="miles">
+                        <select defaultValue={10} onChange={(e) => setDistanceFilter(parseInt(e.target.value))} className="mx-1 bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-50" name="miles" id="miles">
                            {miles.map((each) => {
                             return <option key={each} value={each}>{each}</option>
                            })}
@@ -147,7 +147,7 @@ const Events = () => {
                     </div>
                     <input 
                     onChange={(e) => setQuery(e.target.value)} 
-                    value={query} className="search-bar p-2 mx-auto" 
+                    value={query} className="search-bar p-2 mx-auto bg-gray-50 text-gray-700 dark:bg-gray-700 dark:text-gray-50" 
                     placeholder="Search..."
                     />
                 </div>

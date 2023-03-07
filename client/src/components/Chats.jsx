@@ -68,12 +68,12 @@ const Chats = (props) => {
   if(userData){
     return (
         <div onClick={changeMessage} 
-        className={messenger ? 'flex chats-box-active p-3 font-bold' 
-        : 'flex chats-box p-3 cursor-pointer'}>
-            <p className={messenger ? 'theme-dark' : 'theme-dark'}>{userData.name} | {getUserBirthdate(userData.birthdate)}</p>
+        className={messenger ? 'flex bg-teal-300 dark:bg-teal-500 p-3 font-bold' 
+        : 'flex chats-box hover:bg-gray-200 dark:hover:bg-gray-500 p-3 cursor-pointer'}>
+            <p className={messenger ? 'text-gray-700 dark:text-gray-50' : 'text-gray-700 dark:text-gray-50'}>{userData.name} | {getUserBirthdate(userData.birthdate)}</p>
             <div onClick={() => setMenu(!menu)} 
             className='relative mt-1 ml-auto cursor-pointer hover:text-slate-500 ease-in duration-75'>
-                <AiOutlineEllipsis size={20} />
+                <AiOutlineEllipsis className='dark:text-white' size={20} />
                 <p onClick={deleteFriend} className={menu ? 'absolute top-5 right-2 p-2 rounded-md border border-gray-300 bg-slate-100 hover:bg-gray-200' : 'hidden'}>Delete</p>
             </div>
           

@@ -9,7 +9,7 @@ const ChatMessage = (props) => {
   const currentUid = localStorage.getItem('id');
 
   //determine whether the current user is the sender of the message or not for proper styling of messages
-  const sender = senderID === currentUid ? 'sent' : 'received';
+  const sender = senderID === currentUid ? 'sent bg-gray-100' : 'received bg-teal-300';
 
   return (
     <div className={`message ${sender} rounded-lg p-2`}>

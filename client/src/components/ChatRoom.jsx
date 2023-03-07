@@ -68,7 +68,7 @@ const ChatRoom = () => {
 
     return (
         <div>
-            <main className='chat-messages-box w-full py-4'>
+            <main className='chat-messages-box bg-gray-50 dark:bg-gray-700  w-full py-4'>
             {error && <strong>Error: {JSON.stringify(error)}</strong>}
             {loading && <span>Loading...</span>}
             {/* map through message documents and dispay each using ChatMessage componenet */}
@@ -82,10 +82,10 @@ const ChatRoom = () => {
             {friends ? <form className='chat-form mt-2' onSubmit={sendMessage}>
 
             <div className='flex'>
-                <input className='chat-input bg-[#fbfcfc] py-3 px-2 h-10 w-11/12 rounded-lg mt-2' value={formValue} 
+                <input className='chat-input bg-gray-50 dark:bg-gray-700 dark:text-gray-50 py-3 px-2 h-10 w-11/12 rounded-lg mt-2' value={formValue} 
                 onChange={(e) => setFormValue(e.target.value)} placeholder="Type a message..." />
 
-                <button className='font-bold transition-all cursor-pointer bg-[#fbfcfc] rounded-md ml-2 mt-2 p-2' 
+                <button className='font-bold transition-all cursor-pointer bg-gray-50 dark:bg-gray-700 dark:text-gray-50 rounded-md ml-2 mt-2 p-2' 
                 type="submit" disabled={!formValue}>send</button>
             </div>
             </form> : <div></div>}

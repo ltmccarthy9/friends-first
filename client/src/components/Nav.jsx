@@ -6,6 +6,7 @@ import { RiMessage2Fill } from 'react-icons/ri';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { FiLogOut } from 'react-icons/fi'
 import { FaHome } from 'react-icons/fa';
+import Theme from './Theme';
 import { useDispatch, useSelector } from "react-redux";
 import { setLogout, setFriends, setMessageWith, setPage } from '../state';
 import firebase from 'firebase/compat/app';
@@ -52,12 +53,12 @@ const Nav = () => {
     
 
   return (
-      <nav className="navBar flex justify-center fixed top-0 w-full h-14 z-20 pt-2 mb-4 px-4">
+      <nav className=" text-gray-700 dark:bg-[#343c48] dark:text-gray-50 flex justify-center fixed top-0 w-full h-14 z-20 pt-2 mb-4 px-4">
         <div className='flex justify-between h-full w-full max-w-7xl'>
         <div className='flex flex-grow my-auto'>
             <a href='/events' 
-            className="font-extrabold text-zinc-100 hover:text-zinc-100 text-2xl
-            cursor-pointer mb-2"
+            className="font-extrabold text-2xl
+            cursor-pointer mb-2 hover:text-gray-500"
             >Friends First.
             </a>
         </div>
@@ -65,30 +66,31 @@ const Nav = () => {
         <div className='hidden h-full flex-grow-0 md:flex md:justify-end lg:ml-44'>
             <div className='flex md:mr-12 h-full' >
                 <a href='/events'
-                className={events ? 'h-full pt-1 px-2 cursor-pointer border-b-4 w-24 text-zinc-100 hover:text-zinc-100 border-[#f69400]' 
-                : ' cursor-pointer pt-1 px-2  w-24 text-zinc-100 hover:text-zinc-300'}>
+                className={events ? 'h-full pt-1 px-2 cursor-pointer border-b-4 w-24  hover:text-gray-500 border-teal-500' 
+                : ' cursor-pointer pt-1 px-2  w-24 hover:text-gray-500'}>
                     <BsFillCalendar2EventFill size={18} className='cursor-pointer m-auto'/>
-                    <h4 className={'text-zinc-100 cursor-pointer text-center text-sm'}>Events</h4>
+                    <h4 className={' cursor-pointer text-center text-sm'}>Events</h4>
                 </a>
                 
                 <a href='/profile' 
-                className={profile ? 'pt-1 px-2  cursor-pointer border-b-4 w-24 text-zinc-100 hover:text-zinc-100 border-[#f69400]' 
-                : ' cursor-pointer w-24 pt-1 px-2  text-zinc-100 hover:text-zinc-300'}>
+                className={profile ? 'pt-1 px-2  cursor-pointer border-b-4 w-24  hover:text-gray-500 border-teal-500' 
+                : ' cursor-pointer w-24 pt-1 px-2 hover:text-gray-500'}>
                     <BsPersonCircle size={18} className='cursor-pointer m-auto'/>
-                    <h4 className={'text-zinc-100 cursor-pointer text-center text-sm'}>Profile</h4>
+                    <h4 className={' cursor-pointer text-center text-sm'}>Profile</h4>
                 </a>
 
                 <a href='/messages'
-                className={messages ? 'cursor-pointer pt-1 px-2  w-24 border-b-4 text-zinc-100 hover:text-zinc-100 border-[#f69400]' 
-                : 'cursor-pointer w-24 pt-1 px-2  text-zinc-100 hover:text-zinc-300'}>
+                className={messages ? 'cursor-pointer pt-1 px-2  w-24 border-b-4  hover:text-gray-500 border-teal-500' 
+                : 'cursor-pointer w-24 pt-1 px-2 hover:text-gray-500'}>
                     <RiMessage2Fill size={18} className='cursor-pointer m-auto'/>
-                    <h4 className={'text-zinc-100 cursor-pointer text-center text-sm'}>Messages</h4>
+                    <h4 className={' cursor-pointer text-center text-sm'}>Messages</h4>
                 </a>
+                <Theme/>
             </div>
            
             <div className='flex mb-2'>
                 <button type='button' onClick={logout}
-                className='signOut my-auto pt-2 pr-2 pl-4 rounded-lg font-bold cursor-pointer flex justify-center h-10'>
+                className='my-auto pt-2 pr-2 pl-4 bg-teal-500 hover:bg-teal-600 text-gray-50 rounded-lg font-bold cursor-pointer flex justify-center h-10 ease-in duration-100'>
                     Sign Out
                     <FiLogOut className='my-1 mx-2'/>
                 </button>
@@ -105,12 +107,12 @@ const Nav = () => {
         {/* menu bar small screen */}
         <div className={nav ? 'md:hidden fixed right-0 top-0 w-full h-screen bg-black/70 ease-in duration-200' : ''}>
                 <div className={nav 
-                    ? 'fixed right-0 top-0 w-[60%] sm:w-[50%] md:w-[45%] h-screen bg-[#EDF2F6] p-10 ease-in duration-200' 
+                    ? 'fixed right-0 top-0 w-[60%] sm:w-[50%] md:w-[45%] h-screen bg-gray-50 dark:bg-gray-700 p-10 ease-in duration-200' 
                     : 'fixed right-[-100%] top-0 p-10 h-screen ease-in duration-200'}>
                     <div>
                         <div className='flex flex-col w-full items-center justify-between mt-8 ease-in duration-100'>
                             <a className='m-2' href='/events'>
-                                <FaHome className='hover:scale-105 hover:text-gray-900 ease-in duration-100' size={50} />
+                                <FaHome className='hover:scale-105 hover:text-teal-600 ease-in duration-100' size={50} />
                             </a>
                             <a href='/events' 
                             className='text-lg w-full m-4 p-2 rounded-lg text-center hover:text-gray-800 hover:bg-[#d5d9dc] ease-in duration-100'>

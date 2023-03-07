@@ -74,7 +74,7 @@ const Chats = (props) => {
             <div onClick={() => setMenu(!menu)} 
             className='relative mt-1 ml-auto cursor-pointer hover:text-slate-500 ease-in duration-75'>
                 <AiOutlineEllipsis className='dark:text-white' size={20} />
-                <p onClick={deleteFriend} className={menu ? 'absolute top-5 right-2 p-2 rounded-md border border-gray-300 bg-slate-100 hover:bg-gray-200' : 'hidden'}>Delete</p>
+                <button type='button' onClick={deleteFriend} className={menu ? 'absolute top-5 right-2 p-2 rounded-md bg-slate-100 hover:bg-gray-400 text-gray-700 hover:text-gray-50' : 'hidden'}>Delete</button>
             </div>
           
         </div>

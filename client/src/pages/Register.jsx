@@ -93,10 +93,10 @@ const Register = () => {
 
     return (
         <div  className="flex flex-col">
-            <h1 className="title theme-dark font-black tracking-tight text-6xl cursor-pointer" 
+            <h1 className="title font-black tracking-tight text-6xl cursor-pointer" 
             onClick={navHome} >Friends First.</h1>
-            <div className="login-card mt-32 mx-auto pt-8 pb-12 px-8">
-            <h2 className="theme-dark text-center my-4 font-extrabold tracking-tight text-3xl">Sign Up</h2>
+            <div className="login-card bg-gray-100 mt-32 mx-auto pt-8 pb-12 px-8">
+            <h2 className="text-center my-4 font-extrabold tracking-tight text-3xl">Sign Up</h2>
                 <form id="myForm">
                     <input placeholder="name" onKeyUp={(e) => setName(e.target.value)} 
                     type="name" className="form-control my-2 chat-input"
@@ -122,7 +122,7 @@ const Register = () => {
                     </div>
 
                     <button type="button" onClick={(e) => checkForm(e)} 
-                    className="sign-up btn btn-light sub w-full"
+                    className="bg-teal-300 hover:bg-teal-400 font-bold p-2 text-gray-700 rounded-lg sub w-full"
                     >Sign Up</button>
                 </form>
             </div> 

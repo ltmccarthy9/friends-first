@@ -74,10 +74,10 @@ const Login = () => {
     return (
     <div className="flex flex-col">
       <h1 onClick={navHome} 
-      className="title theme-dark font-black tracking-tight text-6xl cursor-pointer"
+      className="title font-black tracking-tight text-gray-700 text-6xl cursor-pointer"
       >Friends First.</h1>
         
-      <div className="login-card mt-32 mx-auto pt-8 pb-12 px-8">
+      <div className="login-card bg-gray-100 mt-32 mx-auto pt-8 pb-12 px-8">
         <h2 className="theme-dark text-center my-4 font-extrabold tracking-tight text-3xl">Log in</h2>
           <form id="myForm">
             <input placeholder="email" onKeyUp={(e) => setEmail(e.target.value)} 
@@ -87,11 +87,11 @@ const Login = () => {
             type="password" className="form-control my-1 chat-input"
             ></input>
             <button type="button" onClick={(e) => handleLog(e)} 
-            className="btn font-bold mt-3 border-solid border-1 bg-[#fdb342] hover:bg-[#ffc56f] w-full"
+            className="btn font-bold mt-3 border-solid border-1 bg-teal-300 hover:bg-teal-400 w-full"
             >Sign in</button>
             <p className="no-account mt-4 mb-1 text-black" >Don't have an account?</p>
             <button type="button" onClick={() => navigate("/register")} 
-            className="btn sign-up w-full"
+            className="btn bg-gray-700 text-gray-50 hover:bg-gray-800 hover:text-gray-50 w-full"
             >Register</button>
           </form>
       </div>

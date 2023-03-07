@@ -116,31 +116,31 @@ const Event = ({ business, address, description, capacity, taken, category, id, 
         className={expanded ? "overlay" : 'overlaySmall'}>
             <button onClick={expanded ? null : () => handleExpand()} 
             type="button" 
-            className={expanded ? 'eventExpanded bg-[#f4f7f7] relative text-center ml-auto pt-6 pb-2 px-2 max-w-xs sm:max-w-3xl' 
+            className={expanded ? 'eventExpanded bg-gray-50 dark:bg-gray-700 relative text-center ml-auto pt-6 pb-2 px-2 max-w-xs sm:max-w-3xl' 
             : "event flex flex-col relative w-full h-48 mb-2 p-3 bg-gray-50 text-gray-700 dark:bg-gray-700 dark:text-gray-50"}>
                 <div className={expanded ? "flex flex-col w-full mt-2" : "flex w-full"}>
-                    <h3 className={expanded ? "font-extrabold text-2xl px-2 m-auto" 
+                    <h3 className={expanded ? "font-extrabold text-2xl px-2 m-auto text-gray-700 dark:text-gray-50" 
                     : "bussiness-name-small font-extrabold text-xl whitespace-nowrap overflow-hidden text-gray-700 dark:text-gray-50"}
                     >{business}
                     </h3>
                     {icon}
-                    <h3 className={expanded ? " absolute top-2 left-2 font-bold p-3 text-lg"
+                    <h3 className={expanded ? " absolute top-2 left-2 font-bold p-3 text-lg text-gray-700 dark:text-gray-50"
                     : "miles-indicator text-lg font-bold ml-auto inline-block text-gray-700 dark:text-gray-50"}
                     >{distance} mi
                     </h3>
                 </div>
                
-                <div className={expanded ? "flex w-full mt-2" : "flex w-full justify-between"}>
-                    <p className={expanded ? "mx-auto font-bold text-lg" 
+                <div className={expanded ? "flex w-full mt-2" : "flex w-full justify-between text-gray-700 dark:text-gray-50"}>
+                    <p className={expanded ? "mx-auto font-bold text-lg text-gray-700 dark:text-gray-50" 
                         : "text-sm font-bold text-gray-700 dark:text-gray-50"}
                         >{date} - {time}
                     </p>
-                    <p className={expanded ? "absolute bottom-2 left-2 p-3 font-bold text-lg" 
+                    <p className={expanded ? "absolute bottom-2 left-2 p-3 font-bold text-lg text-gray-700 dark:text-gray-50" 
                         : "text-sm font-bold text-gray-700 dark:text-gray-50 "}
                         >{filled}/{capacity}
                     </p>
                 </div>
-                <p className={expanded ? "text-md p-2 overflow-scroll max-h-60" 
+                <p className={expanded ? "text-md p-2 max-h-60 text-gray-700 dark:text-gray-50" 
                     : "hidden"}>{description} "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
                     quised do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
@@ -151,7 +151,7 @@ const Event = ({ business, address, description, capacity, taken, category, id, 
             
                 <div className={expanded ? "event-wrapper max-w-xs sm:max-w-3xl" : ''}>
                 <button type="button" className={expanded 
-                    ? "absolute py-2 px-3 top-4 right-6 text-xl font-bold hover:bg-gray-200 rounded-full cursor-pointer" 
+                    ? "absolute py-2 px-3 top-4 right-6 text-xl font-bold hover:bg-gray-200 hover:text-gray-700 dark:text-gray-50 dark:hover:text-gray-700 rounded-full cursor-pointer" 
                     : "hidden"}>x</button>
                     {expanded ? joined ? <button onClick={() => joinEvent()} 
                     type="button" className="z-30 absolute bottom-0 right-0 text-xl font-bold px-4 py-2 m-4 leaveBtn"

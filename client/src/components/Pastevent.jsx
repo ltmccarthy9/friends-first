@@ -46,7 +46,7 @@ const Pastevent = ({ business, location, date, attending, likes, id }) => {
                 </div>
                 <div type='button' onClick={() => setMenu(!menu)} className='relative mx-2 cursor-pointer hover:text-slate-500'>
                 <AiOutlineEllipsis size={25}/>
-                <button type='button' onClick={deletePastEvent} className={menu ? 'absolute top-8 right-2 p-2 rounded-md text-gray-700 dark:text-gray-50 bg-gray-50 dark:bg-gray-800' : 'hidden'}>Delete</button>
+                <button type='button' onClick={deletePastEvent} className={menu ? 'absolute top-5 right-2 p-2 rounded-md bg-slate-100 hover:bg-gray-400 text-gray-700 hover:text-gray-50' : 'hidden'}>Delete</button>
                 </div>
             </div>
             

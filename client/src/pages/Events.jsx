@@ -30,7 +30,7 @@ const Events = () => {
    
     // fetch events using custom useFetch hook
     const { data, loading, error } = useFetchEvents(`http://localhost:4000/api/events/future/${userId}`, refetch, userLat, userLng);
-    
+
     // fetch user data and set friends + messagesWith state
     const { userData } = useFetch(`http://localhost:4000/api/users/${userId}`);
         if(userData) {
@@ -134,8 +134,8 @@ const Events = () => {
       // Events header, search bar, and return event components
         return (
             <div className="flex flex-col h-screen mt-14 bg-slate-100 dark:bg-gray-600">
-                <div className="w-full flex flex-col locationHeader">
-                    <div className="flex mx-auto mb-2 text-gray-700 dark:text-gray-50">
+                <div className="w-full flex flex-col">
+                    <div className="flex mx-auto mb-2 mt-12 text-gray-700 dark:text-gray-50">
                         <h2 className="text-xl mx-1">Showing events</h2>
                         <h2 className="text-xl theme-dark mx-1">within</h2>
                         <select defaultValue={10} onChange={(e) => setDistanceFilter(parseInt(e.target.value))} className="mx-1 bg-gray-50 dark:bg-gray-700 text-gray-700 dark:text-gray-50" name="miles" id="miles">

@@ -73,9 +73,9 @@ const ChatRoom = () => {
             {loading && <span>Loading...</span>}
             {/* map through message documents and dispay each using ChatMessage componenet */}
             {friends ? filteredMessages && filteredMessages.map(msg => <ChatMessage key={msg.createdAt} message={msg} />) 
-            : <p className='font-light m-4 text-2xl relative'>Uh Oh! You have no friends.</p>}
+            : <p className='font-light m-4 text-2xl relative text-gray-700 dark:text-gray-50'>Uh Oh! You have no friends.</p>}
 
-            <span ref={ref}></span>
+           
 
             </main>
 

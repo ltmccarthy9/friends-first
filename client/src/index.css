@@ -17,18 +17,6 @@ code {
 
 
 /* -----------------------------------------------LANDING PAGE------------------------- */
-
-.login-landing{
-  background-color: #536a74;
-  transition: all ease-in .15s;
-  color: #fbfcfc;
-}
-
-.login-landing:hover {
-  background-color: #ffcd87;
- color: #405151;
-}
-
 .sign-up-landing{
   background-color: #536a74;
   transition: all ease-in .15s;
@@ -45,17 +33,17 @@ code {
 .title{
   text-align: center;
   margin-top: 100px;
+  color: #44403c;
 }
 
 .login-card{
   width: 380px;
-  background-color: #fbfcfc;
   border-radius: 30px;
   transition: all ease-in .2s;
 }
 
 .login-card:hover{
-  box-shadow: -9px 9px 1px #536a74;
+  box-shadow: -9px 9px 1px #404040;
 }
 
 .sign-up{
@@ -85,10 +73,6 @@ code {
   border: 2px solid #6b7280;
   width: 340px;
 }
-
-.locationHeader{
-  margin-top: 100px;
-} 
 
 .signOut:hover{
   background-color: #486678;
@@ -143,10 +127,6 @@ text-overflow: ellipsis;
   height: 500px;
   width: 460px;
   z-index: 20;
-}
-
-.eventExpanded h2, h3, p{
-  color: #3a4950;
 }
 
 .overlay{

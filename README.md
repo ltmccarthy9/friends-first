@@ -18,7 +18,7 @@ For those wondering why this is not deployed. Friends First is structured around
 * Google maps API
 
 ## Demo of Application
-https://www.youtube.com/watch?v=PNmRBSeis2Y&ab_channel=LiamMcCarthy
+https://www.youtube.com/watch?v=RLdI5ZjYOTA&ab_channel=LiamMcCarthy
 
 
 ## Old updates

@@ -30,7 +30,7 @@ const Messages = () => {
   const { userData, loading, error } = useFetch(`http://localhost:4000/api/users/${userId}`);
   
   if(loading) {
-      return <p>Loading...</p>;
+      return <p className='text-gray-700 dark:text-gray-50'>Loading...</p>;
   }
 
   if (error) {

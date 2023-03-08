@@ -70,7 +70,7 @@ const ChatRoom = () => {
         <div>
             <main className='chat-messages-box bg-gray-50 dark:bg-gray-700  w-full py-4'>
             {error && <strong>Error: {JSON.stringify(error)}</strong>}
-            {loading && <span>Loading...</span>}
+            {loading && <span className='text-gray-700 dark:text-gray-50'>Loading...</span>}
             {/* map through message documents and dispay each using ChatMessage componenet */}
             {friends ? filteredMessages && filteredMessages.map(msg => <ChatMessage key={msg.createdAt} message={msg} />) 
             : <p className='font-light m-4 text-2xl relative text-gray-700 dark:text-gray-50'>Uh Oh! You have no friends.</p>}

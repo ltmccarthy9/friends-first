@@ -115,15 +115,15 @@ const Nav = ({dark, setDark}) => {
                                 <FaHome className='hover:scale-105 hover:text-teal-600 ease-in duration-100' size={50} />
                             </a>
                             <a href='/events' 
-                            className='text-lg w-full m-4 p-2 rounded-lg text-center hover:text-gray-800 hover:bg-[#d5d9dc] ease-in duration-100'>
+                            className='text-lg w-full my-2 p-2 rounded-lg text-center hover:text-gray-800 hover:bg-[#d5d9dc] ease-in duration-100'>
                                 Events
                             </a>
                             <a href='/profile' 
-                            className='text-lg w-full m-4 p-2 rounded-lg text-center hover:text-gray-800 hover:bg-[#d5d9dc] ease-in duration-100'>
+                            className='text-lg w-full my-2 p-2 rounded-lg text-center hover:text-gray-800 hover:bg-[#d5d9dc] ease-in duration-100'>
                                 Profile
                             </a>
                             <a href='/messages'
-                            className='text-lg w-full m-4 p-2 rounded-lg text-center hover:text-gray-800 hover:bg-[#d5d9dc] ease-in duration-100'>
+                            className='text-lg w-full my-2 p-2 rounded-lg text-center hover:text-gray-800 hover:bg-[#d5d9dc] ease-in duration-100'>
                                 Messages
                             </a>
                             <button type='button' onClick={logout} 

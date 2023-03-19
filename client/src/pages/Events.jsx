@@ -133,7 +133,7 @@ const Events = () => {
 
       // Events header, search bar, and return event components
         return (
-            <div className="flex flex-col h-screen mt-14 bg-slate-100 dark:bg-gray-600">
+            <main className="flex flex-col h-screen mt-14 bg-slate-100 dark:bg-gray-600">
                 <div className="w-full flex flex-col">
                     <div className="flex mx-auto mb-2 mt-12 text-gray-700 dark:text-gray-50">
                         <h2 className="text-xl mx-1">Showing events</h2>
@@ -151,7 +151,7 @@ const Events = () => {
                     placeholder="Search..."
                     />
                 </div>
-                    <div className="grid max-w-6xl grid-cols-1 gap-2 mt-4 mx-auto w-5/6
+                    <section className="grid max-w-6xl grid-cols-1 gap-2 mt-4 mx-auto w-5/6
                      sm:w-5/6 sm:grid-cols-2 md:w-4/6 lg:w-4/6
                      xl:w-4/6 xl:grid-cols-3">
                         {filteredEvents.map((event) => (
@@ -169,8 +169,8 @@ const Events = () => {
                             refetch={refetch}
                             attending={event.attendees.includes(userId)} />
                         ))}
-                    </div> 
-                    </div> 
+                    </section> 
+                    </main> 
         );
     
 };

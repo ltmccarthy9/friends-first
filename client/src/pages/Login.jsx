@@ -72,12 +72,12 @@ const Login = () => {
 
     
     return (
-    <div className="flex flex-col">
+    <main className="flex flex-col">
       <h1 onClick={navHome} 
       className="title font-black tracking-tight text-gray-700 text-6xl cursor-pointer"
       >Friends First.</h1>
         
-      <div className="login-card bg-gray-100 mt-32 mx-auto pt-8 pb-12 px-8">
+      <section className="login-card bg-gray-100 mt-32 mx-auto pt-8 pb-12 px-8">
         <h2 className="theme-dark text-center my-4 font-extrabold tracking-tight text-3xl">Log in</h2>
           <form id="myForm">
             <input placeholder="email" onKeyUp={(e) => setEmail(e.target.value)} 
@@ -94,8 +94,8 @@ const Login = () => {
             className="btn bg-gray-700 text-gray-50 hover:bg-gray-800 hover:text-gray-50 w-full"
             >Register</button>
           </form>
-      </div>
-    </div>
+      </section>
+    </main>
     );
 }
 

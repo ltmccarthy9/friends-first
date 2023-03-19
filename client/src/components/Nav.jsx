@@ -55,15 +55,15 @@ const Nav = ({dark, setDark}) => {
   return (
       <nav className=" text-gray-700 dark:bg-[#343c48] dark:text-gray-50 flex justify-center fixed top-0 w-full h-14 z-20 pt-2 mb-4 px-4">
         <div className='flex justify-between h-full w-full max-w-7xl'>
-        <div className='flex flex-grow my-auto'>
+        <section className='flex flex-grow my-auto'>
             <a href='/events' 
             className="font-extrabold text-2xl
             cursor-pointer mb-2 hover:text-gray-500"
             >Friends First.
             </a>
-        </div>
+        </section>
         
-        <div className='hidden h-full flex-grow-0 md:flex md:justify-end lg:ml-44'>
+        <section className='hidden h-full flex-grow-0 md:flex md:justify-end lg:ml-44'>
             <div className='flex md:mr-12 h-full' >
                 <a href='/events'
                 className={events ? 'h-full pt-1 px-2 cursor-pointer border-b-4 w-24  hover:text-gray-500 border-teal-500' 
@@ -96,7 +96,7 @@ const Nav = ({dark, setDark}) => {
                 </button>
             </div>
             
-        </div>
+        </section>
         </div>
 
 
@@ -110,7 +110,7 @@ const Nav = ({dark, setDark}) => {
                     ? 'fixed right-0 top-0 w-[60%] sm:w-[50%] md:w-[45%] h-screen bg-gray-50 dark:bg-gray-700 p-10 ease-in duration-200' 
                     : 'fixed right-[-100%] top-0 p-10 h-screen ease-in duration-200'}>
                     <div>
-                        <div className='flex flex-col w-full items-center justify-between mt-8 ease-in duration-100'>
+                        <section className='flex flex-col w-full items-center justify-between mt-8 ease-in duration-100'>
                             <a className='m-2' href='/events'>
                                 <FaHome className='hover:scale-105 hover:text-teal-600 ease-in duration-100' size={50} />
                             </a>
@@ -131,11 +131,11 @@ const Nav = ({dark, setDark}) => {
                             Sign Out
                             </button>
                             <Theme dark={dark} setDark={setDark}/>
-                            <div onClick={handleNav} 
+                            <button type='button' onClick={handleNav} 
                             className='absolute top-4 right-6 rounded-full p-2 cursor-pointer hover:text-gray-900 hover:bg-gray-300 ease-in duration-100 '>
                                 <AiOutlineClose size={22} />
-                            </div>
-                        </div>
+                            </button>
+                        </section>
                     </div>
                 </div>
             </div>

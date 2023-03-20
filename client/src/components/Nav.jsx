@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { BsFillCalendar2EventFill, BsPersonCircle } from 'react-icons/bs';
 import { RiMessage2Fill } from 'react-icons/ri';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
@@ -8,7 +8,7 @@ import { FiLogOut } from 'react-icons/fi'
 import { FaHome } from 'react-icons/fa';
 import Theme from './Theme';
 import { useDispatch, useSelector } from "react-redux";
-import { setLogout, setFriends, setMessageWith, setPage } from '../state';
+import { setLogout, setPage } from '../state';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import 'firebase/compat/analytics';
@@ -16,14 +16,16 @@ import 'firebase/compat/auth'
 
 const Nav = ({dark, setDark}) => {
 
+    //This is the boolean state for opening and closing popout navigation menu
     const [nav, setNav] = useState(false);
+    
     //useNavigate for changing pages
     const navigate = useNavigate();
-    // utilize useDispatch hook for logging out
+    
+    //useDispatch hook for logging out user
     const dispatch = useDispatch();
-    const userId = localStorage.getItem('id');
-
-    //for nav styling depending on current page
+    
+    //this is for nav styling depending on current page
     const events =  useSelector((state) => state.page) === 'events'
     const profile = useSelector((state) => state.page) === 'profile'
     const messages =  useSelector((state) => state.page) === 'messages'
@@ -50,10 +52,9 @@ const Nav = ({dark, setDark}) => {
         }
     }
 
-    
 
   return (
-      <nav className=" text-gray-700 dark:bg-[#343c48] dark:text-gray-50 flex justify-center fixed top-0 w-full h-14 z-20 pt-2 mb-4 px-4">
+      <nav className="bg-[#ffff] dark:bg-[#343c48] text-gray-700 dark:text-gray-50 flex justify-center fixed top-0 w-full h-14 z-20 pt-2 mb-4 px-4">
         <div className='flex justify-between h-full w-full max-w-7xl'>
         <section className='flex flex-grow my-auto'>
             <a href='/events' 
@@ -87,14 +88,12 @@ const Nav = ({dark, setDark}) => {
                 </a>
                 <Theme dark={dark} setDark={setDark}/>
             </div>
-           
-            <div className='flex mb-2'>
+
                 <button type='button' onClick={logout}
-                className='my-auto pt-2 pr-2 pl-4 bg-teal-500 hover:bg-teal-600 text-gray-50 rounded-lg font-bold cursor-pointer flex justify-center h-10 ease-in duration-100'>
-                    Sign Out
+                className='h-10 flex my-auto mb-2 pt-2 p-2 bg-teal-500 hover:bg-teal-600 text-gray-50 rounded-lg font-bold cursor-pointer ease-in duration-100'>
                     <FiLogOut className='my-1 mx-2'/>
                 </button>
-            </div>
+            
             
         </section>
         </div>

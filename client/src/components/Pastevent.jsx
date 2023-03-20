@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Attendees from './Attendees';
-import useFetch from '../hooks/useFetch';
 import { AiOutlineEllipsis } from 'react-icons/ai'
 import { useSelector } from "react-redux";
 

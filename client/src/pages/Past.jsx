@@ -1,8 +1,5 @@
 import React from 'react'
-import { useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
-import Yourevents from "../components/Yourevents";
-import Nav from "../components/Nav";
 import Pastevents from "../components/Pastevents";
 import useFetch from "../hooks/useFetch";
 import { useSelector } from "react-redux";
@@ -46,18 +43,18 @@ const Past = () => {
      const { userData, loading, error } = useFetch(`http://localhost:4000/api/users/${userId}`);
      
      if(loading) {
-         return <p>Loading...</p>;
+         return <p className='text-gray-700 dark:text-gray-50'>Loading...</p>;
      }
  
      if (error) {
-         return <p>Error: {error.message}</p>;
+         return <p className='text-gray-700 dark:text-gray-50'>Error: {error.message}</p>;
      }
  
      //array of user's liked (ids of other users)
      const userLikes = userData.liked;
 
   return (
-    <main className="flex mt-14 mx-auto w-full h-screen bg-slate-100 dark:bg-gray-600">
+    <main className="flex mt-14 mx-auto h-screen bg-slate-100 dark:bg-gray-600">
         <div className="flex flex-col w-full sm:justify-center sm:flex-row p-4">
             <section className="mt-8 flex flex-col rounded-md mr-4 pt-2 h-fit w-full sm:w-48 sm:mx-8 bg-gray-50 text-gray-700 dark:bg-gray-700 dark:text-gray-50">
                 <h2 className="theme-dark tracking-tight text-xl font-bold px-1 pt-2 pb-1">{userData.name}'s</h2>

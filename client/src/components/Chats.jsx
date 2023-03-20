@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import useFetch from '../hooks/useFetch';
 import { useDispatch } from "react-redux";
 import { setMessageWith, setFriends } from '../state';

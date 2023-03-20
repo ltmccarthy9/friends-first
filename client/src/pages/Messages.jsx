@@ -1,19 +1,18 @@
 import React from 'react'
-import Nav from '../components/Nav'
 import ChatRoom from '../components/ChatRoom';
 import Chats from '../components/Chats';
 import useFetch from '../hooks/useFetch';
 import { useDispatch } from 'react-redux';
 import { setPast, setUpcoming, setPage } from '../state';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+
 
 const Messages = () => {
 
   const dispatch = useDispatch();
   const userId = localStorage.getItem('id');
 
-  //UsEffect for properly handling profile conditional style
+  //UseEffect for properly handling profile conditional style
   useEffect(() => {
     dispatch(setPast({
         past: false
@@ -37,7 +36,7 @@ const Messages = () => {
       return <p>Error: {error.message}</p>;
   }
 
-  //array of user's friends (other user ids)
+  //array of user's friend's Ids
   const friends = userData.friends;
 
   return (

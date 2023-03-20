@@ -15,7 +15,6 @@ import 'firebase/auth'
 
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useCollectionData } from 'react-firebase-hooks/firestore'
 
 firebase.initializeApp({
   apiKey: "AIzaSyA72m43fcB8aq6RQqSchVzGzJvH6wFv0yw",
@@ -27,25 +26,25 @@ firebase.initializeApp({
   measurementId: "G-8GJG7K6CVR"
 });
 
-const firestore = firebase.firestore();
-const analytics = firebase.analytics();
-
 function App() {
 
   //For conditionally displaying navbar
   const [ showNav, setShowNav] = useState(true);
+
+  //Is the user logged in?
   const isAuth = Boolean(useSelector((state) => state.token))
 
-  
-    // state for determining display of moon or sun icon
-    const [ dark, setDark ] = useState(false)
+  // state for determining display of moon or sun icon(light/dark theme)
+  const [ dark, setDark ] = useState(false)
 
+  //If user is on dark theme, set to dark
   useEffect(() => {
     if(localStorage.getItem("dark")){
       document.documentElement.classList.add('dark');
     }
   })
 
+  //Make sure not to show nav on landing/login/register pages
   useEffect(() => {
     if(window.location.pathname === '/' || window.location.pathname === '/login' || window.location.pathname === '/register' ){
       setShowNav(false)
@@ -55,7 +54,6 @@ function App() {
   }, [window.location.pathname])
 
   return (
-    
       <Router>
         <div>
         {showNav ? <Nav dark={dark} setDark={setDark}/> : <div></div>}
@@ -71,7 +69,6 @@ function App() {
         </Routes>
         </div>
       </Router>
-      
   );
 }
 

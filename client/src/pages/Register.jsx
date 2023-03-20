@@ -26,11 +26,6 @@ const Register = () => {
             alert('You must fill every part of the form.');
             return;
         } 
-        // else if(password !== passwordCheck) {
-        //     alert('Your password must match.');
-        //     return;
-        // }
-        //if form is properly filled, run handleSubmit function
         handleSubmit();
     };
 

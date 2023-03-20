@@ -48,10 +48,7 @@ const Yourevents = () => {
         return <p>Error: {error.message}</p>;
     }
 
-    // we map our data (each event)
-    // send down props of each event attribute
-    // render each event to events
-
+    //get only our future events
     const filteredData = data.filter(event => event.date >= now);
 
     // In this case we filter it again to only display events the user has joined
@@ -64,6 +61,7 @@ const Yourevents = () => {
         return dateA - dateB;
     });
 
+    //date options
     const options = {
         weekday: 'short',
         month: 'long',

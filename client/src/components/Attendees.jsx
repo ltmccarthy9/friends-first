@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useState } from 'react';
 import useFetch from '../hooks/useFetch';
 import { AiOutlineUserAdd } from 'react-icons/ai';
-import { MdOutlineCancelPresentation } from 'react-icons/md'
 import { ImCheckmark } from 'react-icons/im';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFriends } from '../state';

@@ -1,23 +1,20 @@
-import { useEffect, useState} from "react";
+import { useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import Yourevents from "../components/Yourevents";
-import Nav from "../components/Nav";
-import Pastevents from "../components/Pastevents";
-import useFetch from "../hooks/useFetch";
 import { useSelector } from "react-redux";
 import { useDispatch } from 'react-redux';
 import { setUpcoming, setPast, setPage } from '../state';
 
 const Profile = () => {
 
-    const userId = localStorage.getItem('id');
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
     //redux states for future/past events styling on profile navigation bar
     const upcoming = useSelector((state) => state.upcoming);
     const past = useSelector((state) => state.past);
-    
+
+    //get user's username
     const username = useSelector((state) => state.username);
 
     // For nav bar border styling

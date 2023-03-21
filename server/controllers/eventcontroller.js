@@ -54,6 +54,7 @@ export const updateEvent = async (req, res, next) => {
 export const getEvent = async (req, res, next) => {
     try {
         const event = await Event.findById(req.params.id);
+        
         res.status(200).json(event);
     } catch(err) {
         next(err);
@@ -64,6 +65,7 @@ export const getEvent = async (req, res, next) => {
 export const getEvents = async (req, res, next) => {
     try {
         const events = await Event.find();
+
         res.status(200).json(events);
     } catch (err) {
         next(err);
@@ -73,20 +75,15 @@ export const getEvents = async (req, res, next) => {
 //add a user to an event
 export const joinEvent = async (req, res, next) => {
     try {
-        //grab event id from request parameters
         const eventId = req.params.eventId;
-        //grab userId from request bodyu\
         const userId = req.body.userId
-        //find event by that id
         const event = await Event.findById(eventId);
-        //if the event no longer exists, send error
+       
         if (!event) return res.status(404).json({ error: "Event not found" });
         if (event.attendees.length >= event.capacity) return res.status(400).json({error: "Event is full"})
 
-        //grab user by id so we can send name in message
         const user = await User.findById(userId);
-        
-        // add user to attendees array
+    
         event.attendees.push(userId);
         await event.save()
 
@@ -109,6 +106,7 @@ export const leaveEvent = async (req, res, next) => {
 
         event.attendees = event.attendees.filter(id => id = !userId);
         await event.save();
+
         res.send(event).status(200).json(`${user.name} removed from ${event.business} event`)
     } catch (err) {
         next(err);
@@ -124,6 +122,7 @@ export const getFutureEvents = async (req, res, next) => {
             date: { $gte: now},
             attendees: { $nin: [userId]}
         });
+
         res.status(200).json(events);
     } catch (err) {
         console.log(err);
@@ -154,6 +153,7 @@ export const getUserEvents = async (req, res, next) => {
             date: { $gte: now},
             attendees: { $in: [userId]}
         });
+
         res.status(200).json(events);
     } catch (err) {
         console.log(err);

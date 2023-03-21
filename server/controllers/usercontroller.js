@@ -3,9 +3,6 @@ import User from "../models/User.js";
 // Update user
 export const updateUser = async (req, res, next) => {
     try {
-        //update user by using the id in the request paramter :id
-        //update information with req.body
-        //"new: true" responds with the updated collection
         const updatedUser = await User.findByIdAndUpdate(
             req.params.id,
             { $set: req.body},
@@ -21,8 +18,6 @@ export const updateUser = async (req, res, next) => {
 // Delete user by id
 export const deleteUser = async (req, res, next) => {
     try {
-        //because we are deleting we don't need to assign 
-        //this to a variable to respond.
         await User.findOneAndDelete({email: req.params.id});
         res.status(200).json("User has been deleted.");
     } catch(err) {
@@ -51,6 +46,7 @@ export const getUsers = async (req, res, next) => {
     }
 }
 
+//add a friend
 export const addFriend = async (req, res, next) => {
     try {
        const userId = req.params.id
@@ -78,6 +74,7 @@ export const addFriend = async (req, res, next) => {
     }
 }
 
+//remove a friend
 export const removeFriend = async (req, res, next) => {
     try {
        const userId = req.params.id

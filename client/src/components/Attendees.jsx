@@ -57,8 +57,8 @@ const Attendees = (props) => {
        <p className={added ? ' text-gray-700 m-auto' : ' text-gray-700 m-auto'}>{userData.name}</p>
        <div className='flex'>
             {added ? <ImCheckmark size={27} className='mx-2 my-1 p-1'/>
-            : <AiOutlineUserAdd onClick={addFriend} size={27} 
-            className='mx-2 my-1 -1 hover:text-slate-400 cursor-pointer'/>}
+            : <button type='button' onClick={addFriend} className='mx-2 my-1 -1 hover:text-slate-400'><AiOutlineUserAdd size={27}/>
+            </button>}
        </div>
     </div>
   );

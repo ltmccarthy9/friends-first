@@ -109,8 +109,6 @@ const Event = ({ business, address, description, capacity, taken, category, id, 
                 </div>
         }
     
-    // text-indigo-600 text-gray-800 text-green-600
-
     return (
         <div onClick={expanded ? () => handleExpand() : null } 
         className={expanded ? "overlay" : 'overlaySmall'}>
@@ -141,25 +139,26 @@ const Event = ({ business, address, description, capacity, taken, category, id, 
                     </p>
                 </div>
                 <p className={expanded ? "text-md p-2 max-h-60 text-gray-700 dark:text-gray-50" 
-                    : "hidden"}>{description} "Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                    quised do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                    quised do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                    quised do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+                    : "hidden"}>{description}
                 </p>  
             </button>
             
                 <div className={expanded ? "event-wrapper max-w-xs sm:max-w-3xl" : ''}>
                 <button type="button" className={expanded 
-                    ? "absolute py-2 px-3 top-4 right-6 text-xl font-bold hover:bg-gray-200 hover:text-gray-700 dark:text-gray-50 dark:hover:text-gray-700 rounded-full cursor-pointer" 
-                    : "hidden"}>x</button>
-                    {expanded ? joined ? <button onClick={() => joinEvent()} 
+                    ? "absolute py-2 px-3 top-4 right-6 text-xl font-bold hover:bg-gray-200 hover:text-gray-700 dark:text-gray-50 dark:hover:text-gray-700 rounded-full cursor-pointer ease-in duration-100" 
+                    : "hidden"}
+                    >x
+                </button>
+                {expanded ? joined ? 
+                <button onClick={() => joinEvent()} 
                     type="button" className="z-30 absolute bottom-0 right-0 text-xl font-bold px-4 py-2 m-4 leaveBtn"
-                    >Leave</button>
+                    >Leave
+                </button>
                     : <button onClick={() => joinEvent()} type="button" 
                     className="z-30 absolute bottom-0 right-0 text-xl font-bold px-4 py-2 m-4 joinBtn"
-                    >Join</button>   
-                        : <p></p>}      
+                    >Join
+                </button>   
+                    : <p></p>}      
                 </div>
         </div>
     );

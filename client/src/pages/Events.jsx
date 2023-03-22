@@ -133,7 +133,7 @@ const Events = () => {
 
       // Events header, search bar, and return event components
         return (
-            <main className="flex flex-col h-screen mt-14 bg-slate-100 dark:bg-gray-600">
+            <main className="flex flex-col h-screen mt-14 bg-slate-200 dark:bg-gray-600">
                 <div className="w-full flex flex-col">
                     <div className="flex mx-auto mb-2 mt-12 text-gray-700 dark:text-gray-50">
                         <h2 className="text-xl mx-1">Showing events</h2>

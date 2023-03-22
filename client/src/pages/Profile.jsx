@@ -47,7 +47,7 @@ const Profile = () => {
     }
     
     return (
-         <main className="flex mt-14 mx-auto h-screen bg-slate-100 dark:bg-gray-600">
+         <main className="flex mt-14 mx-auto h-screen bg-slate-200 dark:bg-gray-600">
             <div className="flex flex-col w-full sm:justify-center sm:flex-row p-4">
                 <section className="mt-8 flex flex-col rounded-md bg-gray-50 text-gray-700 dark:bg-gray-700 dark:text-gray-50 
                 mr-4 pt-2 h-fit w-full sm:w-48 sm:mx-8">

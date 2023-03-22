@@ -37,7 +37,7 @@ const Pastevents = (likes) => {
             date={event.date.substring(5, 10)}
             attending={event.attendees} 
             likes={likes}/>
-        )) : <h2 className="pt-12 font-bold m-auto">You don't have any past events yet.</h2>}
+        )) : <h2 className="pt-12 font-bold m-auto text-gray-700 dark:text-gray-50">You don't have any past events yet.</h2>}
         </div>
     );
 }

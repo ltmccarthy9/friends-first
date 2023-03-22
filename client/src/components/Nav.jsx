@@ -54,12 +54,12 @@ const Nav = ({dark, setDark}) => {
 
 
   return (
-      <nav className="bg-[#ffff] dark:bg-[#343c48] text-gray-700 dark:text-gray-50 flex justify-center fixed top-0 w-full h-14 z-20 pt-2 mb-4 px-4">
+      <nav className="bg-gray-50 dark:bg-[#343c48] text-gray-700 dark:text-gray-50 flex justify-center fixed top-0 w-full h-14 z-20 pt-2 mb-4 px-4">
         <div className='flex justify-between h-full w-full max-w-7xl'>
         <section className='flex flex-grow my-auto'>
             <a href='/events' 
             className="font-extrabold text-2xl
-            cursor-pointer mb-2 hover:text-gray-500"
+            cursor-pointer mb-2 hover:text-gray-500 dark:hover:text-gray-300"
             >Friends First.
             </a>
         </section>
@@ -67,22 +67,22 @@ const Nav = ({dark, setDark}) => {
         <section className='hidden h-full flex-grow-0 md:flex md:justify-end lg:ml-44'>
             <div className='flex md:mr-12 h-full' >
                 <a href='/events'
-                className={events ? 'h-full pt-1 px-2 cursor-pointer border-b-4 w-24  hover:text-gray-500 border-teal-500' 
-                : ' cursor-pointer pt-1 px-2  w-24 hover:text-gray-500'}>
+                className={events ? 'h-full pt-1 px-2 cursor-pointer border-b-4 w-24  hover:text-gray-500 dark:hover:text-gray-300 border-teal-500' 
+                : ' cursor-pointer pt-1 px-2  w-24 hover:text-gray-500 dark:hover:text-gray-300'}>
                     <BsFillCalendar2EventFill size={18} className='cursor-pointer m-auto'/>
                     <h4 className={' cursor-pointer text-center text-sm'}>Events</h4>
                 </a>
                 
                 <a href='/profile' 
-                className={profile ? 'pt-1 px-2  cursor-pointer border-b-4 w-24  hover:text-gray-500 border-teal-500' 
-                : ' cursor-pointer w-24 pt-1 px-2 hover:text-gray-500'}>
+                className={profile ? 'pt-1 px-2  cursor-pointer border-b-4 w-24  hover:text-gray-500 dark:hover:text-gray-300 border-teal-500' 
+                : ' cursor-pointer w-24 pt-1 px-2 hover:text-gray-500 dark:hover:text-gray-300'}>
                     <BsPersonCircle size={18} className='cursor-pointer m-auto'/>
                     <h4 className={' cursor-pointer text-center text-sm'}>Profile</h4>
                 </a>
 
                 <a href='/messages'
-                className={messages ? 'cursor-pointer pt-1 px-2  w-24 border-b-4  hover:text-gray-500 border-teal-500' 
-                : 'cursor-pointer w-24 pt-1 px-2 hover:text-gray-500'}>
+                className={messages ? 'cursor-pointer pt-1 px-2  w-24 border-b-4  hover:text-gray-500 dark:hover:text-gray-300 border-teal-500' 
+                : 'cursor-pointer w-24 pt-1 px-2 hover:text-gray-500 dark:hover:text-gray-300'}>
                     <RiMessage2Fill size={18} className='cursor-pointer m-auto'/>
                     <h4 className={' cursor-pointer text-center text-sm'}>Messages</h4>
                 </a>

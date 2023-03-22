@@ -74,10 +74,10 @@ const Login = () => {
     return (
     <main className="flex flex-col">
       <h1 onClick={navHome} 
-      className="title font-black tracking-tight text-gray-700 text-6xl cursor-pointer"
+      className="font-black tracking-tight text-center text-gray-700 text-6xl cursor-pointer mt-10 sm:mt-32 "
       >Friends First.</h1>
         
-      <section className="login-card bg-gray-100 mt-32 mx-auto pt-8 pb-12 px-8">
+      <section className="login-card bg-gray-50 mt-10 sm:mt-32 mx-auto pt-8 pb-12 px-8">
         <h2 className="theme-dark text-center my-4 font-extrabold tracking-tight text-3xl">Log in</h2>
           <form id="myForm">
             <input placeholder="email" onKeyUp={(e) => setEmail(e.target.value)} 

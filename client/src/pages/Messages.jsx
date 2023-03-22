@@ -8,8 +8,8 @@ import { useEffect } from 'react';
 
 
 const Messages = () => {
-
   const dispatch = useDispatch();
+  
   const userId = localStorage.getItem('id');
 
   //UseEffect for properly handling profile conditional style

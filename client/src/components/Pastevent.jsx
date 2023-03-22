@@ -4,15 +4,10 @@ import { AiOutlineEllipsis } from 'react-icons/ai'
 import { useSelector } from "react-redux";
 
 const Pastevent = ({ business, location, date, attending, likes, id }) => {
-   
     const [ menu, setMenu ] = useState(false)
 
     const token = useSelector((state) => state.token);
-
-    // use token to grab userId instead of localstorage
-
     const userId = localStorage.getItem('id');
-
     const eventId = id;
 
     const deletePastEvent = async () => {

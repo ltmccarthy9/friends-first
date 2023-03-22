@@ -7,15 +7,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setFriends } from '../state';
 
 const Attendees = (props) => {
-
     const dispatch = useDispatch();
-    //grab jwt from state
     const token = useSelector((state) => state.token);
     const friends = useSelector((state) => state.friends)
-
     const id = props.user2Id
     const userId = localStorage.getItem('id');
-
 
     //set default state on "add friend" to whether that id is included in user's liked array
     const [added, setAdded ] = useState(props.likes.likes.includes(id));

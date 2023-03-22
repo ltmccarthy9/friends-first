@@ -4,7 +4,6 @@ import React from 'react'
 const ChatMessage = (props) => {
   //id of other user and chat message passed as props
   const { message, senderID } = props.message;
-
   //local user id
   const currentUid = localStorage.getItem('id');
 

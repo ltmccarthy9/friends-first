@@ -7,21 +7,18 @@ import { setPast, setUpcoming, setPage, setFriends, setMessageWith, setUsername 
 import { useSelector } from "react-redux";
 
 const Events = () => {
-    
     const dispatch = useDispatch()
-
+    
+    //------STATE-------
     // state for event filtering
     const [query, setQuery] = useState('');
     const [ distanceFilter, setDistanceFilter ] = useState(10);
     const [filteredEvents, setFilteredEvents] = useState([]);
-
     // state that stores user latituge and longitude
     const [ userLat, setUserLat] = useState(null)
     const [ userLng, setUserLng] = useState(null)
-
     // boolean determining if data from useFetchEvents has been fully loaded
     const [ isDataLoaded, setIsDataLoaded] = useState(false)
-
     // refetch state
     const refetch = useSelector((state) => state.refetch);
     

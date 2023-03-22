@@ -7,7 +7,6 @@ import { useDispatch } from 'react-redux';
 import { setPast, setUpcoming } from '../state';
 
 const Past = () => {
-
      //useStates for switching between upcoming and past events on profile
      const dispatch = useDispatch();
      const navigate = useNavigate();

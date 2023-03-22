@@ -1,5 +1,4 @@
 import { Schema, model }from "mongoose";
-import moment from 'moment';
 
 const eventSchema = new Schema({
     business: {
@@ -54,9 +53,6 @@ const eventSchema = new Schema({
         type: Number
     }
 });
-
-// we will need to add a date and time and auto remove from active events
-
 
 const Event = model("Event", eventSchema);
 export default Event;

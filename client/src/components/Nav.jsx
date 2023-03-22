@@ -15,14 +15,8 @@ import 'firebase/compat/analytics';
 import 'firebase/compat/auth'
 
 const Nav = ({dark, setDark}) => {
-
-    //This is the boolean state for opening and closing popout navigation menu
     const [nav, setNav] = useState(false);
-    
-    //useNavigate for changing pages
     const navigate = useNavigate();
-    
-    //useDispatch hook for logging out user
     const dispatch = useDispatch();
     
     //this is for nav styling depending on current page

@@ -8,11 +8,8 @@ import { useCollectionData } from 'react-firebase-hooks/firestore'
 import { useSelector } from "react-redux";
 
 const ChatRoom = () => {
-
   const [formValue, setFormValue] = useState('');
   const ref = useRef()
-
-  
   // if 0 friends, display "no friends"
   let friends = (useSelector((state) => state.friends))
   // grab the 2nd user in conversation
@@ -20,7 +17,6 @@ const ChatRoom = () => {
   // grab current user
   const currentUserId = localStorage.getItem('id');
 
-  
  // firebase user authentication
   firebase.auth().onAuthStateChanged(function(user) {
     if(user) {
@@ -36,7 +32,7 @@ const ChatRoom = () => {
   const firestore = firebase.firestore();
   const messagesRef = firestore.collection('messages')
   //create query and grab all messages that contain current user.
-  const query = messagesRef.where("members", 'array-contains', currentUserId).orderBy('createdAt').limit(1000);
+  const query = messagesRef.where("members", 'array-contains', currentUserId).orderBy('createdAt').limit(5000);
   //useCollectionData hook.
   const [messages, loading, error ] = useCollectionData(query, {idField: 'id'});
   let filteredMessages;

@@ -6,7 +6,6 @@ import { useDispatch } from 'react-redux';
 import { setUpcoming, setPast, setPage } from '../state';
 
 const Profile = () => {
-
     const navigate = useNavigate();
     const dispatch = useDispatch();
 

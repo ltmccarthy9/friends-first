@@ -7,8 +7,6 @@ import 'firebase/compat/analytics';
 import 'firebase/compat/auth'
 
 const Register = () => {
-
-
     const navigate = useNavigate();
 
     //input text state for register form

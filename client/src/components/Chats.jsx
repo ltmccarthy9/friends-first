@@ -7,14 +7,11 @@ import { useSelector } from 'react-redux';
 import { AiOutlineEllipsis } from 'react-icons/ai';
 
 const Chats = (props) => {
-
     const [ menu, setMenu ] = useState(false)
-
     const userId = localStorage.getItem('id');
     const user2Id = props.user2Id;
     const messenger = useSelector((state) => state.messageWith) === user2Id;
     const friends = useSelector((state) => state.friends)
-
     const token = useSelector((state) => state.token);
     const dispatch = useDispatch();
 

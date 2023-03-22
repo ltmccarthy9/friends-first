@@ -5,14 +5,13 @@ import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 
 const Yourevents = () => {
-
+    const [ userLat, setUserLat] = useState(null)
+    const [ userLng, setUserLng] = useState(null)  
     const userId = localStorage.getItem('id');
-
     // use moment.js to filter out only relevent events (not in the past)
     const now = moment().toISOString();
     const refetch = useSelector((state) => state.refetch);
-    const [ userLat, setUserLat] = useState(null)
-    const [ userLng, setUserLng] = useState(null)
+    
     
     useEffect(() => {
         // Get user lat and lng
@@ -47,10 +46,8 @@ const Yourevents = () => {
     if (error) {
         return <p>Error: {error.message}</p>;
     }
-
     //get only our future events
     const filteredData = data.filter(event => event.date >= now);
-
     // In this case we filter it again to only display events the user has joined
     const ourEvents = filteredData.filter(event => event.attendees.includes(userId));
     

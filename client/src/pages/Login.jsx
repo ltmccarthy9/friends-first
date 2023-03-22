@@ -13,10 +13,7 @@ const Login = () => {
     const [email, setEmail ] = useState('');
     const [password, setPassword] = useState('');
 
-    //dispatch for redux
     const dispatch = useDispatch();
-
-   //useNavigate hook for changing react route
     const navigate = useNavigate();
 
     //function for handling user login

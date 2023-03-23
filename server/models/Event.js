@@ -28,17 +28,17 @@ const eventSchema = new Schema({
     date: {
         type: Date,
         required: true,
-        // set: (date) => moment(date, 'MM-DD-YYYY'),
-        // validate: {
-        //     validator: function (v) {
-        //         return(
-        //             v &&
-        //             v.getTime() > Date.now() + 24 * 60 * 60 * 1000 &&
-        //             v.getTime() < Date.now() + 90 * 24 * 60 * 60 * 1000
-        //         );
-        //     },
-        //     message: "Event must be at least one day from now and no more than ninety days out"
-        // }
+        set: (date) => moment(date, 'MM-DD-YYYY'),
+        validate: {
+            validator: function (v) {
+                return(
+                    v &&
+                    v.getTime() > Date.now() + 24 * 60 * 60 * 1000 &&
+                    v.getTime() < Date.now() + 90 * 24 * 60 * 60 * 1000
+                );
+            },
+            message: "Event must be at least one day from now and no more than ninety days out"
+        }
         
     },
     time: {

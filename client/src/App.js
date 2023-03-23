@@ -42,7 +42,7 @@ function App() {
     if(localStorage.getItem("dark")){
       document.documentElement.classList.add('dark');
     }
-  })
+  }, [])
 
   //Make sure not to show nav on landing/login/register pages
   useEffect(() => {

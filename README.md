@@ -4,7 +4,7 @@
 Friends First is an event-based dating/friend-making application that allows a user to sign up to events, meet new people, and stay in contact with one another.  I have been continually refactoring and adding to this project, check out current demo and old demos for a view into the evolution.
  
  ## Demo of Application
-https://www.youtube.com/watch?v=RLdI5ZjYOTA&ab_channel=LiamMcCarthy
+https://youtu.be/qda-5_52cLw
 
 ## Technologies Used
 

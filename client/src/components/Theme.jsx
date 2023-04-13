@@ -23,9 +23,6 @@ const Theme = ({dark, setDark}) => {
             console.log('set theme to dark')
         }
       }
-    
-     
-      console.log('is dark theme true? ', dark)
 
   return (
     <button type='button' onClick={changeTheme} className='flex mx-4 mb-2 items-center'>

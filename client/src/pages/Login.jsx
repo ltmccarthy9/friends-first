@@ -79,10 +79,10 @@ const Login = () => {
           <form id="myForm">
             <input placeholder="email" onKeyUp={(e) => setEmail(e.target.value)} 
             type="email" className="form-control my-3 chat-input"
-            ></input>
+            required></input>
             <input placeholder="password" onKeyUp={(e) => setPassword(e.target.value)} 
             type="password" className="form-control my-1 chat-input"
-            ></input>
+            required></input>
             <button type="button" onClick={(e) => handleLog(e)} 
             className="btn font-bold mt-3 border-solid border-1 bg-teal-300 hover:bg-teal-400 w-full"
             >Sign in</button>

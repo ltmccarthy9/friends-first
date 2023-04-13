@@ -26,6 +26,7 @@ const Create = () => {
         fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${add}&key=${process.env.REACT_APP_GOOGLE}`)
         .then(response => response.json())
         .then(data => {
+            console.log(data)
             let latitude = (data.results[0].geometry.location.lat);
             let longitude = (data.results[0].geometry.location.lng)
             fetch('http://localhost:4000/api/events/create', {
@@ -71,7 +72,7 @@ const Create = () => {
     return (
     <div className='h-screen w-full top-0 right-0 flex pt-20 sm:pt-40'>
       <div className='mx-auto rounded-md sm:m-4 bg-white max-h-3xl p-12 w-full h-fit sm:w-4/5 lg:w-3/5 xl:w-2/5'>
-      <form onSubmit={submitEvent} className='grid grid-cols-1 gap-3' id="myForm">
+      <form onSubmit={(e) => submitEvent(e)} className='grid grid-cols-1 gap-3' id="myForm">
                     <label className='font-bold' htmlFor="business">Business Name</label>
                     <input placeholder="Business Name" onChange={(e) => setName(e.target.value)} 
                      value={name} id="business" className="form-control chat-input"
@@ -85,9 +86,13 @@ const Create = () => {
                      value={capacity} className="form-control chat-input"
                     ></input>
                     <label className='font-bold' htmlFor="category">Event Category</label>
-                    <input placeholder="ie: bar or sport" id='category' onChange={(e) => setCategory(e.target.value)} 
-                     value={category} className="form-control chat-input"
-                    ></input>
+                    <select id='category' value={category} onChange={(e) => setCategory(e.target.value)}
+                    className='border border-1-black rounded-md p-1'>
+                        <option value="bar">Bar</option>
+                        <option value="sport">Sport</option>
+                        <option value="restaurant">Restaurant</option>
+                        <option value="recreation">Recreation</option>
+                    </select>
                     <div>
                         <p className="font-bold mt-2 text-black">Event date</p>
                         <div>

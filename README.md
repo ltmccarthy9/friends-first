@@ -1,9 +1,9 @@
 # friends-first
 
 ## Description
-Friends First is an event-based dating/friend-making application that allows a user to sign up to events, meet new people, and stay in contact with one another.  I have been continually refactoring and adding to this project, check out current demo and old demos for a view into the evolution.
+Friends First is an event-based dating/friend-making application that allows a user to sign up to events, meet new people, and stay in contact with one another.
  
- ## Demo of Application
+ ## Demo of Application & Code 
 https://youtu.be/qda-5_52cLw
 
 ## Technologies Used
@@ -19,32 +19,6 @@ https://youtu.be/qda-5_52cLw
 
 ## Deployment
 Friends First is structured around the existence of events created by a partnership between Friends First, ie: me at the moment, and the business that wants to host the event. Until that becomes a reality, I'm not going to deploy it. Events are the integral part of the application; I do not want to deploy it with fake events that I would have to personally continue posting.
-
-## Old updates
-
-1.) (oldest)
-https://drive.google.com/file/d/1janvooZxIk15fuhMbP-byOvF1bBVkIMW/view
-
-2.)
-https://drive.google.com/file/d/1xQscWSkKpkTcRvAW5FcLo5GfPkgqcP7I/view
-
-3.)
-https://drive.google.com/file/d/1GHkIAzEgsSw9Uj2cTsFRN3P88daxA3lY/view
-
-4.) 
-https://drive.google.com/file/d/1taImDVGhV74cYG2sZzC32pJDaMHtfUcY/view
-
-5.)
-https://drive.google.com/file/d/12-Q-GOwGbQkl_hXrqYoYF3Z1nEnRZT_N/view
-
-6.)
-https://drive.google.com/file/d/1-M95XduMEb5XuTsPWORG6fudlk0WQuSx/view
-
-7.)
-https://www.youtube.com/watch?v=_a4XgtZ_UnA&ab_channel=LiamMcCarthy
-
-8.)
-https://www.youtube.com/watch?v=pxaGvDUBOk4&ab_channel=LiamMcCarthy
 
 
 ## License 
